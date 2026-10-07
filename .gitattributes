@@ -1,0 +1,15 @@
+# Fin de línea LF en todo el repo (el build de Cloudflare corre en Linux)
+* text=auto eol=lf
+
+# Binarios: sin conversión ni diff de texto
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
