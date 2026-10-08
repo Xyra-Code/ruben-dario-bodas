@@ -140,9 +140,13 @@ async function main() {
     process.exit(1);
   }
 
-  const tareas: Tarea[] = contenido.eventos.flatMap((e) =>
-    e.fotos.map((f) => ({ slug: e.slug, archivo: f.archivo, origen: f.ruta })),
-  );
+  const tareas: Tarea[] = [
+    ...contenido.eventos.flatMap((e) =>
+      e.fotos.map((f) => ({ slug: e.slug, archivo: f.archivo, origen: f.ruta })),
+    ),
+    // Retrato y equipo (content/sobre/fotos): mismo proceso, carpeta "sobre".
+    ...contenido.fotosSobre.map((f) => ({ slug: "sobre", archivo: f.archivo, origen: f.ruta })),
+  ];
 
   const inicio = Date.now();
   const resultados = await enParalelo(tareas, Math.max(2, availableParallelism() - 1), (t) =>

@@ -212,7 +212,57 @@ export const evento = z.strictObject({
     .min(1),
 });
 
+// ── Páginas de texto: sobre, guía de lugares y política de datos ───────────
+
+/** Foto suelta de una página (no de un evento): content/sobre/fotos/<archivo>. */
+const fotoSuelta = z.strictObject({
+  archivo: archivoFoto,
+  alt: texto.min(15, "El alt debe describir la foto (mínimo 15 caracteres)"),
+});
+
+export const sobre = z.strictObject({
+  /** Frase que lo define, junto al retrato en /sobre-ruben-dario. */
+  frase: texto,
+  /** Párrafo de la sección "Sobre Rubén Darío" en la portada. */
+  resumen: texto,
+  retrato: fotoSuelta.optional(),
+  /** "Cómo empezó": historia en primera o tercera persona, 400–600 palabras en total. */
+  historia: parrafos,
+  /** Frase destacada dentro de la historia. */
+  citaHistoria: texto.optional(),
+  hitos: z
+    .array(z.strictObject({ anio: z.string().regex(/^(19|20)\d{2}$/, "Año: AAAA"), texto }))
+    .min(1),
+  /** "Su forma de diseñar": 3 principios. */
+  principios: z
+    .array(z.strictObject({ titulo: texto, texto }))
+    .min(1)
+    .max(4),
+  equipo: z.array(z.strictObject({ nombre: texto, rol: texto, foto: fotoSuelta.optional() })),
+  /** Hasta 3 slugs de eventos del portafolio. */
+  eventosQueMarcaron: z.array(slug).max(3),
+  reconocimientos: z.array(texto),
+});
+
+export const guiaLugares = z.strictObject({
+  /** Textos redactados por XyraCode como borrador: false hasta que la empresa los apruebe. */
+  revisadoPorLaEmpresa: z.boolean(),
+  /** Cómo elegir el lugar de la boda. */
+  introduccion: parrafos,
+  /** Consejos de decoración por tipo de lugar (finca, salón, hacienda…). */
+  consejos: z.array(z.strictObject({ tipo: texto, texto })).min(1),
+});
+
+export const politica = z.strictObject({
+  /** Fecha de la última actualización: "2026-10-08". */
+  actualizada: z.string().regex(/^20\d{2}-\d{2}-\d{2}$/, "Formato AAAA-MM-DD"),
+  secciones: z.array(z.strictObject({ titulo: texto, parrafos })).min(1),
+});
+
 export type Sitio = z.infer<typeof sitio>;
+export type Sobre = z.infer<typeof sobre>;
+export type GuiaLugares = z.infer<typeof guiaLugares>;
+export type Politica = z.infer<typeof politica>;
 export type Servicio = z.infer<typeof servicio>;
 export type PreguntaFrecuente = z.infer<typeof preguntaFrecuente>;
 export type Paso = z.infer<typeof proceso>[number];

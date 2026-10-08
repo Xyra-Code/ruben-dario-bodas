@@ -1,0 +1,21 @@
+{
+  "revisadoPorLaEmpresa": false,
+  "introduccion": [
+    "Elegir el lugar es la primera gran decisión de su boda: define la fecha posible, el número de invitados, el estilo de la decoración y buena parte de la inversión. En Villavicencio y el Meta hay haciendas, fincas y salones para casi cualquier idea, desde una boda íntima al aire libre hasta una recepción grande con pista de baile.",
+    "Antes de reservar, visite el lugar a la misma hora en que será su evento: la luz de la tarde en el Llano cambia por completo una ceremonia. Pregunte por el plan de lluvia, los horarios de montaje y desmontaje, el parqueadero y la distancia para sus invitados que vienen de Villavicencio o Bogotá."
+  ],
+  "consejos": [
+    {
+      "tipo": "Finca o aire libre",
+      "texto": "Aproveche el paisaje: pocos elementos, bien ubicados, lucen más que llenar el espacio. Una carpa o un plan B bajo techo es indispensable, y la iluminación cálida (bombillos colgantes, velas en faroles) hace que la fiesta continúe cuando cae la noche."
+    },
+    {
+      "tipo": "Salón",
+      "texto": "El salón es un lienzo en blanco: el diseño lo transforma con telas, flores e iluminación. Conviene conocer la altura del techo, los colores de paredes y piso, y si se pueden colgar elementos, porque de eso depende cuánto cambia el espacio."
+    },
+    {
+      "tipo": "Hacienda",
+      "texto": "Las haciendas tienen carácter propio: corredores, madera y jardines. La decoración debe dialogar con la arquitectura en lugar de taparla. Ubique la ceremonia y la recepción en espacios distintos para que los invitados recorran el lugar."
+    }
+  ]
+}

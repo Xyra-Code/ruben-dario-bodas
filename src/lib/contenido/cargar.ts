@@ -15,6 +15,8 @@ import type { EventoArchivo, Lugar, TipoEvento } from "./esquemas";
 
 export const CARPETA_CONTENIDO = path.join(process.cwd(), "content");
 const CARPETA_EVENTOS = path.join(CARPETA_CONTENIDO, "eventos");
+/** Fotos de las páginas de texto (retrato, equipo): se procesan con el slug "sobre". */
+export const CARPETA_FOTOS_SOBRE = path.join(CARPETA_CONTENIDO, "sobre", "fotos");
 const MARCA_PENDIENTE = "[PENDIENTE";
 
 const NOMBRE_TIPO: Record<TipoEvento, string> = {
@@ -44,6 +46,11 @@ export type Contenido = {
   testimonios: esquema.Testimonio[];
   /** Del más reciente al más antiguo. */
   eventos: Evento[];
+  sobre: esquema.Sobre;
+  guiaLugares: esquema.GuiaLugares;
+  politica: esquema.Politica;
+  /** Fotos fuera de los eventos (content/sobre/fotos), para el pipeline de imágenes. */
+  fotosSobre: { archivo: string; ruta: string }[];
 };
 
 export type ResultadoValidacion = {
@@ -129,6 +136,9 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
   const proceso = cargar("proceso.json", esquema.proceso);
   const lugares = cargar("lugares.json", esquema.lugares);
   const testimonios = cargar("testimonios.json", esquema.testimonios);
+  const sobre = cargar("sobre/sobre.json", esquema.sobre);
+  const guiaLugares = cargar("guia-lugares.json", esquema.guiaLugares);
+  const politica = cargar("politica-de-datos.json", esquema.politica);
   const servicios = ["bodas", "quince-anos"]
     .map((nombre) => cargar(`servicios/${nombre}.json`, esquema.servicio))
     .filter((s) => s !== null);
@@ -248,6 +258,25 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       avisos.push(`content/testimonios.json: "${t.autor}" sin autorización (no se publica)`);
   }
 
+  // Sobre: eventos que lo marcaron y fotos en disco.
+  for (const s of sobre?.eventosQueMarcaron ?? []) {
+    if (!slugsEventos.has(s)) {
+      errores.push(`content/sobre/sobre.json → eventosQueMarcaron: "${s}" no existe`);
+    }
+  }
+  const fotosSobre = [sobre?.retrato, ...(sobre?.equipo.map((m) => m.foto) ?? [])]
+    .filter((f) => f !== undefined)
+    .map((f) => ({ archivo: f.archivo, ruta: path.join(CARPETA_FOTOS_SOBRE, f.archivo) }));
+  for (const f of fotosSobre) {
+    if (!existsSync(f.ruta)) errores.push(`content/sobre: falta el archivo fotos/${f.archivo}`);
+  }
+
+  if (guiaLugares && !guiaLugares.revisadoPorLaEmpresa) {
+    (estricto ? errores : avisos).push(
+      "content/guia-lugares.json: borrador de XyraCode sin aprobar (revisadoPorLaEmpresa: false)",
+    );
+  }
+
   // Destacados de la portada.
   const destacados = eventos.filter((e) => e.destacado).length;
   if (eventos.length && (destacados < 3 || destacados > 6)) {
@@ -266,6 +295,9 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     proceso &&
     lugares &&
     testimonios &&
+    sobre &&
+    guiaLugares &&
+    politica &&
     servicios.length === 2 &&
     !errores.length;
 
@@ -279,6 +311,10 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
           lugares,
           testimonios: testimonios.filter((t) => t.autorizado),
           eventos,
+          sobre,
+          guiaLugares,
+          politica,
+          fotosSobre,
         }
       : null,
     errores,

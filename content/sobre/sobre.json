@@ -1,0 +1,33 @@
+{
+  "frase": "[PENDIENTE: una frase personal que defina a Rubén Darío como diseñador]",
+  "resumen": "[PENDIENTE: un párrafo sobre Rubén Darío y su trayectoria para la portada]",
+  "historia": [
+    "[PENDIENTE: cómo empezó: origen y primeros eventos]",
+    "[PENDIENTE: cómo creció: equipo, lugares, tipos de evento]",
+    "[PENDIENTE: hoy: qué lo diferencia y qué busca en cada evento]"
+  ],
+  "citaHistoria": "[PENDIENTE: una frase de Rubén Darío para destacar]",
+  "hitos": [
+    {
+      "anio": "2010",
+      "texto": "[PENDIENTE: hito con su año (ejemplo de formato)]"
+    }
+  ],
+  "principios": [
+    {
+      "titulo": "[PENDIENTE: principio 1]",
+      "texto": "[PENDIENTE: texto corto]"
+    },
+    {
+      "titulo": "[PENDIENTE: principio 2]",
+      "texto": "[PENDIENTE: texto corto]"
+    },
+    {
+      "titulo": "[PENDIENTE: principio 3]",
+      "texto": "[PENDIENTE: texto corto]"
+    }
+  ],
+  "equipo": [],
+  "eventosQueMarcaron": ["boda-hacienda-el-caney-restrepo", "quince-salon-rosales-villavicencio"],
+  "reconocimientos": []
+}
