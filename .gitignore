@@ -47,3 +47,6 @@ next-env.d.ts
 # imágenes generadas al compilar (scripts/imagenes.ts)
 /public/img/
 /src/generado/
+
+# capturas de QA (scripts/capturas.mjs)
+/capturas/

@@ -13,14 +13,16 @@ export const metadata = metadatos({
 // Esqueleto de la Fase 3. Texto legal pendiente de la empresa (Ley 1581 de 2012).
 export default function Politica() {
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8">
-      <Migas
-        items={[
-          { nombre: "Inicio", ruta: "/" },
-          { nombre: "Política de datos", ruta: pagina.ruta },
-        ]}
-      />
-      <h1 className="text-3xl">{pagina.h1}</h1>
+    <main>
+      <div className="contenedor py-8 lg:py-12">
+        <Migas
+          items={[
+            { nombre: "Inicio", ruta: "/" },
+            { nombre: "Política de datos", ruta: pagina.ruta },
+          ]}
+        />
+        <h1 className="text-titulo-1">{pagina.h1}</h1>
+      </div>
     </main>
   );
 }

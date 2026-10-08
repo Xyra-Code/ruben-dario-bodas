@@ -7,6 +7,7 @@ import { listaLugares } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
 import { rutaEvento, ubicacion } from "@/lib/rutas";
+import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 
 const pagina = PAGINAS.lugares;
 
@@ -31,35 +32,38 @@ export default function Lugares() {
   );
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8">
-      <JsonLd datos={[listaLugares(enGuia)]} />
-      <Migas
-        items={[
-          { nombre: "Inicio", ruta: "/" },
-          { nombre: "Lugares para bodas", ruta: pagina.ruta },
-        ]}
-      />
-      <h1 className="text-3xl">{pagina.h1}</h1>
-      {grupos.map((g) => (
-        <section key={g.titulo} className="mt-8">
-          <h2 className="text-xl">{g.titulo}</h2>
-          <ul>
-            {g.lugares.map((l) => (
-              <li key={l.slug}>
-                <h3>{l.nombre}</h3>
-                {l.capacidad && <p>{l.capacidad}</p>}
-                <ul>
-                  {eventosEnLugar(l.slug).map((e) => (
-                    <li key={e.slug}>
-                      <Link href={rutaEvento(e.slug)}>{e.titulo}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+    <main>
+      <div className="contenedor py-8 lg:py-12">
+        <JsonLd datos={[listaLugares(enGuia)]} />
+        <Migas
+          items={[
+            { nombre: "Inicio", ruta: "/" },
+            { nombre: "Lugares para bodas", ruta: pagina.ruta },
+          ]}
+        />
+        <h1 className="text-titulo-1">{pagina.h1}</h1>
+        {grupos.map((g) => (
+          <section key={g.titulo} className="mt-8">
+            <h2 className="text-titulo-3">{g.titulo}</h2>
+            <ul>
+              {g.lugares.map((l) => (
+                <li key={l.slug}>
+                  <h3>{l.nombre}</h3>
+                  {l.capacidad && <p>{l.capacidad}</p>}
+                  <ul>
+                    {eventosEnLugar(l.slug).map((e) => (
+                      <li key={e.slug}>
+                        <Link href={rutaEvento(e.slug)}>{e.titulo}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+      <SeccionContacto tipoInicial="boda" origen="lugares" />
     </main>
   );
 }

@@ -10,6 +10,7 @@ import { OG_SITIO, ogEvento } from "@/lib/imagenes";
 import { preguntasFrecuentes, servicio as servicioJsonLd } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { NOMBRE_SERVICIO, RUTA_SERVICIO, rutaEvento } from "@/lib/rutas";
+import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 
 /** Metadata de /bodas o /quince-anos; para compartir, la portada del evento más reciente del tipo. */
 export function metadatosServicio(tipo: TipoEvento): Metadata {
@@ -31,87 +32,90 @@ export function PaginaServicio({ tipo }: { tipo: TipoEvento }) {
   const testimonios = obtenerContenido().testimonios.filter((t) => t.tipo === tipo);
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8">
-      <JsonLd datos={[servicioJsonLd(s, ruta), preguntasFrecuentes(s.preguntas)]} />
-      <Migas
-        items={[
-          { nombre: "Inicio", ruta: "/" },
-          { nombre: NOMBRE_SERVICIO[tipo]!, ruta },
-        ]}
-      />
-      <h1 className="text-3xl">{s.h1}</h1>
-      <p>{s.bajada}</p>
+    <main>
+      <div className="contenedor py-8 lg:py-12">
+        <JsonLd datos={[servicioJsonLd(s, ruta), preguntasFrecuentes(s.preguntas)]} />
+        <Migas
+          items={[
+            { nombre: "Inicio", ruta: "/" },
+            { nombre: NOMBRE_SERVICIO[tipo]!, ruta },
+          ]}
+        />
+        <h1 className="text-titulo-1">{s.h1}</h1>
+        <p>{s.bajada}</p>
 
-      <section className="mt-8">
-        {s.introduccion.map((p) => (
-          <p key={p}>{p}</p>
-        ))}
-      </section>
-
-      <section className="mt-8">
-        <h2 className="text-xl">{s.variantes.titulo}</h2>
-        <ul>
-          {s.variantes.items.map((v) => (
-            <li key={v.nombre}>
-              <strong>{v.nombre}</strong>: {v.descripcion}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mt-8">
-        <h2 className="text-xl">Qué incluye</h2>
-        <ul>
-          {s.incluye.map((i) => (
-            <li key={i}>{i}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mt-8">
-        <h2 className="text-xl">Galería</h2>
-        <div className="grid grid-cols-2 gap-2 lg:grid-cols-3">
-          {eventos.map((e) => (
-            <Link key={e.slug} href={rutaEvento(e.slug)} className="min-w-0">
-              <Foto
-                evento={e.slug}
-                archivo={e.portada}
-                alt={e.fotos.find((f) => f.archivo === e.portada)!.alt}
-                sizes="(min-width: 1024px) 33vw, 50vw"
-                className="aspect-[4/5] w-full object-cover"
-              />
-              <span>{e.titulo}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-8">
-        <h2 className="text-xl">Inversión</h2>
-        <p>Desde {s.inversion.desde}</p>
-        <p>{s.inversion.nota}</p>
-      </section>
-
-      {testimonios.length > 0 && (
         <section className="mt-8">
-          <h2 className="text-xl">Testimonios</h2>
-          {testimonios.map((t) => (
-            <blockquote key={t.texto}>
-              {t.texto} — {t.autor}
-            </blockquote>
+          {s.introduccion.map((p) => (
+            <p key={p}>{p}</p>
           ))}
         </section>
-      )}
 
-      <section className="mt-8">
-        <h2 className="text-xl">Preguntas frecuentes</h2>
-        {s.preguntas.map((p) => (
-          <details key={p.pregunta}>
-            <summary>{p.pregunta}</summary>
-            <p>{p.respuesta}</p>
-          </details>
-        ))}
-      </section>
+        <section className="mt-8">
+          <h2 className="text-titulo-3">{s.variantes.titulo}</h2>
+          <ul>
+            {s.variantes.items.map((v) => (
+              <li key={v.nombre}>
+                <strong>{v.nombre}</strong>: {v.descripcion}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="text-titulo-3">Qué incluye</h2>
+          <ul>
+            {s.incluye.map((i) => (
+              <li key={i}>{i}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="text-titulo-3">Galería</h2>
+          <div className="grid grid-cols-2 gap-2 lg:grid-cols-3">
+            {eventos.map((e) => (
+              <Link key={e.slug} href={rutaEvento(e.slug)} className="min-w-0">
+                <Foto
+                  evento={e.slug}
+                  archivo={e.portada}
+                  alt={e.fotos.find((f) => f.archivo === e.portada)!.alt}
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+                <span>{e.titulo}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="text-titulo-3">Inversión</h2>
+          <p>Desde {s.inversion.desde}</p>
+          <p>{s.inversion.nota}</p>
+        </section>
+
+        {testimonios.length > 0 && (
+          <section className="mt-8">
+            <h2 className="text-titulo-3">Testimonios</h2>
+            {testimonios.map((t) => (
+              <blockquote key={t.texto}>
+                {t.texto} — {t.autor}
+              </blockquote>
+            ))}
+          </section>
+        )}
+
+        <section className="mt-8">
+          <h2 className="text-titulo-3">Preguntas frecuentes</h2>
+          {s.preguntas.map((p) => (
+            <details key={p.pregunta}>
+              <summary>{p.pregunta}</summary>
+              <p>{p.respuesta}</p>
+            </details>
+          ))}
+        </section>
+      </div>
+      <SeccionContacto tipoInicial={tipo} origen={s.slug} />
     </main>
   );
 }

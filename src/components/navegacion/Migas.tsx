@@ -10,7 +10,7 @@ import { migas, type Miga } from "@/lib/seo/jsonld";
 export function Migas({ items }: { items: Miga[] }) {
   return (
     <>
-      <nav aria-label="Migas de pan" className="text-topo text-sm">
+      <nav aria-label="Migas de pan" className="text-sm text-topo">
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
           {items.map((m, i) => {
             const actual = i === items.length - 1;

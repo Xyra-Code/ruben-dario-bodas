@@ -133,26 +133,32 @@ def main() -> None:
     salidas["logo-vertical.svg"] = documento(caja, nombre_marca, cuerpo, defs)
     salidas["logo-vertical-tinta.svg"] = documento(caja, nombre_marca, a_una_tinta(*todo))
 
-    # 3. Horizontal: monograma a la izquierda del bloque de texto (encabezado).
-    bloque = union(*(p[n]["caja"] for n in texto))
-    mono = p["monograma"]["caja"]
-    escala = bloque[3] / mono[3]  # el monograma mide lo mismo que el bloque de texto
-    separacion = 36
-    ancho_mono = mono[2] * escala
-    desplazar_mono = (
-        f'transform="translate({bloque[0] - separacion - ancho_mono:.2f} {bloque[1]:.2f}) '
-        f'scale({escala:.5f}) translate({-mono[0]:.2f} {-mono[1]:.2f})"'
-    )
-    caja = (bloque[0] - separacion - ancho_mono - 8, bloque[1] - 8,
-            bloque[2] + separacion + ancho_mono + 16, bloque[3] + 16)
-    defs, cuerpo_texto = a_color(*texto)
-    defs += gradiente("g-monograma", p["monograma"])
-    cuerpo = f'<g {desplazar_mono}>{trazo(p["monograma"], "url(#g-monograma)")}</g>' + cuerpo_texto
-    salidas["logo-horizontal.svg"] = documento(caja, nombre_marca, cuerpo, defs)
-    cuerpo_tinta = (
-        f'<g {desplazar_mono}>{trazo(p["monograma"], "currentColor")}</g>' + a_una_tinta(*texto)
-    )
-    salidas["logo-horizontal-tinta.svg"] = documento(caja, nombre_marca, cuerpo_tinta)
+    def horizontal(piezas_texto, separacion, archivo):
+        """Monograma a la izquierda, con la misma altura que el bloque de texto."""
+        bloque = union(*(p[n]["caja"] for n in piezas_texto))
+        mono = p["monograma"]["caja"]
+        escala = bloque[3] / mono[3]
+        ancho_mono = mono[2] * escala
+        desplazar_mono = (
+            f'transform="translate({bloque[0] - separacion - ancho_mono:.2f} {bloque[1]:.2f}) '
+            f'scale({escala:.5f}) translate({-mono[0]:.2f} {-mono[1]:.2f})"'
+        )
+        caja = (bloque[0] - separacion - ancho_mono - 8, bloque[1] - 8,
+                bloque[2] + separacion + ancho_mono + 16, bloque[3] + 16)
+        defs, cuerpo_texto = a_color(*piezas_texto)
+        defs += gradiente("g-monograma", p["monograma"])
+        cuerpo = f'<g {desplazar_mono}>{trazo(p["monograma"], "url(#g-monograma)")}</g>' + cuerpo_texto
+        salidas[f"{archivo}.svg"] = documento(caja, nombre_marca, cuerpo, defs)
+        cuerpo_tinta = (
+            f'<g {desplazar_mono}>{trazo(p["monograma"], "currentColor")}</g>'
+            + a_una_tinta(*piezas_texto)
+        )
+        salidas[f"{archivo}-tinta.svg"] = documento(caja, nombre_marca, cuerpo_tinta)
+
+    # 3. Horizontal completo: monograma + nombre + línea + descriptor (footer ancho, OG).
+    horizontal(texto, 36, "logo-horizontal")
+    # 4. Firma: monograma + nombre, sin descriptor (ilegible a la altura de un encabezado).
+    horizontal(("nombre",), 28, "logo-firma")
 
     for archivo, contenido in salidas.items():
         (SALIDA / archivo).write_text(contenido, encoding="utf-8", newline="\n")

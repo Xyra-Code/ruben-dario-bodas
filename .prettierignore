@@ -9,3 +9,4 @@ package-lock.json
 # Documentos de proyecto: se editan a mano, no se formatean
 *.md
 src/generado/
+capturas/
