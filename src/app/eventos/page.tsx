@@ -1,14 +1,12 @@
-import Link from "next/link";
-
+import { FiltroEventos } from "@/components/eventos/FiltroEventos";
+import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { Migas } from "@/components/navegacion/Migas";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { Foto } from "@/components/ui/Foto";
+import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { listaEventos } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
-import { rutaEvento } from "@/lib/rutas";
-import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 
 const pagina = PAGINAS.eventos;
 
@@ -18,40 +16,69 @@ export const metadata = metadatos({
   ruta: pagina.ruta,
 });
 
-// Esqueleto de la Fase 3. Filtros (en el navegador, sin URLs indexables) y diseño: Fases 4 y 5.
+const NOMBRE_FILTRO = { boda: "Bodas", quince: "15 años", otro: "Otros" } as const;
+
+/** Portafolio: todas las tarjetas en el HTML; los filtros solo ocultan (sin URLs nuevas). */
 export default function Eventos() {
-  const { eventos } = obtenerContenido();
+  const { eventos, sitio } = obtenerContenido();
+  const unicos = (valores: string[]) => [...new Set(valores)];
+  const tipos = unicos(eventos.map((e) => e.tipo)).map((t) => ({
+    valor: t,
+    nombre: NOMBRE_FILTRO[t as keyof typeof NOMBRE_FILTRO],
+  }));
+  // Municipios en el orden de la cobertura (sede primero); estilos en orden alfabético.
+  const orden = sitio.cobertura.zonas.flatMap((z) => z.municipios);
+  const municipios = unicos(eventos.map((e) => e.lugar.municipio)).sort(
+    (a, b) => (orden.indexOf(a) + 1 || 99) - (orden.indexOf(b) + 1 || 99),
+  );
+  const estilos = unicos(eventos.map((e) => e.estilo)).sort((a, b) => a.localeCompare(b, "es"));
+
   return (
     <main>
-      <div className="contenedor py-8 lg:py-12">
-        <JsonLd datos={[listaEventos(eventos)]} />
+      <JsonLd datos={[listaEventos(eventos)]} />
+      <div className="contenedor pt-4 pb-(--spacing-seccion)">
         <Migas
           items={[
             { nombre: "Inicio", ruta: "/" },
             { nombre: "Eventos", ruta: pagina.ruta },
           ]}
         />
-        <h1 className="text-titulo-1">{pagina.h1}</h1>
-        <ul className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-3">
-          {eventos.map((e) => (
-            <li key={e.slug} className="min-w-0">
-              <Link href={rutaEvento(e.slug)}>
-                <Foto
-                  evento={e.slug}
-                  archivo={e.portada}
-                  alt={e.fotos.find((f) => f.archivo === e.portada)!.alt}
-                  sizes="(min-width: 1024px) 33vw, 50vw"
-                  className="aspect-[4/5] w-full object-cover"
-                />
-                <span>{e.titulo}</span>
-              </Link>
-              <p className="text-sm text-topo">
-                {e.lugar.municipio} · {e.fecha.slice(0, 4)}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-6 max-w-3xl lg:mt-10">
+          <p className="antetitulo">Portafolio</p>
+          <h1 className="mt-4 text-titulo-1">{pagina.h1}</h1>
+          <p className="mt-5 text-lg text-topo">
+            Cada evento, con su lugar, su estilo y su paleta. Toque uno para ver todas las fotos.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <FiltroEventos
+            tipos={tipos}
+            municipios={municipios}
+            estilos={estilos}
+            items={eventos.map((e) => ({
+              tipo: e.tipo,
+              municipio: e.lugar.municipio,
+              estilo: e.estilo,
+            }))}
+          >
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14">
+              {eventos.map((e) => (
+                <li
+                  key={e.slug}
+                  data-tipo={e.tipo}
+                  data-municipio={e.lugar.municipio}
+                  data-estilo={e.estilo}
+                  className="min-w-0"
+                >
+                  <TarjetaEvento evento={e} nivel="h2" sizes="(min-width: 1024px) 33vw, 50vw" />
+                </li>
+              ))}
+            </ul>
+          </FiltroEventos>
+        </div>
       </div>
+
       <SeccionContacto titulo="¿Le gustó lo que vio? Cuéntenos de su evento" origen="eventos" />
     </main>
   );

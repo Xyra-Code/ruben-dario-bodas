@@ -1,15 +1,12 @@
 import type { Evento } from "@/lib/contenido/cargar";
 import { ubicacion } from "@/lib/rutas";
 
-const NOMBRE_TIPO = { boda: "Boda", quince: "Fiesta de 15 años", otro: "Evento" } as const;
-
 /**
- * Ficha del evento: tipo, lugar, municipio, estilo, fecha y la paleta como muestras de
- * color con su nombre (el color nunca va solo: lleva el nombre al lado).
+ * Ficha del evento: lugar, municipio, estilo, fecha y la paleta como muestras de color
+ * con su nombre (el color nunca va solo). El tipo ya lo muestra la etiqueta sobre el H1.
  */
 export function FichaEvento({ evento: e }: { evento: Evento }) {
   const filas = [
-    ["Tipo", NOMBRE_TIPO[e.tipo]],
     ["Lugar", e.lugar.nombre],
     ["Municipio", ubicacion(e.lugar)],
     ["Estilo", e.estilo],
@@ -17,14 +14,14 @@ export function FichaEvento({ evento: e }: { evento: Evento }) {
   ] as const;
 
   return (
-    <dl className="grid gap-x-8 gap-y-5 border-y border-linea py-6 sm:grid-cols-2 lg:grid-cols-3">
+    <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-y border-linea py-6 lg:grid-cols-4">
       {filas.map(([dato, valor]) => (
         <div key={dato} className="min-w-0">
           <dt className="antetitulo">{dato}</dt>
           <dd className="mt-1">{valor}</dd>
         </div>
       ))}
-      <div className="min-w-0 sm:col-span-2 lg:col-span-3">
+      <div className="col-span-2 min-w-0 lg:col-span-4">
         <dt className="antetitulo">Paleta</dt>
         <dd className="mt-3">
           <ul className="flex flex-wrap gap-x-5 gap-y-3">
