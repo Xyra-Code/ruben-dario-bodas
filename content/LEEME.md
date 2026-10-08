@@ -7,6 +7,7 @@ definen cada archivo están en `src/lib/contenido/esquemas.ts`.
 |---|---|
 | `sitio.json` | Nombre, teléfono, WhatsApp, dirección, horario, redes, municipios, cifras. **Debe coincidir con Google Business.** |
 | `servicios/bodas.json`, `servicios/quince-anos.json` | Páginas `/bodas` y `/quince-anos` |
+| `proceso.json` | "Cómo trabajamos" de la portada: 3 a 6 pasos |
 | `preguntas-generales.json` | Preguntas frecuentes de la portada (las de cada servicio van en su archivo) |
 | `lugares.json` | Salones, haciendas y fincas. Los eventos los referencian por `slug` |
 | `testimonios.json` | Solo se publican los que tienen `"autorizado": true` (Ley 1581) |

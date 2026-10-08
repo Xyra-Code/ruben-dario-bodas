@@ -1,6 +1,7 @@
 // Capturas de QA del sitio compilado (./out) en celular, tablet y escritorio, con el Edge
 // o Chrome instalado (playwright-core: no descarga navegadores). Además de las capturas,
-// verifica que ninguna página tenga scroll horizontal.
+// verifica que ninguna página tenga scroll horizontal. Densidad 1×: Chromium no captura
+// más de 16.384 px de alto y las páginas largas a 2× se cortan y repiten.
 //
 //   npm run build && node scripts/capturas.mjs [carpeta-salida] [/ruta …]
 import { createReadStream, existsSync, mkdirSync, statSync } from "node:fs";
@@ -14,8 +15,8 @@ const rutas = process.argv.slice(3).length
   : ["/", "/bodas", "/eventos", "/eventos/boda-hacienda-el-caney-restrepo", "/noexiste"];
 
 const TAMANOS = [
-  { nombre: "320", width: 320, height: 640, isMobile: true, hasTouch: true, deviceScaleFactor: 2 },
-  { nombre: "390", width: 390, height: 844, isMobile: true, hasTouch: true, deviceScaleFactor: 2 },
+  { nombre: "320", width: 320, height: 640, isMobile: true, hasTouch: true, deviceScaleFactor: 1 },
+  { nombre: "390", width: 390, height: 844, isMobile: true, hasTouch: true, deviceScaleFactor: 1 },
   {
     nombre: "1440",
     width: 1440,

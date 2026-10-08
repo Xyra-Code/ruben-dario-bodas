@@ -38,6 +38,7 @@ export type Contenido = {
   sitio: esquema.Sitio;
   servicios: esquema.Servicio[];
   preguntasGenerales: esquema.PreguntaFrecuente[];
+  proceso: esquema.Paso[];
   lugares: Lugar[];
   /** Solo los testimonios autorizados. */
   testimonios: esquema.Testimonio[];
@@ -125,6 +126,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
 
   const sitio = cargar("sitio.json", esquema.sitio);
   const preguntasGenerales = cargar("preguntas-generales.json", esquema.preguntasGenerales);
+  const proceso = cargar("proceso.json", esquema.proceso);
   const lugares = cargar("lugares.json", esquema.lugares);
   const testimonios = cargar("testimonios.json", esquema.testimonios);
   const servicios = ["bodas", "quince-anos"]
@@ -261,6 +263,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
   const completo =
     sitio &&
     preguntasGenerales &&
+    proceso &&
     lugares &&
     testimonios &&
     servicios.length === 2 &&
@@ -272,6 +275,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
           sitio,
           servicios,
           preguntasGenerales,
+          proceso,
           lugares,
           testimonios: testimonios.filter((t) => t.autorizado),
           eventos,

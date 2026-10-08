@@ -7,19 +7,22 @@ export type Variante = "principal" | "secundario" | "claro" | "texto";
 
 /**
  * Clases de botón, reutilizables en <a>, <Link> y <button>. Esquinas apenas suavizadas
- * (brief: evitar estilo "app" muy redondeado); 48px de alto, por encima de los 44 táctiles.
+ * (brief: evitar estilo "app" muy redondeado). Alto: 48px normal, 44px compacto o texto;
+ * nunca menos que el área táctil mínima. El tamaño es una opción, no clases sueltas que
+ * compitan con las de la variante.
  */
-export function clasesBoton(variante: Variante = "principal", ancho = false) {
+export function clasesBoton(variante: Variante = "principal", ancho = false, compacto = false) {
   const comun =
-    "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-sm px-6 text-[0.9375rem] font-medium tracking-wide transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
+    "inline-flex items-center justify-center gap-2.5 rounded-sm text-[0.9375rem] font-medium tracking-wide transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
   const variantes: Record<Variante, string> = {
     principal: "bg-terracota text-white hover:bg-terracota-profundo",
     secundario: "border border-terracota text-terracota hover:bg-terracota hover:text-white",
     claro: "border border-white/80 text-white hover:bg-white hover:text-carbon",
     texto:
-      "min-h-11 px-0 text-terracota underline decoration-terracota/40 underline-offset-[6px] hover:decoration-terracota",
+      "min-h-11 text-terracota underline decoration-terracota/40 underline-offset-[6px] hover:decoration-terracota",
   };
-  return `${comun} ${variantes[variante]} ${ancho ? "w-full" : ""}`;
+  const tamano = variante === "texto" ? "" : compacto ? "min-h-11 px-4 sm:px-6" : "min-h-12 px-6";
+  return `${comun} ${tamano} ${variantes[variante]} ${ancho ? "w-full" : ""}`;
 }
 
 type Props = {

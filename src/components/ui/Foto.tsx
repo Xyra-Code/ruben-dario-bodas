@@ -45,7 +45,7 @@ export function Foto({ evento, archivo, alt, sizes, prioridad = false, className
       loading={prioridad ? "eager" : "lazy"}
       fetchPriority={prioridad ? "high" : "auto"}
       decoding={prioridad ? "sync" : "async"}
-      className={`block h-auto max-w-full ${className}`}
+      className={`block max-w-full ${/(^|\s)h-/.test(className) ? "" : "h-auto"} ${className}`}
       style={fondo}
     />
   );

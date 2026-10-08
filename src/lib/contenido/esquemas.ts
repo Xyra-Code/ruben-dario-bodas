@@ -138,6 +138,13 @@ export const servicio = z.strictObject({
 
 export const preguntasGenerales = z.array(preguntaFrecuente).min(1);
 
+// ── Cómo trabajamos (portada): del primer mensaje al día del evento ─────────
+
+export const proceso = z
+  .array(z.strictObject({ titulo: texto, descripcion: texto }))
+  .min(3)
+  .max(6);
+
 // ── Lugares: salones, haciendas y fincas ────────────────────────────────────
 
 export const lugar = z.strictObject({
@@ -208,6 +215,7 @@ export const evento = z.strictObject({
 export type Sitio = z.infer<typeof sitio>;
 export type Servicio = z.infer<typeof servicio>;
 export type PreguntaFrecuente = z.infer<typeof preguntaFrecuente>;
+export type Paso = z.infer<typeof proceso>[number];
 export type Lugar = z.infer<typeof lugar>;
 export type Testimonio = z.infer<typeof testimonio>;
 export type TipoEvento = z.infer<typeof tipoEvento>;

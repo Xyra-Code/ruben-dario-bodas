@@ -174,6 +174,11 @@ Reglas:
    eventos del año (uno cada ~2 meses); pedir testimonio y permiso para usar el caso en el
    portafolio de XyraCode.
 
+Herramientas del repo para QA: `node scripts/capturas.mjs <carpeta> [/rutas]` (capturas a
+320/390/1440 con el Edge instalado y verificación de scroll horizontal; en Git Bash anteponer
+`MSYS_NO_PATHCONV=1`). `/guia-de-estilos` (noindex, fuera del sitemap) muestra colores,
+tipografía y componentes para aprobar el diseño; antes del lanzamiento, decidir si se borra.
+
 Hábitos de agencia: **registrar horas por fase** (para calibrar precios futuros), anotar
 y cotizar todo pedido fuera de alcance, reporte semanal fijo (qué se hizo, enlace de
 preview, qué falta del cliente).

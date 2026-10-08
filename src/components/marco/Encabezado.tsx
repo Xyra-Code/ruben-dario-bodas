@@ -47,7 +47,7 @@ export function Encabezado() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <BotonCotizar className="min-h-11 px-4 sm:px-6" />
+          <BotonCotizar compacto />
           <div className="lg:hidden">
             <MenuMovil enlaceWhatsApp={whatsapp} />
           </div>
