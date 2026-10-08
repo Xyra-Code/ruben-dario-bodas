@@ -1,0 +1,45 @@
+{
+  "name": "ruben-dario-bodas",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run imagenes && next dev",
+    "validar": "tsx scripts/validar-contenido.ts",
+    "imagenes": "tsx scripts/imagenes.ts",
+    "fotos:importar": "tsx scripts/importar-fotos.ts",
+    "prebuild": "npm run validar && npm run imagenes",
+    "build": "next build",
+    "postbuild": "node scripts/contar-archivos.mjs",
+    "build:produccion": "tsx scripts/validar-contenido.ts --estricto && tsx scripts/imagenes.ts && next build && node scripts/contar-archivos.mjs",
+    "lint": "eslint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build:produccion && wrangler deploy"
+  },
+  "dependencies": {
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "wrangler": "^4.86.0"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

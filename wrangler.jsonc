@@ -1,0 +1,13 @@
+// Sitio 100% estático: Workers sirve los archivos de ./out (next build con output: "export").
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ruben-dario-bodas",
+  "compatibility_date": "2026-05-01",
+  "assets": {
+    "directory": "./out",
+    // Sirve out/404.html con estado 404 para rutas inexistentes.
+    "not_found_handling": "404-page",
+    // /bodas.html se sirve en /bodas (sin barra final), igual que los canonical.
+    "html_handling": "drop-trailing-slash",
+  },
+}
