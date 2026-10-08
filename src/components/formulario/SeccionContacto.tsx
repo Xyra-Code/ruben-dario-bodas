@@ -43,19 +43,20 @@ export function SeccionContacto({
 
           <div className="mt-8 border-t border-linea pt-8">
             <h3 className="text-titulo-3">Qué necesito para cotizarle</h3>
-            <dl className="mt-5 grid gap-4">
+            {/* Lista ordenada (no <dl>): el número es decorativo y el orden lo da la lista. */}
+            <ol className="mt-5 grid gap-4">
               {NECESITO.map((n, i) => (
-                <div key={n.dato} className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3">
+                <li key={n.dato} className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3">
                   <span aria-hidden="true" className="font-titulo text-xl text-dorado-texto">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="min-w-0">
-                    <dt className="font-medium">{n.dato}</dt>
-                    <dd className="text-[0.9375rem] text-topo">{n.detalle}</dd>
+                    <p className="font-medium">{n.dato}</p>
+                    <p className="text-[0.9375rem] text-topo">{n.detalle}</p>
                   </div>
-                </div>
+                </li>
               ))}
-            </dl>
+            </ol>
           </div>
         </div>
 
