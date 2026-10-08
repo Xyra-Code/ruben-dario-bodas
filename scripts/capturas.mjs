@@ -16,7 +16,14 @@ const rutas = process.argv.slice(3).length
 const TAMANOS = [
   { nombre: "320", width: 320, height: 640, isMobile: true, hasTouch: true, deviceScaleFactor: 2 },
   { nombre: "390", width: 390, height: 844, isMobile: true, hasTouch: true, deviceScaleFactor: 2 },
-  { nombre: "1440", width: 1440, height: 900, isMobile: false, hasTouch: false, deviceScaleFactor: 1 },
+  {
+    nombre: "1440",
+    width: 1440,
+    height: 900,
+    isMobile: false,
+    hasTouch: false,
+    deviceScaleFactor: 1,
+  },
 ];
 
 const TIPOS = {
@@ -72,11 +79,13 @@ for (const t of TAMANOS) {
       pagina: document.documentElement.scrollWidth,
       vista: document.documentElement.clientWidth,
     }));
-    const archivo = `${(ruta === "/" ? "inicio" : ruta.slice(1).replaceAll("/", "_"))}-${nombre}.png`;
+    const archivo = `${ruta === "/" ? "inicio" : ruta.slice(1).replaceAll("/", "_")}-${nombre}.png`;
     await pagina.screenshot({ path: path.join(salida, archivo), fullPage: true });
     const ok = ancho.pagina <= ancho.vista;
     if (!ok) desbordes++;
-    console.log(`${ok ? "✓" : "✖ DESBORDA"} ${nombre.padStart(4)}px ${ruta}  (${ancho.pagina}/${ancho.vista})`);
+    console.log(
+      `${ok ? "✓" : "✖ DESBORDA"} ${nombre.padStart(4)}px ${ruta}  (${ancho.pagina}/${ancho.vista})`,
+    );
   }
   await contexto.close();
 }
