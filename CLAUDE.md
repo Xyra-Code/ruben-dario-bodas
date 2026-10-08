@@ -195,4 +195,7 @@ preview, qué falta del cliente).
   En canonical, sitemap, Open Graph y JSON-LD va en punycode
   (`https://xn--rubendariodiseadordebodas-moc.com`); en textos visibles, con ñ.
 - [ ] Confirmar que el dominio esté a nombre de la empresa en Hostinger.
+- [x] Correo de las cuentas de la nube (2026-10-08): **rubendariodebodas.dev@gmail.com**.
+  Se usa para Cloudflare, GitHub y Google (Search Console, Business). Hostinger queda con
+  su cuenta actual. Nunca guardar contraseñas en el repo.
 - [x] Iniciar el proyecto (Next estático + git) en esta carpeta (Fase 0, 2026-10-07).
