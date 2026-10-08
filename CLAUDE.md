@@ -199,3 +199,13 @@ preview, qué falta del cliente).
   Se usa para Cloudflare, GitHub y Google (Search Console, Business). Hostinger queda con
   su cuenta actual. Nunca guardar contraseñas en el repo.
 - [x] Iniciar el proyecto (Next estático + git) en esta carpeta (Fase 0, 2026-10-07).
+- [x] Cloudflare (2026-10-08): dominio agregado y activo (nameservers `cory`/`irma.ns.cloudflare.com`,
+  sin DNSSEC); bots de IA permitidos y **Bot Preference Sync apagado**; Worker
+  `ruben-dario-bodas` conectado a GitHub (build `npm run build`, previews por rama). El
+  preview vive en `…workers.dev`.
+- [ ] **Conectar el dominio al Worker solo en el lanzamiento** (decisión del 2026-10-08: no
+  publicar con fotos de ejemplo ni textos [PENDIENTE]). Pasos: validación estricta sin
+  errores → build command a `npm run build:produccion` → borrar el registro A del parking
+  de Hostinger → Worker › Domains & Routes › Custom domain → regla "Redirect from WWW to
+  root" (301) con `www` en naranja → Always Use HTTPS → verificar robots.txt, llms.txt y
+  `curl -A GPTBot` (200).

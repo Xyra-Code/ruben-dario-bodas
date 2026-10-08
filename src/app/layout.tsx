@@ -11,12 +11,20 @@ import "./globals.css";
 
 // Fuentes descargadas al compilar y servidas desde el propio sitio (sin peticiones a Google).
 // Títulos: serif editorial, como el descriptor del logo. Texto: sans geométrica, como el nombre.
+// Cormorant variable: un archivo cubre los pesos 500 y 600. La cursiva (pocas frases y
+// citas) va aparte y sin precarga, para no competir con la foto principal (LCP).
 const titulo = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["500", "600"],
-  style: ["normal", "italic"],
+  style: "normal",
   variable: "--fuente-titulo",
   display: "swap",
+});
+const tituloCursiva = Cormorant_Garamond({
+  subsets: ["latin"],
+  style: "italic",
+  variable: "--fuente-titulo-cursiva",
+  display: "swap",
+  preload: false,
 });
 const texto = Jost({ subsets: ["latin"], variable: "--fuente-texto", display: "swap" });
 
@@ -36,7 +44,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es-CO" className={`${titulo.variable} ${texto.variable}`}>
+    <html lang="es-CO" className={`${titulo.variable} ${tituloCursiva.variable} ${texto.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#contenido"

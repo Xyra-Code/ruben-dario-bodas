@@ -72,6 +72,11 @@
   p {
     text-wrap: pretty;
   }
+  /* La cursiva de Cormorant es otra familia (sin precarga): se usa en frases y citas. */
+  .font-titulo.italic,
+  .italic .font-titulo {
+    font-family: var(--fuente-titulo-cursiva), var(--fuente-titulo), Georgia, serif;
+  }
   ::selection {
     background-color: var(--color-rubor);
     color: var(--color-carbon);
