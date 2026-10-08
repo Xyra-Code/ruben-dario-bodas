@@ -1,4 +1,4 @@
-# Brief de diseño · Sitio web Rubén Darío Bodas y Eventos
+# Brief de diseño · Sitio web Rubén Darío Diseñador de Bodas
 
 Necesito el diseño (maqueta de alta fidelidad) de un sitio web completo para una empresa de
 diseño y decoración de eventos. Diseña **todas las pantallas listadas abajo**, en **móvil
@@ -11,16 +11,26 @@ Todo el texto del sitio va **en español de Colombia, con trato formal (usted)**
 
 ## 1. La empresa
 
-- **Nombre:** Rubén Darío Bodas y Eventos.
-- **Ubicación:** Villavicencio, Meta (Colombia). Atiende Villavicencio y municipios del Meta
-  (Restrepo, Acacías, Cumaral, Puerto López, Granada, entre otros).
+- **Nombre:** Rubén Darío Diseñador de Bodas.
+- **Ubicación:** Villavicencio, Meta (Colombia), su centro de operación. Atiende municipios del
+  Meta (Restrepo, Acacías, Cumaral, Puerto López, Granada, entre otros), Bogotá y
+  municipios de Cundinamarca.
 - **Qué hace:** diseño y decoración de eventos. **Su fuerte son las bodas**; también hace
   fiestas de 15 años y otros eventos.
 - **Diferencial:** diseño de autor. No alquila decoración genérica: cada evento se diseña
   con un estilo y una paleta propios (rústico, clásico, moderno, bohemio, etc.), en salones,
   haciendas y fincas de los Llanos.
-- **Logo:** aún no está disponible. Usa un logotipo tipográfico provisional con el nombre
-  "Rubén Darío" y el descriptor "Bodas y Eventos".
+- **Logo:** monograma "RD" en un círculo con degradado rosa-terracota, el nombre "Rubén
+  Darío" en una sans geométrica fina y el descriptor "DISEÑADOR DE BODAS" en serif dorada,
+  separados por una línea dorada. El original (para redes) trae además un aro dorado y
+  flores en acuarela; en el sitio se usan las versiones sin flores de `public/marca/`:
+  - `logo-horizontal.svg`: encabezado.
+  - `monograma.svg`: encabezado compacto, favicon, avatar.
+  - `logo-vertical.svg`: footer, página 404, imágenes para compartir.
+  - `*-tinta.svg`: a una tinta (toma el color del texto), para fondos oscuros o fotos.
+
+  No redibujar ni cambiar las proporciones del logo. Las flores en acuarela del original
+  pueden inspirar detalles decorativos puntuales, sin recargar.
 
 ## 2. Objetivo del sitio
 
@@ -44,16 +54,31 @@ fina, pero cercana y regional, no fría ni de lujo inalcanzable.
 
 - **La fotografía manda.** Fotos grandes, generosas, con mucho aire alrededor. La interfaz
   acompaña, no compite.
-- **Paleta sugerida** (puedes proponer variaciones):
-  - Marfil / blanco cálido para fondos: `#FAF7F2`
-  - Carbón cálido para texto: `#2B2724`
-  - Verde salvia u oliva (guiño a los Llanos): `#7A8B6F`
-  - Acento dorado suave / champaña para detalles y botones secundarios: `#B89B6A`
-  - Un tono arena para fondos de sección alternos: `#EFE8DD`
-  - El botón principal de WhatsApp puede usar el acento de la marca, no necesariamente el verde de WhatsApp; el **ícono** de WhatsApp sí debe reconocerse.
+- **Paleta de la marca** (sale del logo; contraste verificado contra el fondo marfil):
+
+  | Rol | Color | Uso | Contraste sobre marfil |
+  |---|---|---|---|
+  | Fondo | Marfil `#FAF7F2` | Fondo general | — |
+  | Fondo alterno | Rubor `#F4E9E5` | Secciones alternas, tarjetas | — |
+  | Texto | Carbón cálido `#2B2724` | Títulos y cuerpo | 13,9 : 1 |
+  | Texto secundario | Topo `#6B5F59` | Pies de foto, metadatos | 5,8 : 1 |
+  | **Principal** | Terracota `#A45249` | Botones (texto blanco: 5,4 : 1), enlaces, botón de WhatsApp | 5,1 : 1 |
+  | Principal oscuro | Terracota profundo `#8E4239` | Hover y estado activo | 6,6 : 1 |
+  | Rosa del logo | Rosa `#C2776E` | Solo decorativo o texto grande (≥ 24 px) | 3,2 : 1 |
+  | **Acento** | Dorado `#B86B14` → `#F4AB1F` | Líneas finas, ornamentos, numeración grande, iconos | decorativo |
+  | Dorado para texto | Dorado oscuro `#9A5A10` | Antetítulos y etiquetas pequeñas en dorado | 5,1 : 1 |
+
+  - **Degradados de la marca** (iguales a los del logo, de izquierda a derecha):
+    terracota `#C3776E → #A15046` y dorado `#B86B14 → #F4AB1F → #B86B14`.
+    Usarlos con moderación: el monograma, una línea divisoria, un detalle; nunca en
+    bloques grandes de texto.
+  - Ya no se usan la salvia ni el champaña de la versión anterior del brief.
+  - El botón principal de WhatsApp usa la terracota de la marca, no el verde de WhatsApp;
+    el **ícono** de WhatsApp sí debe reconocerse.
 - **Tipografía:** una serif elegante para títulos (tipo Cormorant Garamond, Playfair Display
   o similar) y una sans limpia y muy legible para textos y botones (tipo Inter, Manrope o
-  DM Sans). Cuerpo de texto mínimo 16 px en móvil.
+  DM Sans). Cuerpo de texto mínimo 16 px en móvil. El descriptor del logo es una serif en
+  mayúsculas: los antetítulos pueden retomarlo (serif, versalitas, espaciado amplio, dorado).
 - **Detalles:** líneas finas, esquinas suaves o rectas (evitar estilo "app" muy redondeado),
   numeración editorial en los pasos, transiciones sutiles. Nada recargado.
 - **Evitar:** estética de plantilla genérica, exceso de íconos, fondos oscuros pesados,
@@ -74,10 +99,10 @@ Proporciona un modo claro únicamente.
 ## 6. Elementos comunes a todas las páginas
 
 ### Encabezado
-- Izquierda: logotipo tipográfico.
+- Izquierda: logo horizontal (`logo-horizontal.svg`); al hacer scroll, solo el monograma.
 - Enlaces: Bodas · 15 años · Eventos · Nosotros · Contacto.
 - Derecha: botón **"Cotizar"** (lleva al formulario).
-- Móvil: logotipo + botón "Cotizar" pequeño + menú hamburguesa que abre un panel a pantalla completa.
+- Móvil: monograma o logo horizontal reducido + botón "Cotizar" pequeño + menú hamburguesa que abre un panel a pantalla completa.
 - Se mantiene fijo al hacer scroll, más compacto.
 
 ### Botón flotante de WhatsApp
@@ -100,13 +125,13 @@ Aparece al final de casi todas las páginas. Diseño cálido, no de "formulario 
 - Diseña también el estado de error (campo obligatorio vacío).
 
 ### Footer
-- Logotipo y frase corta.
+- Logo vertical (o a una tinta) y frase corta.
 - Datos de contacto: dirección, teléfono, correo, horario de atención.
 - Mapa estático pequeño (imagen) con enlace "Cómo llegar".
 - Enlaces: Bodas, 15 años, Eventos, Nosotros, Lugares para bodas, Política de datos.
 - "Atendemos en: Villavicencio, Restrepo, Acacías, Cumaral, Puerto López, Granada…"
 - Redes sociales (Instagram, Facebook) y "Vea nuestras reseñas en Google".
-- Línea final: © Rubén Darío Bodas y Eventos · Sitio por XyraCode.
+- Línea final: © Rubén Darío Diseñador de Bodas · Sitio por XyraCode.
 
 ### Migas de pan
 En todas las páginas internas: `Inicio › Bodas`, `Inicio › Eventos › Boda en …`.

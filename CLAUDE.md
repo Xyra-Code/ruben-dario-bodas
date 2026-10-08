@@ -1,4 +1,4 @@
-# Rubén Darío Bodas y Eventos · Sitio web
+# Rubén Darío Diseñador de Bodas · Sitio web
 
 Proyecto de **XyraCode** (agencia, Villavicencio). Es el **primer proyecto pago de la agencia**:
 aprobado por el cliente el 2026-10-05. Este archivo resume todo lo decidido antes de
@@ -13,8 +13,18 @@ Esto aplica especialmente a la **exportación estática**.
 
 ## El cliente
 
-- **Rubén Darío Bodas y Eventos**, Villavicencio (Meta, Colombia).
+- **Rubén Darío Diseñador de Bodas**, Villavicencio (Meta, Colombia). Nombre definido el
+  2026-10-07 para coincidir con el logo (reemplaza "Rubén Darío Bodas y Eventos"). Debe
+  escribirse **igual en el sitio, Google Business y redes**.
+- **Logo:** único archivo disponible, `docs/marca/Perfil Redes Logo.pdf` (versión circular
+  para redes, vectorial). Las versiones web (monograma, horizontal, vertical, a una tinta)
+  se extraen con `scripts/marca/extraer-logo.py` a `public/marca/`, y los íconos con
+  `scripts/marca/iconos.mjs`. Paleta del sitio derivada del logo: ver `docs/brief-diseno.md` §4.
 - Diseño y decoración de eventos. **Su fuerte son las bodas**; también diseña **fiestas de 15 años**.
+- **Cobertura** (definida el 2026-10-07): **Villavicencio como centro de operación**, municipios
+  del Meta, **Bogotá y municipios de Cundinamarca** (lista de Cundinamarca pendiente de la
+  empresa). Se configura en `content/sitio.json` → `cobertura` y debe coincidir con el área
+  de servicio de Google Business.
 - Con el cliente: **trato formal (usted)** en documentos y mensajes. Referirse a "la empresa".
 - Pronombres del cliente: no asumidos; usar el nombre de la empresa.
 
@@ -95,12 +105,12 @@ Sitio **100% estático**: sin base de datos, sin API, sin panel.
 | Framework | Next.js con exportación estática |
 | Hosting | Cloudflare Workers, como archivos estáticos (plan Free) |
 | Eventos del portafolio | Un archivo por evento (JSON o MDX) en el repo; publicar uno = agregar archivo + desplegar |
-| Imágenes | Procesadas al compilar: WebP en 3 tamaños, carga diferida, dentro del mismo despliegue. Nada de servicios de imágenes pagos |
+| Imágenes | Procesadas al compilar: WebP en 3 tamaños, carga diferida, dentro del mismo despliegue. Nada de servicios de imágenes pagos. **Másters** (2400 px, sin metadatos/GPS) en el repo vía `npm run fotos:importar`; originales en máxima calidad en el Drive de la empresa, nunca en el repo. R2 descartado por ahora (2026-10-07): migrable cambiando `rutaPublica` en `src/lib/imagenes.ts` |
 | Formulario de contacto | Solo cliente: arma el texto y abre `wa.me` |
 | DNS · CDN · SSL | Cloudflare Free |
 | Correo | Cloudflare Email Routing, 2 direcciones, solo recepción |
 | Analítica | Cloudflare Web Analytics (sin cookies) |
-| Dominio | Recomendado Cloudflare Registrar (.com a costo, ~USD 10,44/año, ~$34.200 COP) |
+| Dominio | **`rubendariodiseñadordebodas.com`** (punycode `xn--rubendariodiseadordebodas-moc.com`). Comprado en Hostinger el 2026-10-06, vence el 2027-10-06. DNS se delega a Cloudflare (cambiar nameservers en Hostinger). Transferible a Cloudflare Registrar desde el 2026-12-05 (bloqueo de 60 días) |
 
 **Costo mensual al publicar: USD 0.** Topes del plan gratis: visitas sin límite para
 archivos estáticos; **20.000 archivos por despliegue**; 25 MiB por archivo. Estimado del
@@ -118,6 +128,12 @@ Palabras clave objetivo (una principal por página):
 - Cada evento: *boda en [lugar], [municipio]* (salones y fincas de la zona)
 
 Mapa completo de rutas, secciones y SEO por página: `docs/mapa-del-sitio.md`.
+
+Bogotá y Cundinamarca: las páginas principales siguen apuntando a Villavicencio y el Meta
+(ahí el perfil de Google Business compite en el mapa). Bogotá y Cundinamarca entran por el
+área de servicio (datos estructurados y Google Business), las menciones de cobertura y los
+eventos realizados allá (long-tail: *boda en [finca], [municipio de Cundinamarca]*). Una
+página propia para Bogotá/Cundinamarca solo cuando haya 2–3 eventos reales de esa zona.
 
 Reglas:
 - Un solo H1 por página con palabra clave + ciudad.
@@ -147,9 +163,12 @@ Reglas:
 5. **QA (final semana 3):** celulares reales (Android e iPhone), PageSpeed, mensajes de
    WhatsApp de cada botón, vista previa al compartir, ortografía, 404, favicon; una ronda
    de ajustes consolidada.
-6. **Lanzamiento (semana 4):** cobrar el 70% antes de publicar; dominio, DNS, SSL,
+6. **Lanzamiento (semana 4):** cobrar el 50% final antes de publicar; dominio, DNS, SSL,
    correos; Search Console + sitemap; Google Business (enlace, servicios, fotos, enlace
-   para pedir reseñas); explicar al cliente cómo enviar eventos nuevos.
+   para pedir reseñas); explicar al cliente cómo enviar eventos nuevos. En Cloudflare,
+   **desactivar el bloqueo de bots de IA** y el robots.txt administrado (pueden venir
+   activos por defecto y anular el `robots.txt` del sitio, que los permite); comprobar
+   `/robots.txt` y `/llms.txt` en producción.
 7. **Post-lanzamiento:** garantía 30 días (error → se corrige; cambio → se cotiza);
    revisar Search Console a las 2 y 4 semanas con mini reporte; calendarizar los 6
    eventos del año (uno cada ~2 meses); pedir testimonio y permiso para usar el caso en el
@@ -165,5 +184,10 @@ preview, qué falta del cliente).
 - [ ] Contrato de prestación de servicios y cuenta de cobro del anticipo (50%, $300.000).
 - [ ] Cronograma con fechas concretas.
 - [ ] Cuestionario de contenido para el cliente (eventos y servicios) + lista de insumos.
-- [ ] Definir dominio y nombre definitivo del repo/carpeta.
-- [ ] Iniciar el proyecto (Next estático + git) en esta carpeta.
+- [x] Dominio: `rubendariodiseñadordebodas.com` (Hostinger). Repo: `Xyra-Code/ruben-dario-bodas`.
+- [x] Solo se usa el dominio con ñ (decisión del 2026-10-07; no se compra la versión sin ñ).
+  URL principal sin www: `https://rubendariodiseñadordebodas.com` (www redirige ahí).
+  En canonical, sitemap, Open Graph y JSON-LD va en punycode
+  (`https://xn--rubendariodiseadordebodas-moc.com`); en textos visibles, con ñ.
+- [ ] Confirmar que el dominio esté a nombre de la empresa en Hostinger.
+- [x] Iniciar el proyecto (Next estático + git) en esta carpeta (Fase 0, 2026-10-07).

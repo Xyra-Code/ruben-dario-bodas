@@ -1,4 +1,4 @@
-# Checklist de arranque · Rubén Darío Bodas y Eventos
+# Checklist de arranque · Rubén Darío Diseñador de Bodas
 
 Todo lo que hay que definir o pedirle a la empresa para empezar. Uso interno de XyraCode:
 se recorre en la reunión de inicio y lo pendiente pasa al cuestionario de contenido.
@@ -18,8 +18,8 @@ Prioridad: 🔴 bloquea el diseño o el desarrollo · 🟡 se necesita antes del
 
 ## 2. Identidad visual
 
-- [ ] 🔴 **¿Tiene logo?** Pedir los archivos originales (SVG, AI o PDF; PNG con fondo transparente como mínimo). Si no hay logo, se usa un logotipo tipográfico (el diseño de marca no está incluido).
-- [ ] 🔴 **Paleta de colores:** la de su marca o una propuesta de XyraCode para aprobar.
+- [x] 🔴 **Logo:** solo existe `docs/marca/Perfil Redes Logo.pdf` (vectorial, versión para redes). Se trabaja con ese archivo; las versiones web se extraen de él (2026-10-07).
+- [x] 🔴 **Paleta de colores:** derivada del logo (2026-10-07), en `docs/brief-diseno.md` §4 y `src/app/globals.css`.
 - [ ] 🔴 **Tipografía:** la de su marca o una propuesta de XyraCode para aprobar.
 - [ ] 🔴 **Referencias visuales:** 3–5 sitios o cuentas que le gusten y 2–3 que no, y por qué.
 - [ ] 🟡 Estilo que quiere transmitir: elegante, rústico, moderno, cálido, lujoso…
@@ -32,7 +32,7 @@ Prioridad: 🔴 bloquea el diseño o el desarrollo · 🟡 se necesita antes del
 - [ ] 🔴 Dirección (si aplica), teléfono y horario de atención.
 - [ ] 🔴 **Número de WhatsApp para las cotizaciones.** ¿Quién responde? ¿En cuánto tiempo?
 - [ ] 🟡 ¿Persona natural o empresa? NIT o razón social para el footer y la política de datos.
-- [ ] 🟡 Municipios que atiende y si cobra desplazamiento.
+- [ ] 🟡 Municipios que atiende (Meta y **Cundinamarca**; Bogotá ya confirmada) y si cobra desplazamiento, sobre todo fuera del Meta.
 - [ ] 🟡 Cifras de trayectoria: años de experiencia, eventos realizados, municipios.
 - [ ] 🟡 Enlaces de redes: Instagram, Facebook, TikTok, Pinterest.
 

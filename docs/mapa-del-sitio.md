@@ -1,4 +1,4 @@
-# Mapa del sitio · Rubén Darío Bodas y Eventos
+# Mapa del sitio · Rubén Darío Diseñador de Bodas
 
 Rutas, secciones, SEO y datos estructurados de cada página. Base para el diseño y el
 desarrollo. Actualizado: 2026-10-05.
@@ -119,7 +119,7 @@ Hola, quisiera cotizar la decoración de mi evento.
 
 ### `/` Inicio
 
-- **Título:** Rubén Darío Bodas y Eventos · Decoración de eventos en Villavicencio
+- **Título:** Rubén Darío · Decoración de eventos en Villavicencio (≤ 60 caracteres para que Google no lo corte)
 - **H1:** Diseño y decoración de eventos en Villavicencio y el Meta
 - **Descripción:** Diseñamos y decoramos bodas y fiestas de 15 años en Villavicencio y todo el Meta. Vea nuestros eventos y cotice por WhatsApp.
 
@@ -131,7 +131,7 @@ Hola, quisiera cotizar la decoración de mi evento.
 | 4 | Cómo trabajamos `#como-trabajamos` | 4–5 pasos: contacto → visita/idea → propuesta → montaje → el día |
 | 5 | Sobre Rubén Darío `#sobre` | Resumen + "Conozca su historia" → `/sobre-ruben-dario` |
 | 6 | Testimonios `#testimonios` | 3 mezclados + enlace a reseñas en Google |
-| 7 | Cobertura `#cobertura` | Villavicencio y municipios del Meta + mapa estático + enlace a la guía de lugares |
+| 7 | Cobertura `#cobertura` | Villavicencio (centro de operación), municipios del Meta, Bogotá y Cundinamarca + mapa estático + enlace a la guía de lugares |
 | 8 | Preguntas frecuentes `#preguntas` | Generales: cobertura, anticipación, reserva, cómo cotizar |
 | 9 | Contacto `#contacto` | Formulario + "Qué necesito para cotizarle" |
 
@@ -248,11 +248,16 @@ Mensaje breve + enlaces a Bodas, 15 años, Eventos y WhatsApp.
 
 ```
 content/eventos/boda-hacienda-el-caney-restrepo/
-├── evento.json   tipo, titulo, lugar, municipio, estilo, paleta[], fecha, destacado,
-│                 descripcion, testimonio{texto, autor}, proveedores[{rol, nombre, url}],
-│                 seo{title, description}, portada, fotos[{archivo, alt}]
+├── evento.json   tipo, lugar (slug de lugares.json), estilo, paleta[], fecha, destacado,
+│                 descripcion[], testimonio{texto, autor}, proveedores[{rol, nombre, url}],
+│                 seo{title, description}, portada, fotos[{archivo, alt}], borrador?
 └── fotos/        originales renombradas → WebP en 3 tamaños al compilar
 ```
+
+El título (H1) se arma solo a partir del lugar: "Boda en Hacienda El Caney, Restrepo".
+El municipio sale del lugar, así cada salón o finca se escribe igual en todo el sitio.
+Implementado en la Fase 1: guía de uso en `content/LEEME.md`, esquemas en
+`src/lib/contenido/esquemas.ts`, validación con `npm run validar`.
 
 Publicar un evento = agregar la carpeta y desplegar. Sitemap, galerías, filtros,
 relacionados, destacados y guía de lugares se actualizan solos.
