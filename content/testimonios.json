@@ -1,0 +1,25 @@
+[
+  {
+    "borrador": true,
+    "texto": "Testimonio de ejemplo: cada detalle quedó como lo soñamos.",
+    "autor": "Pareja de ejemplo",
+    "tipo": "boda",
+    "evento": "boda-hacienda-el-caney-restrepo",
+    "autorizado": true
+  },
+  {
+    "borrador": true,
+    "texto": "Testimonio de ejemplo: la fiesta superó lo que imaginábamos.",
+    "autor": "Familia de ejemplo",
+    "tipo": "quince",
+    "evento": "quince-salon-rosales-villavicencio",
+    "autorizado": true
+  },
+  {
+    "borrador": true,
+    "texto": "Testimonio de ejemplo: puntuales, organizados y con muy buen gusto.",
+    "autor": "Pareja de ejemplo",
+    "tipo": "boda",
+    "autorizado": true
+  }
+]

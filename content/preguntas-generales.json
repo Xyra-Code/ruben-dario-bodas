@@ -1,0 +1,15 @@
+[
+  {
+    "pregunta": "¿Con cuánta anticipación debo reservar?",
+    "respuesta": "[PENDIENTE: respuesta de la empresa]"
+  },
+  {
+    "pregunta": "¿Atienden fuera de Villavicencio?",
+    "respuesta": "[PENDIENTE: municipios y si se cobra desplazamiento]"
+  },
+  { "pregunta": "¿Cómo se separa la fecha?", "respuesta": "[PENDIENTE: anticipo y forma de pago]" },
+  {
+    "pregunta": "¿Qué necesito para pedir una cotización?",
+    "respuesta": "La fecha, el lugar, el número aproximado de invitados y el estilo o las referencias que le gustan. Con eso le respondemos más rápido."
+  }
+]

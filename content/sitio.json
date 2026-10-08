@@ -1,0 +1,71 @@
+{
+  "nombre": "Rubén Darío Diseñador de Bodas",
+  "lema": "Bodas y fiestas de 15 años diseñadas con detalle, de principio a fin.",
+  "url": "https://xn--rubendariodiseadordebodas-moc.com",
+  "dominioVisible": "rubendariodiseñadordebodas.com",
+  "telefono": {
+    "visible": "[PENDIENTE: teléfono como aparece en Google Business]",
+    "e164": "+573000000000"
+  },
+  "whatsapp": "573000000000",
+  "correo": "[PENDIENTE: correo corporativo]",
+  "direccion": {
+    "publica": false,
+    "calle": "[PENDIENTE: dirección y horario exactos como en Google Business]",
+    "ciudad": "Villavicencio",
+    "departamento": "Meta",
+    "pais": "CO"
+  },
+  "horario": [
+    {
+      "dias": ["lunes", "martes", "miercoles", "jueves", "viernes"],
+      "abre": "08:00",
+      "cierra": "18:00"
+    },
+    {
+      "dias": ["sabado"],
+      "abre": "08:00",
+      "cierra": "13:00"
+    }
+  ],
+  "redes": {},
+  "google": {
+    "perfil": "[PENDIENTE: enlace al perfil de Google Business]",
+    "escribirResena": "[PENDIENTE: enlace para dejar reseña en Google]"
+  },
+  "cobertura": {
+    "sede": "Villavicencio",
+    "resumen": "Villavicencio, el Meta, Bogotá y Cundinamarca",
+    "zonas": [
+      {
+        "nombre": "Meta",
+        "tipo": "departamento",
+        "municipios": ["Villavicencio", "Restrepo", "Acacías", "Cumaral", "Puerto López", "Granada"]
+      },
+      {
+        "nombre": "Bogotá D.C.",
+        "tipo": "distrito",
+        "municipios": ["Bogotá"]
+      },
+      {
+        "nombre": "Cundinamarca",
+        "tipo": "departamento",
+        "municipios": ["[PENDIENTE: municipios de Cundinamarca donde trabaja la empresa]"]
+      }
+    ]
+  },
+  "cifras": [
+    {
+      "valor": "[PENDIENTE]",
+      "etiqueta": "años de experiencia"
+    },
+    {
+      "valor": "[PENDIENTE]",
+      "etiqueta": "eventos realizados"
+    },
+    {
+      "valor": "[PENDIENTE]",
+      "etiqueta": "municipios del Meta"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "hacienda-el-caney",
+  "estilo": "Rústico elegante",
+  "paleta": [
+    {
+      "nombre": "Terracota",
+      "hex": "#B5654A"
+    },
+    {
+      "nombre": "Salvia",
+      "hex": "#8A9A7B"
+    },
+    {
+      "nombre": "Marfil",
+      "hex": "#F4EEE3"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "fecha": "2026-03",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]",
+    "[PENDIENTE: detalles del montaje, flores, iluminación]"
+  ],
+  "testimonio": {
+    "texto": "[PENDIENTE: frase de la pareja o la familia, con autorización]",
+    "autor": "[PENDIENTE]"
+  },
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "[PENDIENTE]"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en Hacienda El Caney, Restrepo | Rubén Darío",
+    "description": "Boda rústica elegante en Hacienda El Caney, Restrepo (Meta): arco floral, mesa principal en terracota y salvia. Vea el diseño completo."
+  },
+  "portada": "boda-hacienda-el-caney-restrepo-mesa-principal.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-hacienda-el-caney-restrepo-mesa-principal.jpg",
+      "alt": "Mesa principal con centros de flores en tonos terracota y velas"
+    },
+    {
+      "archivo": "boda-hacienda-el-caney-restrepo-arco-ceremonia.jpg",
+      "alt": "Arco de flores para la ceremonia al aire libre en la hacienda"
+    },
+    {
+      "archivo": "boda-hacienda-el-caney-restrepo-detalle-centro-de-mesa.jpg",
+      "alt": "Detalle de centro de mesa con flores secas y follaje"
+    },
+    {
+      "archivo": "boda-hacienda-el-caney-restrepo-salon-iluminado.jpg",
+      "alt": "Vista general del montaje iluminado al atardecer"
+    }
+  ]
+}

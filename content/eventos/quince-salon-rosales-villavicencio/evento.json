@@ -1,0 +1,59 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "salon-rosales",
+  "estilo": "Clásico elegante",
+  "paleta": [
+    {
+      "nombre": "Rosa empolvado",
+      "hex": "#D9A5A0"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Plata",
+      "hex": "#BFC3C7"
+    }
+  ],
+  "fecha": "2025-11",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]",
+    "[PENDIENTE: detalles del montaje, flores, iluminación]"
+  ],
+  "testimonio": {
+    "texto": "[PENDIENTE: frase de la pareja o la familia, con autorización]",
+    "autor": "[PENDIENTE]"
+  },
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "[PENDIENTE]"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Fiesta de 15 años en Salón Rosales, Villavicencio",
+    "description": "Decoración de 15 años clásica y elegante en Salón Rosales, Villavicencio: mesa de la quinceañera, pista iluminada y paleta en rosa y plata."
+  },
+  "portada": "quince-salon-rosales-villavicencio-mesa-de-la-quinceanera.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-salon-rosales-villavicencio-mesa-de-la-quinceanera.jpg",
+      "alt": "Mesa de la quinceañera con flores rosadas y candelabros"
+    },
+    {
+      "archivo": "quince-salon-rosales-villavicencio-pista-de-baile.jpg",
+      "alt": "Pista de baile con iluminación cálida y telas suspendidas"
+    },
+    {
+      "archivo": "quince-salon-rosales-villavicencio-detalle-torta.jpg",
+      "alt": "Torta de tres pisos sobre mesa decorada con flores"
+    }
+  ]
+}

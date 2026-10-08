@@ -1,0 +1,59 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "finca-la-esperanza",
+  "estilo": "Bohemio",
+  "paleta": [
+    {
+      "nombre": "Arena",
+      "hex": "#E6D3B3"
+    },
+    {
+      "nombre": "Verde oliva",
+      "hex": "#7A7F4E"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    }
+  ],
+  "fecha": "2025-08",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]",
+    "[PENDIENTE: detalles del montaje, flores, iluminación]"
+  ],
+  "testimonio": {
+    "texto": "[PENDIENTE: frase de la pareja o la familia, con autorización]",
+    "autor": "[PENDIENTE]"
+  },
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "[PENDIENTE]"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en Finca La Esperanza, Acacías | Rubén Darío",
+    "description": "Boda bohemia al aire libre en Finca La Esperanza, Acacías (Meta): mesa imperial, pampas y luces colgantes. Vea las fotos del montaje."
+  },
+  "portada": "boda-finca-la-esperanza-acacias-ceremonia-al-aire-libre.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-finca-la-esperanza-acacias-ceremonia-al-aire-libre.jpg",
+      "alt": "Ceremonia al aire libre con sillas de madera y pasillo de flores"
+    },
+    {
+      "archivo": "boda-finca-la-esperanza-acacias-mesa-imperial.jpg",
+      "alt": "Mesa imperial con mantel de lino y centros de pampas"
+    },
+    {
+      "archivo": "boda-finca-la-esperanza-acacias-luces-colgantes.jpg",
+      "alt": "Luces colgantes sobre las mesas de la recepción"
+    }
+  ]
+}

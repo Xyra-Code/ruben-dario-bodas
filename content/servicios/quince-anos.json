@@ -1,0 +1,40 @@
+{
+  "slug": "quince-anos",
+  "tipo": "quince",
+  "nombre": "Decoración de 15 años",
+  "h1": "Decoración de fiestas de 15 años en Villavicencio",
+  "seo": {
+    "title": "Decoración de 15 años en Villavicencio | Rubén Darío",
+    "description": "Decoración de fiestas de 15 años en Villavicencio y el Meta: temáticas clásicas, modernas y personalizadas, con diseño de autor. Cotice por WhatsApp."
+  },
+  "bajada": "[PENDIENTE: frase corta de presentación del servicio]",
+  "introduccion": [
+    "[PENDIENTE: párrafo 1, enfoque de la empresa en las fiestas de 15 años]",
+    "[PENDIENTE: párrafo 2, temáticas y estilos]"
+  ],
+  "variantes": {
+    "titulo": "Temáticas y estilos",
+    "items": [
+      { "nombre": "Clásico elegante", "descripcion": "[PENDIENTE: descripción corta]" },
+      { "nombre": "Moderno", "descripcion": "[PENDIENTE: descripción corta]" },
+      { "nombre": "Encantado", "descripcion": "[PENDIENTE: descripción corta]" },
+      { "nombre": "Neón / Glow", "descripcion": "[PENDIENTE: descripción corta]" },
+      { "nombre": "Personalizado", "descripcion": "[PENDIENTE: descripción corta]" }
+    ]
+  },
+  "incluye": [
+    "Diseño a medida",
+    "Mobiliario",
+    "Flores",
+    "Iluminación",
+    "Montaje y desmontaje",
+    "[PENDIENTE: confirmar con la empresa qué incluye]"
+  ],
+  "inversion": {
+    "desde": "[PENDIENTE: valor desde]",
+    "nota": "El valor final depende del número de invitados, el lugar y la temática."
+  },
+  "preguntas": [
+    { "pregunta": "[PENDIENTE: pregunta frecuente sobre 15 años]", "respuesta": "[PENDIENTE]" }
+  ]
+}

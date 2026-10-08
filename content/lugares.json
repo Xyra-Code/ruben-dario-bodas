@@ -1,0 +1,31 @@
+[
+  {
+    "borrador": true,
+    "slug": "hacienda-el-caney",
+    "nombre": "Hacienda El Caney",
+    "tipo": "hacienda",
+    "municipio": "Restrepo",
+    "departamento": "Meta",
+    "capacidad": "Hasta 250 invitados",
+    "enGuia": true
+  },
+  {
+    "borrador": true,
+    "slug": "salon-rosales",
+    "nombre": "Salón Rosales",
+    "tipo": "salon",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "capacidad": "Hasta 180 invitados",
+    "enGuia": true
+  },
+  {
+    "borrador": true,
+    "slug": "finca-la-esperanza",
+    "nombre": "Finca La Esperanza",
+    "tipo": "finca",
+    "municipio": "Acacías",
+    "departamento": "Meta",
+    "enGuia": false
+  }
+]
