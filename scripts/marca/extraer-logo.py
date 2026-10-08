@@ -155,7 +155,7 @@ def main() -> None:
     salidas["logo-horizontal-tinta.svg"] = documento(caja, nombre_marca, cuerpo_tinta)
 
     for archivo, contenido in salidas.items():
-        (SALIDA / archivo).write_text(contenido, encoding="utf-8")
+        (SALIDA / archivo).write_text(contenido, encoding="utf-8", newline="\n")
         print(f"{archivo}: {len(contenido.encode()) / 1024:.1f} KB")
 
     print("\nColores muestreados:")
