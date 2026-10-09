@@ -10,3 +10,6 @@ package-lock.json
 *.md
 src/generado/
 capturas/
+
+# Entregables autónomos para el cliente (HTML compacto, publicado aparte)
+docs/entregables/
