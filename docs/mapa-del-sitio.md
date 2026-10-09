@@ -70,14 +70,15 @@ sin embed) · municipios de cobertura en texto · correo corporativo · reseñas
 
 ### Formulario de cotización (componente único, reutilizado)
 
-| Campo | Obligatorio |
+| Campo | Obligatorio (todos, decisión de la empresa del 2026-10-09) |
 |---|---|
 | Nombre | ✅ |
 | Tipo de evento (Boda / 15 años / Otro) | ✅ (ya elegido según la página) |
 | Fecha del evento | ✅ |
-| Municipio o lugar | |
-| N.º aproximado de invitados | |
-| Mensaje | |
+| Municipio o lugar | ✅ |
+| N.º aproximado de invitados | ✅ |
+| Presupuesto aproximado: botones con los rangos de `content/sitio.json` + "Aún no lo sé" | ✅ ("Aún no lo sé" es válida) |
+| Mensaje | ✅ |
 
 - Botón: **"Enviar por WhatsApp"**. Debajo: *"Se abrirá WhatsApp con su mensaje listo para enviar."*
 - Junto al formulario: bloque **"Qué necesito para cotizarle"** (fecha, lugar, invitados, estilo).
@@ -93,6 +94,7 @@ Hola, quisiera cotizar la decoración de mi evento.
 • Fecha: 14 de marzo de 2027
 • Lugar: Hacienda El Caney, Restrepo
 • Invitados: 150
+• Presupuesto: $35 a $45 millones
 • Referencia: Boda en Hacienda El Caney, Restrepo   ← solo desde una página de evento
 • Mensaje: …
 ```

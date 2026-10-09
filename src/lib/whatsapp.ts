@@ -29,6 +29,8 @@ export type DatosCotizacion = {
   fecha: string;
   lugar?: string;
   invitados?: string;
+  /** Rango elegido ("$20 a $30 millones") o "Aún no lo sé". */
+  presupuesto?: string;
   mensaje?: string;
   /** Desde una página de evento: "Boda en Hacienda El Caney, Restrepo". */
   referencia?: string;
@@ -51,6 +53,7 @@ export function mensajeCotizacion(d: DatosCotizacion) {
     `• Fecha: ${fechaLegible(d.fecha)}`,
     d.lugar?.trim() && `• Lugar: ${d.lugar.trim()}`,
     d.invitados?.trim() && `• Invitados: ${d.invitados.trim()}`,
+    d.presupuesto?.trim() && `• Presupuesto: ${d.presupuesto.trim()}`,
     d.referencia && `• Referencia: ${d.referencia}`,
     d.mensaje?.trim() && `• Mensaje: ${d.mensaje.trim()}`,
   ];

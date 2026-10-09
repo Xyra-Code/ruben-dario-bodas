@@ -16,9 +16,15 @@ type Props = {
   referencia?: string;
   /** Página de origen para la analítica: "inicio", "bodas", "evento"… */
   origen: string;
+  /** Rangos de presupuesto (sitio.json); se agrega "Aún no lo sé". */
+  presupuestos: string[];
 };
 
-type Campo = "nombre" | "tipo" | "fecha" | "invitados";
+const SIN_PRESUPUESTO = "Aún no lo sé";
+
+/** Todos obligatorios (decisión de la empresa), en el orden en que aparecen. */
+const CAMPOS = ["nombre", "fecha", "tipo", "invitados", "lugar", "presupuesto", "mensaje"] as const;
+type Campo = (typeof CAMPOS)[number];
 type Errores = Partial<Record<Campo, string>>;
 
 const TIPOS: TipoEvento[] = ["boda", "quince", "otro"];
@@ -29,14 +35,20 @@ const hoyIso = () => {
 };
 
 const campoClase =
-  "block min-h-12 w-full min-w-0 rounded-sm border border-borde bg-superficie px-4 py-3 text-carbon placeholder:text-topo/70 transition-colors focus:border-terracota focus:outline-2 focus:outline-offset-0 focus:outline-terracota aria-invalid:border-error";
+  "block min-h-11 w-full min-w-0 rounded-sm border border-borde bg-superficie px-3 py-2 text-[0.9375rem] text-carbon placeholder:text-topo/70 transition-colors focus:border-terracota focus:outline-2 focus:outline-offset-0 focus:outline-terracota aria-invalid:border-error";
 
 /**
  * Formulario de cotización: arma el mensaje y abre WhatsApp (sitio estático, sin envío
  * automático). Valida al enviar, marca cada error junto a su campo y lleva el foco al
  * primero. Funciona con teclado y lector de pantalla.
  */
-export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen }: Props) {
+export function FormularioCotizacion({
+  whatsapp,
+  tipoInicial,
+  referencia,
+  origen,
+  presupuestos,
+}: Props) {
   const id = useId();
   const formulario = useRef<HTMLFormElement>(null);
   const [errores, setErrores] = useState<Errores>({});
@@ -56,12 +68,18 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
     if (!valor("tipo")) nuevos.tipo = "Elija el tipo de evento.";
     if (!valor("fecha")) nuevos.fecha = "Indique la fecha del evento (aunque sea aproximada).";
     else if (valor("fecha") < hoyIso()) nuevos.fecha = "La fecha ya pasó; revise el año.";
-    if (valor("invitados") && !/^\d{1,5}$/.test(valor("invitados"))) {
+    if (!valor("invitados")) nuevos.invitados = "Indique un número aproximado de invitados.";
+    else if (!/^\d{1,5}$/.test(valor("invitados"))) {
       nuevos.invitados = "Escriba solo el número, por ejemplo 150.";
+    }
+    if (!valor("presupuesto")) nuevos.presupuesto = "Elija un rango, o «Aún no lo sé».";
+    if (valor("lugar").length < 3) nuevos.lugar = "Indique el municipio o el lugar del evento.";
+    if (valor("mensaje").length < 3) {
+      nuevos.mensaje = "Cuéntenos el estilo, los colores o las ideas que tiene en mente.";
     }
     setErrores(nuevos);
 
-    const primero = (["nombre", "tipo", "fecha", "invitados"] as Campo[]).find((c) => nuevos[c]);
+    const primero = CAMPOS.find((c) => nuevos[c]);
     if (primero) {
       formulario.current?.querySelector<HTMLElement>(`[name="${primero}"]`)?.focus();
       return;
@@ -75,6 +93,7 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
         fecha: valor("fecha"),
         lugar: valor("lugar"),
         invitados: valor("invitados"),
+        presupuesto: valor("presupuesto"),
         mensaje: valor("mensaje"),
         referencia,
       }),
@@ -87,39 +106,58 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
     errores[campo] ? (
       <p
         id={idCampo(`${campo}-error`)}
-        className="mt-2 flex items-start gap-1.5 text-sm text-error"
+        className="mt-1.5 flex items-start gap-1.5 text-sm text-error"
       >
         <IconoAlerta className="mt-0.5 size-4" />
         <span className="min-w-0">{errores[campo]}</span>
       </p>
     ) : null;
 
-  const etiqueta = "mb-2 block text-[0.9375rem] font-medium text-carbon";
-  const opcional = <span className="font-normal text-topo"> (opcional)</span>;
+  const etiqueta = "mb-1.5 block text-sm font-medium text-carbon";
+  // Campos cortos de a dos por fila desde sm (Nombre + Fecha, Invitados + Lugar).
+  const fila = "grid gap-4 sm:grid-cols-2 sm:gap-5";
 
   return (
-    <form ref={formulario} onSubmit={enviar} noValidate className="grid gap-6">
+    <form ref={formulario} onSubmit={enviar} noValidate className="grid gap-4 sm:gap-5">
+      <p className="text-sm text-topo">Todos los campos son obligatorios.</p>
       {referencia && (
-        <p className="rounded-sm border border-linea bg-superficie px-4 py-3 text-[0.9375rem]">
+        <p className="rounded-sm border border-linea bg-superficie px-3 py-2 text-sm">
           <span className="text-topo">Referencia: </span>
           <span className="font-medium">{referencia}</span>
         </p>
       )}
 
-      <div className="min-w-0">
-        <label htmlFor={idCampo("nombre")} className={etiqueta}>
-          Nombre
-        </label>
-        <input
-          id={idCampo("nombre")}
-          name="nombre"
-          autoComplete="name"
-          required
-          aria-invalid={!!errores.nombre || undefined}
-          aria-describedby={describe("nombre")}
-          className={campoClase}
-        />
-        {mensajeError("nombre")}
+      <div className={fila}>
+        <div className="min-w-0">
+          <label htmlFor={idCampo("nombre")} className={etiqueta}>
+            Nombre
+          </label>
+          <input
+            id={idCampo("nombre")}
+            name="nombre"
+            autoComplete="name"
+            required
+            aria-invalid={!!errores.nombre || undefined}
+            aria-describedby={describe("nombre")}
+            className={campoClase}
+          />
+          {mensajeError("nombre")}
+        </div>
+        <div className="min-w-0">
+          <label htmlFor={idCampo("fecha")} className={etiqueta}>
+            Fecha del evento
+          </label>
+          <input
+            id={idCampo("fecha")}
+            name="fecha"
+            type="date"
+            required
+            aria-invalid={!!errores.fecha || undefined}
+            aria-describedby={describe("fecha")}
+            className={campoClase}
+          />
+          {mensajeError("fecha")}
+        </div>
       </div>
 
       <fieldset className="min-w-0" aria-describedby={describe("tipo")}>
@@ -136,7 +174,7 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
                 data-invalido={!!errores.tipo || undefined}
                 className="peer absolute inset-0 cursor-pointer opacity-0"
               />
-              <span className="flex min-h-12 items-center justify-center rounded-boton border border-borde bg-superficie px-2 text-center text-[0.9375rem] transition-colors peer-checked:border-terracota peer-checked:bg-terracota peer-checked:text-sobre-principal peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-terracota peer-data-invalido:border-error">
+              <span className="flex min-h-11 items-center justify-center rounded-boton border border-borde bg-superficie px-2 text-center text-sm transition-colors peer-checked:border-terracota peer-checked:bg-terracota peer-checked:text-sobre-principal peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-terracota peer-data-invalido:border-error">
                 {NOMBRE_TIPO_MENSAJE[t]}
               </span>
             </label>
@@ -145,30 +183,16 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
         {mensajeError("tipo")}
       </fieldset>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="min-w-0">
-          <label htmlFor={idCampo("fecha")} className={etiqueta}>
-            Fecha del evento
-          </label>
-          <input
-            id={idCampo("fecha")}
-            name="fecha"
-            type="date"
-            required
-            aria-invalid={!!errores.fecha || undefined}
-            aria-describedby={describe("fecha")}
-            className={campoClase}
-          />
-          {mensajeError("fecha")}
-        </div>
+      <div className={fila}>
         <div className="min-w-0">
           <label htmlFor={idCampo("invitados")} className={etiqueta}>
-            Invitados (aprox.){opcional}
+            Invitados (aprox.)
           </label>
           <input
             id={idCampo("invitados")}
             name="invitados"
             inputMode="numeric"
+            required
             placeholder="150"
             aria-invalid={!!errores.invitados || undefined}
             aria-describedby={describe("invitados")}
@@ -176,31 +200,61 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
           />
           {mensajeError("invitados")}
         </div>
+        <div className="min-w-0">
+          <label htmlFor={idCampo("lugar")} className={etiqueta}>
+            Municipio o lugar
+          </label>
+          <input
+            id={idCampo("lugar")}
+            name="lugar"
+            required
+            placeholder="Finca, hacienda o salón y municipio"
+            aria-invalid={!!errores.lugar || undefined}
+            aria-describedby={describe("lugar")}
+            className={campoClase}
+          />
+          {mensajeError("lugar")}
+        </div>
       </div>
 
-      <div className="min-w-0">
-        <label htmlFor={idCampo("lugar")} className={etiqueta}>
-          Municipio o lugar{opcional}
-        </label>
-        <input
-          id={idCampo("lugar")}
-          name="lugar"
-          placeholder="Hacienda, finca o salón y municipio"
-          className={campoClase}
-        />
-      </div>
+      {/* Botones de selección (un toque en celular); "Aún no lo sé" es una respuesta válida. */}
+      <fieldset className="min-w-0" aria-describedby={describe("presupuesto")}>
+        <legend className={etiqueta}>Presupuesto aproximado</legend>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {[...presupuestos, SIN_PRESUPUESTO].map((rango) => (
+            <label key={rango} className="relative min-w-0">
+              <input
+                type="radio"
+                name="presupuesto"
+                value={rango}
+                required
+                data-invalido={!!errores.presupuesto || undefined}
+                className="peer absolute inset-0 cursor-pointer opacity-0"
+              />
+              <span className="flex h-full min-h-11 items-center justify-center rounded-boton border border-borde bg-superficie px-2 py-1.5 text-center text-[0.8125rem] leading-snug transition-colors peer-checked:border-terracota peer-checked:bg-terracota peer-checked:text-sobre-principal peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-terracota peer-data-invalido:border-error">
+                {rango}
+              </span>
+            </label>
+          ))}
+        </div>
+        {mensajeError("presupuesto")}
+      </fieldset>
 
       <div className="min-w-0">
         <label htmlFor={idCampo("mensaje")} className={etiqueta}>
-          Mensaje{opcional}
+          Mensaje
         </label>
         <textarea
           id={idCampo("mensaje")}
           name="mensaje"
-          rows={4}
+          rows={3}
+          required
           placeholder="Estilo, colores o ideas que tenga en mente"
+          aria-invalid={!!errores.mensaje || undefined}
+          aria-describedby={describe("mensaje")}
           className={`${campoClase} resize-y`}
         />
+        {mensajeError("mensaje")}
       </div>
 
       <div>

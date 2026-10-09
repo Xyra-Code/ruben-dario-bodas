@@ -67,5 +67,11 @@
       "valor": "[PENDIENTE]",
       "etiqueta": "municipios del Meta"
     }
+  ],
+  "presupuestos": [
+    "$20 a $30 millones",
+    "$35 a $45 millones",
+    "$50 a $60 millones",
+    "$60 millones en adelante"
   ]
 }

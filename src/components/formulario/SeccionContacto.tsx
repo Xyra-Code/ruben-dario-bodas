@@ -60,9 +60,10 @@ export function SeccionContacto({
           </div>
         </div>
 
-        <div className="min-w-0 rounded-sm bg-marfil p-5 shadow-[0_1px_24px_rgba(43,39,36,0.06)] sm:p-8">
+        <div className="min-w-0 rounded-sm bg-marfil p-4 shadow-[0_1px_24px_rgba(43,39,36,0.06)] sm:p-6">
           <FormularioCotizacion
             whatsapp={sitio.whatsapp}
+            presupuestos={sitio.presupuestos}
             tipoInicial={tipoInicial}
             referencia={referencia}
             origen={origen}
