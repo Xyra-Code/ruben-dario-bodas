@@ -29,7 +29,7 @@ export type DatosCotizacion = {
   fecha: string;
   lugar?: string;
   invitados?: string;
-  /** Rango elegido ("$20 a $30 millones") o "Aún no lo sé". */
+  /** Rango elegido: "$20 a $30 millones". */
   presupuesto?: string;
   mensaje?: string;
   /** Desde una página de evento: "Boda en Hacienda El Caney, Restrepo". */

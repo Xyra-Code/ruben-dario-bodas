@@ -77,7 +77,7 @@ sin embed) · municipios de cobertura en texto · correo corporativo · reseñas
 | Fecha del evento | ✅ |
 | Municipio o lugar | ✅ |
 | N.º aproximado de invitados | ✅ |
-| Presupuesto aproximado: botones con los rangos de `content/sitio.json` + "Aún no lo sé" | ✅ ("Aún no lo sé" es válida) |
+| Presupuesto aproximado: botones con los rangos de `content/sitio.json` | ✅ |
 | Mensaje | ✅ |
 
 - Botón: **"Enviar por WhatsApp"**. Debajo: *"Se abrirá WhatsApp con su mensaje listo para enviar."*

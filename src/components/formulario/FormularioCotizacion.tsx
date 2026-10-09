@@ -16,11 +16,9 @@ type Props = {
   referencia?: string;
   /** Página de origen para la analítica: "inicio", "bodas", "evento"… */
   origen: string;
-  /** Rangos de presupuesto (sitio.json); se agrega "Aún no lo sé". */
+  /** Rangos de presupuesto (sitio.json). */
   presupuestos: string[];
 };
-
-const SIN_PRESUPUESTO = "Aún no lo sé";
 
 /** Todos obligatorios (decisión de la empresa), en el orden en que aparecen. */
 const CAMPOS = ["nombre", "fecha", "tipo", "invitados", "lugar", "presupuesto", "mensaje"] as const;
@@ -72,7 +70,7 @@ export function FormularioCotizacion({
     else if (!/^\d{1,5}$/.test(valor("invitados"))) {
       nuevos.invitados = "Escriba solo el número, por ejemplo 150.";
     }
-    if (!valor("presupuesto")) nuevos.presupuesto = "Elija un rango, o «Aún no lo sé».";
+    if (!valor("presupuesto")) nuevos.presupuesto = "Elija un rango de presupuesto.";
     if (valor("lugar").length < 3) nuevos.lugar = "Indique el municipio o el lugar del evento.";
     if (valor("mensaje").length < 3) {
       nuevos.mensaje = "Cuéntenos el estilo, los colores o las ideas que tiene en mente.";
@@ -217,11 +215,11 @@ export function FormularioCotizacion({
         </div>
       </div>
 
-      {/* Botones de selección (un toque en celular); "Aún no lo sé" es una respuesta válida. */}
+      {/* Botones de selección: un toque en celular. */}
       <fieldset className="min-w-0" aria-describedby={describe("presupuesto")}>
         <legend className={etiqueta}>Presupuesto aproximado</legend>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {[...presupuestos, SIN_PRESUPUESTO].map((rango) => (
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {presupuestos.map((rango) => (
             <label key={rango} className="relative min-w-0">
               <input
                 type="radio"

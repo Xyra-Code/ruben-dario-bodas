@@ -107,7 +107,7 @@ export const sitio = z.strictObject({
   cifras: z.array(z.strictObject({ valor: texto, etiqueta: texto })).max(4),
   /**
    * Rangos de presupuesto del formulario de cotización, como los ve el visitante y como
-   * llegan en el mensaje ("$20 a $30 millones"). El formulario agrega "Aún no lo sé".
+   * llegan en el mensaje ("$20 a $30 millones").
    */
   presupuestos: z.array(texto).min(2).max(6),
 });
