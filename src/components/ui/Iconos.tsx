@@ -95,3 +95,59 @@ export function IconoAlerta({ className = "size-4" }: Props) {
     </svg>
   );
 }
+
+/** Instagram en línea fina (dibujado, no el logo de color). */
+export function IconoInstagram({ className = "size-5" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={`${base} ${className}`}
+    >
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+/** Estrella (reseñas). */
+export function IconoEstrella({ className = "size-5" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={`${base} ${className}`}
+    >
+      <path
+        d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8L12 3.5Z"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/** Facebook en línea fina (dibujado, no el logo de color). */
+export function IconoFacebook({ className = "size-5" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+      className={`${base} ${className}`}
+    >
+      <path
+        d="M14.5 8.5H16V5.2c-.3 0-1.3-.2-2.4-.2-2.4 0-4 1.5-4 4.2v2.3H7v3.6h2.6V21h3.2v-5.9h2.6l.4-3.6h-3v-2c0-1 .3-1 1.7-1Z"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

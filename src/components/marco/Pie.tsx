@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-import { IconoWhatsApp } from "@/components/ui/Iconos";
+import {
+  IconoEstrella,
+  IconoFacebook,
+  IconoInstagram,
+  IconoWhatsApp,
+} from "@/components/ui/Iconos";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { esEnlace, textoDias, textoHora } from "@/lib/formato";
 import { NAVEGACION } from "@/lib/rutas";
@@ -44,6 +49,55 @@ export function Pie() {
               className="h-auto w-40 max-w-full lg:w-48"
             />
             <p className="mt-5 max-w-xs text-topo">{sitio.lema}</p>
+
+            {/* Redes junto a la marca: visibles en celular (justo después del logo) y sin
+                ocupar una columna propia en escritorio. */}
+            {hayRedes && (
+              <ul className="mt-6 flex flex-wrap items-center gap-3" aria-label="Síganos">
+                {redes.map(([red, url]) => (
+                  <li key={red}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`${NOMBRE_RED[red] ?? red} de ${sitio.nombre}`}
+                      className="inline-flex size-11 items-center justify-center rounded-full border border-linea text-carbon transition-colors hover:border-terracota hover:text-terracota"
+                    >
+                      {red === "instagram" ? (
+                        <IconoInstagram />
+                      ) : red === "facebook" ? (
+                        <IconoFacebook />
+                      ) : (
+                        <span className="text-xs">{NOMBRE_RED[red] ?? red}</span>
+                      )}
+                    </a>
+                  </li>
+                ))}
+                {esEnlace(sitio.google.perfil) && (
+                  <li>
+                    <a
+                      href={sitio.google.perfil}
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex min-h-11 items-center gap-2 rounded-full border border-linea px-4 text-sm text-carbon transition-colors hover:border-terracota hover:text-terracota"
+                    >
+                      <IconoEstrella className="size-4 text-dorado-texto" />
+                      Reseñas en Google
+                    </a>
+                  </li>
+                )}
+              </ul>
+            )}
+            {esEnlace(sitio.google.escribirResena) && (
+              <a
+                href={sitio.google.escribirResena}
+                target="_blank"
+                rel="noopener"
+                className={`${enlaceClase} mt-2 text-sm`}
+              >
+                Déjenos una reseña
+              </a>
+            )}
           </div>
 
           <div className="grid min-w-0 grid-cols-[repeat(auto-fit,minmax(min(13rem,100%),1fr))] gap-x-10 gap-y-12">
@@ -65,18 +119,12 @@ export function Pie() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href={`tel:${sitio.telefono.e164}`}
-                    className={`${enlaceClase} [overflow-wrap:anywhere]`}
-                  >
+                  <a href={`tel:${sitio.telefono.e164}`} className={`${enlaceClase} wrap-anywhere`}>
                     {sitio.telefono.visible}
                   </a>
                 </li>
                 <li>
-                  <a
-                    href={`mailto:${sitio.correo}`}
-                    className={`${enlaceClase} [overflow-wrap:anywhere]`}
-                  >
+                  <a href={`mailto:${sitio.correo}`} className={`${enlaceClase} wrap-anywhere`}>
                     {sitio.correo}
                   </a>
                 </li>
@@ -144,47 +192,6 @@ export function Pie() {
                 ))}
               </ul>
             </section>
-
-            {hayRedes && (
-              <section className="min-w-0" aria-labelledby="pie-redes">
-                <h2 id="pie-redes" className="antetitulo">
-                  Síganos
-                </h2>
-                <ul className="mt-4">
-                  {redes.map(([red, url]) => (
-                    <li key={red}>
-                      <a href={url} target="_blank" rel="noopener" className={enlaceClase}>
-                        {NOMBRE_RED[red] ?? red}
-                      </a>
-                    </li>
-                  ))}
-                  {esEnlace(sitio.google.perfil) && (
-                    <li>
-                      <a
-                        href={sitio.google.perfil}
-                        target="_blank"
-                        rel="noopener"
-                        className={enlaceClase}
-                      >
-                        Vea nuestras reseñas en Google
-                      </a>
-                    </li>
-                  )}
-                  {esEnlace(sitio.google.escribirResena) && (
-                    <li>
-                      <a
-                        href={sitio.google.escribirResena}
-                        target="_blank"
-                        rel="noopener"
-                        className={enlaceClase}
-                      >
-                        Déjenos una reseña
-                      </a>
-                    </li>
-                  )}
-                </ul>
-              </section>
-            )}
           </div>
         </div>
 

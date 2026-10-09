@@ -4,10 +4,10 @@
   "url": "https://xn--rubendariodiseadordebodas-moc.com",
   "dominioVisible": "rubendariodiseñadordebodas.com",
   "telefono": {
-    "visible": "[PENDIENTE: teléfono como aparece en Google Business]",
-    "e164": "+573000000000"
+    "visible": "314 443 1139",
+    "e164": "+573144431139"
   },
-  "whatsapp": "573000000000",
+  "whatsapp": "573144431139",
   "correo": "[PENDIENTE: correo corporativo]",
   "direccion": {
     "publica": false,
@@ -28,9 +28,12 @@
       "cierra": "13:00"
     }
   ],
-  "redes": {},
+  "redes": {
+    "instagram": "https://www.instagram.com/rubendario_disenadordebodas/",
+    "facebook": "https://www.facebook.com/RubenDarioar"
+  },
   "google": {
-    "perfil": "[PENDIENTE: enlace al perfil de Google Business]",
+    "perfil": "https://maps.google.com/?cid=5504032344679855680",
     "escribirResena": "[PENDIENTE: enlace para dejar reseña en Google]"
   },
   "cobertura": {

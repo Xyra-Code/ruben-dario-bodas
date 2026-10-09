@@ -8,6 +8,7 @@ import { Migas } from "@/components/navegacion/Migas";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { Acordeon } from "@/components/ui/Acordeon";
 import { Boton } from "@/components/ui/Boton";
+import { BotonWhatsApp, VARIANTES_WHATSAPP } from "@/components/ui/BotonWhatsApp";
 import { Cita } from "@/components/ui/Cita";
 import { Etiqueta } from "@/components/ui/Etiqueta";
 import { Pasos } from "@/components/ui/Pasos";
@@ -80,13 +81,14 @@ export default function GuiaDeEstilos() {
 
         <Bloque titulo="Tipografía">
           <div className="grid gap-6">
-            <p className="antetitulo">Antetítulo · Cormorant Garamond, versalitas</p>
+            <p className="antetitulo">Antetítulo · Manrope, versalitas espaciadas</p>
             <p className="font-titulo text-titulo-1">Decoración de bodas en Villavicencio</p>
             <p className="font-titulo text-titulo-2">Eventos destacados</p>
             <p className="font-titulo text-titulo-3">Boda en Hacienda El Caney, Restrepo</p>
             <p className="lectura">
-              Texto de lectura en Jost, mínimo 16 px en celular. Cada evento se diseña con un estilo
-              y una paleta propios, en salones, haciendas y fincas de los Llanos.
+              Títulos en Bodoni Moda y texto de lectura en Manrope, mínimo 16 px en celular. Cada
+              evento se diseña con un estilo y una paleta propios, en salones, haciendas y fincas de
+              los Llanos.
             </p>
             <p className="text-sm text-topo">Texto secundario: pies de foto y metadatos.</p>
           </div>
@@ -110,6 +112,32 @@ export default function GuiaDeEstilos() {
             <Etiqueta tipo="quince" />
             <Etiqueta tipo="otro" />
           </div>
+        </Bloque>
+
+        <Bloque titulo="Botón flotante de WhatsApp · propuestas">
+          <p className="lectura text-topo">
+            Mismas animaciones del botón de xyracode.com: aparece al cargar, flota, emite un halo y
+            cada pocos segundos el ícono saluda. En computador, al pasar el mouse se detiene y
+            muestra “Cuéntenos de su evento”. El sitio usa hoy la primera.
+          </p>
+          <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {VARIANTES_WHATSAPP.map((v, i) => (
+              <li
+                key={v.id}
+                className="flex min-w-0 flex-col items-center gap-4 rounded-sm border border-linea bg-superficie px-3 py-6 text-center"
+              >
+                <div className="flex min-h-20 items-center">
+                  <BotonWhatsApp variante={v.id} href="https://wa.me/" origen="guia" />
+                </div>
+                <div className="min-w-0">
+                  <p className="font-medium">
+                    {i + 1}. {v.nombre}
+                  </p>
+                  <p className="mt-1 text-sm text-topo">{v.nota}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </Bloque>
 
         <Bloque titulo="Migas de pan">

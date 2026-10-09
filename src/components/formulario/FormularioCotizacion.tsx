@@ -117,7 +117,6 @@ export function FormularioCotizacion({
 
   return (
     <form ref={formulario} onSubmit={enviar} noValidate className="grid gap-4 sm:gap-5">
-      <p className="text-sm text-topo">Todos los campos son obligatorios.</p>
       {referencia && (
         <p className="rounded-sm border border-linea bg-superficie px-3 py-2 text-sm">
           <span className="text-topo">Referencia: </span>
