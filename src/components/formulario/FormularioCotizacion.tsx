@@ -29,7 +29,7 @@ const hoyIso = () => {
 };
 
 const campoClase =
-  "block min-h-12 w-full min-w-0 rounded-sm border border-borde bg-white px-4 py-3 text-carbon placeholder:text-topo/70 transition-colors focus:border-terracota focus:outline-2 focus:outline-offset-0 focus:outline-terracota aria-invalid:border-error";
+  "block min-h-12 w-full min-w-0 rounded-sm border border-borde bg-superficie px-4 py-3 text-carbon placeholder:text-topo/70 transition-colors focus:border-terracota focus:outline-2 focus:outline-offset-0 focus:outline-terracota aria-invalid:border-error";
 
 /**
  * Formulario de cotización: arma el mensaje y abre WhatsApp (sitio estático, sin envío
@@ -100,7 +100,7 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
   return (
     <form ref={formulario} onSubmit={enviar} noValidate className="grid gap-6">
       {referencia && (
-        <p className="rounded-sm border border-linea bg-white px-4 py-3 text-[0.9375rem]">
+        <p className="rounded-sm border border-linea bg-superficie px-4 py-3 text-[0.9375rem]">
           <span className="text-topo">Referencia: </span>
           <span className="font-medium">{referencia}</span>
         </p>
@@ -136,7 +136,7 @@ export function FormularioCotizacion({ whatsapp, tipoInicial, referencia, origen
                 data-invalido={!!errores.tipo || undefined}
                 className="peer absolute inset-0 cursor-pointer opacity-0"
               />
-              <span className="flex min-h-12 items-center justify-center rounded-sm border border-borde bg-white px-2 text-center text-[0.9375rem] transition-colors peer-checked:border-terracota peer-checked:bg-terracota peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-terracota peer-data-invalido:border-error">
+              <span className="flex min-h-12 items-center justify-center rounded-boton border border-borde bg-superficie px-2 text-center text-[0.9375rem] transition-colors peer-checked:border-terracota peer-checked:bg-terracota peer-checked:text-sobre-principal peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-terracota peer-data-invalido:border-error">
                 {NOMBRE_TIPO_MENSAJE[t]}
               </span>
             </label>

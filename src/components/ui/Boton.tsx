@@ -13,10 +13,11 @@ export type Variante = "principal" | "secundario" | "claro" | "texto";
  */
 export function clasesBoton(variante: Variante = "principal", ancho = false, compacto = false) {
   const comun =
-    "inline-flex items-center justify-center gap-2.5 rounded-sm text-[0.9375rem] font-medium tracking-wide transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
+    "inline-flex items-center justify-center gap-2.5 rounded-boton text-[0.9375rem] font-medium tracking-wide transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
   const variantes: Record<Variante, string> = {
-    principal: "bg-terracota text-white hover:bg-terracota-profundo",
-    secundario: "border border-terracota text-terracota hover:bg-terracota hover:text-white",
+    principal: "bg-terracota text-sobre-principal hover:bg-terracota-profundo",
+    secundario:
+      "border border-terracota text-terracota hover:bg-terracota hover:text-sobre-principal",
     claro: "border border-white/80 text-white hover:bg-white hover:text-carbon",
     texto:
       "min-h-11 text-terracota underline decoration-terracota/40 underline-offset-[6px] hover:decoration-terracota",

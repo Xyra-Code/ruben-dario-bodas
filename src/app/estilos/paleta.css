@@ -1,0 +1,26 @@
+/*
+ * Paleta del sitio: 2 · Terracota Atardecer Llanero, elegida por la empresa el 2026-10-09
+ * entre 7 opciones (documento "Paletas y tipografía"). Inspiración: atardeceres del
+ * piedemonte y haciendas de Restrepo y Cumaral; el terracota sale del centro de la flor
+ * del logo. Contrastes medidos contra el fondo (AA). Los componentes usan los nombres de
+ * globals.css (marfil, terracota…), que apuntan a estas variables.
+ */
+:root {
+  --c-bg: #fdfaf7; /* Arena Suave */
+  --c-bg-alt: #f7efe7; /* Lino Tostado */
+  --c-surface: #ffffff;
+  --c-primary: #9c4a3b; /* Terracota Cálido · 5,8 : 1 */
+  --c-primary-hover: #7c3a2e; /* 8,0 : 1 */
+  --c-on-primary: #ffffff;
+  --c-accent: #c47a71; /* melocotón del círculo · solo decorativo o texto ≥ 24px */
+  --c-gold: #d4a359; /* Miel Dorada · decorativo */
+  --c-gold-text: #855a16; /* Miel profunda · 5,8 : 1 */
+  --c-ink: #2a1e1b; /* Café Espresso · 15 : 1 */
+  --c-ink-soft: #4c3a35; /* 10 : 1 */
+  --c-muted: #6e5d57; /* 5,9 : 1 */
+  --c-border: #e8ded6; /* Arcilla Atenuada · decorativo */
+  --c-input-border: #9a8474; /* 3,4 : 1 */
+  --c-error: #a3282f;
+  --radius-btn: 2px;
+  color-scheme: light;
+}

@@ -53,13 +53,13 @@ export function FiltroEventos({ tipos, municipios, estilos, items, children }: P
   const hayFiltros = Boolean(tipo || municipio || estilo);
 
   const chip = (activo: boolean) =>
-    `inline-flex min-h-11 shrink-0 items-center rounded-full border px-5 text-[0.9375rem] transition-colors ${
+    `inline-flex min-h-11 shrink-0 items-center rounded-boton border px-5 text-[0.9375rem] transition-colors ${
       activo
-        ? "border-terracota bg-terracota text-white"
-        : "border-borde bg-white text-carbon hover:border-terracota"
+        ? "border-terracota bg-terracota text-sobre-principal"
+        : "border-borde bg-superficie text-carbon hover:border-terracota"
     }`;
   const select =
-    "min-h-11 w-full min-w-0 rounded-sm border border-borde bg-white px-3 text-[0.9375rem] text-carbon";
+    "min-h-11 w-full min-w-0 rounded-sm border border-borde bg-superficie px-3 text-[0.9375rem] text-carbon";
 
   return (
     <div>

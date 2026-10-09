@@ -32,7 +32,7 @@ export function WhatsAppFlotante({ enlace }: { enlace: string }) {
       data-origen="flotante"
       aria-hidden={oculto || undefined}
       tabIndex={oculto ? -1 : undefined}
-      className={`fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-30 inline-flex size-14 items-center justify-center rounded-full bg-terracota text-white shadow-[0_6px_20px_rgba(43,39,36,0.25)] transition-[opacity,transform,background-color] duration-300 hover:bg-terracota-profundo lg:size-16 ${
+      className={`fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-30 inline-flex size-14 items-center justify-center rounded-full bg-terracota text-sobre-principal shadow-[0_6px_20px_rgba(43,39,36,0.25)] transition-[opacity,transform,background-color] duration-300 hover:bg-terracota-profundo lg:size-16 ${
         oculto ? "pointer-events-none translate-y-4 opacity-0" : "opacity-100"
       }`}
     >

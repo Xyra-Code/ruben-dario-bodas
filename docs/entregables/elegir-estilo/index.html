@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Elija el estilo de su sitio · Rubén Darío Diseñador de Bodas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&family=Gilda+Display&family=Jost:wght@300;400;500&family=Karla:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&family=Marcellus&family=Outfit:wght@300;400;500&family=Prata&family=Tenor+Sans&display=swap">
+<style>
+/* ===== Herramienta (neutra: no cambia con la elección) ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#f3f1ee;color:#262422;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.5}
+img,svg{max-width:100%}
+button{font:inherit;color:inherit}
+.contenedor{width:100%;max-width:72rem;margin-inline:auto;padding-inline:clamp(1rem,.6rem + 2vw,2rem)}
+.intro{padding-block:1.5rem 1rem}
+.intro h1{margin:0;font-size:clamp(1.375rem,1.1rem + 1.4vw,2rem);line-height:1.2;font-weight:600}
+.intro p{margin:.5rem 0 0;color:#5c5853;max-width:46rem}
+.intro ol{margin:.75rem 0 0;padding-left:1.25rem;color:#5c5853}
+
+.selector{position:sticky;top:0;z-index:20;background:rgba(243,241,238,.96);backdrop-filter:blur(8px);border-bottom:1px solid #dedad4;padding-block:.75rem}
+.fila{display:flex;gap:.5rem;align-items:center;min-width:0}
+.fila + .fila{margin-top:.6rem}
+.fila-titulo{flex:0 0 auto;width:5.25rem;font-size:.8125rem;font-weight:600;color:#5c5853}
+.opciones{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.25rem;min-width:0;flex:1;-webkit-overflow-scrolling:touch}
+.chip{flex:0 0 auto;scroll-snap-align:start;display:flex;align-items:center;gap:.6rem;min-height:44px;padding:.45rem .8rem;border:1px solid #d3cec6;border-radius:999px;background:#fff;cursor:pointer;text-align:left;line-height:1.2}
+.chip:hover{border-color:#8a847b}
+.chip[aria-pressed="true"]{border-color:#262422;box-shadow:0 0 0 2px #262422 inset;background:#fff}
+.chip:focus-visible{outline:3px solid #2f6fdc;outline-offset:2px}
+.chip small{display:none}
+.puntos{display:flex}
+.puntos span{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.15);margin-left:-5px}
+.puntos span:first-child{margin-left:0}
+.aa{font-size:1.5rem;line-height:1;width:2.1rem;text-align:center}
+.estrella{color:#b07d10;font-weight:700}
+.pista{margin:.5rem 0 0;font-size:.75rem;color:#6b665f}
+/* Escritorio: panel lateral fijo con las opciones en lista y la vista previa al lado. */
+@media (min-width:1024px){
+  .area{display:grid;grid-template-columns:19rem minmax(0,1fr);align-items:start;max-width:84rem;margin-inline:auto}
+  .selector{top:0;height:100dvh;overflow-y:auto;border-bottom:0;border-right:1px solid #dedad4;padding-block:1.25rem 6rem}
+  .selector .contenedor{padding-inline:1.25rem}
+  .fila{flex-direction:column;align-items:stretch}
+  .fila + .fila{margin-top:1.25rem}
+  .fila-titulo{width:auto;margin-bottom:.25rem}
+  .opciones{flex-direction:column;overflow:visible}
+  .chip{border-radius:10px}
+  .pista{display:none}
+  .area main.contenedor{max-width:none}
+}
+
+.resumen{padding-block:1rem .5rem}
+.resumen p{margin:0;color:#5c5853;font-size:.9375rem}
+.resumen strong{color:#262422}
+
+.marco{margin-block:.5rem 1.5rem;border:1px solid #d9d4cd;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 10px 40px rgba(38,36,34,.10)}
+.barra-navegador{display:flex;align-items:center;gap:.4rem;padding:.55rem .8rem;background:#ece9e4;border-bottom:1px solid #d9d4cd;font-size:.75rem;color:#6b665f}
+.barra-navegador i{width:9px;height:9px;border-radius:50%;background:#d0cbc4;display:inline-block}
+.barra-navegador span{margin-left:.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+
+.detalle{margin-block:0 7rem}
+.detalle h2{font-size:1.125rem;margin:0 0 .75rem;font-weight:600}
+.muestras{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(9.5rem,100%),1fr));gap:.75rem;padding:0;margin:0;list-style:none}
+.muestras li{min-width:0;background:#fff;border:1px solid #e1ddd7;border-radius:8px;overflow:hidden}
+.muestras .color{height:3.25rem;border-bottom:1px solid rgba(0,0,0,.08)}
+.muestras p{margin:0;padding:.45rem .6rem;font-size:.8125rem;line-height:1.35}
+.muestras p span{display:block;color:#6b665f;font-family:ui-monospace,Consolas,monospace;font-size:.75rem}
+.nota-recomendada{margin:.9rem 0 0;font-size:.875rem;color:#5c5853}
+
+.eleccion{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#262422;color:#fff;padding-block:.75rem calc(.75rem + env(safe-area-inset-bottom))}
+.eleccion .contenedor{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem 1rem}
+.eleccion p{margin:0;font-size:.875rem;line-height:1.35;min-width:0}
+.eleccion p b{font-weight:600}
+.acciones{display:flex;gap:.5rem;width:100%}
+.acciones .boton-wa{flex:1}
+.corto{display:inline}.largo{display:none}
+@media (min-width:640px){.acciones{width:auto}.acciones .boton-wa{flex:none}.corto{display:none}.largo{display:inline}}
+.boton-herr{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1rem;border-radius:999px;border:0;cursor:pointer;font-weight:600;font-size:.9375rem;text-decoration:none}
+.boton-wa{background:#1c6b47;color:#fff}
+.boton-wa:hover{background:#14533a}
+.boton-copiar{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.boton-herr:focus-visible{outline:3px solid #8fb6ff;outline-offset:2px}
+
+/* ===== Paletas (documento "Paletas y tipografía", versión final + la original) ===== */
+.vista{--c-bg:#fff8f7;--c-bg-alt:#fff0ef;--c-surface:#fff;--c-primary:#9c5a58;--c-primary-hover:#7e4644;--c-on-primary:#fff;--c-accent:#a36361;--c-gold:#c59b27;--c-gold-text:#8a6a14;--c-ink:#2b1b1a;--c-muted:#6e5a58;--c-border:#e7d6d4;--c-input-border:#a88683;--radius-btn:2px;color-scheme:light}
+.vista[data-palette="2"]{--c-bg:#fdfaf7;--c-bg-alt:#f7efe7;--c-surface:#fff;--c-primary:#9c4a3b;--c-primary-hover:#7c3a2e;--c-on-primary:#fff;--c-accent:#c47a71;--c-gold:#d4a359;--c-gold-text:#855a16;--c-ink:#2a1e1b;--c-muted:#6e5d57;--c-border:#e8ded6;--c-input-border:#9a8474;--radius-btn:2px;color-scheme:light}
+.vista[data-palette="3"]{--c-bg:#fcfbfa;--c-bg-alt:#f7f4ee;--c-surface:#fff;--c-primary:#85631f;--c-primary-hover:#6a4e17;--c-on-primary:#fff;--c-accent:#c47a71;--c-gold:#ba9956;--c-gold-text:#85631f;--c-ink:#22201d;--c-muted:#6b6459;--c-border:#e8e2d3;--c-input-border:#948870;--radius-btn:2px;color-scheme:light}
+.vista[data-palette="4"]{--c-bg:#faf2f0;--c-bg-alt:#f0dcd8;--c-surface:#fff;--c-primary:#7e3f3a;--c-primary-hover:#612f2b;--c-on-primary:#fff;--c-accent:#c47a71;--c-gold:#ec9e20;--c-gold-text:#7e3f3a;--c-ink:#3b2422;--c-muted:#7a5753;--c-border:#e8cfca;--c-input-border:#a27e79;--radius-btn:2px;color-scheme:light}
+.vista[data-palette="5"]{--c-bg:#fdfbfa;--c-bg-alt:#f9f0f3;--c-surface:#fff;--c-primary:#70384a;--c-primary-hover:#562a39;--c-on-primary:#fff;--c-accent:#b57588;--c-gold:#c89280;--c-gold-text:#8e5466;--c-ink:#2b1720;--c-muted:#735c66;--c-border:#e8d6dc;--c-input-border:#9e7f8b;--radius-btn:999px;color-scheme:light}
+.vista[data-palette="6"]{--c-bg:#1e1514;--c-bg-alt:#2c201e;--c-surface:#2c201e;--c-primary:#eebcbf;--c-primary-hover:#f7e9e8;--c-on-primary:#1e1514;--c-accent:#c47a71;--c-gold:#f4b027;--c-gold-text:#f4b027;--c-ink:#f7e9e8;--c-muted:#b8aba8;--c-border:#3d2e2b;--c-input-border:#85706b;--radius-btn:2px;color-scheme:dark}
+.vista[data-palette="7"]{--c-bg:#faf7f2;--c-bg-alt:#f4e9e5;--c-surface:#fff;--c-primary:#a45249;--c-primary-hover:#8e4239;--c-on-primary:#fff;--c-accent:#c2776e;--c-gold:#b86b14;--c-gold-text:#9a5a10;--c-ink:#2b2724;--c-muted:#6b5f59;--c-border:#e3d5cc;--c-input-border:#8a7b73;--radius-btn:2px;color-scheme:light}
+
+/* ===== Tipografías ===== */
+.vista{--f-display:"Prata",Georgia,serif;--f-body:"Outfit",system-ui,sans-serif;--f-eyebrow:"Marcellus",Georgia,serif;--f-cita:var(--f-display);--d-weight:400;--d-transform:none;--d-tracking:0;--d-scale:.92;--e-weight:400;--e-tracking:.2em;--b-scale:1}
+.vista[data-type="1"]{--f-display:"Cormorant Garamond",Georgia,serif;--f-body:"Jost",system-ui,sans-serif;--f-eyebrow:var(--f-body);--f-cita:var(--f-display);--d-weight:500;--d-transform:none;--d-tracking:0;--d-scale:1;--e-weight:500;--e-tracking:.24em;--b-scale:1}
+.vista[data-type="3"]{--f-display:"Bodoni Moda",Didot,Georgia,serif;--f-body:"Manrope",system-ui,sans-serif;--f-eyebrow:var(--f-body);--f-cita:var(--f-display);--d-weight:400;--d-transform:none;--d-tracking:0;--d-scale:1;--e-weight:600;--e-tracking:.22em;--b-scale:1}
+.vista[data-type="4"]{--f-display:"Cinzel",Georgia,serif;--f-body:"DM Sans",system-ui,sans-serif;--f-eyebrow:"Cinzel",Georgia,serif;--f-cita:var(--f-display);--d-weight:400;--d-transform:none;--d-tracking:.04em;--d-scale:.78;--e-weight:500;--e-tracking:.2em;--b-scale:1}
+.vista[data-type="5"]{--f-display:"Gilda Display",Georgia,serif;--f-body:"Karla",system-ui,sans-serif;--f-eyebrow:var(--f-body);--f-cita:var(--f-display);--d-weight:400;--d-transform:none;--d-tracking:0;--d-scale:1;--e-weight:600;--e-tracking:.24em;--b-scale:1}
+.vista[data-type="6"]{--f-display:"Tenor Sans",system-ui,sans-serif;--f-body:"Lora",Georgia,serif;--f-eyebrow:"Tenor Sans",system-ui,sans-serif;--f-cita:"Lora",Georgia,serif;--d-weight:400;--d-transform:uppercase;--d-tracking:.08em;--d-scale:.75;--e-weight:400;--e-tracking:.3em;--b-scale:1.0625}
+
+/* ===== Vista previa del sitio (usa solo los tokens de arriba) ===== */
+.vista{background:var(--c-bg);color:var(--c-ink);font-family:var(--f-body);font-size:calc(1rem * var(--b-scale));line-height:1.65;transition:background-color .25s,color .25s}
+.vista *{transition:background-color .25s,border-color .25s,color .25s}
+.v-cont{width:100%;max-width:64rem;margin-inline:auto;padding-inline:clamp(1rem,.6rem + 2vw,2rem)}
+.v-h1,.v-h2,.v-h3{font-family:var(--f-display);font-weight:var(--d-weight);text-transform:var(--d-transform);letter-spacing:var(--d-tracking);line-height:1.1;margin:0;text-wrap:balance}
+.v-h1{font-size:calc(clamp(2rem,1.4rem + 3vw,3.5rem) * var(--d-scale))}
+.v-h2{font-size:calc(clamp(1.625rem,1.3rem + 1.6vw,2.5rem) * var(--d-scale))}
+.v-h3{font-size:calc(clamp(1.25rem,1.15rem + .5vw,1.5rem) * var(--d-scale))}
+.v-ante{font-family:var(--f-eyebrow);font-weight:var(--e-weight);letter-spacing:var(--e-tracking);text-transform:uppercase;font-size:.75rem;color:var(--c-gold-text);margin:0}
+.v-texto{color:var(--c-muted);margin:0}
+.v-boton{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 1.4rem;border-radius:var(--radius-btn);font-family:var(--f-body);font-weight:500;font-size:.9375rem;border:1px solid var(--c-primary);cursor:pointer;text-decoration:none}
+.v-principal{background:var(--c-primary);color:var(--c-on-primary)}
+.v-principal:hover{background:var(--c-primary-hover);border-color:var(--c-primary-hover)}
+.v-secundario{background:transparent;color:var(--c-primary)}
+.v-filete{height:1px;background:linear-gradient(90deg,var(--c-gold),color-mix(in oklab,var(--c-gold),white 40%),var(--c-gold));border:0;margin:0}
+.v-foto{border-radius:4px;background:linear-gradient(135deg,color-mix(in oklab,var(--c-accent),white 35%),color-mix(in oklab,var(--c-gold),var(--c-bg-alt) 45%) 55%,color-mix(in oklab,var(--c-primary),var(--c-bg) 30%));display:flex;align-items:flex-end;padding:.75rem;color:#fff;font-size:.75rem;text-shadow:0 1px 3px rgba(0,0,0,.35);min-width:0}
+
+.v-encabezado{border-bottom:1px solid var(--c-border);background:var(--c-bg)}
+.v-encabezado .v-cont{display:flex;align-items:center;justify-content:space-between;gap:.75rem;min-height:4rem}
+.v-logo{display:block;height:26px;width:auto;max-width:55%}
+.v-nav{display:none;gap:1.4rem;font-size:.875rem}
+.v-nav a{color:var(--c-ink);text-decoration:none}
+.v-nav a:first-child{color:var(--c-primary);border-bottom:1px solid var(--c-primary)}
+.v-menu{display:inline-flex;align-items:center;gap:.5rem}
+.v-ham{width:22px;height:14px;border-top:1.5px solid var(--c-ink);border-bottom:1.5px solid var(--c-ink);position:relative}
+.v-ham::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:1.5px solid var(--c-ink);transform:translateY(-50%)}
+
+.v-portada{padding-block:2rem 3rem;display:grid;gap:1.75rem}
+.v-portada .v-texto{font-size:1.0625rem;max-width:30rem;margin-top:1rem}
+.v-botones{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.v-portada .v-foto{aspect-ratio:4/3}
+
+.v-servicios{padding-block:3rem;border-top:1px solid var(--c-border)}
+.v-tarjetas{display:grid;gap:1.75rem;margin-top:1.75rem}
+.v-tarjeta .v-foto{aspect-ratio:3/2}
+.v-tarjeta .v-h3{margin-top:1rem}
+.v-tarjeta .v-texto{margin-top:.35rem}
+.v-enlace{display:inline-block;margin-top:.6rem;color:var(--c-primary);text-decoration:none;font-size:.9375rem}
+
+.v-cifras{background:var(--c-bg-alt);padding-block:3rem}
+.v-cifras ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;list-style:none;padding:1.25rem 0;margin:1.5rem 0 0;border-block:1px solid var(--c-border)}
+.v-cifra{font-family:var(--f-display);font-size:calc(2.25rem * var(--d-scale));line-height:1;color:var(--c-accent);display:block}
+.v-cifras small{display:block;margin-top:.35rem;color:var(--c-muted);font-size:.8125rem;line-height:1.3}
+.v-cita{margin:2.25rem auto 0;max-width:40rem;text-align:center}
+.v-cita blockquote{margin:0;font-family:var(--f-cita);font-style:italic;font-size:calc(clamp(1.375rem,1.1rem + 1.4vw,2rem) * var(--d-scale));line-height:1.25;text-transform:none;letter-spacing:0}
+.v-cita .comillas{display:block;font-family:var(--f-display);font-size:3rem;line-height:.6;color:var(--c-gold)}
+.v-cita figcaption{margin-top:.9rem;font-size:.875rem;color:var(--c-muted)}
+
+.v-faq{padding-block:3rem}
+.v-faq details{border-bottom:1px solid var(--c-border);padding-block:.9rem}
+.v-faq details:first-of-type{border-top:1px solid var(--c-border);margin-top:1.25rem}
+.v-faq summary{cursor:pointer;font-family:var(--f-display);font-size:calc(1.15rem * var(--d-scale));list-style:none;display:flex;justify-content:space-between;gap:1rem;text-transform:var(--d-transform);letter-spacing:var(--d-tracking)}
+.v-faq summary::-webkit-details-marker{display:none}
+.v-faq summary::after{content:"+";color:var(--c-primary);font-family:var(--f-body)}
+.v-faq details[open] summary::after{content:"–"}
+.v-faq details p{margin:.6rem 0 0;color:var(--c-muted)}
+
+.v-contacto{background:var(--c-bg-alt);padding-block:3rem}
+.v-form{margin-top:1.5rem;background:var(--c-bg);padding:1.25rem;border-radius:4px;display:grid;gap:1rem}
+.v-form label{display:block;font-size:.875rem;font-weight:500;margin-bottom:.35rem}
+.v-campo{display:block;width:100%;min-height:46px;border:1px solid var(--c-input-border);background:var(--c-surface);color:var(--c-ink);border-radius:2px;padding:.6rem .8rem;font:inherit}
+.v-tipos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+.v-tipos span{display:flex;align-items:center;justify-content:center;min-height:46px;border:1px solid var(--c-input-border);background:var(--c-surface);border-radius:var(--radius-btn);font-size:.875rem}
+.v-tipos span.activo{background:var(--c-primary);border-color:var(--c-primary);color:var(--c-on-primary)}
+
+.v-pie{border-top:1px solid var(--c-border);background:var(--c-bg-alt);padding-block:2rem;font-size:.875rem;color:var(--c-muted)}
+.v-pie .v-cont{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
+.v-pie strong{font-family:var(--f-display);font-weight:var(--d-weight);color:var(--c-ink);font-size:1.0625rem;text-transform:var(--d-transform);letter-spacing:var(--d-tracking)}
+
+@media (min-width:640px){
+  .v-tarjetas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .v-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .v-form .ancho{grid-column:1/-1}
+}
+@media (min-width:900px){
+  .v-nav{display:flex}
+  .v-ham{display:none}
+  .v-portada{grid-template-columns:1fr 1fr;align-items:center;padding-block:3rem 4rem}
+  .v-portada .v-foto{aspect-ratio:4/5}
+}
+@media (prefers-reduced-motion:reduce){.vista,.vista *{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="intro contenedor">
+  <h1>Elija la paleta de colores y la tipografía de su sitio web</h1>
+  <p>Toque una <strong>paleta</strong> y una <strong>tipografía</strong>: la vista previa cambia al instante. Las fotos son recuadros de color mientras recibimos las de sus eventos.</p>
+  <ol>
+    <li>Pruebe las combinaciones que quiera.</li>
+    <li>Cuando tenga su favorita, toque <strong>“Enviar mi elección por WhatsApp”</strong>.</li>
+  </ol>
+</header>
+
+<div class="area">
+<div class="selector" role="region" aria-label="Opciones de estilo">
+  <div class="contenedor">
+    <div class="fila">
+      <span class="fila-titulo" id="t-paleta">1 · Paleta</span>
+      <div class="opciones" id="paletas" role="group" aria-labelledby="t-paleta"></div>
+    </div>
+    <div class="fila">
+      <span class="fila-titulo" id="t-tipo">2 · Tipografía</span>
+      <div class="opciones" id="tipografias" role="group" aria-labelledby="t-tipo"></div>
+    </div>
+    <p class="pista">Deslice cada fila hacia los lados para ver todas las opciones →</p>
+  </div>
+</div>
+
+<main class="contenedor">
+  <div class="resumen"><p id="descripcion" aria-live="polite"></p></div>
+
+  <div class="marco">
+    <div class="barra-navegador" aria-hidden="true"><i></i><i></i><i></i><span>rubendariodiseñadordebodas.com</span></div>
+
+    <div class="vista" id="vista" data-palette="1" data-type="2">
+      <div class="v-encabezado">
+        <div class="v-cont">
+          <svg class="v-logo" xmlns="http://www.w3.org/2000/svg" viewBox="40.3 626.0 907.7 126.0" role="img" aria-label="Rubén Darío, diseñador de bodas"><title>Rubén Darío, diseñador de bodas</title><defs><linearGradient id="g-nombre" gradientUnits="userSpaceOnUse" x1="186.0" y1="0" x2="940.0" y2="0"><stop offset="0.00" stop-color="#C3776E"/><stop offset="0.25" stop-color="#C2766D"/><stop offset="0.50" stop-color="#BD7168"/><stop offset="0.75" stop-color="#B3655C"/><stop offset="1.00" stop-color="#A15046"/></linearGradient><linearGradient id="g-monograma" gradientUnits="userSpaceOnUse" x1="360.0" y1="0" x2="766.0" y2="0"><stop offset="0.00" stop-color="#C3776E"/><stop offset="0.25" stop-color="#C2766D"/><stop offset="0.50" stop-color="#BD7168"/><stop offset="0.75" stop-color="#B3655C"/><stop offset="1.00" stop-color="#A15046"/></linearGradient></defs><g transform="translate(48.27 634.00) scale(0.27027) translate(-360.00 -194.00)"><path transform="matrix(1,0,0,-1,0,1075)" fill-rule="nonzero" fill="url(#g-monograma)" d="M360.086 677.577C360.086 622.157 382.314 571.936 418.327 535.315L482.311 606.653C439.089 624.451 418.749 659.933 418.749 700.724 418.749 719.591 424.907 738.33 434.754 754.312L434.668 754.365C455.645 787.606 491.21 812.592 525.532 820.219L525.154 654.96 533.16 663.858V633.349L524.234 623.151 524.9 559.617C524.9 559.617 511.549 564.702 505.829 568.516L506.464 604.111 432.819 521.938C468.054 492.435 513.449 474.664 563 474.664 675.067 474.664 765.914 565.511 765.914 677.577 765.914 789.644 675.067 880.491 563 880.491 450.934 880.491 360.086 789.644 360.086 677.577M533.16 822.762C542.426 824.507 553.208 824.987 562.716 824.987 646.482 824.987 714.629 756.84 714.629 673.075 714.629 589.31 646.482 521.163 562.716 521.163 527.966 521.163 497.806 530.163 470.87 551.99L484.853 567.245C501.38 554.532 516.634 546.906 550.902 541.389 554.764 540.767 558.773 540.868 562.716 540.868 635.616 540.868 694.925 600.175 694.925 673.075 694.925 742.874 640.547 800.204 571.933 804.955V803.181 554.532C562.398 553.261 552.229 554.532 552.229 554.532L551.593 803.184V804.811C551.351 804.791 551.105 804.78 550.863 804.758 550.857 804.758 550.85 804.758 550.845 804.757L550.283 804.707V804.706C544.964 804.209 538.371 803.557 533.16 802.422ZM443.984 732.458 443.965 732.466C443.787 732.058 443.612 731.65 443.439 731.24 443.412 731.18 443.386 731.12 443.359 731.058L443.362 731.057C439.05 720.742 435.276 709.478 435.276 698.181 435.276 659.579 459.659 632.884 495.023 621.908L506.464 634.62V792.908C482.652 781.335 456.696 760.487 443.984 732.458"/></g><path transform="matrix(1,0,0,-1,0,1075)" fill-rule="nonzero" fill="url(#g-nombre)" d="M635.578 440.159V334.699H663.425C678.829 334.699 691.715 340.129 702.082 350.992 711.956 361.36 716.894 373.603 716.894 387.724 716.894 400.759 712.056 412.609 702.379 423.274 692.107 434.53 680.014 440.159 666.092 440.159ZM641.355 434.384H666.135C678.03 434.384 688.6 429.305 697.843 419.151 706.693 409.387 711.118 398.89 711.118 387.651 711.118 375.131 706.693 364.234 697.843 354.969 688.6 345.305 677.145 340.476 663.478 340.476H641.355ZM344.826 439.715V362.989C344.826 354.992 348.625 347.831 356.23 341.513 363.831 335.194 372.324 332.033 381.706 332.033 391.186 332.033 399.234 335.291 405.85 341.808 412.464 348.326 415.773 356.177 415.773 365.36 415.773 375.232 412.168 383.971 404.961 391.577 397.75 399.179 389.159 402.981 379.189 402.981 374.448 402.981 369.709 401.992 364.967 400.018 360.229 398.042 355.586 394.983 351.045 390.835L355.035 386.541C359.072 390.292 363.084 393.007 367.074 394.688 371.065 396.365 375.125 397.204 379.265 397.204 387.637 397.204 394.926 393.896 401.131 387.28 407.041 380.961 409.996 373.801 409.996 365.805 409.308 357.806 406.301 351.139 400.981 345.808 395.663 340.476 389.163 337.81 381.481 337.81 373.799 337.81 366.73 340.498 360.276 345.883 353.823 351.263 350.601 356.965 350.601 362.989V439.715ZM186.637 439.419V335.439H192.414V374.986L251.066 333.105 254.546 337.907 209.636 370.156H216.887C227.046 370.156 235.481 372.628 242.191 377.569 249.886 383.305 253.735 391.46 253.735 402.042 253.735 413.807 249.833 423.149 242.034 430.073 234.824 436.5 225.839 439.715 215.076 439.715ZM192.414 433.642H215.015C224.568 433.642 232.349 430.982 238.357 425.664 244.758 419.95 247.958 412.12 247.958 402.174 247.958 393.11 244.854 386.315 238.652 381.784 233.335 377.846 226.047 375.876 216.789 375.876H192.414ZM470.691 434.829 455.583 416.499 458.249 413.667 479.281 426.93C480.663 427.726 481.601 428.421 482.097 429.018 482.588 429.613 482.835 430.555 482.835 431.849 482.835 433.834 482.243 435.301 481.057 436.246 479.875 437.19 478.392 437.663 476.615 437.663 474.146 437.663 472.172 436.718 470.691 434.829M867.379 430.217 852.271 411.886 854.938 409.054 875.97 422.318C877.352 423.113 878.289 423.807 878.785 424.406 879.277 425.001 879.523 425.943 879.523 427.236 879.523 429.221 878.933 430.688 877.746 431.634 876.563 432.577 875.081 433.051 873.303 433.051 870.834 433.051 868.861 432.104 867.379 430.217M519.01 399.425C513.974 396.464 509.627 392.414 505.975 387.28L506.121 400.612H500.495V335.291H505.975V374.84C508.349 381.452 512.383 387.059 518.077 391.65 523.769 396.241 529.685 398.537 535.824 398.537 546.02 398.537 553.594 395.269 558.542 388.741 562.304 383.791 564.186 377.654 564.186 370.329V335.291H569.963V370.322C569.963 378.635 567.54 385.957 562.703 392.292 556.581 400.306 547.745 404.314 536.191 404.314 530.266 404.314 524.538 402.685 519.01 399.425M824.278 400.463C820.821 398.785 817.807 396.612 815.242 393.946 812.378 390.688 810.059 387.477 808.281 384.319 805.415 379.184 803.984 374.148 803.984 369.21L803.838 335.735H809.761V369.21C809.761 371.973 810.551 375.135 812.131 378.689 814.106 383.231 816.524 386.986 819.389 389.947 821.166 391.921 823.636 393.65 826.796 395.132 830.547 396.91 834.151 397.799 837.609 397.799L837.311 403.574C832.867 403.574 828.522 402.537 824.278 400.463M731.705 393.819C724.989 387.317 721.632 379.48 721.632 370.318 721.632 360.559 725.26 351.864 732.518 344.227 739.777 336.591 748.344 332.773 758.218 332.773 763.056 332.773 767.821 333.731 772.511 335.635 777.2 337.543 781.817 340.603 786.362 344.811L782.362 349.068C778.411 345.365 774.436 342.689 770.437 341.033 766.438 339.376 762.365 338.551 758.218 338.551 749.824 338.551 742.593 341.773 736.519 348.225 730.447 354.677 727.409 361.892 727.409 369.873 727.409 377.75 730.199 384.374 735.778 389.742 741.356 395.113 748.097 397.799 755.995 397.799 763.6 397.799 770.634 395.105 777.102 389.725 783.568 384.343 786.804 378.639 786.804 372.618V336.032H792.582V372.618C792.582 380.615 788.779 387.774 781.176 394.095 773.572 400.411 765.081 403.574 755.701 403.574 746.417 403.574 738.42 400.321 731.705 393.819M879.006 391.925C872.24 384.947 868.857 376.561 868.857 366.766 868.857 357.066 872.339 348.827 879.302 342.05 886.263 335.274 894.631 331.886 904.407 331.886 914.184 331.886 922.452 335.374 929.217 342.347 935.98 349.323 939.363 357.661 939.363 367.358 939.363 377.155 935.883 385.443 928.921 392.222 921.96 398.998 913.591 402.39 903.815 402.39 894.039 402.39 885.768 398.897 879.006 391.925M883.375 346.124C877.547 351.768 874.634 358.647 874.634 366.766 874.634 374.983 877.499 382.009 883.226 387.851 888.953 393.692 895.817 396.612 903.815 396.612 912.01 396.612 919.02 393.74 924.847 387.998 930.674 382.258 933.588 375.376 933.588 367.358 933.588 359.24 930.721 352.262 924.997 346.421 919.267 340.58 912.406 337.661 904.407 337.661 896.211 337.661 889.2 340.483 883.375 346.124M851.235 335.291H857.01V401.64698H851.235ZM439.988 397.057C434.605 393.996 430.335 389.773 427.178 384.393 424.017 379.01 422.437 373.358 422.437 367.431 422.437 361.706 423.893 356.198 426.807 350.919 429.718 345.634 433.693 341.365 438.729 338.107 444.85 334.355 451.22 332.477 457.838 332.477 462.28 332.477 466.503 333.317 470.502 334.995 474.501 336.674 478.079 339.143 481.24 342.401 484.4 345.659 486.67 349.016 488.053 352.472 489.435 355.927 490.423 360.124 491.015 365.062L485.24 365.656C484.744 361.113 483.928 357.51 482.795 354.843 481.659 352.176 479.758 349.412 477.092 346.548 471.561 341.017 464.947 338.255 457.243 338.255 452.898 338.255 448.951 339.241 445.395 341.215L475.76 395.279 473.538 396.612C468.599 399.967 463.072 401.647 456.95 401.647 451.024 401.647 445.37 400.117 439.988 397.057M431.328 354.767C429.25 358.765 428.214 362.987 428.214 367.431 428.214 372.567 429.496 377.306 432.065 381.653 434.633 386.096 438.186 389.577 442.727 392.095 447.268 394.612 452.058 395.87 457.093 395.87 461.143 395.87 464.797 395.033 468.057 393.355L440.513 344.62C436.463 347.384 433.4 350.769 431.328 354.767M325.867 400.759V361.212C323.498 354.694 319.473 349.115 313.796 344.475 308.117 339.832 302.215 337.513 296.095 337.513 285.924 337.513 278.37 340.771 273.434 347.29 269.68 352.226 267.805 358.347 267.805 365.656V400.759H262.029V365.656C262.029 357.361 264.446 350.052 269.286 343.734 275.408 335.735 284.246 331.736 295.798 331.736 301.822 331.736 307.426 333.293 312.611 336.403 317.794 339.512 322.213 343.685 325.867 348.917V335.587H331.644V400.759Z"/></svg>
+          <nav class="v-nav" aria-label="Ejemplo de menú"><a href="#" tabindex="-1">Bodas</a><a href="#" tabindex="-1">15 años</a><a href="#" tabindex="-1">Eventos</a><a href="#" tabindex="-1">Nosotros</a></nav>
+          <div class="v-menu"><span class="v-boton v-principal" style="min-height:40px;padding:0 1rem">Cotizar</span><span class="v-ham" aria-hidden="true"></span></div>
+        </div>
+      </div>
+
+      <section class="v-cont v-portada">
+        <div>
+          <p class="v-ante">Rubén Darío · Diseñador de bodas</p>
+          <p class="v-h1" style="margin-top:.9rem">Diseño y decoración de eventos en Villavicencio y el Meta</p>
+          <p class="v-texto">Bodas y fiestas de 15 años diseñadas con detalle, de principio a fin.</p>
+          <div class="v-botones"><span class="v-boton v-principal">Cotizar mi evento</span><span class="v-boton v-secundario">Ver eventos</span></div>
+        </div>
+        <div class="v-foto" aria-hidden="true">Aquí irá una foto de sus eventos</div>
+      </section>
+
+      <section class="v-servicios">
+        <div class="v-cont">
+          <p class="v-ante">Servicios</p>
+          <p class="v-h2" style="margin-top:.6rem">Bodas y fiestas de 15 años con diseño de autor</p>
+          <div class="v-tarjetas">
+            <div class="v-tarjeta"><div class="v-foto" aria-hidden="true">Foto de una boda</div><p class="v-h3">Decoración de bodas</p><p class="v-texto">Ceremonia, recepción y bodas en finca, con un estilo y una paleta propios.</p><a class="v-enlace" href="#" tabindex="-1">Conozca el servicio →</a></div>
+            <div class="v-tarjeta"><div class="v-foto" aria-hidden="true">Foto de unos 15 años</div><p class="v-h3">Decoración de 15 años</p><p class="v-texto">Temáticas clásicas, modernas y personalizadas para un día inolvidable.</p><a class="v-enlace" href="#" tabindex="-1">Conozca el servicio →</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="v-cifras">
+        <div class="v-cont">
+          <p class="v-ante">Sobre Rubén Darío</p>
+          <p class="v-h2" style="margin-top:.6rem">Quién diseña su evento</p>
+          <ul>
+            <li><span class="v-cifra">15</span><small>años de experiencia</small></li>
+            <li><span class="v-cifra">+300</span><small>eventos realizados</small></li>
+            <li><span class="v-cifra">20</span><small>municipios</small></li>
+          </ul>
+          <figure class="v-cita">
+            <span class="comillas" aria-hidden="true">“</span>
+            <blockquote>Cada detalle quedó como lo soñamos.</blockquote>
+            <figcaption>Testimonio de ejemplo · Boda en hacienda</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="v-faq">
+        <div class="v-cont">
+          <p class="v-ante">Preguntas frecuentes</p>
+          <p class="v-h2" style="margin-top:.6rem">Antes de cotizar</p>
+          <details open><summary>¿Con cuánta anticipación debo reservar?</summary><p>Aquí irá la respuesta de la empresa.</p></details>
+          <details><summary>¿Atienden fuera de Villavicencio?</summary><p>Aquí irá la respuesta de la empresa.</p></details>
+        </div>
+      </section>
+
+      <section class="v-contacto">
+        <div class="v-cont">
+          <p class="v-ante">Cotización</p>
+          <p class="v-h2" style="margin-top:.6rem">Cuéntenos de su evento</p>
+          <div class="v-form" aria-hidden="true">
+            <div><label>Nombre</label><span class="v-campo">&nbsp;</span></div>
+            <div><label>Fecha del evento</label><span class="v-campo">dd/mm/aaaa</span></div>
+            <div class="ancho"><label>Tipo de evento</label><div class="v-tipos"><span class="activo">Boda</span><span>15 años</span><span>Otro</span></div></div>
+            <div class="ancho"><span class="v-boton v-principal" style="width:100%">Enviar por WhatsApp</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="v-pie">
+        <div class="v-cont"><strong>Rubén Darío Diseñador de Bodas</strong><span>Villavicencio, el Meta, Bogotá y Cundinamarca</span></div>
+      </footer>
+    </div>
+  </div>
+
+  <section class="detalle" aria-labelledby="t-detalle">
+    <h2 id="t-detalle">Colores de la paleta elegida</h2>
+    <ul class="muestras" id="muestras"></ul>
+    <p class="nota-recomendada"><span class="estrella">★</span> Combinación recomendada por XyraCode: paleta 1 · Rosa Empolvado con tipografía 2 · Hacienda Sofisticada. La paleta 7 con la tipografía 1 es el diseño inicial.</p>
+  </section>
+</main>
+</div>
+
+<div class="eleccion" role="region" aria-label="Su elección">
+  <div class="contenedor">
+    <p id="mi-eleccion"></p>
+    <div class="acciones">
+      <a class="boton-herr boton-wa" id="enviar" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42Z"/></svg>
+        <span class="largo">Enviar mi elección por WhatsApp</span><span class="corto">Enviar por WhatsApp</span>
+      </a>
+      <button type="button" class="boton-herr boton-copiar" id="copiar">Copiar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var PALETAS = [
+    { id: "1", nombre: "Rosa Empolvado", sensacion: "La marca tal cual: romántica y de alta gama", recomendada: true,
+      colores: [["Fondo", "#FFF8F7"], ["Fondo alterno", "#FFF0EF"], ["Principal (botones)", "#9C5A58"], ["Acento", "#A36361"], ["Oro", "#C59B27"], ["Texto", "#2B1B1A"]] },
+    { id: "2", nombre: "Terracota Atardecer Llanero", sensacion: "Cálida, tierra, regional",
+      colores: [["Fondo", "#FDFAF7"], ["Fondo alterno", "#F7EFE7"], ["Principal (botones)", "#9C4A3B"], ["Acento", "#C47A71"], ["Oro", "#D4A359"], ["Texto", "#2A1E1B"]] },
+    { id: "3", nombre: "Marfil & Champagne Real", sensacion: "Opulenta, de gala",
+      colores: [["Fondo", "#FCFBFA"], ["Fondo alterno", "#F7F4EE"], ["Principal (botones)", "#85631F"], ["Acento", "#C47A71"], ["Oro", "#BA9956"], ["Texto", "#22201D"]] },
+    { id: "4", nombre: "Velo de Novia", sensacion: "Serena, rosa tono sobre tono",
+      colores: [["Fondo", "#FAF2F0"], ["Fondo alterno", "#F0DCD8"], ["Principal (botones)", "#7E3F3A"], ["Acento", "#C47A71"], ["Oro", "#EC9E20"], ["Texto", "#3B2422"]] },
+    { id: "5", nombre: "Ocaso del Llano & Moriche", sensacion: "Apasionada, nocturna (botones redondeados)",
+      colores: [["Fondo", "#FDFBFA"], ["Fondo alterno", "#F9F0F3"], ["Principal (botones)", "#70384A"], ["Acento", "#B57588"], ["Oro", "#C89280"], ["Texto", "#2B1720"]] },
+    { id: "6", nombre: "Noche de Gala", sensacion: "Oscura y dramática",
+      colores: [["Fondo", "#1E1514"], ["Fondo alterno", "#2C201E"], ["Principal (botones)", "#EEBCBF"], ["Acento", "#C47A71"], ["Oro", "#F4B027"], ["Texto", "#F7E9E8"]] },
+    { id: "7", nombre: "Original · Marfil y Terracota", sensacion: "El diseño inicial del sitio",
+      colores: [["Fondo", "#FAF7F2"], ["Fondo alterno", "#F4E9E5"], ["Principal (botones)", "#A45249"], ["Acento", "#C2776E"], ["Oro", "#B86B14"], ["Texto", "#2B2724"]] }
+  ];
+  var TIPOS = [
+    { id: "1", nombre: "Editorial Clásica", familias: "Cormorant Garamond + Jost", titulo: "Cormorant Garamond", texto: "Jost" },
+    { id: "2", nombre: "Hacienda Sofisticada", familias: "Prata + Marcellus + Outfit", titulo: "Prata", texto: "Outfit", recomendada: true },
+    { id: "3", nombre: "Alta Costura", familias: "Bodoni Moda + Manrope", titulo: "Bodoni Moda", texto: "Manrope" },
+    { id: "4", nombre: "Romano Monumental", familias: "Cinzel + DM Sans", titulo: "Cinzel", texto: "DM Sans" },
+    { id: "5", nombre: "Invitación Caligráfica", familias: "Gilda Display + Karla", titulo: "Gilda Display", texto: "Karla" },
+    { id: "6", nombre: "Lujo Silencioso", familias: "Tenor Sans + Lora", titulo: "Tenor Sans", texto: "Lora" }
+  ];
+
+  var vista = document.getElementById("vista");
+  var estado = { p: "1", t: "2" };
+  try {
+    var guardado = JSON.parse(localStorage.getItem("rd-eleccion") || "{}");
+    if (/^[1-7]$/.test(guardado.p || "")) estado.p = guardado.p;
+    if (/^[1-6]$/.test(guardado.t || "")) estado.t = guardado.t;
+  } catch (e) {}
+
+  function el(tag, attrs, html) {
+    var n = document.createElement(tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (html != null) n.innerHTML = html;
+    return n;
+  }
+
+  var cajaP = document.getElementById("paletas");
+  PALETAS.forEach(function (p) {
+    var puntos = p.colores.filter(function (c, i) { return i !== 1; }).map(function (c) {
+      return '<span style="background:' + c[1] + '"></span>';
+    }).join("");
+    var b = el("button", { type: "button", class: "chip", "data-p": p.id },
+      '<span class="puntos" aria-hidden="true">' + puntos + '</span><span>' + p.id + " · " + p.nombre +
+      (p.recomendada ? ' <span class="estrella" aria-label="recomendada">★</span>' : "") + "<small>" + p.sensacion + "</small></span>");
+    b.addEventListener("click", function () { estado.p = p.id; actualizar(); });
+    cajaP.appendChild(b);
+  });
+
+  var cajaT = document.getElementById("tipografias");
+  TIPOS.forEach(function (t) {
+    var b = el("button", { type: "button", class: "chip", "data-t": t.id },
+      '<span class="aa" aria-hidden="true" style="font-family:\'' + t.titulo + '\',serif">Aa</span><span style="font-family:\'' + t.texto + '\',sans-serif">' +
+      t.id + " · " + t.nombre + (t.recomendada ? ' <span class="estrella" aria-label="recomendada">★</span>' : "") + "<small>" + t.familias + "</small></span>");
+    b.addEventListener("click", function () { estado.t = t.id; actualizar(); });
+    cajaT.appendChild(b);
+  });
+
+  function buscar(lista, id) { return lista.filter(function (x) { return x.id === id; })[0]; }
+
+  function actualizar() {
+    var p = buscar(PALETAS, estado.p), t = buscar(TIPOS, estado.t);
+    vista.setAttribute("data-palette", p.id);
+    vista.setAttribute("data-type", t.id);
+    cajaP.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c.getAttribute("data-p") === p.id)); });
+    cajaT.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c.getAttribute("data-t") === t.id)); });
+
+    document.getElementById("descripcion").innerHTML =
+      "Está viendo la <strong>paleta " + p.id + " · " + p.nombre + "</strong> (" + p.sensacion.toLowerCase() +
+      ") con la <strong>tipografía " + t.id + " · " + t.nombre + "</strong> (" + t.familias + ").";
+
+    document.getElementById("muestras").innerHTML = p.colores.map(function (c) {
+      return '<li><div class="color" style="background:' + c[1] + '"></div><p>' + c[0] + "<span>" + c[1] + "</span></p></li>";
+    }).join("");
+
+    var texto = "Hola, ya elegí el estilo para mi sitio web:\n• Paleta " + p.id + ": " + p.nombre + "\n• Tipografía " + t.id + ": " + t.nombre;
+    document.getElementById("mi-eleccion").innerHTML = "Su elección: <b>Paleta " + p.id + "</b> · " + p.nombre + " + <b>Tipografía " + t.id + "</b> · " + t.nombre;
+    document.getElementById("enviar").href = "https://wa.me/?text=" + encodeURIComponent(texto);
+    document.getElementById("copiar").dataset.texto = texto;
+    try { localStorage.setItem("rd-eleccion", JSON.stringify(estado)); } catch (e) {}
+  }
+
+  document.getElementById("copiar").addEventListener("click", function () {
+    var b = this, texto = b.dataset.texto;
+    function listo() { b.textContent = "¡Copiado!"; setTimeout(function () { b.textContent = "Copiar"; }, 2000); }
+    if (navigator.clipboard) navigator.clipboard.writeText(texto).then(listo, function () { window.prompt("Copie su elección:", texto); });
+    else window.prompt("Copie su elección:", texto);
+  });
+
+  actualizar();
+})();
+</script>
+</body>
+</html>

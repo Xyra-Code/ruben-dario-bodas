@@ -1,33 +1,48 @@
 @import "tailwindcss";
+/* Paleta 2 + tipografía 3, elegidas por la empresa (estilos/). */
+@import "./estilos/paleta.css";
+@import "./estilos/tipografia.css";
 
-/* ── Paleta de la marca, derivada del logo. Usos y contrastes: docs/brief-diseno.md §4 ── */
+/*
+ * Los componentes usan nombres semánticos (marfil = fondo, terracota = principal…). Apuntan
+ * a las variables de la paleta activa (estilos/paletas.css), así cambiar de paleta no toca
+ * ningún componente. Usos y contrastes: docs/brief-diseno.md §4.
+ */
+@theme inline {
+  --color-marfil: var(--c-bg); /* fondo general */
+  --color-rubor: var(--c-bg-alt); /* fondo alterno */
+  --color-superficie: var(--c-surface); /* tarjetas, campos */
+  --color-carbon: var(--c-ink); /* texto */
+  --color-carbon-suave: var(--c-ink-soft);
+  --color-topo: var(--c-muted); /* texto secundario */
+  --color-terracota: var(--c-primary); /* principal: botones, enlaces, foco */
+  --color-terracota-profundo: var(--c-primary-hover);
+  --color-sobre-principal: var(--c-on-primary); /* texto sobre botones principales */
+  --color-rosa: var(--c-accent); /* decorativo o texto ≥ 24px */
+  --color-dorado: var(--c-gold); /* filetes y ornamentos */
+  --color-dorado-texto: var(--c-gold-text); /* antetítulos y etiquetas */
+  --color-linea: var(--c-border); /* divisores decorativos */
+  --color-borde: var(--c-input-border); /* bordes de campos (≥ 3:1) */
+  --color-error: var(--c-error);
+
+  --radius-boton: var(--radius-btn);
+
+  --font-titulo: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
 @theme {
-  --color-marfil: #faf7f2; /* fondo general */
-  --color-rubor: #f4e9e5; /* fondo alterno */
-  --color-carbon: #2b2724; /* texto */
-  --color-topo: #6b5f59; /* texto secundario (5,8 : 1) */
-  --color-terracota: #a45249; /* principal: botones, enlaces (5,1 : 1) */
-  --color-terracota-profundo: #8e4239; /* hover / activo */
-  --color-rosa: #c2776e; /* solo decorativo o texto ≥ 24px */
-  --color-dorado: #b86b14; /* líneas y ornamentos */
-  --color-dorado-claro: #f4ab1f; /* brillo del degradado dorado */
-  --color-dorado-texto: #9a5a10; /* texto pequeño en dorado (5,1 : 1) */
-  --color-linea: #e3d5cc; /* divisores decorativos */
-  --color-borde: #8a7b73; /* bordes de campos: 3,8 : 1, mínimo AA para controles */
-  --color-error: #b3261e; /* mensajes de error (6,1 : 1) */
-
-  /* Tipografía: escala fluida de 320px a 1440px (sin saltos por breakpoint). */
-  --text-titulo-1: clamp(2.125rem, 1.55rem + 2.9vw, 4rem);
+  /* Escala fluida de 320px a 1440px; los títulos se ajustan al ancho de cada fuente. */
+  --text-titulo-1: calc(clamp(2.125rem, 1.55rem + 2.9vw, 4rem) * var(--display-scale, 1));
   --text-titulo-1--line-height: 1.08;
-  --text-titulo-2: clamp(1.75rem, 1.4rem + 1.75vw, 2.875rem);
+  --text-titulo-2: calc(clamp(1.75rem, 1.4rem + 1.75vw, 2.875rem) * var(--display-scale, 1));
   --text-titulo-2--line-height: 1.12;
-  --text-titulo-3: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
+  --text-titulo-3: calc(clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem) * var(--display-scale, 1));
   --text-titulo-3--line-height: 1.2;
-  --text-cuerpo: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-cuerpo: calc(clamp(1rem, 0.96rem + 0.2vw, 1.125rem) * var(--body-scale, 1));
   --text-cuerpo--line-height: 1.65;
   --text-antetitulo: 0.8125rem;
   --text-antetitulo--line-height: 1.4;
-  --text-antetitulo--letter-spacing: 0.18em;
 
   /* Ritmo vertical entre secciones. */
   --spacing-seccion: clamp(3.5rem, 2.4rem + 5.5vw, 7.5rem);
@@ -35,16 +50,15 @@
   --ease-suave: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Las fuentes las define next/font en <html> (src/app/layout.tsx). */
-@theme inline {
-  --font-titulo: var(--fuente-titulo), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--fuente-texto), "Jost", ui-sans-serif, system-ui, sans-serif;
-}
-
-/* Degradados del logo (de izquierda a derecha), para detalles puntuales. */
+/* Degradados (eco del logo), con los colores de la paleta activa. */
 :root {
-  --degradado-terracota: linear-gradient(90deg, #c3776e, #a15046);
-  --degradado-dorado: linear-gradient(90deg, #b86b14, #f4ab1f, #b86b14);
+  --degradado-terracota: linear-gradient(90deg, var(--c-accent), var(--c-primary));
+  --degradado-dorado: linear-gradient(
+    90deg,
+    var(--c-gold),
+    color-mix(in oklab, var(--c-gold), white 40%),
+    var(--c-gold)
+  );
   /* Alto del encabezado fijo: las anclas (#contacto) no quedan tapadas. */
   --alto-encabezado: 4rem;
   scroll-padding-top: calc(var(--alto-encabezado) + 1rem);
@@ -66,16 +80,18 @@
   h2,
   h3 {
     font-family: var(--font-titulo);
-    font-weight: 500;
+    font-weight: var(--display-weight, 500);
+    text-transform: var(--display-transform, none);
+    letter-spacing: var(--display-tracking, 0);
     text-wrap: balance;
   }
   p {
     text-wrap: pretty;
   }
-  /* La cursiva de Cormorant es otra familia (sin precarga): se usa en frases y citas. */
+  /* Citas y frases en cursiva: la familia de cita de la tipografía activa. */
   .font-titulo.italic,
   .italic .font-titulo {
-    font-family: var(--fuente-titulo-cursiva), var(--fuente-titulo), Georgia, serif;
+    font-family: var(--font-cita), var(--font-titulo);
   }
   ::selection {
     background-color: var(--color-rubor);
@@ -115,14 +131,14 @@
   max-width: 68ch;
 }
 
-/* Antetítulo editorial: versalitas espaciadas en dorado, como el descriptor del logo. */
+/* Antetítulo: mayúsculas espaciadas en el oro para texto de la paleta. */
 @utility antetitulo {
-  font-family: var(--font-titulo);
+  font-family: var(--font-eyebrow);
   font-size: var(--text-antetitulo);
   line-height: var(--text-antetitulo--line-height);
-  letter-spacing: var(--text-antetitulo--letter-spacing);
+  letter-spacing: var(--eyebrow-tracking, 0.2em);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: var(--eyebrow-weight, 500);
   color: var(--color-dorado-texto);
 }
 

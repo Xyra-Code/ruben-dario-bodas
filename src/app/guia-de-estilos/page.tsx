@@ -25,16 +25,18 @@ export const metadata = metadatos({
   noIndexar: true,
 });
 
+// Las muestras usan los tokens de la paleta del sitio (src/app/estilos/paleta.css).
 const COLORES = [
-  ["Marfil", "bg-marfil", "#FAF7F2", "Fondo general"],
-  ["Rubor", "bg-rubor", "#F4E9E5", "Fondo alterno"],
-  ["Carbón", "bg-carbon", "#2B2724", "Texto · 13,9 : 1"],
-  ["Topo", "bg-topo", "#6B5F59", "Texto secundario · 5,8 : 1"],
-  ["Terracota", "bg-terracota", "#A45249", "Principal · 5,1 : 1"],
-  ["Terracota profundo", "bg-terracota-profundo", "#8E4239", "Hover · 6,6 : 1"],
-  ["Rosa", "bg-rosa", "#C2776E", "Decorativo / texto grande"],
-  ["Dorado", "bg-dorado", "#B86B14", "Líneas y ornamentos"],
-  ["Dorado texto", "bg-dorado-texto", "#9A5A10", "Antetítulos · 5,1 : 1"],
+  ["Fondo", "bg-marfil", "--c-bg"],
+  ["Fondo alterno", "bg-rubor", "--c-bg-alt"],
+  ["Superficie", "bg-superficie", "--c-surface"],
+  ["Texto", "bg-carbon", "--c-ink"],
+  ["Texto secundario", "bg-topo", "--c-muted"],
+  ["Principal", "bg-terracota", "--c-primary"],
+  ["Principal hover", "bg-terracota-profundo", "--c-primary-hover"],
+  ["Acento", "bg-rosa", "--c-accent"],
+  ["Oro (decorativo)", "bg-dorado", "--c-gold"],
+  ["Oro para texto", "bg-dorado-texto", "--c-gold-text"],
 ] as const;
 
 function Bloque({ titulo, children }: { titulo: string; children: ReactNode }) {
@@ -60,15 +62,13 @@ export default function GuiaDeEstilos() {
           aprobar la dirección visual antes de componer las páginas finales.
         </p>
 
-        <Bloque titulo="Colores (derivados del logo)">
+        <Bloque titulo="Colores · Paleta 2, Terracota Atardecer Llanero">
           <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(10rem,100%),1fr))] gap-4">
-            {COLORES.map(([nombre, clase, hex, uso]) => (
+            {COLORES.map(([nombre, clase, token]) => (
               <li key={nombre} className="min-w-0">
                 <div className={`${clase} h-20 rounded-sm border border-carbon/10`} />
                 <p className="mt-2 font-medium">{nombre}</p>
-                <p className="text-sm text-topo">
-                  {hex} · {uso}
-                </p>
+                <p className="text-sm text-topo">{token}</p>
               </li>
             ))}
           </ul>

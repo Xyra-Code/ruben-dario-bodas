@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 
 import { Encabezado } from "@/components/marco/Encabezado";
 import { Pie } from "@/components/marco/Pie";
@@ -10,23 +10,25 @@ import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 import "./globals.css";
 
 // Fuentes descargadas al compilar y servidas desde el propio sitio (sin peticiones a Google).
-// Títulos: serif editorial, como el descriptor del logo. Texto: sans geométrica, como el nombre.
-// Cormorant variable: un archivo cubre los pesos 500 y 600. La cursiva (pocas frases y
-// citas) va aparte y sin precarga, para no competir con la foto principal (LCP).
-const titulo = Cormorant_Garamond({
+// Tipografía 3 · Alta Costura, elegida por la empresa: Bodoni Moda (títulos, con eje de
+// tamaño óptico para que los trazos finos aguanten en tamaños pequeños) y Manrope (texto).
+// La cursiva de Bodoni (citas) va sin precarga para no competir con la foto principal.
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
+  display: "swap",
   style: "normal",
-  variable: "--fuente-titulo",
-  display: "swap",
+  axes: ["opsz"],
+  variable: "--f-bodoni",
 });
-const tituloCursiva = Cormorant_Garamond({
+const bodoniCursiva = Bodoni_Moda({
   subsets: ["latin"],
-  style: "italic",
-  variable: "--fuente-titulo-cursiva",
   display: "swap",
+  style: "italic",
+  axes: ["opsz"],
+  variable: "--f-bodoni-cursiva",
   preload: false,
 });
-const texto = Jost({ subsets: ["latin"], variable: "--fuente-texto", display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--f-manrope" });
 
 const { sitio } = obtenerContenido();
 
@@ -39,16 +41,19 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#faf7f2",
+  themeColor: "#fdfaf7",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es-CO" className={`${titulo.variable} ${tituloCursiva.variable} ${texto.variable}`}>
+    <html
+      lang="es-CO"
+      className={`${bodoni.variable} ${bodoniCursiva.variable} ${manrope.variable}`}
+    >
       <body className="flex min-h-dvh flex-col">
         <a
           href="#contenido"
-          className="sr-only z-50 bg-terracota px-4 py-3 text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+          className="sr-only z-50 bg-terracota px-4 py-3 text-sobre-principal focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
         >
           Saltar al contenido
         </a>

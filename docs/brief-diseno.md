@@ -54,31 +54,29 @@ fina, pero cercana y regional, no fría ni de lujo inalcanzable.
 
 - **La fotografía manda.** Fotos grandes, generosas, con mucho aire alrededor. La interfaz
   acompaña, no compite.
-- **Paleta de la marca** (sale del logo; contraste verificado contra el fondo marfil):
+- **Paleta del sitio: 2 · Terracota Atardecer Llanero** (elegida por la empresa el
+  2026-10-09 entre 7 opciones derivadas del logo; contraste verificado contra el fondo):
 
-  | Rol | Color | Uso | Contraste sobre marfil |
+  | Rol | Color | Uso | Contraste |
   |---|---|---|---|
-  | Fondo | Marfil `#FAF7F2` | Fondo general | — |
-  | Fondo alterno | Rubor `#F4E9E5` | Secciones alternas, tarjetas | — |
-  | Texto | Carbón cálido `#2B2724` | Títulos y cuerpo | 13,9 : 1 |
-  | Texto secundario | Topo `#6B5F59` | Pies de foto, metadatos | 5,8 : 1 |
-  | **Principal** | Terracota `#A45249` | Botones (texto blanco: 5,4 : 1), enlaces, botón de WhatsApp | 5,1 : 1 |
-  | Principal oscuro | Terracota profundo `#8E4239` | Hover y estado activo | 6,6 : 1 |
-  | Rosa del logo | Rosa `#C2776E` | Solo decorativo o texto grande (≥ 24 px) | 3,2 : 1 |
-  | **Acento** | Dorado `#B86B14` → `#F4AB1F` | Líneas finas, ornamentos, numeración grande, iconos | decorativo |
-  | Dorado para texto | Dorado oscuro `#9A5A10` | Antetítulos y etiquetas pequeñas en dorado | 5,1 : 1 |
+  | Fondo | Arena Suave `#FDFAF7` | Fondo general | — |
+  | Fondo alterno | Lino Tostado `#F7EFE7` | Secciones alternas, footer | — |
+  | Superficie | Blanco `#FFFFFF` | Tarjetas y campos | — |
+  | Texto | Café Espresso `#2A1E1B` | Títulos y cuerpo | 15 : 1 |
+  | Texto secundario | `#6E5D57` | Metadatos, pies de foto | 5,9 : 1 |
+  | **Principal** | Terracota Cálido `#9C4A3B` | Botones (texto blanco), enlaces, foco, WhatsApp | 5,8 : 1 |
+  | Principal hover | `#7C3A2E` | Hover y activo | 8,0 : 1 |
+  | Acento | Melocotón `#C47A71` | Cifras y detalles ≥ 24 px (decorativo) | 3,1 : 1 |
+  | Oro | Miel Dorada `#D4A359` | Filetes y ornamentos (decorativo) | — |
+  | Oro para texto | Miel profunda `#855A16` | Antetítulos y etiquetas | 5,8 : 1 |
+  | Bordes | Arcilla `#E8DED6` / campos `#9A8474` | Divisores / bordes de campos (≥ 3:1) | 3,4 : 1 |
 
-  - **Degradados de la marca** (iguales a los del logo, de izquierda a derecha):
-    terracota `#C3776E → #A15046` y dorado `#B86B14 → #F4AB1F → #B86B14`.
-    Usarlos con moderación: el monograma, una línea divisoria, un detalle; nunca en
-    bloques grandes de texto.
-  - Ya no se usan la salvia ni el champaña de la versión anterior del brief.
-  - El botón principal de WhatsApp usa la terracota de la marca, no el verde de WhatsApp;
-    el **ícono** de WhatsApp sí debe reconocerse.
-- **Tipografía:** una serif elegante para títulos (tipo Cormorant Garamond, Playfair Display
-  o similar) y una sans limpia y muy legible para textos y botones (tipo Inter, Manrope o
-  DM Sans). Cuerpo de texto mínimo 16 px en móvil. El descriptor del logo es una serif en
-  mayúsculas: los antetítulos pueden retomarlo (serif, versalitas, espaciado amplio, dorado).
+  - El terracota sale del centro de la flor del logo; el melocotón, del círculo del monograma.
+  - El botón de WhatsApp usa la terracota de la marca; el **ícono** de WhatsApp se reconoce.
+- **Tipografía: 3 · Alta Costura.** Títulos y citas en **Bodoni Moda** (400, cursiva en
+  citas; con tamaño óptico para que los trazos finos aguanten en tamaños pequeños). Texto,
+  menú, botones y antetítulos en **Manrope** (antetítulos en 600, mayúsculas espaciadas).
+  Cuerpo de texto mínimo 16 px en móvil.
 - **Detalles:** líneas finas, esquinas suaves o rectas (evitar estilo "app" muy redondeado),
   numeración editorial en los pasos, transiciones sutiles. Nada recargado.
 - **Evitar:** estética de plantilla genérica, exceso de íconos, fondos oscuros pesados,

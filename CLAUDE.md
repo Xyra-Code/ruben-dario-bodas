@@ -19,7 +19,7 @@ Esto aplica especialmente a la **exportación estática**.
 - **Logo:** único archivo disponible, `docs/marca/Perfil Redes Logo.pdf` (versión circular
   para redes, vectorial). Las versiones web (monograma, horizontal, vertical, a una tinta)
   se extraen con `scripts/marca/extraer-logo.py` a `public/marca/`, y los íconos con
-  `scripts/marca/iconos.mjs`. Paleta del sitio derivada del logo: ver `docs/brief-diseno.md` §4.
+  `scripts/marca/iconos.mjs`. Paleta (2 · Terracota) y tipografía (3 · Alta Costura): `docs/brief-diseno.md` §4.
 - Diseño y decoración de eventos. **Su fuerte son las bodas**; también diseña **fiestas de 15 años**.
 - **Cobertura** (definida el 2026-10-07): **Villavicencio como centro de operación**, municipios
   del Meta, **Bogotá y municipios de Cundinamarca** (lista de Cundinamarca pendiente de la
@@ -178,6 +178,12 @@ Herramientas del repo para QA: `node scripts/capturas.mjs <carpeta> [/rutas]` (c
 320/390/1440 con el Edge instalado y verificación de scroll horizontal; en Git Bash anteponer
 `MSYS_NO_PATHCONV=1`). `/guia-de-estilos` (noindex, fuera del sitemap) muestra colores,
 tipografía y componentes para aprobar el diseño; antes del lanzamiento, decidir si se borra.
+
+**Paleta y tipografía** (decididas por la empresa el 2026-10-09, tras probar 7 paletas y 6
+tipografías en una página de elección, `docs/entregables/elegir-estilo/`): **paleta 2 ·
+Terracota Atardecer Llanero** (`src/app/estilos/paleta.css`) y **tipografía 3 · Alta Costura**,
+Bodoni Moda + Manrope (`src/app/estilos/tipografia.css` y `layout.tsx`). Detalle en
+`docs/brief-diseno.md` §4. El selector temporal se retiró.
 
 Hábitos de agencia: **registrar horas por fase** (para calibrar precios futuros), anotar
 y cotizar todo pedido fuera de alcance, reporte semanal fijo (qué se hizo, enlace de

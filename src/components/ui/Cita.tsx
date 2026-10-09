@@ -15,7 +15,7 @@ export function Cita({ texto, autor, detalle, variante = "tarjeta" }: Props) {
       className={
         destacada
           ? "mx-auto max-w-3xl text-center"
-          : "flex h-full min-w-0 flex-col rounded-sm border border-linea bg-white/60 p-6 sm:p-8"
+          : "flex h-full min-w-0 flex-col rounded-sm border border-linea bg-superficie/60 p-6 sm:p-8"
       }
     >
       <span
