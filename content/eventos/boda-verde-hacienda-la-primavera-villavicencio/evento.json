@@ -1,0 +1,107 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "hacienda-la-primavera",
+  "titulo": "Boda en verde en Hacienda La Primavera, Villavicencio",
+  "nombres": "Natalia y Sebastián",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Hacienda La Primavera"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en verde en Hacienda La Primavera, Villavicencio",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Hacienda La Primavera]"
+  },
+  "portada": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salon-telas-y-lamparas.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-mesa-imperial-coronas-de-follaje.jpg",
+      "alt": "Mesa imperial coronas de follaje"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-altar-cortinas-blancas-y-follaje.jpg",
+      "alt": "Altar cortinas blancas y follaje"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-detalle-puesto-copas-verdes.jpg",
+      "alt": "Detalle puesto copas verdes"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-fiesta-hora-loca.jpg",
+      "alt": "Fiesta hora loca"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-mesa-invitados-centro-de-flores-blancas.jpg",
+      "alt": "Mesa invitados centro de flores blancas"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-novia-lanzamiento-del-ramo.jpg",
+      "alt": "Novia lanzamiento del ramo"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-novia-ramo-de-flores-blancas.jpg",
+      "alt": "Novia ramo de flores blancas"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-novia-y-dama-de-honor.jpg",
+      "alt": "Novia y dama de honor"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-altar-capilla.jpg",
+      "alt": "Pareja altar capilla"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-arco-de-follaje.jpg",
+      "alt": "Pareja arco de follaje"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-baile-salon.jpg",
+      "alt": "Pareja baile salon"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salida-capilla.jpg",
+      "alt": "Pareja salida capilla"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salida-capilla-arco-de-flores.jpg",
+      "alt": "Pareja salida capilla arco de flores"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salida-lluvia-de-petalos.jpg",
+      "alt": "Pareja salida lluvia de petalos"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salon-piso-ajedrez.jpg",
+      "alt": "Pareja salon piso ajedrez"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salon-telas-y-lamparas.jpg",
+      "alt": "Pareja salon telas y lamparas"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-show-de-bailarinas-plumas-blancas.jpg",
+      "alt": "Show de bailarinas plumas blancas"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-torta-de-bodas-arco-de-follaje.jpg",
+      "alt": "Torta de bodas arco de follaje"
+    },
+    {
+      "archivo": "boda-verde-hacienda-la-primavera-villavicencio-torta-de-bodas-garzas-doradas.jpg",
+      "alt": "Torta de bodas garzas doradas"
+    }
+  ]
+}

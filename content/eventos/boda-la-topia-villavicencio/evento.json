@@ -1,0 +1,114 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "la-topia",
+  "nombres": "Lau y Jack",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "La Topia"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en La Topia, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en La Topia]"
+  },
+  "portada": "boda-la-topia-villavicencio-pareja-arco-tropical-iluminado.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-la-topia-villavicencio-salon-bambu-pista-iluminada.jpg",
+      "alt": "Salon bambu pista iluminada"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-arco-tropical-entrada-salon.jpg",
+      "alt": "Arco tropical entrada salon"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-centro-de-mesa-heliconias-y-velas.jpg",
+      "alt": "Centro de mesa heliconias y velas"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-ceremonia-arcos-bancas-de-madera.jpg",
+      "alt": "Ceremonia arcos bancas de madera"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-ceremonia-jardin-palmas-arcos.jpg",
+      "alt": "Ceremonia jardin palmas arcos"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-ceremonia-jardin-vista-lateral.jpg",
+      "alt": "Ceremonia jardin vista lateral"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-ceremonia-votos-arcos-tropicales.jpg",
+      "alt": "Ceremonia votos arcos tropicales"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-detalle-puesto-plato-de-mimbre.jpg",
+      "alt": "Detalle puesto plato de mimbre"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-disenador-arco-verde.jpg",
+      "alt": "Disenador arco verde"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-disenador-ceremonia-jardin.jpg",
+      "alt": "Disenador ceremonia jardin"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-libro-de-firmas-corazon-de-madera.jpg",
+      "alt": "Libro de firmas corazon de madera"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-mesa-de-bienvenida-cortinas.jpg",
+      "alt": "Mesa de bienvenida cortinas"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-mesa-de-bienvenida-flores-tropicales.jpg",
+      "alt": "Mesa de bienvenida flores tropicales"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-mesa-principal-heliconias.jpg",
+      "alt": "Mesa principal heliconias"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-mesas-invitados-centros-tropicales.jpg",
+      "alt": "Mesas invitados centros tropicales"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-paisaje-palmas-y-lago.jpg",
+      "alt": "Paisaje palmas y lago"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-pareja-arco-tropical-iluminado.jpg",
+      "alt": "Pareja arco tropical iluminado"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-pareja-arcos-verde-y-arena.jpg",
+      "alt": "Pareja arcos verde y arena"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-pareja-salida-ceremonia-tropical.jpg",
+      "alt": "Pareja salida ceremonia tropical"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-plano-de-mesas-invitados.jpg",
+      "alt": "Plano de mesas invitados"
+    },
+    {
+      "archivo": "boda-la-topia-villavicencio-primer-baile-salon-bambu.jpg",
+      "alt": "Primer baile salon bambu"
+    }
+  ]
+}

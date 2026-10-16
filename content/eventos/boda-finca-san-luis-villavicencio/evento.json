@@ -1,0 +1,110 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "finca-san-luis",
+  "nombres": "Luisa y Héctor",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca San Luis"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en Finca San Luis, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Finca San Luis]"
+  },
+  "portada": "boda-finca-san-luis-villavicencio-pareja-salida-ceremonia-invitados.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-ceremonia-pareja-sentados-altar.jpg",
+      "alt": "Ceremonia pareja sentados altar"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-altar-ceremonia-follaje-verde.jpg",
+      "alt": "Altar ceremonia follaje verde"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-altar-entre-arboles.jpg",
+      "alt": "Altar entre arboles"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-altar-telas-blancas-follaje.jpg",
+      "alt": "Altar telas blancas follaje"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-cartel-de-bienvenida-fotos.jpg",
+      "alt": "Cartel de bienvenida fotos"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-ceremonia-telas-entre-arboles.jpg",
+      "alt": "Ceremonia telas entre arboles"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-estante-de-postres-celosia.jpg",
+      "alt": "Estante de postres celosia"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-estante-de-recuerdos-detalle.jpg",
+      "alt": "Estante de recuerdos detalle"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-mesa-de-postres-celosia-y-follaje.jpg",
+      "alt": "Mesa de postres celosia y follaje"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-mesa-de-postres-entre-arboles.jpg",
+      "alt": "Mesa de postres entre arboles"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-mesa-de-torta-celosia-de-noche.jpg",
+      "alt": "Mesa de torta celosia de noche"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-altar-follaje-verde.jpg",
+      "alt": "Pareja altar follaje verde"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-beso-altar-de-noche.jpg",
+      "alt": "Pareja beso altar de noche"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-beso-arco-de-flores.jpg",
+      "alt": "Pareja beso arco de flores"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-brindis-jardin.jpg",
+      "alt": "Pareja brindis jardin"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-con-el-disenador.jpg",
+      "alt": "Pareja con el disenador"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-letras-iluminadas-iniciales.jpg",
+      "alt": "Pareja letras iluminadas iniciales"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-mesa-de-torta-celosia.jpg",
+      "alt": "Pareja mesa de torta celosia"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-salida-ceremonia-invitados.jpg",
+      "alt": "Pareja salida ceremonia invitados"
+    },
+    {
+      "archivo": "boda-finca-san-luis-villavicencio-pasillo-ceremonia-telas-colgantes.jpg",
+      "alt": "Pasillo ceremonia telas colgantes"
+    }
+  ]
+}

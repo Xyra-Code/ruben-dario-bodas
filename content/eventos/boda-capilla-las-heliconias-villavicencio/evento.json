@@ -1,0 +1,127 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "las-heliconias",
+  "titulo": "Boda con capilla en Las Heliconias, Villavicencio",
+  "nombres": "Naty y Milton",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Centro de Eventos Las Heliconias"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda con capilla en Las Heliconias, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro de Eventos Las Heliconias]"
+  },
+  "portada": "boda-capilla-las-heliconias-villavicencio-pareja-altar-capilla.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-salon-mesa-principal-lamparas-colgantes.jpg",
+      "alt": "Salon mesa principal lamparas colgantes"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-capilla-al-anochecer.jpg",
+      "alt": "Capilla al anochecer"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-capilla-entrada-muros-verdes.jpg",
+      "alt": "Capilla entrada muros verdes"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-capilla-interior-pasillo-y-velas.jpg",
+      "alt": "Capilla interior pasillo y velas"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-capilla-pasillo-blanco.jpg",
+      "alt": "Capilla pasillo blanco"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-centro-de-mesa-calas-y-velas.jpg",
+      "alt": "Centro de mesa calas y velas"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-detalle-puesto-plato-sweet-love.jpg",
+      "alt": "Detalle puesto plato sweet love"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-mesa-de-torta-arboles-de-follaje.jpg",
+      "alt": "Mesa de torta arboles de follaje"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-mesa-de-torta-marco-de-follaje.jpg",
+      "alt": "Mesa de torta marco de follaje"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-mesa-de-torta-muro-de-flores.jpg",
+      "alt": "Mesa de torta muro de flores"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-mesa-principal-ventanales-y-flores.jpg",
+      "alt": "Mesa principal ventanales y flores"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-mesas-redondas-centros-de-calas.jpg",
+      "alt": "Mesas redondas centros de calas"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-mesas-redondas-lamparas-de-cristal.jpg",
+      "alt": "Mesas redondas lamparas de cristal"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-novia-cola-de-encaje-jardin.jpg",
+      "alt": "Novia cola de encaje jardin"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-novia-retrato-ramo-de-calas.jpg",
+      "alt": "Novia retrato ramo de calas"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-pareja-altar-capilla.jpg",
+      "alt": "Pareja altar capilla"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-pareja-con-el-disenador.jpg",
+      "alt": "Pareja con el disenador"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-pareja-fuegos-artificiales.jpg",
+      "alt": "Pareja fuegos artificiales"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-pareja-velo-largo-jardin.jpg",
+      "alt": "Pareja velo largo jardin"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-pasillo-capilla-flores-blancas.jpg",
+      "alt": "Pasillo capilla flores blancas"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-primer-baile-pirotecnia-fria.jpg",
+      "alt": "Primer baile pirotecnia fria"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-salon-mesas-redondas-piso-ajedrez.jpg",
+      "alt": "Salon mesas redondas piso ajedrez"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-salon-mesas-redondas-vista-general.jpg",
+      "alt": "Salon mesas redondas vista general"
+    },
+    {
+      "archivo": "boda-capilla-las-heliconias-villavicencio-salon-pista-led-lamparas.jpg",
+      "alt": "Salon pista led lamparas"
+    }
+  ]
+}

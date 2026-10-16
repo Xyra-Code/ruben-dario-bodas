@@ -1,0 +1,131 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "las-heliconias",
+  "titulo": "Boda de jardín blanco en Las Heliconias, Villavicencio",
+  "nombres": "Alejandra y Fabián",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Centro de Eventos Las Heliconias"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda de jardín blanco en Las Heliconias, Villavicencio",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro de Eventos Las Heliconias]"
+  },
+  "portada": "boda-jardin-blanco-las-heliconias-villavicencio-pareja-salon-lamparas-colgantes.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-salon-lamparas-de-flecos.jpg",
+      "alt": "Salon lamparas de flecos"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-bienvenida-espejos-tallados.jpg",
+      "alt": "Bienvenida espejos tallados"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-centro-de-mesa-hortensias-mesa-redonda.jpg",
+      "alt": "Centro de mesa hortensias mesa redonda"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-ceremonia-arco-hortensias-blancas.jpg",
+      "alt": "Ceremonia arco hortensias blancas"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-ceremonia-intercambio-de-anillos.jpg",
+      "alt": "Ceremonia intercambio de anillos"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-ceremonia-invitados-jardin.jpg",
+      "alt": "Ceremonia invitados jardin"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-ceremonia-jardin-sillas-blancas.jpg",
+      "alt": "Ceremonia jardin sillas blancas"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-mesa-de-los-novios-cortinas-lila.jpg",
+      "alt": "Mesa de los novios cortinas lila"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-mesa-imperial-centro-de-mesa-alto.jpg",
+      "alt": "Mesa imperial centro de mesa alto"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-mesa-lamparas-y-portarretratos.jpg",
+      "alt": "Mesa lamparas y portarretratos"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-mesa-principal-velas-y-flores.jpg",
+      "alt": "Mesa principal velas y flores"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-mesa-principal-ventanales-iluminados.jpg",
+      "alt": "Mesa principal ventanales iluminados"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-mesas-redondas-platos-dorados.jpg",
+      "alt": "Mesas redondas platos dorados"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-novia-altar-velas-de-noche.jpg",
+      "alt": "Novia altar velas de noche"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-novia-fiesta-con-invitados.jpg",
+      "alt": "Novia fiesta con invitados"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-novia-mesa-principal-lamparas-de-cristal.jpg",
+      "alt": "Novia mesa principal lamparas de cristal"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-novia-retrato-velo-jardin.jpg",
+      "alt": "Novia retrato velo jardin"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-novio-altar-ventanales-blancos.jpg",
+      "alt": "Novio altar ventanales blancos"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-pareja-fuegos-artificiales.jpg",
+      "alt": "Pareja fuegos artificiales"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-pareja-salida-de-la-ceremonia.jpg",
+      "alt": "Pareja salida de la ceremonia"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-pareja-salon-lamparas-colgantes.jpg",
+      "alt": "Pareja salon lamparas colgantes"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-pasillo-ceremonia-alfombra-blanca.jpg",
+      "alt": "Pasillo ceremonia alfombra blanca"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-salon-lamparas-geometricas-pista-ajedrez.jpg",
+      "alt": "Salon lamparas geometricas pista ajedrez"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-salon-mesas-iluminacion-lila.jpg",
+      "alt": "Salon mesas iluminacion lila"
+    },
+    {
+      "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-salon-pista-iluminada-cortinas.jpg",
+      "alt": "Salon pista iluminada cortinas"
+    }
+  ]
+}

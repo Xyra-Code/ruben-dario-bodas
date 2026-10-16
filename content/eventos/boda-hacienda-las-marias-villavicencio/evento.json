@@ -1,0 +1,134 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "hacienda-las-marias",
+  "nombres": "Laura y Sebastián",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Hacienda Las Marías"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": " eBoda en Hacienda Las Marías, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la bodan Hacienda Las Marías]"
+  },
+  "portada": "boda-hacienda-las-marias-villavicencio-pareja-salon-techo-ondulado.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-salon-mesas-lampara-de-cristal.jpg",
+      "alt": "Salon mesas lampara de cristal"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-arcos-de-flores-blancas-ventanales.jpg",
+      "alt": "Arcos de flores blancas ventanales"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-ceremonia-religiosa-votos.jpg",
+      "alt": "Ceremonia religiosa votos"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-detalle-puesto-plato-dorado.jpg",
+      "alt": "Detalle puesto plato dorado"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-detalles-de-la-novia-zapatos-y-anillo.jpg",
+      "alt": "Detalles de la novia zapatos y anillo"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-con-retrato-de-los-novios.jpg",
+      "alt": "Mesa con retrato de los novios"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-imperial-platos-dorados.jpg",
+      "alt": "Mesa imperial platos dorados"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-invitados-centro-de-flores-blancas.jpg",
+      "alt": "Mesa invitados centro de flores blancas"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-invitados-techo-ondulado.jpg",
+      "alt": "Mesa invitados techo ondulado"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-principal-celosia-blanca.jpg",
+      "alt": "Mesa principal celosia blanca"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-principal-flores-y-follaje.jpg",
+      "alt": "Mesa principal flores y follaje"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-mesa-principal-sillas-doradas.jpg",
+      "alt": "Mesa principal sillas doradas"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-novia-retrato-jardin-sentada.jpg",
+      "alt": "Novia retrato jardin sentada"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-novia-retrato-jardin-tropical.jpg",
+      "alt": "Novia retrato jardin tropical"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-novia-retrato-pared-y-follaje.jpg",
+      "alt": "Novia retrato pared y follaje"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-pareja-arcos-jardin-interior.jpg",
+      "alt": "Pareja arcos jardin interior"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-pareja-mesa-de-torta-arco-blanco.jpg",
+      "alt": "Pareja mesa de torta arco blanco"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-pareja-mesa-principal-flores-blancas.jpg",
+      "alt": "Pareja mesa principal flores blancas"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-pareja-salon-lamparas-de-cristal.jpg",
+      "alt": "Pareja salon lamparas de cristal"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-pareja-salon-techo-ondulado.jpg",
+      "alt": "Pareja salon techo ondulado"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-primer-baile-pirotecnia-fria.jpg",
+      "alt": "Primer baile pirotecnia fria"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-salon-mesas-y-mesa-de-bienvenida.jpg",
+      "alt": "Salon mesas y mesa de bienvenida"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-salon-montaje-general-techo-de-telas.jpg",
+      "alt": "Salon montaje general techo de telas"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-salon-techo-ondulado-vista-general.jpg",
+      "alt": "Salon techo ondulado vista general"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-salon-vista-general-arcos-de-flores.jpg",
+      "alt": "Salon vista general arcos de flores"
+    },
+    {
+      "archivo": "boda-hacienda-las-marias-villavicencio-torta-de-bodas-arco-de-madera.jpg",
+      "alt": "Torta de bodas arco de madera"
+    }
+  ]
+}

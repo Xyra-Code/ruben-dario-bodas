@@ -1,0 +1,110 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "el-campanario",
+  "nombres": "Caro y Andy",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "El Campanario"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en El Campanario, Restrepo | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en El Campanario]"
+  },
+  "portada": "boda-el-campanario-restrepo-pareja-salon-iluminado.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-el-campanario-restrepo-salon-arcos-lamparas-de-cristal.jpg",
+      "alt": "Salon arcos lamparas de cristal"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-entrada-flores-blancas-y-velas.jpg",
+      "alt": "Entrada flores blancas y velas"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-iglesia-altar-flores-blancas.jpg",
+      "alt": "Iglesia altar flores blancas"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-mesa-principal-flores-blancas-ventanales.jpg",
+      "alt": "Mesa principal flores blancas ventanales"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-mesa-redonda-centro-de-mesa-blanco.jpg",
+      "alt": "Mesa redonda centro de mesa blanco"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-mesas-invitados-flores-blancas.jpg",
+      "alt": "Mesas invitados flores blancas"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-novia-sendero-jardin-tropical.jpg",
+      "alt": "Novia sendero jardin tropical"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-novia-velo-al-viento-salon.jpg",
+      "alt": "Novia velo al viento salon"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-atardecer-arbol-seco.jpg",
+      "alt": "Pareja atardecer arbol seco"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-ceremonia-iglesia.jpg",
+      "alt": "Pareja ceremonia iglesia"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-mesa-de-los-novios-velas.jpg",
+      "alt": "Pareja mesa de los novios velas"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-mesa-principal-flores.jpg",
+      "alt": "Pareja mesa principal flores"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-potrero-atardecer.jpg",
+      "alt": "Pareja potrero atardecer"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-reflejo-salon-de-noche.jpg",
+      "alt": "Pareja reflejo salon de noche"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-salon-iluminado.jpg",
+      "alt": "Pareja salon iluminado"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pareja-salon-lamparas.jpg",
+      "alt": "Pareja salon lamparas"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-pista-led-salon-iluminado.jpg",
+      "alt": "Pista led salon iluminado"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-primer-baile-chispas.jpg",
+      "alt": "Primer baile chispas"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-salon-montaje-general-lamparas-colgantes.jpg",
+      "alt": "Salon montaje general lamparas colgantes"
+    },
+    {
+      "archivo": "boda-el-campanario-restrepo-salon-piso-ajedrez-mesas-imperiales.jpg",
+      "alt": "Salon piso ajedrez mesas imperiales"
+    }
+  ]
+}

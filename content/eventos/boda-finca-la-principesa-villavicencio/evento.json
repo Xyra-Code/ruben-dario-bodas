@@ -1,0 +1,110 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "finca-la-principesa",
+  "nombres": "Nathalya y Hairom",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca La Principesa"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en Finca La Principesa, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Finca La Principesa]"
+  },
+  "portada": "boda-finca-la-principesa-villavicencio-pareja-salon-pista-led.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-mesa-principal-faroles-dorados.jpg",
+      "alt": "Mesa principal faroles dorados"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-ceremonia-sillas-de-lira-jardin.jpg",
+      "alt": "Ceremonia sillas de lira jardin"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-fuegos-artificiales-letras-iluminadas.jpg",
+      "alt": "Fuegos artificiales letras iluminadas"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-lampara-de-cristal-corona-de-flores.jpg",
+      "alt": "Lampara de cristal corona de flores"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-mesa-de-recuerdos-fotos-y-flores.jpg",
+      "alt": "Mesa de recuerdos fotos y flores"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-mesa-invitados-flores-blancas-y-velas.jpg",
+      "alt": "Mesa invitados flores blancas y velas"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-mesa-principal-sillas-doradas.jpg",
+      "alt": "Mesa principal sillas doradas"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-novia-cola-de-tul-salon.jpg",
+      "alt": "Novia cola de tul salon"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-novia-llegada-en-carro-decorado.jpg",
+      "alt": "Novia llegada en carro decorado"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-celebracion-salida-ceremonia.jpg",
+      "alt": "Pareja celebracion salida ceremonia"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-ceremonia-sentados-jardin.jpg",
+      "alt": "Pareja ceremonia sentados jardin"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-con-el-disenador.jpg",
+      "alt": "Pareja con el disenador"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-mesa-de-torta-follaje.jpg",
+      "alt": "Pareja mesa de torta follaje"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-mesa-principal-flores-blancas.jpg",
+      "alt": "Pareja mesa principal flores blancas"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-pasillo-ceremonia-de-noche.jpg",
+      "alt": "Pareja pasillo ceremonia de noche"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-pirotecnia-fria-letras.jpg",
+      "alt": "Pareja pirotecnia fria letras"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-pirotecnia-letras-you-and-me.jpg",
+      "alt": "Pareja pirotecnia letras you and me"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-pareja-salon-pista-led.jpg",
+      "alt": "Pareja salon pista led"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-primer-baile-pirotecnia-fria.jpg",
+      "alt": "Primer baile pirotecnia fria"
+    },
+    {
+      "archivo": "boda-finca-la-principesa-villavicencio-torta-de-bodas-flores-blancas.jpg",
+      "alt": "Torta de bodas flores blancas"
+    }
+  ]
+}

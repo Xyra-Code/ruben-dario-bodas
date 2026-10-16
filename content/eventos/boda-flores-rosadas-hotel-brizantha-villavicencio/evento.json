@@ -1,0 +1,143 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "hotel-brizantha",
+  "titulo": "Boda con flores rosadas en el Hotel Brizantha, Villavicencio",
+  "nombres": "Lida y Carlos",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Hotel Brizantha"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda con flores rosadas en el Hotel Brizantha, Villavicencio",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Hotel Brizantha]"
+  },
+  "portada": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-con-el-disenador.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-salon-pista-led-lamparas.jpg",
+      "alt": "Salon pista led lamparas"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-altar-ceremonia-kiosco-de-flores.jpg",
+      "alt": "Altar ceremonia kiosco de flores"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-altar-muro-floral-jardin.jpg",
+      "alt": "Altar muro floral jardin"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-arbol-con-jaulas-y-flores.jpg",
+      "alt": "Arbol con jaulas y flores"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-arco-de-flores-cortinas-blancas.jpg",
+      "alt": "Arco de flores cortinas blancas"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-arreglo-floral-pedestal-jardin.jpg",
+      "alt": "Arreglo floral pedestal jardin"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-ceremonia-invitados-sillas-de-madera.jpg",
+      "alt": "Ceremonia invitados sillas de madera"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-kiosco-ceremonia-vista-lateral.jpg",
+      "alt": "Kiosco ceremonia vista lateral"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-lampara-de-flecos-detalle.jpg",
+      "alt": "Lampara de flecos detalle"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-mesa-de-torta-muro-de-flores.jpg",
+      "alt": "Mesa de torta muro de flores"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-mesa-imperial-centro-de-mesa-alto.jpg",
+      "alt": "Mesa imperial centro de mesa alto"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-mesa-imperial-flores-rosadas-sillas-de-madera.jpg",
+      "alt": "Mesa imperial flores rosadas sillas de madera"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-mesa-principal-estanteria-y-flores.jpg",
+      "alt": "Mesa principal estanteria y flores"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-novia-cola-de-encaje-salon.jpg",
+      "alt": "Novia cola de encaje salon"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-panel-de-fotos-de-los-novios.jpg",
+      "alt": "Panel de fotos de los novios"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-altar-de-noche.jpg",
+      "alt": "Pareja altar de noche"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-ceremonia-sentados.jpg",
+      "alt": "Pareja ceremonia sentados"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-con-el-disenador.jpg",
+      "alt": "Pareja con el disenador"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-firma-ceremonia.jpg",
+      "alt": "Pareja firma ceremonia"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-fuegos-artificiales.jpg",
+      "alt": "Pareja fuegos artificiales"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-mesa-de-torta-muro-floral.jpg",
+      "alt": "Pareja mesa de torta muro floral"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-mesa-principal-flores-rosadas.jpg",
+      "alt": "Pareja mesa principal flores rosadas"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-pasillo-ceremonia-atardecer.jpg",
+      "alt": "Pareja pasillo ceremonia atardecer"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-pista-led.jpg",
+      "alt": "Pareja pista led"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-salida-bengalas.jpg",
+      "alt": "Pareja salida bengalas"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pasillo-ceremonia-flores-rosadas.jpg",
+      "alt": "Pasillo ceremonia flores rosadas"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-pasillo-ceremonia-vista-general.jpg",
+      "alt": "Pasillo ceremonia vista general"
+    },
+    {
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-serenata-con-guitarra.jpg",
+      "alt": "Serenata con guitarra"
+    }
+  ]
+}

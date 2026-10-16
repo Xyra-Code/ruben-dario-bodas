@@ -1,0 +1,106 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "san-gabriel-de-las-palmas",
+  "nombres": "Yuliana y Jhony",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Centro Vacacional San Gabriel de las Palmas"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en San Gabriel de las Palmas, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro Vacacional San Gabriel de las Palmas]"
+  },
+  "portada": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-altar-flores-blancas.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-salon-mesas-pantalla-led.jpg",
+      "alt": "Salon mesas pantalla led"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-altar-ventanales-flores-blancas.jpg",
+      "alt": "Altar ventanales flores blancas"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-ceremonia-novios-sentados-altar.jpg",
+      "alt": "Ceremonia novios sentados altar"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-disenador-pasillo-ceremonia.jpg",
+      "alt": "Disenador pasillo ceremonia"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-mesa-imperial-centro-de-follaje.jpg",
+      "alt": "Mesa imperial centro de follaje"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-mesa-imperial-terraza-de-noche.jpg",
+      "alt": "Mesa imperial terraza de noche"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-novia-pasillo-ceremonia-jardin.jpg",
+      "alt": "Novia pasillo ceremonia jardin"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-novia-salon-techo-de-rosas.jpg",
+      "alt": "Novia salon techo de rosas"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-novio-retrato-pista-led.jpg",
+      "alt": "Novio retrato pista led"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-altar-flores-blancas.jpg",
+      "alt": "Pareja altar flores blancas"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-con-bailarinas.jpg",
+      "alt": "Pareja con bailarinas"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-mesa-principal-cortinas-de-luz.jpg",
+      "alt": "Pareja mesa principal cortinas de luz"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-mesa-principal-follaje.jpg",
+      "alt": "Pareja mesa principal follaje"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-salon-pista-led.jpg",
+      "alt": "Pareja salon pista led"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pasillo-ceremonia-flores-y-velas.jpg",
+      "alt": "Pasillo ceremonia flores y velas"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pasillo-ceremonia-jardin-tropical.jpg",
+      "alt": "Pasillo ceremonia jardin tropical"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-primer-baile-pirotecnia-fria.jpg",
+      "alt": "Primer baile pirotecnia fria"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-salon-mesas-techo-de-rosas.jpg",
+      "alt": "Salon mesas techo de rosas"
+    },
+    {
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-sillas-de-los-novios-ceremonia.jpg",
+      "alt": "Sillas de los novios ceremonia"
+    }
+  ]
+}

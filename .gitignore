@@ -51,3 +51,7 @@ next-env.d.ts
 # capturas de QA (scripts/capturas.mjs)
 /capturas/
 pr-descriptions/
+
+# fotos en espera de importar (npm run fotos:importar); solo se versiona el LEEME
+/fotos-pendientes/*
+!/fotos-pendientes/LEEME.md

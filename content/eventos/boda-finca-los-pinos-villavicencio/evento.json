@@ -1,0 +1,126 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "finca-los-pinos",
+  "nombres": "Angie y Samuel",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca Los Pinos"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en Finca Los Pinos, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Finca Los Pinos]"
+  },
+  "portada": "boda-finca-los-pinos-villavicencio-primer-baile-pista-iluminada.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-salon-mesa-principal-techo-de-telas.jpg",
+      "alt": "Salon mesa principal techo de telas"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-centro-de-mesa-hortensias-platos-dorados.jpg",
+      "alt": "Centro de mesa hortensias platos dorados"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-ceremonia-pareja-e-invitados.jpg",
+      "alt": "Ceremonia pareja e invitados"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-fondo-floral-arco-iluminado.jpg",
+      "alt": "Fondo floral arco iluminado"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-mesa-de-torta-flores-pastel.jpg",
+      "alt": "Mesa de torta flores pastel"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-mesa-imperial-centro-de-mesa-alto.jpg",
+      "alt": "Mesa imperial centro de mesa alto"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-mesa-principal-esferas-de-luz.jpg",
+      "alt": "Mesa principal esferas de luz"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-mesa-principal-ventanales-y-flores.jpg",
+      "alt": "Mesa principal ventanales y flores"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-mesas-invitados-techo-de-telas.jpg",
+      "alt": "Mesas invitados techo de telas"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-novia-cola-de-encaje-pista.jpg",
+      "alt": "Novia cola de encaje pista"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-novia-entrada-ceremonia.jpg",
+      "alt": "Novia entrada ceremonia"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-novia-velo-al-viento-salon.jpg",
+      "alt": "Novia velo al viento salon"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-novia-velo-de-encaje-jardin.jpg",
+      "alt": "Novia velo de encaje jardin"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-novio-retrato-jardin.jpg",
+      "alt": "Novio retrato jardin"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-pareja-altar-jardin.jpg",
+      "alt": "Pareja altar jardin"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-pareja-arco-de-flores-pastel.jpg",
+      "alt": "Pareja arco de flores pastel"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-pareja-celebracion-salida-ceremonia.jpg",
+      "alt": "Pareja celebracion salida ceremonia"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-pareja-ceremonia-jardin-de-noche.jpg",
+      "alt": "Pareja ceremonia jardin de noche"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-pareja-letras-you-and-me-piscina.jpg",
+      "alt": "Pareja letras you and me piscina"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-pareja-mesa-de-torta.jpg",
+      "alt": "Pareja mesa de torta"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-primer-baile-pista-iluminada.jpg",
+      "alt": "Primer baile pista iluminada"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-salon-montaje-general-telas.jpg",
+      "alt": "Salon montaje general telas"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-silla-de-los-novios-flores-pastel.jpg",
+      "alt": "Silla de los novios flores pastel"
+    },
+    {
+      "archivo": "boda-finca-los-pinos-villavicencio-torta-de-bodas-garzas-doradas.jpg",
+      "alt": "Torta de bodas garzas doradas"
+    }
+  ]
+}

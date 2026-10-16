@@ -1,31 +1,90 @@
 [
   {
-    "borrador": true,
-    "slug": "hacienda-el-caney",
-    "nombre": "Hacienda El Caney",
+    "slug": "hacienda-la-primavera",
+    "nombre": "Hacienda La Primavera",
     "tipo": "hacienda",
-    "municipio": "Restrepo",
+    "municipio": "Villavicencio",
     "departamento": "Meta",
-    "capacidad": "Hasta 250 invitados",
     "enGuia": true
   },
   {
-    "borrador": true,
-    "slug": "salon-rosales",
-    "nombre": "Salón Rosales",
+    "slug": "las-heliconias",
+    "nombre": "Centro de Eventos Las Heliconias",
     "tipo": "salon",
     "municipio": "Villavicencio",
     "departamento": "Meta",
-    "capacidad": "Hasta 180 invitados",
     "enGuia": true
   },
   {
-    "borrador": true,
-    "slug": "finca-la-esperanza",
-    "nombre": "Finca La Esperanza",
+    "slug": "finca-los-pinos",
+    "nombre": "Finca Los Pinos",
     "tipo": "finca",
-    "municipio": "Acacías",
+    "municipio": "Villavicencio",
     "departamento": "Meta",
-    "enGuia": false
+    "enGuia": true
+  },
+  {
+    "slug": "el-campanario",
+    "nombre": "El Campanario",
+    "tipo": "otro",
+    "municipio": "Restrepo",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "la-topia",
+    "nombre": "La Topia",
+    "tipo": "otro",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "hacienda-las-marias",
+    "nombre": "Hacienda Las Marías",
+    "tipo": "hacienda",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "hotel-brizantha",
+    "nombre": "Hotel Brizantha",
+    "tipo": "hotel",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "finca-san-luis",
+    "nombre": "Finca San Luis",
+    "tipo": "finca",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "condominio-palma-real",
+    "nombre": "Condominio Palma Real",
+    "tipo": "otro",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "finca-la-principesa",
+    "nombre": "Finca La Principesa",
+    "tipo": "finca",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
+  },
+  {
+    "slug": "san-gabriel-de-las-palmas",
+    "nombre": "Centro Vacacional San Gabriel de las Palmas",
+    "tipo": "otro",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": true
   }
 ]

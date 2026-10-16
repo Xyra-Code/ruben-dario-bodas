@@ -1,0 +1,123 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "hotel-brizantha",
+  "titulo": "Boda verde tropical en el Hotel Brizantha, Villavicencio",
+  "nombres": "Mafe y Sebas",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Hotel Brizantha"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda verde tropical en el Hotel Brizantha, Villavicencio",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Hotel Brizantha]"
+  },
+  "portada": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-mesa-principal-follaje.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-mesa-principal-ventanales-follaje.jpg",
+      "alt": "Mesa principal ventanales follaje"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-ceremonia-invitados-lamparas-de-macrame.jpg",
+      "alt": "Ceremonia invitados lamparas de macrame"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-ceremonia-pasillo-vista-desde-el-altar.jpg",
+      "alt": "Ceremonia pasillo vista desde el altar"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-detalle-pasillo-macrame-y-monstera.jpg",
+      "alt": "Detalle pasillo macrame y monstera"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-disenador-pasillo-ceremonia.jpg",
+      "alt": "Disenador pasillo ceremonia"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-estanteria-de-recuerdos-follaje.jpg",
+      "alt": "Estanteria de recuerdos follaje"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-fondo-arco-iluminado-telas-verdes.jpg",
+      "alt": "Fondo arco iluminado telas verdes"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-invitados-ceremonia-jardin.jpg",
+      "alt": "Invitados ceremonia jardin"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-kiosco-ceremonia-vista-general.jpg",
+      "alt": "Kiosco ceremonia vista general"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-mesas-invitados-luz-verde.jpg",
+      "alt": "Mesas invitados luz verde"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-novia-arco-blanco-jardin.jpg",
+      "alt": "Novia arco blanco jardin"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-novia-jardin-cola-larga.jpg",
+      "alt": "Novia jardin cola larga"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-novia-retrato-velo.jpg",
+      "alt": "Novia retrato velo"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-novia-salon-telas-verdes.jpg",
+      "alt": "Novia salon telas verdes"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-novio-retrato-jardin.jpg",
+      "alt": "Novio retrato jardin"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-altar-kiosco.jpg",
+      "alt": "Pareja altar kiosco"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-arco-blanco-sentados.jpg",
+      "alt": "Pareja arco blanco sentados"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-arco-iluminado-telas-verdes.jpg",
+      "alt": "Pareja arco iluminado telas verdes"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-mesa-principal-follaje.jpg",
+      "alt": "Pareja mesa principal follaje"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-salon-lamparas-de-cristal.jpg",
+      "alt": "Pareja salon lamparas de cristal"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-sentados-fondo-iluminado.jpg",
+      "alt": "Pareja sentados fondo iluminado"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pasillo-ceremonia-lamparas-de-macrame.jpg",
+      "alt": "Pasillo ceremonia lamparas de macrame"
+    },
+    {
+      "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pasillo-ceremonia-velas-y-follaje.jpg",
+      "alt": "Pasillo ceremonia velas y follaje"
+    }
+  ]
+}

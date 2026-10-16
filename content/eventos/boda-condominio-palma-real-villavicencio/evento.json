@@ -1,0 +1,118 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "condominio-palma-real",
+  "nombres": "Marce y Criss",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Condominio Palma Real"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en Condominio Palma Real, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Condominio Palma Real]"
+  },
+  "portada": "boda-condominio-palma-real-villavicencio-pareja-salon-iluminado.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-salon-mesa-principal-techo-de-rosas.jpg",
+      "alt": "Salon mesa principal techo de rosas"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-arco-de-flores-entrada-salon.jpg",
+      "alt": "Arco de flores entrada salon"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-detalle-puesto-plato-dorado.jpg",
+      "alt": "Detalle puesto plato dorado"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-iglesia-ceremonia-invitados.jpg",
+      "alt": "Iglesia ceremonia invitados"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-iglesia-novia-velo-largo.jpg",
+      "alt": "Iglesia novia velo largo"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-iglesia-novios-altar.jpg",
+      "alt": "Iglesia novios altar"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-mesa-de-torta-arboles-de-flores.jpg",
+      "alt": "Mesa de torta arboles de flores"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-mesa-de-torta-flores-blancas-luz-verde.jpg",
+      "alt": "Mesa de torta flores blancas luz verde"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-mesa-imperial-centro-de-mesa-alto.jpg",
+      "alt": "Mesa imperial centro de mesa alto"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-mesa-principal-celosia-luz-verde.jpg",
+      "alt": "Mesa principal celosia luz verde"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-mesa-principal-flores-blancas-vertical.jpg",
+      "alt": "Mesa principal flores blancas vertical"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-mesa-redonda-centro-de-mesa-alto.jpg",
+      "alt": "Mesa redonda centro de mesa alto"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-pareja-con-el-disenador.jpg",
+      "alt": "Pareja con el disenador"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-pareja-palmera-al-anochecer.jpg",
+      "alt": "Pareja palmera al anochecer"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-pareja-salon-iluminado.jpg",
+      "alt": "Pareja salon iluminado"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-pareja-salon-mesas.jpg",
+      "alt": "Pareja salon mesas"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-pista-led-salon.jpg",
+      "alt": "Pista led salon"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-salon-mesa-principal-ventanales.jpg",
+      "alt": "Salon mesa principal ventanales"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-salon-mesas-techo-de-rosas.jpg",
+      "alt": "Salon mesas techo de rosas"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-salon-mesas-techo-de-telas.jpg",
+      "alt": "Salon mesas techo de telas"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-salon-mesas-y-mesa-principal.jpg",
+      "alt": "Salon mesas y mesa principal"
+    },
+    {
+      "archivo": "boda-condominio-palma-real-villavicencio-salon-techo-de-rosas-de-tela.jpg",
+      "alt": "Salon techo de rosas de tela"
+    }
+  ]
+}

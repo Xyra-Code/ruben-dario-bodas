@@ -1,0 +1,155 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "las-heliconias",
+  "titulo": "Boda en rosa en Las Heliconias, Villavicencio",
+  "nombres": "Isa y Carlos",
+  "estilo": "[PENDIENTE: estilo]",
+  "paleta": [],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Centro de Eventos Las Heliconias"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda en rosa en Las Heliconias, Villavicencio | Rubén Darío",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro de Eventos Las Heliconias]"
+  },
+  "portada": "boda-rosa-las-heliconias-villavicencio-pareja-con-el-disenador.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-salon-lampara-central-telas.jpg",
+      "alt": "Salon lampara central telas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-altar-ceremonia-jardin.jpg",
+      "alt": "Altar ceremonia jardin"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-centro-de-mesa-alto-cristales.jpg",
+      "alt": "Centro de mesa alto cristales"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-ceremonia-arcos-verdes-altar.jpg",
+      "alt": "Ceremonia arcos verdes altar"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-ceremonia-jardin-flores-rosadas.jpg",
+      "alt": "Ceremonia jardin flores rosadas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-ceremonia-jardin-vista-lateral.jpg",
+      "alt": "Ceremonia jardin vista lateral"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-ceremonia-pasillo-invitados.jpg",
+      "alt": "Ceremonia pasillo invitados"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-entrada-salon-cortinas-blancas.jpg",
+      "alt": "Entrada salon cortinas blancas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-mesa-de-torta-marco-de-flores-rosadas.jpg",
+      "alt": "Mesa de torta marco de flores rosadas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-mesa-imperial-platos-dorados.jpg",
+      "alt": "Mesa imperial platos dorados"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-mesa-principal-flores-rosadas.jpg",
+      "alt": "Mesa principal flores rosadas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-mesa-principal-techo-de-telas.jpg",
+      "alt": "Mesa principal techo de telas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-mesa-puesto-plato-dorado-flores-rosadas.jpg",
+      "alt": "Mesa puesto plato dorado flores rosadas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-mesas-invitados-terraza.jpg",
+      "alt": "Mesas invitados terraza"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-novia-arboles-de-flores-noche.jpg",
+      "alt": "Novia arboles de flores noche"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-novia-arco-verde-jardin.jpg",
+      "alt": "Novia arco verde jardin"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-altar-ceremonia.jpg",
+      "alt": "Pareja altar ceremonia"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-arcos-ceremonia-jardin.jpg",
+      "alt": "Pareja arcos ceremonia jardin"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-arcos-de-noche.jpg",
+      "alt": "Pareja arcos de noche"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-con-el-disenador.jpg",
+      "alt": "Pareja con el disenador"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-entrada-pirotecnia-fria.jpg",
+      "alt": "Pareja entrada pirotecnia fria"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-mesa-de-torta.jpg",
+      "alt": "Pareja mesa de torta"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-pista-monograma.jpg",
+      "alt": "Pareja pista monograma"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pareja-salida-ceremonia-pirotecnia.jpg",
+      "alt": "Pareja salida ceremonia pirotecnia"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pasillo-ceremonia-arboles-de-flores.jpg",
+      "alt": "Pasillo ceremonia arboles de flores"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-pista-monograma-mesa-principal.jpg",
+      "alt": "Pista monograma mesa principal"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-salon-mesa-principal-cortinas.jpg",
+      "alt": "Salon mesa principal cortinas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-salon-mesas-lamparas-de-cristal.jpg",
+      "alt": "Salon mesas lamparas de cristal"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-salon-montaje-general-flores-rosadas.jpg",
+      "alt": "Salon montaje general flores rosadas"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-salon-techo-de-lamparas-colgantes.jpg",
+      "alt": "Salon techo de lamparas colgantes"
+    },
+    {
+      "archivo": "boda-rosa-las-heliconias-villavicencio-vista-general-ceremonia-jardin.jpg",
+      "alt": "Vista general ceremonia jardin"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "hacienda-la-primavera",
+  "titulo": "Boda romántica en Hacienda La Primavera, Villavicencio",
+  "nombres": "Caro y Pipe",
+  "estilo": "Romántico clásico",
+  "paleta": [
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Marfil",
+      "hex": "#F4EEE3"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    }
+  ],
+  "fecha": "[PENDIENTE: fecha]",
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: qué hizo especial el diseño de este evento]",
+    "[PENDIENTE: detalles del montaje: techo de telas, arco dorado, flores blancas, iluminación]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Hacienda La Primavera"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda romántica en Hacienda La Primavera, Villavicencio",
+    "description": "Boda romántica en Hacienda La Primavera, Villavicencio: techo de telas, arco dorado y flores blancas. Mira el diseño completo del montaje."
+  },
+  "portada": "boda-romantica-hacienda-la-primavera-villavicencio-pareja-mesa-principal.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-salon-lampara-de-telas.jpg",
+      "alt": "Salón de la hacienda con lámpara de telas blancas en el techo y mesas de madera"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-mesa-principal-arco-dorado.jpg",
+      "alt": "Mesa principal con arco dorado, flores blancas y faroles sobre piso ajedrezado"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-entrada-arco-floral.jpg",
+      "alt": "Entrada al salón con arco de flores blancas y puertas de madera tallada"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-mesa-imperial-centro-de-mesa-alto.jpg",
+      "alt": "Mesa imperial con centro de mesa alto de flores blancas y lámparas colgantes"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-detalle-puesto-plato-dorado.jpg",
+      "alt": "Detalle de puesto con plato base dorado, copas y arreglo de flores blancas"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-salon-montaje-general.jpg",
+      "alt": "Vista general del montaje con telas en el techo, lámparas y pista iluminada"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-mesas-invitados-lamparas-colgantes.jpg",
+      "alt": "Mesas de invitados bajo lámparas colgantes y techo de vigas de madera"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-mesa-principal-techo-de-telas.jpg",
+      "alt": "Mesa principal de los novios bajo un techo de telas blancas"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-mesa-principal-flores-y-velas.jpg",
+      "alt": "Mesa principal con flores blancas, velas y faroles al pie del arco"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-pareja-arco-dorado-con-flores.jpg",
+      "alt": "Novios frente al arco dorado con flores blancas y esferas de luz"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-pareja-mesa-principal.jpg",
+      "alt": "Novios junto a la mesa principal decorada con flores blancas"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-pareja-velo-techo-de-telas.jpg",
+      "alt": "Novios con el velo extendido bajo el techo de telas del salón"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-pareja-velo-salon-iluminado.jpg",
+      "alt": "Novios abrazados con el velo en primer plano y el salón iluminado detrás"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-ceremonia-votos.jpg",
+      "alt": "Novios tomados de la mano durante los votos frente a los invitados"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-primer-baile-bajo-telas.jpg",
+      "alt": "Primer baile de los novios bajo el techo de telas blancas"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-primer-baile-pista-led.jpg",
+      "alt": "Primer baile de los novios sobre la pista de baile iluminada"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-fiesta-pista-de-baile.jpg",
+      "alt": "Novios e invitados bailando en la fiesta con luces de colores"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-novia-ramo-puerta-colonial.jpg",
+      "alt": "Novia con ramo de flores junto a una puerta de madera colonial"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-novia-retrato-ventana.jpg",
+      "alt": "Retrato de la novia sentada con su ramo junto a una ventana"
+    },
+    {
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-novio-pared-terracota.jpg",
+      "alt": "Novio de traje blanco junto a una pared terracota con faroles"
+    }
+  ]
+}
