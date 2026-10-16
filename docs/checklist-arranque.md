@@ -23,7 +23,7 @@ Prioridad: 🔴 bloquea el diseño o el desarrollo · 🟡 se necesita antes del
 - [ ] 🔴 **Tipografía:** la de su marca o una propuesta de XyraCode para aprobar.
 - [ ] 🔴 **Referencias visuales:** 3–5 sitios o cuentas que le gusten y 2–3 que no, y por qué.
 - [ ] 🟡 Estilo que quiere transmitir: elegante, rústico, moderno, cálido, lujoso…
-- [ ] 🟡 **Tono hacia sus clientes: ¿usted o tú?** Define cómo se escriben todos los textos del sitio.
+- [x] 🟡 **Tono hacia sus clientes:** tú (2026-10-13). Todos los textos del sitio tutean al visitante.
 
 ## 3. Datos del negocio (deben coincidir con Google Business)
 

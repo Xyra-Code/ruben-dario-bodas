@@ -5,7 +5,7 @@ diseño y decoración de eventos. Diseña **todas las pantallas listadas abajo**
 (390 px) y escritorio (1440 px)**. El diseño es **móvil primero**: la mayoría de visitantes
 llega desde el celular, muchas veces desde un enlace compartido por WhatsApp.
 
-Todo el texto del sitio va **en español de Colombia, con trato formal (usted)**.
+Todo el texto del sitio va **en español de Colombia, tuteando al visitante (tú, nunca usted)**.
 
 ---
 

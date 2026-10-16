@@ -26,6 +26,9 @@ Esto aplica especialmente a la **exportación estática**.
   empresa). Se configura en `content/sitio.json` → `cobertura` y debe coincidir con el área
   de servicio de Google Business.
 - Con el cliente: **trato formal (usted)** en documentos y mensajes. Referirse a "la empresa".
+- **Textos del sitio: todo en tú, nunca en usted** (decisión del 2026-10-13). Aplica a títulos,
+  botones, formularios, mensajes de error, aria-labels, metadescripciones y contenido en
+  `content/`. Los mensajes de WhatsApp que arma el sitio van en la voz del visitante.
 - Pronombres del cliente: no asumidos; usar el nombre de la empresa.
 
 ## Objetivo
