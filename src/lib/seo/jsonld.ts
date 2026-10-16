@@ -6,6 +6,7 @@
 import type { Evento } from "@/lib/contenido/cargar";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import type { Lugar, PreguntaFrecuente, Servicio } from "@/lib/contenido/esquemas";
+import { correoAscii, esCorreo } from "@/lib/formato";
 import { obtenerImagen } from "@/lib/imagenes";
 import { urlAbsoluta } from "@/lib/seo/metadatos";
 
@@ -63,6 +64,7 @@ export function negocio(): Nodo {
     logo: urlAbsoluta("/marca/icono-512.png"),
     image: urlAbsoluta("/img/og/sitio.jpg"),
     telephone: sitio.telefono.e164,
+    ...(esCorreo(sitio.correo) ? { email: correoAscii(sitio.correo) } : {}),
     // Negocio de área de servicio: sin calle pública, solo ciudad (como en Google Business).
     address: {
       "@type": "PostalAddress",

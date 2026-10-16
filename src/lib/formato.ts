@@ -36,3 +36,15 @@ export function textoHora(hora: string) {
 }
 
 export const esEnlace = (valor: string) => /^https?:\/\//.test(valor);
+
+export const esCorreo = (valor: string) => /^[^\s@[\]]+@[^\s@[\]]+\.[^\s@[\]]+$/.test(valor);
+
+/**
+ * Correo con el dominio en punycode, para `mailto:` y JSON-LD: algunos clientes de correo
+ * y formularios no aceptan la ñ en el dominio. En textos visibles va con ñ.
+ * "cotizaciones@rubendariodiseñadordebodas.com" → "cotizaciones@xn--…-moc.com".
+ */
+export function correoAscii(correo: string) {
+  const [usuario, dominio] = correo.split("@");
+  return `${usuario}@${new URL(`http://${dominio}`).hostname}`;
+}
