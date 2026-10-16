@@ -25,7 +25,7 @@ export function WhatsAppFlotante({ enlace }: { enlace: string }) {
   return (
     <div
       aria-hidden={oculto || undefined}
-      className={`fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-30 transition-[opacity,transform] duration-300 lg:right-7 lg:bottom-7 ${
+      className={`fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-30 transition-[opacity,transform] duration-300 max-lg:hidden lg:right-7 lg:bottom-7 ${
         oculto ? "pointer-events-none translate-y-4 opacity-0" : "opacity-100"
       }`}
     >

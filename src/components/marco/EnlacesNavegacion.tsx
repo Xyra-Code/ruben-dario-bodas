@@ -33,7 +33,7 @@ export function EnlacesNavegacion({ disposicion, alNavegar }: Props) {
   const ruta = usePathname();
   const barra = disposicion === "barra";
   const clase = barra
-    ? "relative inline-flex min-h-11 items-center px-1 text-[0.9375rem] tracking-wide text-carbon transition-colors hover:text-terracota aria-[current=page]:text-terracota after:absolute after:inset-x-1 after:bottom-2 after:h-px after:origin-left after:scale-x-0 after:bg-terracota after:transition-transform hover:after:scale-x-100 aria-[current=page]:after:scale-x-100"
+    ? "relative inline-flex min-h-11 items-center px-1 text-[0.9375rem] tracking-wide text-carbon transition-colors hover:text-terracota aria-[current=page]:text-terracota after:absolute after:inset-x-1 after:bottom-2 after:h-px after:origin-left after:scale-x-0 after:bg-terracota after:transition-transform hover:after:scale-x-100 aria-[current=page]:after:scale-x-100 group-data-sobre-foto:text-white group-data-sobre-foto:after:bg-white group-data-sobre-foto:hover:text-white/80"
     : "flex min-h-14 items-center font-titulo text-[2rem] leading-tight text-carbon aria-[current=page]:text-terracota";
 
   return (

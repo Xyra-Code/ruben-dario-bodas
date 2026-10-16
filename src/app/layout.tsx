@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Manrope } from "next/font/google";
+import { Bodoni_Moda, Manrope, Poiret_One } from "next/font/google";
 
+import { BarraInferior } from "@/components/marco/BarraInferior";
 import { Encabezado } from "@/components/marco/Encabezado";
 import { Pie } from "@/components/marco/Pie";
 import { WhatsAppFlotante } from "@/components/marco/WhatsAppFlotante";
@@ -29,6 +30,13 @@ const bodoniCursiva = Bodoni_Moda({
   preload: false,
 });
 const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--f-manrope" });
+// PRUEBA (2026-10-16): Poiret One, la letra de "Rubén Darío" en el logo, en los títulos.
+const poiret = Poiret_One({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--f-poiret",
+});
 
 const { sitio } = obtenerContenido();
 
@@ -48,9 +56,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es-CO"
-      className={`${bodoni.variable} ${bodoniCursiva.variable} ${manrope.variable}`}
+      className={`${bodoni.variable} ${bodoniCursiva.variable} ${manrope.variable} ${poiret.variable}`}
     >
-      <body className="flex min-h-dvh flex-col">
+      {/* pb en celular: la barra inferior (PRUEBA) no tapa el final del pie. */}
+      <body className="flex min-h-dvh flex-col pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-0">
         <a
           href="#contenido"
           className="sr-only z-50 bg-terracota px-4 py-3 text-sobre-principal focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
@@ -63,6 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </div>
         <Pie />
         <WhatsAppFlotante enlace={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)} />
+        <BarraInferior enlaceWhatsApp={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)} />
       </body>
     </html>
   );

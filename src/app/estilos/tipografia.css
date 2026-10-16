@@ -5,7 +5,8 @@
  * declara next/font en layout.tsx (--f-*).
  */
 :root {
-  --font-display: var(--f-bodoni), Didot, Georgia, serif;
+  /* PRUEBA (2026-10-16): Poiret One en títulos. Para volver: var(--f-bodoni), Didot, Georgia, serif */
+  --font-display: var(--f-poiret), var(--f-bodoni), Didot, Georgia, serif;
   --font-body: var(--f-manrope), system-ui, sans-serif;
   --font-eyebrow: var(--font-body);
   --font-cita: var(--f-bodoni-cursiva), var(--f-bodoni), Georgia, serif;
