@@ -24,7 +24,7 @@ export function GET() {
     `- Sitio: ${sitio.dominioVisible}`,
     `- Centro de operación: ${sitio.cobertura.sede} (Meta)`,
     ...sitio.cobertura.zonas.map((z) => `- Cobertura en ${z.nombre}: ${z.municipios.join(", ")}`),
-    `- Cotizaciones por WhatsApp: ${whatsapp} (indique fecha, lugar y número de invitados)`,
+    `- Cotizaciones por WhatsApp: ${whatsapp} (indica fecha, lugar, número de invitados y presupuesto)`,
     `- Teléfono: ${sitio.telefono.visible}`,
     ...Object.entries(sitio.redes).map(([red, url]) => `- ${red}: ${url}`),
     "",

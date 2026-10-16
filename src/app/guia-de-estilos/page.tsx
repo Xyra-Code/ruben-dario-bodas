@@ -101,10 +101,10 @@ export default function GuiaDeEstilos() {
               Ver eventos
             </Boton>
             <Boton href="https://wa.me/" whatsapp origen="guia">
-              Escríbanos
+              Escríbenos
             </Boton>
             <Boton href="/bodas" variante="texto">
-              Conozca el servicio
+              Conoce el servicio
             </Boton>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -118,7 +118,7 @@ export default function GuiaDeEstilos() {
           <p className="lectura text-topo">
             Mismas animaciones del botón de xyracode.com: aparece al cargar, flota, emite un halo y
             cada pocos segundos el ícono saluda. En computador, al pasar el mouse se detiene y
-            muestra “Cuéntenos de su evento”. El sitio usa hoy la primera.
+            muestra “Cuéntanos de tu evento”. El sitio usa hoy la primera.
           </p>
           <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
             {VARIANTES_WHATSAPP.map((v, i) => (

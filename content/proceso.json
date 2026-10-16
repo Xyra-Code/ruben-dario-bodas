@@ -1,7 +1,7 @@
 [
   {
     "titulo": "Conversemos",
-    "descripcion": "Nos escribe por WhatsApp con la fecha y el lugar, y le contamos si tenemos disponibilidad."
+    "descripcion": "Nos escribes por WhatsApp con la fecha y el lugar, y te contamos si tenemos disponibilidad."
   },
   {
     "titulo": "Visita e idea",
@@ -16,7 +16,7 @@
     "descripcion": "[PENDIENTE: cómo es este paso en el proceso de la empresa]"
   },
   {
-    "titulo": "Su día",
+    "titulo": "Tu día",
     "descripcion": "[PENDIENTE: cómo es este paso en el proceso de la empresa]"
   }
 ]

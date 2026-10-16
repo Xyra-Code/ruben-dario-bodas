@@ -45,7 +45,7 @@ export function TarjetaServicio({ titulo, texto, ruta, foto, destacada = false }
         className="mt-4 inline-flex min-h-11 items-center gap-2 text-terracota"
         aria-hidden="true"
       >
-        Conozca el servicio
+        Conoce el servicio
         <IconoFlecha className="size-4 transition-transform group-hover:translate-x-1" />
       </span>
     </article>

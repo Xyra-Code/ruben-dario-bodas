@@ -74,7 +74,7 @@ export function MenuMovil({ enlaceWhatsApp }: { enlaceWhatsApp: string }) {
               data-origen="menu-movil"
             >
               <IconoWhatsApp />
-              Escríbanos por WhatsApp
+              Escríbenos por WhatsApp
             </a>
           </div>
         </div>

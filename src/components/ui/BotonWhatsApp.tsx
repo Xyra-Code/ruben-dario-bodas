@@ -68,7 +68,7 @@ const NUCLEO: Record<VarianteWhatsApp, string> = {
 export function BotonWhatsApp({
   variante = "circulo",
   href,
-  etiqueta = "Cuéntenos de su evento",
+  etiqueta = "Cuéntanos de tu evento",
   origen = "flotante",
   oculto = false,
 }: Props) {
@@ -78,7 +78,7 @@ export function BotonWhatsApp({
       href={href}
       target="_blank"
       rel="noopener"
-      aria-label={variante === "pildora" ? undefined : `Escríbanos por WhatsApp: ${etiqueta}`}
+      aria-label={variante === "pildora" ? undefined : `Escríbenos por WhatsApp: ${etiqueta}`}
       tabIndex={oculto ? -1 : undefined}
       data-evento="whatsapp"
       data-origen={origen}

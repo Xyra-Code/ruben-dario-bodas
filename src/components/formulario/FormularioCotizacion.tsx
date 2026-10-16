@@ -62,18 +62,18 @@ export function FormularioCotizacion({
     const valor = (c: string) => String(datos.get(c) ?? "").trim();
 
     const nuevos: Errores = {};
-    if (valor("nombre").length < 2) nuevos.nombre = "Escriba su nombre.";
-    if (!valor("tipo")) nuevos.tipo = "Elija el tipo de evento.";
-    if (!valor("fecha")) nuevos.fecha = "Indique la fecha del evento (aunque sea aproximada).";
-    else if (valor("fecha") < hoyIso()) nuevos.fecha = "La fecha ya pasó; revise el año.";
-    if (!valor("invitados")) nuevos.invitados = "Indique un número aproximado de invitados.";
+    if (valor("nombre").length < 2) nuevos.nombre = "Escribe tu nombre.";
+    if (!valor("tipo")) nuevos.tipo = "Elige el tipo de evento.";
+    if (!valor("fecha")) nuevos.fecha = "Indica la fecha del evento (aunque sea aproximada).";
+    else if (valor("fecha") < hoyIso()) nuevos.fecha = "La fecha ya pasó; revisa el año.";
+    if (!valor("invitados")) nuevos.invitados = "Indica un número aproximado de invitados.";
     else if (!/^\d{1,5}$/.test(valor("invitados"))) {
-      nuevos.invitados = "Escriba solo el número, por ejemplo 150.";
+      nuevos.invitados = "Escribe solo el número, por ejemplo 150.";
     }
-    if (!valor("presupuesto")) nuevos.presupuesto = "Elija un rango de presupuesto.";
-    if (valor("lugar").length < 3) nuevos.lugar = "Indique el municipio o el lugar del evento.";
+    if (!valor("presupuesto")) nuevos.presupuesto = "Elige un rango de presupuesto.";
+    if (valor("lugar").length < 3) nuevos.lugar = "Indica el municipio o el lugar del evento.";
     if (valor("mensaje").length < 3) {
-      nuevos.mensaje = "Cuéntenos el estilo, los colores o las ideas que tiene en mente.";
+      nuevos.mensaje = "Cuéntanos el estilo, los colores o las ideas que tienes en mente.";
     }
     setErrores(nuevos);
 
@@ -246,7 +246,7 @@ export function FormularioCotizacion({
           name="mensaje"
           rows={3}
           required
-          placeholder="Estilo, colores o ideas que tenga en mente"
+          placeholder="Estilo, colores o ideas que tengas en mente"
           aria-invalid={!!errores.mensaje || undefined}
           aria-describedby={describe("mensaje")}
           className={`${campoClase} resize-y`}
@@ -265,7 +265,7 @@ export function FormularioCotizacion({
           Enviar por WhatsApp
         </button>
         <p className="mt-3 text-center text-sm text-topo">
-          Se abrirá WhatsApp con su mensaje listo para enviar.
+          Se abrirá WhatsApp con tu mensaje listo para enviar.
         </p>
         <p aria-live="polite" className="mt-2 text-center text-sm">
           {enlaceEnviado && (

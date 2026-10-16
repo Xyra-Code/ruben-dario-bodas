@@ -156,7 +156,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
           <div className="min-w-0 lg:col-span-4">
             <p className="antetitulo">El servicio</p>
             <h2 id="incluye-titulo" className="mt-3 text-titulo-2">
-              Qué incluye
+              Servicios a tu disposición
             </h2>
           </div>
           <ul className="grid min-w-0 gap-x-10 sm:grid-cols-2 lg:col-span-8">
@@ -244,7 +244,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
           <div className="min-w-0 lg:col-span-4">
             <p className="antetitulo">Preguntas frecuentes</p>
             <h2 id="preguntas-titulo" className="mt-3 text-titulo-2">
-              Sobre {tipo === "boda" ? "la decoración de su boda" : "la decoración de 15 años"}
+              Sobre {tipo === "boda" ? "la decoración de tu boda" : "la decoración de 15 años"}
             </h2>
           </div>
           <div className="min-w-0 lg:col-span-8">

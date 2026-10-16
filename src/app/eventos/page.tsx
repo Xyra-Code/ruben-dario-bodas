@@ -47,7 +47,7 @@ export default function Eventos() {
           <p className="antetitulo">Portafolio</p>
           <h1 className="mt-4 text-titulo-1">{pagina.h1}</h1>
           <p className="mt-5 text-lg text-topo">
-            Cada evento, con su lugar, su estilo y su paleta. Toque uno para ver todas las fotos.
+            Cada evento, con su lugar, su estilo y su paleta. Toca uno para ver todas las fotos.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function Eventos() {
         </div>
       </div>
 
-      <SeccionContacto titulo="¿Le gustó lo que vio? Cuéntenos de su evento" origen="eventos" />
+      <SeccionContacto titulo="¿Te gustó lo que viste? Cuéntanos de tu evento" origen="eventos" />
     </main>
   );
 }

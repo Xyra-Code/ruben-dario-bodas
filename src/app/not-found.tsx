@@ -7,7 +7,7 @@ import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 export const metadata = metadatos({
   titulo: "Página no encontrada | Rubén Darío Diseñador de Bodas",
   descripcion:
-    "La página que busca no existe. Vea nuestra decoración de bodas, fiestas de 15 años y el portafolio de eventos en Villavicencio y el Meta.",
+    "La página que buscas no existe. Mira nuestra decoración de bodas, fiestas de 15 años y el portafolio de eventos en Villavicencio y el Meta.",
   ruta: "/404",
   noIndexar: true,
 });
@@ -22,9 +22,9 @@ export default function NoEncontrada() {
     <main className="contenedor grid items-center gap-10 pt-8 pb-(--spacing-seccion) lg:grid-cols-2 lg:gap-16 lg:pt-14">
       <div className="min-w-0">
         <p className="antetitulo">Error 404</p>
-        <h1 className="mt-4 text-titulo-1">Esta página no existe, pero su evento sí puede</h1>
+        <h1 className="mt-4 text-titulo-1">Esta página no existe, pero tu evento sí puede</h1>
         <p className="mt-5 text-lg text-topo">
-          Puede que el enlace haya cambiado. Estos caminos lo llevan a lo que busca:
+          Puede que el enlace haya cambiado. Estos caminos te llevan a lo que buscas:
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Boton href="/bodas">Decoración de bodas</Boton>
@@ -42,7 +42,7 @@ export default function NoEncontrada() {
             variante="texto"
             origen="404"
           >
-            Escríbanos por WhatsApp
+            Escríbenos por WhatsApp
           </Boton>
         </div>
       </div>
