@@ -1,7 +1,7 @@
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { Migas } from "@/components/navegacion/Migas";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { TarjetaLugar } from "@/components/tarjetas/TarjetaLugar";
+import { FichaLugar } from "@/components/tarjetas/FichaLugar";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { eventosEnLugar, obtenerContenido } from "@/lib/contenido/cargar";
 import { ubicacion } from "@/lib/rutas";
@@ -72,10 +72,15 @@ export default function Lugares() {
         >
           <div className="contenedor">
             <h2 className="text-titulo-2">{g.titulo}</h2>
-            <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {g.lugares.map((l) => (
-                <TarjetaLugar key={l.slug} lugar={l} eventos={eventosEnLugar(l.slug)} />
-              ))}
+            {/* PRUEBA (2026-10-16): fichas por lugar, una debajo de otra (antes, tarjetas en
+                cuadrícula: TarjetaLugar). Primero los lugares con más bodas. */}
+            <div className="mt-10 grid gap-6 lg:gap-10">
+              {g.lugares
+                .map((l) => ({ l, eventos: eventosEnLugar(l.slug) }))
+                .sort((a, b) => b.eventos.length - a.eventos.length)
+                .map(({ l, eventos }, k) => (
+                  <FichaLugar key={l.slug} lugar={l} eventos={eventos} invertida={k % 2 === 1} />
+                ))}
             </div>
           </div>
         </section>
