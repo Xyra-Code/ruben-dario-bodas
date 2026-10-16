@@ -28,6 +28,14 @@ export const metadata = metadatos({
 
 const seccion = "py-(--spacing-seccion)";
 
+/** PRUEBA (2026-10-16): portada con foto de fondo a todo el ancho. false = versión anterior. */
+const FOTO_DE_FONDO = true;
+/** Foto del fondo: la pareja a la derecha (el texto va a la izquierda) con la decoración detrás. */
+const FOTO_FONDO = {
+  evento: "boda-jardin-blanco-las-heliconias-villavicencio",
+  archivo: "boda-jardin-blanco-las-heliconias-villavicencio-pareja-salon-lamparas-colgantes.jpg",
+};
+
 /**
  * Portada: resume y enlaza (no compite con /bodas ni /quince-anos). Secciones del mapa del
  * sitio §4: portada, servicios, destacados, cómo trabajamos, sobre, testimonios,
@@ -51,49 +59,104 @@ export default function Inicio() {
     const f = mismo?.fotos.find((x) => x.archivo !== mismo.portada) ?? mismo?.fotos[0];
     return mismo && f ? { evento: mismo.slug, archivo: f.archivo, alt: f.alt } : undefined;
   };
+  const fotoFondo = eventos
+    .find((e) => e.slug === FOTO_FONDO.evento)
+    ?.fotos.find((f) => f.archivo === FOTO_FONDO.archivo);
   const bodas = servicios.find((s) => s.tipo === "boda")!;
   const quince = servicios.find((s) => s.tipo === "quince")!;
 
   return (
-    <main>
+    // PRUEBA (2026-10-16): fondos con significado. Marfil = contenido, rubor = prueba de
+    // trabajo (portafolio y testimonios), terracota = la única banda de acento (cotizar).
+    // Grano de papel en todos los fondos de la portada.
+    <main className="grano">
       <JsonLd datos={[negocio(), sitioWeb(), preguntasFrecuentes(preguntasGenerales)]} />
 
-      {/* 1 · Portada */}
-      <section
-        id="inicio"
-        aria-labelledby="inicio-titulo"
-        className="pt-6 pb-(--spacing-seccion) lg:pt-10"
-      >
-        <div className="contenedor grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="min-w-0 lg:col-span-6">
-            <p className="antetitulo">Rubén Darío · Diseñador de bodas</p>
-            <h1 id="inicio-titulo" className="mt-4 text-titulo-1">
-              {pagina.h1}
-            </h1>
-            <p className="mt-6 max-w-md text-lg text-topo">{sitio.lema}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Boton href="#contacto" origen="portada-cotizar">
-                Cotizar mi evento
-              </Boton>
-              <Boton href="/eventos" variante="secundario">
-                Ver eventos
-              </Boton>
+      {/* 1 · Portada · PRUEBA (2026-10-16): foto de fondo a todo el ancho. Velo oscuro
+          degradado (donde va el texto: arriba en celular, a la izquierda en escritorio) para que el texto
+          blanco se lea sobre cualquier foto. Llena justo la primera pantalla y sube detrás del encabezado,
+          que es transparente hasta que se baja (CabeceraFija, data-foto-portada); en celular
+          descuenta la barra de pestañas de abajo. La versión
+          anterior (texto + foto en dos columnas) sigue abajo, desactivada con FOTO_DE_FONDO. */}
+      {FOTO_DE_FONDO && fotoFondo ? (
+        <section
+          id="inicio"
+          aria-labelledby="inicio-titulo"
+          data-foto-portada
+          className="relative isolate -mt-16 flex min-h-[max(30rem,calc(100svh-4.5rem-env(safe-area-inset-bottom)))] items-start overflow-hidden lg:-mt-20 lg:min-h-[max(36rem,100svh)] lg:items-center"
+        >
+          <Foto
+            evento={FOTO_FONDO.evento}
+            archivo={fotoFondo.archivo}
+            alt={fotoFondo.alt}
+            prioridad
+            sizes="100vw"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-[72%_50%] lg:object-center"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(42,30,27,0.85)_0%,rgba(42,30,27,0.55)_50%,rgba(42,30,27,0.1)_80%)] lg:bg-[linear-gradient(to_right,rgba(42,30,27,0.8)_0%,rgba(42,30,27,0.5)_45%,rgba(42,30,27,0.05)_80%)]"
+          />
+          {/* Velo superior: el encabezado transparente se lee sobre cualquier foto. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 -z-10 h-36 bg-[linear-gradient(to_bottom,rgba(42,30,27,0.55),transparent)]"
+          />
+          <div className="contenedor w-full pt-24 pb-12 lg:py-24">
+            <div className="max-w-xl min-w-0">
+              <p className="antetitulo text-[#f1d29b]!">Rubén Darío · Diseñador de bodas</p>
+              <h1 id="inicio-titulo" className="mt-4 text-titulo-1 text-white">
+                {pagina.h1}
+              </h1>
+              <p className="mt-6 max-w-md text-lg text-white/85">{sitio.lema}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Boton href="#contacto" origen="portada-cotizar">
+                  Cotizar mi evento
+                </Boton>
+                <Boton href="/eventos" variante="claro">
+                  Ver eventos
+                </Boton>
+              </div>
             </div>
           </div>
-          {portada && fotoPortada && (
+        </section>
+      ) : (
+        <section
+          id="inicio"
+          aria-labelledby="inicio-titulo"
+          className="pt-6 pb-(--spacing-seccion) lg:pt-10"
+        >
+          <div className="contenedor grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="min-w-0 lg:col-span-6">
-              <Foto
-                evento={portada.slug}
-                archivo={fotoPortada.archivo}
-                alt={fotoPortada.alt}
-                prioridad
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="aspect-[4/5] w-full rounded-sm object-cover sm:aspect-[3/2] lg:aspect-[4/5] xl:aspect-[5/6]"
-              />
+              <p className="antetitulo">Rubén Darío · Diseñador de bodas</p>
+              <h1 id="inicio-titulo" className="mt-4 text-titulo-1">
+                {pagina.h1}
+              </h1>
+              <p className="mt-6 max-w-md text-lg text-topo">{sitio.lema}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Boton href="#contacto" origen="portada-cotizar">
+                  Cotizar mi evento
+                </Boton>
+                <Boton href="/eventos" variante="secundario">
+                  Ver eventos
+                </Boton>
+              </div>
             </div>
-          )}
-        </div>
-      </section>
+            {portada && fotoPortada && (
+              <div className="min-w-0 lg:col-span-6">
+                <Foto
+                  evento={portada.slug}
+                  archivo={fotoPortada.archivo}
+                  alt={fotoPortada.alt}
+                  prioridad
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="aspect-[4/5] w-full rounded-sm object-cover sm:aspect-[3/2] lg:aspect-[4/5] xl:aspect-[5/6]"
+                />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* 2 · Servicios */}
       <section
@@ -126,8 +189,8 @@ export default function Inicio() {
               <article className="min-w-0 rounded-sm bg-rubor p-6 sm:p-8">
                 <h3 className="text-titulo-3">Otros eventos</h3>
                 <p className="mt-2 text-topo">
-                  Celebraciones especiales con el mismo cuidado en el diseño. Cuéntenos qué tiene en
-                  mente.
+                  Celebraciones especiales con el mismo cuidado en el diseño. Cuéntanos qué tienes
+                  en mente.
                 </p>
                 <div className="mt-6">
                   <Boton
@@ -136,7 +199,7 @@ export default function Inicio() {
                     variante="secundario"
                     origen="servicios-otros"
                   >
-                    Escríbanos
+                    Escríbenos
                   </Boton>
                 </div>
               </article>
@@ -147,7 +210,11 @@ export default function Inicio() {
 
       {/* 3 · Eventos destacados */}
       {destacados.length > 0 && (
-        <section id="eventos" aria-labelledby="eventos-titulo" className={`${seccion} bg-rubor`}>
+        <section
+          id="eventos"
+          aria-labelledby="eventos-titulo"
+          className={`${seccion} bg-rubor grano`}
+        >
           <div className="contenedor">
             <TituloSeccion
               id="eventos-titulo"
@@ -174,7 +241,7 @@ export default function Inicio() {
           <TituloSeccion
             id="proceso-titulo"
             antetitulo="Cómo trabajamos"
-            titulo="De la primera conversación a su día"
+            titulo="De la primera conversación a tu día"
           />
           <div className="mt-12">
             <Pasos pasos={proceso} />
@@ -203,7 +270,7 @@ export default function Inicio() {
           <div className={`min-w-0 ${sobre.retrato ? "" : "lg:col-span-2 lg:max-w-3xl"}`}>
             <p className="antetitulo">Sobre Rubén Darío</p>
             <h2 id="sobre-titulo" className="mt-3 text-titulo-2">
-              Quién diseña su evento
+              Quién diseña tu evento
             </h2>
             <p className="mt-5 text-topo">{sobre.resumen}</p>
             {sitio.cifras.length > 0 && (
@@ -225,7 +292,7 @@ export default function Inicio() {
             )}
             <div className="mt-6">
               <Boton href={PAGINAS.sobre.ruta} variante="texto">
-                Conozca su historia
+                Conoce su historia
               </Boton>
             </div>
           </div>
@@ -237,7 +304,7 @@ export default function Inicio() {
         <section
           id="testimonios"
           aria-labelledby="testimonios-titulo"
-          className={`${seccion} bg-rubor`}
+          className={`${seccion} bg-rubor grano`}
         >
           <div className="contenedor">
             <TituloSeccion
@@ -247,7 +314,7 @@ export default function Inicio() {
               accion={
                 esEnlace(sitio.google.perfil) ? (
                   <Boton href={sitio.google.perfil} variante="texto">
-                    Vea nuestras reseñas en Google
+                    Mira nuestras reseñas en Google
                   </Boton>
                 ) : undefined
               }
@@ -307,9 +374,9 @@ export default function Inicio() {
               Antes de cotizar
             </h2>
             <p className="mt-4 text-topo">
-              ¿Su pregunta no está aquí?{" "}
+              ¿Tu pregunta no está aquí?{" "}
               <Link href="#contacto" className="text-terracota underline underline-offset-4">
-                Escríbanos
+                Escríbenos
               </Link>
               .
             </p>
@@ -321,7 +388,7 @@ export default function Inicio() {
       </section>
 
       {/* 9 · Contacto */}
-      <SeccionContacto origen="inicio" />
+      <SeccionContacto origen="inicio" acento />
     </main>
   );
 }

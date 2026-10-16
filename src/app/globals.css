@@ -142,6 +142,15 @@
   color: var(--color-dorado-texto);
 }
 
+/*
+ * PRUEBA (2026-10-16, solo portada): grano de papel casi invisible, como el de la papelería
+ * de bodas. Ruido SVG de 160 px en mosaico (sin archivos ni peticiones); se suma encima del
+ * color de fondo de cada sección.
+ */
+@utility grano {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .18 .14 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 /* Línea dorada fina, eco de la línea del logo. */
 @utility filete-dorado {
   height: 1px;
