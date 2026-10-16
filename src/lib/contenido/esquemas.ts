@@ -192,13 +192,26 @@ export const evento = z.strictObject({
   lugar: slug,
   /** Solo si el título automático no sirve. */
   titulo: texto.optional(),
+  /**
+   * Nombres de la pareja o de la quinceañera ("Juan y Caro", "Valentina"). Solo con
+   * autorización (Ley 1581). Van como subtítulo bajo el H1, nunca en la URL ni en el título
+   * SEO: así el H1 conserva la palabra clave y retirarlos es borrar esta línea.
+   */
+  nombres: texto.optional(),
   estilo: texto,
+  /** 2 a 6 colores. Vacía mientras la empresa la define (la validación estricta la rechaza). */
   paleta: z
     .array(z.strictObject({ nombre: texto, hex }))
-    .min(2)
-    .max(6),
-  /** Mes del evento: "2026-03". */
-  fecha: z.string().regex(/^20\d{2}-(0[1-9]|1[0-2])$/, "Formato AAAA-MM"),
+    .max(6)
+    .refine(
+      (p) => p.length !== 1,
+      "La paleta lleva al menos 2 colores (o queda vacía si está pendiente)",
+    ),
+  /** Mes del evento: "2026-03", o "[PENDIENTE: …]" mientras no se conoce. */
+  fecha: z.union([
+    z.string().regex(/^20\d{2}-(0[1-9]|1[0-2])$/, "Formato AAAA-MM"),
+    z.string().startsWith("[PENDIENTE"),
+  ]),
   destacado: z.boolean(),
   /** Qué hizo especial el diseño (texto de la empresa). */
   descripcion: parrafos,

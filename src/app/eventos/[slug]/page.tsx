@@ -37,8 +37,15 @@ export async function generateMetadata({
 }
 
 const ENLACE_SERVICIO = {
-  boda: "Conozca nuestro servicio de decoración de bodas",
-  quince: "Conozca nuestro servicio de decoración de 15 años",
+  boda: "Conoce nuestro servicio de decoración de bodas",
+  quince: "Conoce nuestro servicio de decoración de 15 años",
+} as const;
+
+/** Subtítulo con los nombres: "La boda de Juan y Caro", "Los 15 años de Valentina". */
+const DE_QUIEN = {
+  boda: "La boda de ",
+  quince: "Los 15 años de ",
+  otro: "",
 } as const;
 
 const seccion = "py-(--spacing-seccion)";
@@ -66,6 +73,12 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
         <header className="mt-6 max-w-4xl lg:mt-10">
           <Etiqueta tipo={e.tipo} />
           <h1 className="mt-4 text-titulo-1">{e.titulo}</h1>
+          {e.nombres && (
+            <p className="mt-3 font-titulo text-titulo-3 text-topo">
+              {DE_QUIEN[e.tipo]}
+              {e.nombres}
+            </p>
+          )}
         </header>
         <div className="mt-8">
           <FichaEvento evento={e} />
@@ -170,7 +183,11 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
         </section>
       )}
 
-      <SeccionContacto tipoInicial={e.tipo} referencia={e.titulo} origen="evento" />
+      <SeccionContacto
+        tipoInicial={e.tipo}
+        referencia={e.nombres ? `${e.titulo} (${e.nombres})` : e.titulo}
+        origen="evento"
+      />
     </main>
   );
 }

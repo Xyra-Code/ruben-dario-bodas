@@ -31,8 +31,10 @@ export type Evento = Omit<EventoArchivo, "lugar" | "titulo" | "fotos"> & {
   slug: string;
   titulo: string;
   lugar: Lugar;
-  /** "marzo de 2026" */
+  /** "marzo de 2026" (o el texto [PENDIENTE: …]) */
   fechaTexto: string;
+  /** "2026" (o el texto [PENDIENTE: …]) */
+  anio: string;
   fotos: (EventoArchivo["fotos"][number] & { ruta: string })[];
 };
 
@@ -103,6 +105,7 @@ function pendientes(valor: unknown, ruta = ""): string[] {
 }
 
 function fechaTexto(fecha: string) {
+  if (fecha.startsWith(MARCA_PENDIENTE)) return fecha;
   const [anio, mes] = fecha.split("-").map(Number);
   return new Intl.DateTimeFormat("es-CO", {
     month: "long",
@@ -229,6 +232,9 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     if (datos.borrador) {
       (estricto ? errores : avisos).push(`${base}: está marcado como borrador`);
     }
+    if (datos.paleta.length === 0) {
+      (estricto ? errores : avisos).push(`${base}: falta la paleta de colores`);
+    }
 
     eventos.push({
       ...datos,
@@ -236,11 +242,14 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       lugar,
       titulo: datos.titulo ?? `${NOMBRE_TIPO[datos.tipo]} en ${lugar.nombre}, ${lugar.municipio}`,
       fechaTexto: fechaTexto(datos.fecha),
+      anio: datos.fecha.startsWith(MARCA_PENDIENTE) ? datos.fecha : datos.fecha.slice(0, 4),
       fotos: datos.fotos.map((f) => ({ ...f, ruta: path.join(carpetaFotos, f.archivo) })),
     });
   }
 
-  eventos.sort((a, b) => b.fecha.localeCompare(a.fecha));
+  // Más recientes primero; los de fecha [PENDIENTE] cuentan como los más nuevos.
+  const orden = (e: Evento) => (e.fecha.startsWith(MARCA_PENDIENTE) ? "9999" : e.fecha);
+  eventos.sort((a, b) => orden(b).localeCompare(orden(a)));
 
   // Testimonios: referencias a eventos y autorización.
   const slugsEventos = new Set(eventos.map((e) => e.slug));
@@ -326,13 +335,17 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
 
 let cache: Contenido | null = null;
 
-/** Contenido validado. Lanza un error con la lista de problemas si algo no cumple. */
+/**
+ * Contenido validado. Lanza un error con la lista de problemas si algo no cumple.
+ * En desarrollo se relee en cada página, para ver los cambios de content/ sin reiniciar
+ * `npm run dev`; al compilar se lee una sola vez.
+ */
 export function obtenerContenido(): Contenido {
-  if (cache) return cache;
+  if (cache && process.env.NODE_ENV === "production") return cache;
   const { contenido, errores } = validarContenido();
   if (!contenido) {
     throw new Error(
-      `El contenido tiene errores (corra npm run validar):\n- ${errores.join("\n- ")}`,
+      `El contenido tiene errores (corre npm run validar):\n- ${errores.join("\n- ")}`,
     );
   }
   cache = contenido;

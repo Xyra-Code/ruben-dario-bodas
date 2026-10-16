@@ -42,7 +42,7 @@ export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3" }: Props)
         </Link>
       </Titulo>
       <p className="mt-1 text-sm text-topo">
-        {e.estilo} · {e.fecha.slice(0, 4)}
+        {e.estilo} · {e.anio}
       </p>
     </article>
   );

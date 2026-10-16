@@ -24,6 +24,7 @@ export function FichaEvento({ evento: e }: { evento: Evento }) {
       <div className="col-span-2 min-w-0 lg:col-span-4">
         <dt className="antetitulo">Paleta</dt>
         <dd className="mt-3">
+          {e.paleta.length === 0 && <p>[PENDIENTE: paleta de colores]</p>}
           <ul className="flex flex-wrap gap-x-5 gap-y-3">
             {e.paleta.map((c) => (
               <li key={c.nombre} className="flex min-w-0 items-center gap-2.5">

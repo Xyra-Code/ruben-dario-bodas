@@ -3,7 +3,7 @@
  *   content/eventos/<slug>/fotos/<base>.jpg  →  public/img/eventos/<slug>/<base>-<ancho>.webp
  * y sus medidas, color y placeholder en src/generado/imagenes.json.
  */
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 
 /** Anchos generados: celular, tablet/columna, pantalla completa. */
@@ -50,18 +50,23 @@ export const ogEvento = (slug: string, alt: string): ImagenOg => ({
   alt,
 });
 
+// El manifiesto se relee si cambió en disco: con `npm run dev` corriendo, importar fotos y
+// correr `npm run imagenes` no exige reiniciar el servidor.
 let cache: Record<string, Imagen> | null = null;
+let cacheModificado = 0;
 
 export function obtenerImagen(slug: string, archivo: string): Imagen {
-  if (!cache) {
-    if (!existsSync(MANIFIESTO)) {
-      throw new Error("Falta src/generado/imagenes.json: corra npm run imagenes");
-    }
+  if (!existsSync(MANIFIESTO)) {
+    throw new Error("Falta src/generado/imagenes.json: corre npm run imagenes");
+  }
+  const modificado = statSync(MANIFIESTO).mtimeMs;
+  if (!cache || modificado !== cacheModificado) {
     cache = JSON.parse(readFileSync(MANIFIESTO, "utf8")) as Record<string, Imagen>;
+    cacheModificado = modificado;
   }
   const imagen = cache[clave(slug, archivo)];
   if (!imagen) {
-    throw new Error(`La foto ${clave(slug, archivo)} no está procesada: corra npm run imagenes`);
+    throw new Error(`La foto ${clave(slug, archivo)} no está procesada: corre npm run imagenes`);
   }
   return imagen;
 }

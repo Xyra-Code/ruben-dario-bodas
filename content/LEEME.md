@@ -21,7 +21,9 @@ definen cada archivo están en `src/lib/contenido/esquemas.ts`.
 2. Crear la carpeta `eventos/<slug>/` con el slug `tipo-lugar-municipio`, en minúsculas y
    sin tildes ni ñ: `boda-hacienda-el-caney-restrepo`, `quince-salon-rosales-villavicencio`.
 3. Renombrar las fotos originales con lo que muestran ("mesa principal.jpg", no
-   "IMG_1234.jpg"): el nombre va en la URL de la foto y ayuda al SEO. Luego importarlas:
+   "IMG_1234.jpg"): el nombre va en la URL de la foto y ayuda al SEO. Mientras esperan,
+   pueden quedarse en `fotos-pendientes/<slug>/` (git y los scripts no la tocan; nunca en
+   `public/img/`, que se borra al compilar). Luego importarlas:
    ```
    npm run fotos:importar -- "C:/ruta/a/las/originales" boda-hacienda-el-caney-restrepo
    ```
@@ -32,6 +34,12 @@ definen cada archivo están en `src/lib/contenido/esquemas.ts`.
 4. Crear `evento.json` copiando el de otro evento (si ya existía al importar, las fotos se
    agregan solas con el alt `[PENDIENTE]`). El título se arma solo ("Boda en Hacienda El
    Caney, Restrepo"); cada foto necesita un `alt` que la describa.
+   - **Varios eventos en el mismo lugar:** el slug lleva el estilo para distinguirlos
+     (`boda-boho-hacienda-la-primavera-villavicencio`) y cada uno necesita su propio
+     `titulo` y `seo.title`, para que Google no vea páginas duplicadas.
+   - **Nombres de la pareja o la quinceañera** (opcional, solo con autorización):
+     `"nombres": "Juan y Caro"`. Se muestran bajo el H1 ("La boda de Juan y Caro") y en
+     el mensaje de WhatsApp; nunca en el slug ni en `seo`.
 5. `npm run validar`: dice exactamente qué falta o qué está mal.
 6. Commit y push: Cloudflare publica. El sitemap, la galería, los filtros, los relacionados,
    los destacados y la guía de lugares se actualizan solos.
