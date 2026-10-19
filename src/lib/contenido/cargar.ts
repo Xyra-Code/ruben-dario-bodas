@@ -273,7 +273,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       errores.push(`content/sobre/sobre.json → eventosQueMarcaron: "${s}" no existe`);
     }
   }
-  const fotosSobre = [sobre?.retrato, ...(sobre?.equipo.map((m) => m.foto) ?? [])]
+  const fotosSobre = [sobre?.retrato, sobre?.firma, ...(sobre?.equipo.map((m) => m.foto) ?? [])]
     .filter((f) => f !== undefined)
     .map((f) => ({ archivo: f.archivo, ruta: path.join(CARPETA_FOTOS_SOBRE, f.archivo) }));
   for (const f of fotosSobre) {

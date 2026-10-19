@@ -19,7 +19,7 @@ const NOMBRE_TIPO: Record<Lugar["tipo"], string> = {
 
 const DE_QUIEN = { boda: "Boda de", quince: "15 años de", otro: "Evento de" } as const;
 
-/** Nombre corto de un evento para su miniatura: "Boda de Isa y Carlos" o su título. */
+/** Nombre corto de un evento para su miniatura: "Boda de Isa & Carlos" o su título. */
 const etiqueta = (e: Evento) => (e.nombres ? `${DE_QUIEN[e.tipo]} ${e.nombres}` : e.titulo);
 
 /**

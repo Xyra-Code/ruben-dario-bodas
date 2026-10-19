@@ -1,6 +1,10 @@
 {
   "frase": "[PENDIENTE: una frase personal que defina a Rubén Darío como diseñador]",
   "resumen": "[PENDIENTE: un párrafo sobre Rubén Darío y su trayectoria para la portada]",
+  "firma": {
+    "archivo": "ruben-dario-disenador-de-bodas.jpg",
+    "alt": "Rubén Darío, diseñador de bodas en Villavicencio"
+  },
   "historia": [
     "[PENDIENTE: cómo empezó: origen y primeros eventos]",
     "[PENDIENTE: cómo creció: equipo, lugares, tipos de evento]",

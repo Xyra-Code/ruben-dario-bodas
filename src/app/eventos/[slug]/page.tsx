@@ -9,7 +9,9 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { Boton } from "@/components/ui/Boton";
 import { Cita } from "@/components/ui/Cita";
+import { ConAmpersand } from "@/components/ui/ConAmpersand";
 import { Etiqueta } from "@/components/ui/Etiqueta";
+import { Foto } from "@/components/ui/Foto";
 import { IconoFlecha } from "@/components/ui/Iconos";
 import { eventosRelacionados, obtenerContenido, obtenerEvento } from "@/lib/contenido/cargar";
 import { ogEvento } from "@/lib/imagenes";
@@ -41,7 +43,7 @@ const ENLACE_SERVICIO = {
   quince: "Conoce nuestro servicio de decoración de 15 años",
 } as const;
 
-/** Subtítulo con los nombres: "La boda de Juan y Caro", "Los 15 años de Valentina". */
+/** Subtítulo con los nombres: "La boda de Juan & Caro", "Los 15 años de Valentina". */
 const DE_QUIEN = {
   boda: "La boda de ",
   quince: "Los 15 años de ",
@@ -56,6 +58,9 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
   const ruta = rutaEvento(e.slug);
   const relacionados = eventosRelacionados(e);
   const rutaServicio = e.tipo === "otro" ? undefined : RUTA_SERVICIO[e.tipo];
+  // La firma solo acompaña textos reales: sobre un [PENDIENTE] parecería que él lo escribió.
+  const { sobre } = obtenerContenido();
+  const firma = e.descripcion.some((p) => p.includes("[PENDIENTE")) ? undefined : sobre.firma;
 
   return (
     <main>
@@ -76,7 +81,7 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
           {e.nombres && (
             <p className="mt-3 font-titulo text-titulo-3 text-topo">
               {DE_QUIEN[e.tipo]}
-              {e.nombres}
+              <ConAmpersand texto={e.nombres} />
             </p>
           )}
         </header>
@@ -104,12 +109,29 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
             <h2 id="diseno-titulo" className="mt-3 text-titulo-2">
               Sobre el diseño
             </h2>
+            {firma && (
+              <a href="/sobre-ruben-dario" className="group mt-6 inline-flex items-center gap-4">
+                <Foto
+                  evento="sobre"
+                  archivo={firma.archivo}
+                  alt=""
+                  sizes="64px"
+                  className="size-16 shrink-0 rounded-full object-cover"
+                />
+                <span className="min-w-0">
+                  <span className="block font-titulo text-titulo-3 group-hover:text-terracota">
+                    Rubén Darío
+                  </span>
+                  <span className="block text-[0.9375rem] text-topo">Diseñador de bodas</span>
+                </span>
+              </a>
+            )}
           </div>
           <div className="min-w-0 lg:col-span-8">
             <div className="lectura space-y-5">
               {e.descripcion.map((p, i) => (
                 <p key={p} className={i === 0 ? "font-titulo text-titulo-3" : "text-topo"}>
-                  {p}
+                  {i === 0 ? <ConAmpersand texto={p} /> : p}
                 </p>
               ))}
             </div>

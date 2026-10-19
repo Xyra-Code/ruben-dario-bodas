@@ -193,7 +193,7 @@ export const evento = z.strictObject({
   /** Solo si el título automático no sirve. */
   titulo: texto.optional(),
   /**
-   * Nombres de la pareja o de la quinceañera ("Juan y Caro", "Valentina"). Solo con
+   * Nombres de la pareja o de la quinceañera ("Juan & Caro", "Valentina"). Solo con
    * autorización (Ley 1581). Van como subtítulo bajo el H1, nunca en la URL ni en el título
    * SEO: así el H1 conserva la palabra clave y retirarlos es borrar esta línea.
    */
@@ -244,6 +244,11 @@ export const sobre = z.strictObject({
   /** Párrafo de la sección "Sobre Rubén Darío" en la portada. */
   resumen: texto,
   retrato: fotoSuelta.optional(),
+  /**
+   * Recorte cuadrado de la cara: firma circular junto a "Sobre el diseño" de cada evento
+   * (solo cuando su descripción ya es el texto real de la empresa).
+   */
+  firma: fotoSuelta.optional(),
   /** "Cómo empezó": historia en primera o tercera persona, 400–600 palabras en total. */
   historia: parrafos,
   /** Frase destacada dentro de la historia. */
