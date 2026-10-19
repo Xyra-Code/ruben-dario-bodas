@@ -2,13 +2,27 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "el-campanario",
-  "nombres": "Caro y Andy",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Caro & Andy",
+  "estilo": "Clásico en blanco y dorado",
+  "paleta": [
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": true,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "De Canadá a Colombia, una historia de amor sin fronteras.",
+    "Hay historias que cruzan países para encontrar el escenario perfecto donde convertirse en recuerdos para toda la vida.",
+    "Caro & Andy llegaron desde Canadá para celebrar su boda en Colombia, y vestí su gran día de luz, flores blancas, destellos dorados y una elegancia que envolvió cada rincón.",
+    "Creé una puesta en escena donde las flores se fundieron con la iluminación, las texturas crearon una atmósfera de ensueño y cada detalle acompañó la emoción de una historia que merecía ser celebrada en grande.",
+    "Porque el amor no conoce fronteras, y los recuerdos más hermosos merecen un escenario a su altura.",
+    "Diseño y creo escenarios que convierten historias de amor en experiencias inolvidables."
   ],
   "proveedores": [
     {
@@ -22,7 +36,7 @@
   ],
   "seo": {
     "title": "Boda en El Campanario, Restrepo | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en El Campanario]"
+    "description": "Boda en El Campanario, Restrepo: una pareja que llegó desde Canadá y un gran día vestido de luz, flores blancas y destellos dorados."
   },
   "portada": "boda-el-campanario-restrepo-pareja-salon-iluminado.jpg",
   "fotos": [

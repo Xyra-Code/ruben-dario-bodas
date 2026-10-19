@@ -2,13 +2,25 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "finca-san-luis",
-  "nombres": "Luisa y Héctor",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Luisa & Héctor",
+  "estilo": "Bosque al aire libre",
+  "paleta": [
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Un amor en medio del bosque.",
+    "Celebrar el amor rodeados de naturaleza tiene una magia especial. Para Luisa & Héctor creé una boda al aire libre, en medio de un bosque, donde la belleza de los árboles, la luz natural y cada detalle se unieron para dar vida a una celebración llena de encanto y romanticismo.",
+    "Un escenario donde la naturaleza fue protagonista y el diseño encontró su lugar sin perder la esencia del entorno: flores blancas y follajes verdes que se unieron perfectamente al bosque.",
+    "Porque hay historias de amor que merecen celebrarse de una manera única, en un lugar que las haga inolvidables."
   ],
   "proveedores": [
     {
@@ -22,7 +34,7 @@
   ],
   "seo": {
     "title": "Boda en Finca San Luis, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Finca San Luis]"
+    "description": "Boda en Finca San Luis, Villavicencio: celebración al aire libre en medio del bosque, con flores blancas y follajes verdes integrados a la naturaleza."
   },
   "portada": "boda-finca-san-luis-villavicencio-pareja-salida-ceremonia-invitados.jpg",
   "fotos": [

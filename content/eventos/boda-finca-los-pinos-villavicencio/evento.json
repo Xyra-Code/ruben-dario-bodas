@@ -2,13 +2,33 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "finca-los-pinos",
-  "nombres": "Angie y Samuel",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Angie & Samuel",
+  "estilo": "Noche de luces",
+  "paleta": [
+    {
+      "nombre": "Rosa",
+      "hex": "#E8B4B8"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Salmón",
+      "hex": "#F0A48A"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Una noche suspendida entre luces y emociones.",
+    "Cada detalle se convirtió en parte de una experiencia inolvidable. Telas que dibujaban el cielo, luces que envolvían el ambiente y una pista que brillaba al ritmo de la celebración crearon una atmósfera mágica, elegante y llena de personalidad. Elegí colores suaves y románticos, del rosa y el blanco hasta el salmón, con follajes verdes.",
+    "Pero el momento más hermoso no fue la decoración, sino ver a Angie & Samuel convertirse en protagonistas de una noche que celebró su amor a lo grande. Y, sobre todo, ver a mi hijo convertido en un señor casado. Amé acompañarlo en su gran día.",
+    "Diseñar espacios que emocionan y momentos que permanecen para siempre: esa es la esencia de cada boda que lleva mi sello."
   ],
   "proveedores": [
     {
@@ -22,7 +42,7 @@
   ],
   "seo": {
     "title": "Boda en Finca Los Pinos, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Finca Los Pinos]"
+    "description": "Boda en Finca Los Pinos, Villavicencio: rosa, blanco, salmón y follajes verdes, telas que dibujan el cielo, luces envolventes y una pista que brilla."
   },
   "portada": "boda-finca-los-pinos-villavicencio-primer-baile-pista-iluminada.jpg",
   "fotos": [

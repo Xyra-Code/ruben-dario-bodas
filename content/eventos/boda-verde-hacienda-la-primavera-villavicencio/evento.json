@@ -3,13 +3,33 @@
   "tipo": "boda",
   "lugar": "hacienda-la-primavera",
   "titulo": "Boda en verde en Hacienda La Primavera, Villavicencio",
-  "nombres": "Natalia y Sebastián",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Naty & Sebas",
+  "estilo": "Jardín romántico",
+  "paleta": [
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Verde eucalipto",
+      "hex": "#8FA89A"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    },
+    {
+      "nombre": "Mármol",
+      "hex": "#E9E6E1"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Jardín de amor.",
+    "A Naty la conozco hace mucho tiempo: diseñé su vestido de 15 años. Tenemos una relación cercana con toda su familia. Era obvio que diseñaría su boda. Fue todo un reto, porque debía sorprender a grandes amigos.",
+    "Pensé en un jardín lleno de flores blancas entre hortensias, rosas y claveles, enmarcados en mucho follaje de eucalipto, para la entrada de la capilla. En la recepción, toques dorados, muchas luces y un escenario para su fotografía social que reflejara mi sueño, “su jardín de amor”: un escenario rodeado de mármol y muchas flores blancas.",
+    "Fue un privilegio ser parte del gran día en el que se reunieron con sus familiares y grandes amigos (170 invitados): una boda a gran escala que nos exigió mucho, pero nos dejó el corazón lleno de felicidad."
   ],
   "proveedores": [
     {
@@ -23,7 +43,7 @@
   ],
   "seo": {
     "title": "Boda en verde en Hacienda La Primavera, Villavicencio",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Hacienda La Primavera]"
+    "description": "Boda en verde en Hacienda La Primavera, Villavicencio: jardín de flores blancas y eucalipto, toques dorados, luces y un escenario de mármol."
   },
   "portada": "boda-verde-hacienda-la-primavera-villavicencio-pareja-salon-telas-y-lamparas.jpg",
   "fotos": [

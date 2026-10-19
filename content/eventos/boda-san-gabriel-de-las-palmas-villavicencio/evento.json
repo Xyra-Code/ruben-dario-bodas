@@ -2,13 +2,27 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "san-gabriel-de-las-palmas",
-  "nombres": "Yuliana y Jhony",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Yuliana & Jhony",
+  "estilo": "Jardín tropical",
+  "paleta": [
+    {
+      "nombre": "Verde profundo",
+      "hex": "#2F4A3A"
+    },
+    {
+      "nombre": "Marfil",
+      "hex": "#F4EEE3"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Quise crear un jardín tropical de elegancia natural.",
+    "Me inspiré en la exuberancia de la naturaleza para crear una atmósfera romántica y sofisticada. Elegí una paleta de verdes profundos, marfiles y blancos, y la fundí con la delicadeza de las flores y las texturas orgánicas del follaje tropical. Dispuse cada elemento para enmarcar el camino hacia el altar y crear una experiencia envolvente, donde la frescura del jardín se encontrara con la elegancia atemporal del romance."
   ],
   "proveedores": [
     {
@@ -22,7 +36,7 @@
   ],
   "seo": {
     "title": "Boda en San Gabriel de las Palmas, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro Vacacional San Gabriel de las Palmas]"
+    "description": "Boda en San Gabriel de las Palmas, Villavicencio: jardín tropical en verdes profundos, marfil y blanco, con flores y follaje enmarcando el altar."
   },
   "portada": "boda-san-gabriel-de-las-palmas-villavicencio-pareja-altar-flores-blancas.jpg",
   "fotos": [

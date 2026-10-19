@@ -3,13 +3,24 @@
   "tipo": "boda",
   "lugar": "las-heliconias",
   "titulo": "Boda en rosa en Las Heliconias, Villavicencio",
-  "nombres": "Isa y Carlos",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Isa & Carlos",
+  "estilo": "Jardín romántico",
+  "paleta": [
+    {
+      "nombre": "Rosa suave",
+      "hex": "#E8B4B8"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": true,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Un jardín entre los árboles del amor, con rosas en colores suaves y follajes que inundaron la escena.",
+    "Ellos iniciaron su proceso dos años atrás y pensé que se habían ido con otro decorador. Su presupuesto los limitó y prefirieron esperar para realizar su boda soñada.",
+    "Me inspiré en su loco amor, un amor que sobrepasa protocolos y reglas normales. Ellos hicieron de su gran día el mejor momento para reunir a familiares y amigos de toda la vida. Fue un día maravilloso que siempre estará en mi corazón."
   ],
   "proveedores": [
     {
@@ -23,7 +34,7 @@
   ],
   "seo": {
     "title": "Boda en rosa en Las Heliconias, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro de Eventos Las Heliconias]"
+    "description": "Boda en rosa en Las Heliconias, Villavicencio: un jardín entre los árboles, con rosas en colores suaves y follajes que inundaron la escena."
   },
   "portada": "boda-rosa-las-heliconias-villavicencio-pareja-con-el-disenador.jpg",
   "fotos": [

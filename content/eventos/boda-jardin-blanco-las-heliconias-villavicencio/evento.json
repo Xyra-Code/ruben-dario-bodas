@@ -3,13 +3,24 @@
   "tipo": "boda",
   "lugar": "las-heliconias",
   "titulo": "Boda de jardín blanco en Las Heliconias, Villavicencio",
-  "nombres": "Alejandra y Fabián",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Alejandra & Fabián",
+  "estilo": "Boda en blanco",
+  "paleta": [
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Ellos querían algo único e inolvidable.",
+    "Nos inclinamos por una boda white, llena de detalles en blanco y dorado, con muchas telas y encajes. La ceremonia al aire libre fue impactante y todos sus invitados quedaron maravillados con su boda.",
+    "El comentario más común: “¿Todas las flores son naturales?”. Y sí: miles de rosas y hortensias engalanaron cada espacio. Fue un privilegio diseñar esta boda inolvidable."
   ],
   "proveedores": [
     {
@@ -23,7 +34,7 @@
   ],
   "seo": {
     "title": "Boda de jardín blanco en Las Heliconias, Villavicencio",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro de Eventos Las Heliconias]"
+    "description": "Boda en blanco en Las Heliconias, Villavicencio: detalles dorados, telas, encajes, ceremonia al aire libre y miles de rosas y hortensias naturales."
   },
   "portada": "boda-jardin-blanco-las-heliconias-villavicencio-pareja-salon-lamparas-colgantes.jpg",
   "fotos": [

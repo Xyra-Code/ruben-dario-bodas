@@ -38,7 +38,7 @@ definen cada archivo están en `src/lib/contenido/esquemas.ts`.
      (`boda-boho-hacienda-la-primavera-villavicencio`) y cada uno necesita su propio
      `titulo` y `seo.title`, para que Google no vea páginas duplicadas.
    - **Nombres de la pareja o la quinceañera** (opcional, solo con autorización):
-     `"nombres": "Juan y Caro"`. Se muestran bajo el H1 ("La boda de Juan y Caro") y en
+     `"nombres": "Juan & Caro"`. Se muestran bajo el H1 ("La boda de Juan & Caro") y en
      el mensaje de WhatsApp; nunca en el slug ni en `seo`.
 5. `npm run validar`: dice exactamente qué falta o qué está mal.
 6. Commit y push: Cloudflare publica. El sitemap, la galería, los filtros, los relacionados,

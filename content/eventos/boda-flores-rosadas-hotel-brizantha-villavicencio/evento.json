@@ -3,13 +3,35 @@
   "tipo": "boda",
   "lugar": "hotel-brizantha",
   "titulo": "Boda con flores rosadas en el Hotel Brizantha, Villavicencio",
-  "nombres": "Lida y Carlos",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Lida & Carlos",
+  "estilo": "Jardín romántico",
+  "paleta": [
+    {
+      "nombre": "Rosa empolvado",
+      "hex": "#D8A7A1"
+    },
+    {
+      "nombre": "Blush",
+      "hex": "#EFC9C3"
+    },
+    {
+      "nombre": "Fucsia",
+      "hex": "#C2307A"
+    },
+    {
+      "nombre": "Malva",
+      "hex": "#9E7A92"
+    },
+    {
+      "nombre": "Madera natural",
+      "hex": "#9C7350"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Un romance entre flores y naturaleza.",
+    "Me inspiré en la belleza de los jardines románticos para esta celebración: combiné tonos rosa empolvado, blush, fucsia y matices de malva, y creé una composición floral llena de profundidad y delicadeza. La calidez de la madera natural aportó textura y carácter, mientras que la abundancia de flores transformó el entorno en un escenario de ensueño. Una propuesta donde la elegancia clásica y la exuberancia floral se encontraron para celebrar el amor."
   ],
   "proveedores": [
     {
@@ -23,7 +45,7 @@
   ],
   "seo": {
     "title": "Boda con flores rosadas en el Hotel Brizantha, Villavicencio",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Hotel Brizantha]"
+    "description": "Boda en el Hotel Brizantha, Villavicencio: jardín romántico en rosa empolvado, blush, fucsia y malva, con madera natural y abundancia de flores."
   },
   "portada": "boda-flores-rosadas-hotel-brizantha-villavicencio-pareja-con-el-disenador.jpg",
   "fotos": [

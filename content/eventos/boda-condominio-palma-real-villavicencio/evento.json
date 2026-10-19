@@ -2,13 +2,28 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "condominio-palma-real",
-  "nombres": "Marce y Criss",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Marce & Criss",
+  "estilo": "Cuento de hadas",
+  "paleta": [
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Marce & Cris buscaron muchos lugares y finalmente eligieron el salón de su condominio. El escenario fue perfecto.",
+    "Luego de una maravillosa ceremonia en la capilla principal de Restrepo, con muchas flores y velas (como lo pidieron), sus invitados se encontraron con un salón entelado en forma de rosetones, con muchas flores blancas y follajes que se mezclaban entre luces y detalles en dorado, y que enmarcaban a la perfección su boda soñada.",
+    "Fue como entrar a un cuento de hadas, que combinaba con sus trajes impecables y llenos de diseño. Literal: la princesa y su príncipe en el más hermoso escenario."
   ],
   "proveedores": [
     {
@@ -22,7 +37,7 @@
   ],
   "seo": {
     "title": "Boda en Condominio Palma Real, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Condominio Palma Real]"
+    "description": "Boda en Condominio Palma Real, Villavicencio: salón entelado en rosetones, flores blancas, follajes, luces y detalles dorados, como un cuento de hadas."
   },
   "portada": "boda-condominio-palma-real-villavicencio-pareja-salon-iluminado.jpg",
   "fotos": [

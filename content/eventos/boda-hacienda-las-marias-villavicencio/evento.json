@@ -2,13 +2,25 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "hacienda-las-marias",
-  "nombres": "Laura y Sebastián",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Laura & Sebastián",
+  "estilo": "Verde y blanco",
+  "paleta": [
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": true,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Una locación soñada.",
+    "Esta boda la preparé vía WhatsApp. Ellos viven en Canadá y quisieron realizar su boda en Colombia; llegaron con muchos invitados de diferentes países.",
+    "Buscando, encontramos una locación maravillosa: una hacienda con una capilla y una arquitectura increíble. Trabajar allí fue un reto; quería estar a la altura del lugar y de mis novios, para quienes todo fue sorpresa.",
+    "En la primera reunión virtual solo me dijeron: “Queremos mucho verde y toques blancos, encárgate de sorprendernos”. Inspiré cada detalle en ellos y ¡todos quedamos felices con el resultado!"
   ],
   "proveedores": [
     {
@@ -21,8 +33,8 @@
     }
   ],
   "seo": {
-    "title": " eBoda en Hacienda Las Marías, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la bodan Hacienda Las Marías]"
+    "title": "Boda en Hacienda Las Marías, Villavicencio | Rubén Darío",
+    "description": "Boda en Hacienda Las Marías, Villavicencio: una pareja desde Canadá, capilla, arquitectura increíble y una decoración con mucho verde y toques blancos."
   },
   "portada": "boda-hacienda-las-marias-villavicencio-pareja-salon-techo-ondulado.jpg",
   "fotos": [

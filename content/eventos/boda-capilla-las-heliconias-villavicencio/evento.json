@@ -3,13 +3,29 @@
   "tipo": "boda",
   "lugar": "las-heliconias",
   "titulo": "Boda con capilla en Las Heliconias, Villavicencio",
-  "nombres": "Naty y Milton",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Naty & Milton",
+  "estilo": "Greenery",
+  "paleta": [
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    },
+    {
+      "nombre": "Rosa pink",
+      "hex": "#E58FAE"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Una boda milimétrica.",
+    "Una de las novias más exigentes que he tenido. Ella quería tener el control de todo y creó su propio timeline para todo el evento, pero me dio libertad en el diseño.",
+    "Busqué sorprenderla con la capilla: entelé el techo y creé una entrada de ensueño. Todo fue tan romántico e inolvidable como ella lo soñó. Trabajamos una tendencia greenery con toques de rosas pink y cartuchos que hicieron todo el evento maravilloso.",
+    "Sin olvidar que Naty lució un vestido que la hizo lucir como una reina."
   ],
   "proveedores": [
     {
@@ -23,7 +39,7 @@
   ],
   "seo": {
     "title": "Boda con capilla en Las Heliconias, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Centro de Eventos Las Heliconias]"
+    "description": "Boda con capilla en Las Heliconias, Villavicencio: techo entelado, entrada de ensueño y tendencia greenery con rosas pink y cartuchos."
   },
   "portada": "boda-capilla-las-heliconias-villavicencio-pareja-altar-capilla.jpg",
   "fotos": [

@@ -3,8 +3,8 @@
   "tipo": "boda",
   "lugar": "hacienda-la-primavera",
   "titulo": "Boda romántica en Hacienda La Primavera, Villavicencio",
-  "nombres": "Caro y Pipe",
-  "estilo": "Romántico clásico",
+  "nombres": "Caro & Pipe",
+  "estilo": "Greenery",
   "paleta": [
     {
       "nombre": "Blanco",
@@ -26,8 +26,9 @@
   "fecha": "[PENDIENTE: fecha]",
   "destacado": true,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]",
-    "[PENDIENTE: detalles del montaje: techo de telas, arco dorado, flores blancas, iluminación]"
+    "Una pareja llena de sueños y muchas metas por cumplir: me dieron libertad en el diseño de su boda.",
+    "Elegí la tendencia greenery, con toques de dorado y luces románticas. Grandes arreglos de flores blancas y follajes engalanaron cada rincón.",
+    "Verlos como unos príncipes en sus trajes de ensueño, saber que hice su sueño realidad y que además los sorprendí dándoles más de lo que esperaban, llenó mi corazón de felicidad."
   ],
   "proveedores": [
     {
@@ -41,7 +42,7 @@
   ],
   "seo": {
     "title": "Boda romántica en Hacienda La Primavera, Villavicencio",
-    "description": "Boda romántica en Hacienda La Primavera, Villavicencio: techo de telas, arco dorado y flores blancas. Mira el diseño completo del montaje."
+    "description": "Boda greenery en Hacienda La Primavera, Villavicencio: toques de dorado, luces románticas y grandes arreglos de flores blancas y follajes."
   },
   "portada": "boda-romantica-hacienda-la-primavera-villavicencio-pareja-mesa-principal.jpg",
   "fotos": [

@@ -2,13 +2,29 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "la-topia",
-  "nombres": "Lau y Jack",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Lau & Jack",
+  "estilo": "Rústico llanero",
+  "paleta": [
+    {
+      "nombre": "Naranja",
+      "hex": "#E07B39"
+    },
+    {
+      "nombre": "Amarillo",
+      "hex": "#F2C14E"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": true,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "De Londres al trópico.",
+    "Esta hermosa pareja llegó con sus invitados desde Inglaterra. Lau es colombiana y quería mostrar algo de su país a su prometido, familiares y amigos.",
+    "Elegimos la locación más representativa de la región y utilizamos muebles rústicos y flores autóctonas del Llano, que aportaron color, texturas y muy lindos recuerdos a nuestro diseño. Fue una boda íntima y llena de todo lo mejor que puede ofrecer el Llano.",
+    "Los ingleses se fueron enamorados de nuestro país. Espero recibir más parejas europeas que quieran hacer realidad su sueño en los Llanos colombianos."
   ],
   "proveedores": [
     {
@@ -22,7 +38,7 @@
   ],
   "seo": {
     "title": "Boda en La Topia, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en La Topia]"
+    "description": "Boda en La Topia, Villavicencio: una pareja desde Inglaterra, muebles rústicos y flores autóctonas del Llano en una boda íntima y llena de color."
   },
   "portada": "boda-la-topia-villavicencio-pareja-arco-tropical-iluminado.jpg",
   "fotos": [

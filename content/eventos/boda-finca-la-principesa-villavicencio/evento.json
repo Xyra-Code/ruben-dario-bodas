@@ -2,13 +2,28 @@
   "borrador": true,
   "tipo": "boda",
   "lugar": "finca-la-principesa",
-  "nombres": "Nathalya y Hairom",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "nombres": "Nathalya & Hairom",
+  "estilo": "Romántico con eucalipto",
+  "paleta": [
+    {
+      "nombre": "Verde eucalipto",
+      "hex": "#8FA89A"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
   "fecha": "[PENDIENTE: fecha]",
   "destacado": false,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Una boda tan romántica como ellos.",
+    "Querían un toque diferente y me fui por mucho follaje de eucalipto, con toques de rosas y hortensias blancas. En la ceremonia, todos comentaron el exquisito aroma a eucalipto recién cortado. Esa plataforma engalanada para su ceremonia fue un detalle muy romántico e inolvidable, el escenario perfecto para quedar grabado en el corazón.",
+    "Su recepción no podía ser diferente: muchos detalles en blanco, verde y dorado. Otra hermosa historia de la cual me siento muy orgulloso."
   ],
   "proveedores": [
     {
@@ -22,7 +37,7 @@
   ],
   "seo": {
     "title": "Boda en Finca La Principesa, Villavicencio | Rubén Darío",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Finca La Principesa]"
+    "description": "Boda en Finca La Principesa, Villavicencio: follaje de eucalipto, rosas y hortensias blancas, y una recepción en blanco, verde y dorado."
   },
   "portada": "boda-finca-la-principesa-villavicencio-pareja-salon-pista-led.jpg",
   "fotos": [
