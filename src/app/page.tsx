@@ -319,19 +319,26 @@ export default function Inicio() {
                 ) : undefined
               }
             />
-            <div className="mt-12 grid gap-6 md:grid-cols-[repeat(auto-fit,minmax(min(18rem,100%),1fr))]">
-              {testimonios.slice(0, 3).map((t) => {
+            {/* Todos los testimonios en una fila que se desliza (solo CSS: scroll-snap). En
+                celular asoma la siguiente tarjeta para que se note que hay más. */}
+            <ul
+              tabIndex={0}
+              aria-label="Testimonios: desliza para ver más"
+              className="-mx-(--gutter) mt-12 flex snap-x snap-mandatory scroll-px-(--gutter) gap-4 overflow-x-auto overscroll-x-contain px-(--gutter) pb-4 sm:gap-6"
+            >
+              {testimonios.map((t) => {
                 const evento = eventos.find((e) => e.slug === t.evento);
                 return (
-                  <Cita
-                    key={t.texto}
-                    texto={t.texto}
-                    autor={t.autor}
-                    detalle={evento?.titulo ?? (t.tipo === "boda" ? "Boda" : "15 años")}
-                  />
+                  <li key={t.texto} className="w-[85%] min-w-0 shrink-0 snap-start sm:w-[22rem]">
+                    <Cita
+                      texto={t.texto}
+                      autor={t.autor}
+                      detalle={evento?.titulo ?? (t.tipo === "boda" ? "Boda" : "15 años")}
+                    />
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </section>
       )}
