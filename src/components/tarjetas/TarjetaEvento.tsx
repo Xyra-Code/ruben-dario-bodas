@@ -41,9 +41,7 @@ export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3" }: Props)
           {e.titulo}
         </Link>
       </Titulo>
-      <p className="mt-1 text-sm text-topo">
-        {e.estilo} · {e.anio}
-      </p>
+      <p className="mt-1 text-sm text-topo">{e.estilo}</p>
     </article>
   );
 }

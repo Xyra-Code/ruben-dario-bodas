@@ -250,8 +250,8 @@ Mensaje breve + enlaces a Bodas, 15 años, Eventos y WhatsApp.
 
 ```
 content/eventos/boda-hacienda-el-caney-restrepo/
-├── evento.json   tipo, lugar (slug de lugares.json), estilo, paleta[], fecha, destacado,
-│                 descripcion[], testimonio{texto, autor}, proveedores[{rol, nombre, url}],
+├── evento.json   tipo, lugar (slug de lugares.json), estilo, paleta[], destacado,
+│                 descripcion[], proveedores[{rol, nombre, url}] (testimonio: testimonios.json),
 │                 seo{title, description}, portada, fotos[{archivo, alt}], borrador?
 └── fotos/        originales renombradas → WebP en 3 tamaños al compilar
 ```

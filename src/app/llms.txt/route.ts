@@ -38,8 +38,7 @@ export function GET() {
     "## Portafolio de eventos",
     "",
     ...eventos.map(
-      (e) =>
-        `- ${enlace(e.titulo, rutaEvento(e.slug))}: estilo ${e.estilo.toLowerCase()}, ${e.fechaTexto}.`,
+      (e) => `- ${enlace(e.titulo, rutaEvento(e.slug))}: estilo ${e.estilo.toLowerCase()}.`,
     ),
     "",
     "## Preguntas frecuentes",

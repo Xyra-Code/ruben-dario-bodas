@@ -2,26 +2,26 @@ import type { Evento } from "@/lib/contenido/cargar";
 import { ubicacion } from "@/lib/rutas";
 
 /**
- * Ficha del evento: lugar, municipio, estilo, fecha y la paleta como muestras de color
- * con su nombre (el color nunca va solo). El tipo ya lo muestra la etiqueta sobre el H1.
+ * Ficha del evento: lugar, municipio, estilo y la paleta como muestras de color con su
+ * nombre (el color nunca va solo). El tipo ya lo muestra la etiqueta sobre el H1. Sin
+ * fecha: decisión del 2026-10-19 (envejece el portafolio).
  */
 export function FichaEvento({ evento: e }: { evento: Evento }) {
   const filas = [
     ["Lugar", e.lugar.nombre],
     ["Municipio", ubicacion(e.lugar)],
     ["Estilo", e.estilo],
-    ["Fecha", e.fechaTexto.charAt(0).toUpperCase() + e.fechaTexto.slice(1)],
   ] as const;
 
   return (
-    <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-y border-linea py-6 lg:grid-cols-4">
+    <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-y border-linea py-6 lg:grid-cols-3">
       {filas.map(([dato, valor]) => (
         <div key={dato} className="min-w-0">
           <dt className="antetitulo">{dato}</dt>
           <dd className="mt-1">{valor}</dd>
         </div>
       ))}
-      <div className="col-span-2 min-w-0 lg:col-span-4">
+      <div className="col-span-2 min-w-0 lg:col-span-3">
         <dt className="antetitulo">Paleta</dt>
         <dd className="mt-3">
           {e.paleta.length === 0 && <p>[PENDIENTE: paleta de colores]</p>}
