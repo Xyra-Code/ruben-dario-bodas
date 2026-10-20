@@ -52,6 +52,7 @@ function Bloque({ titulo, children }: { titulo: string; children: ReactNode }) {
 export default function GuiaDeEstilos() {
   const { eventos, preguntasGenerales, proceso, testimonios } = obtenerContenido();
   const evento = eventos[0];
+  const testimonioEvento = testimonios.find((t) => t.evento === evento.slug);
 
   return (
     <main>
@@ -167,18 +168,18 @@ export default function GuiaDeEstilos() {
             {testimonios.map((t) => (
               <Cita
                 key={t.texto}
-                texto={t.texto}
+                texto={t.extracto ?? t.texto}
                 autor={t.autor}
                 detalle={t.tipo === "boda" ? "Boda" : "15 años"}
               />
             ))}
           </div>
-          {evento.testimonio && (
+          {testimonioEvento && (
             <div className="mt-14">
               <Cita
                 variante="destacada"
-                texto={evento.testimonio.texto}
-                autor={evento.testimonio.autor}
+                texto={testimonioEvento.texto}
+                autor={testimonioEvento.autor}
                 detalle={evento.titulo}
               />
             </div>

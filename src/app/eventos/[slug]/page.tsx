@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 
 import { Compartir } from "@/components/evento/Compartir";
 import { FichaEvento } from "@/components/evento/FichaEvento";
+import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { Galeria } from "@/components/galeria/Galeria";
 import { Migas } from "@/components/navegacion/Migas";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { Boton } from "@/components/ui/Boton";
-import { Cita } from "@/components/ui/Cita";
 import { ConAmpersand } from "@/components/ui/ConAmpersand";
 import { Etiqueta } from "@/components/ui/Etiqueta";
 import { Foto } from "@/components/ui/Foto";
@@ -59,8 +59,10 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
   const relacionados = eventosRelacionados(e);
   const rutaServicio = e.tipo === "otro" ? undefined : RUTA_SERVICIO[e.tipo];
   // La firma solo acompaña textos reales: sobre un [PENDIENTE] parecería que él lo escribió.
-  const { sobre } = obtenerContenido();
+  const { sobre, testimonios } = obtenerContenido();
   const firma = e.descripcion.some((p) => p.includes("[PENDIENTE")) ? undefined : sobre.firma;
+  // Los testimonios viven en content/testimonios.json (con su autorización); aquí, el de este evento.
+  const testimonio = testimonios.find((t) => t.evento === e.slug);
 
   return (
     <main>
@@ -166,15 +168,10 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
         </div>
       </section>
 
-      {e.testimonio && (
+      {testimonio && (
         <section aria-label="Testimonio" className={`${seccion} bg-rubor`}>
           <div className="contenedor">
-            <Cita
-              variante="destacada"
-              texto={e.testimonio.texto}
-              autor={e.testimonio.autor}
-              detalle={e.titulo}
-            />
+            <TestimonioEvento evento={e} testimonio={testimonio} />
           </div>
         </section>
       )}

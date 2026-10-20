@@ -228,7 +228,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
               {testimonios.map((t) => (
                 <Cita
                   key={t.texto}
-                  texto={t.texto}
+                  texto={t.extracto ?? t.texto}
                   autor={t.autor}
                   detalle={todos.find((e) => e.slug === t.evento)?.titulo}
                 />

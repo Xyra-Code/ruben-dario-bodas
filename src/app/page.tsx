@@ -6,13 +6,14 @@ import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { TarjetaServicio } from "@/components/tarjetas/TarjetaServicio";
 import { Acordeon } from "@/components/ui/Acordeon";
 import { Boton } from "@/components/ui/Boton";
+import { CarruselTestimonios } from "@/components/ui/CarruselTestimonios";
 import { Cita } from "@/components/ui/Cita";
 import { Foto } from "@/components/ui/Foto";
 import { Pasos } from "@/components/ui/Pasos";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { esEnlace } from "@/lib/formato";
-import { RUTA_SERVICIO } from "@/lib/rutas";
+import { RUTA_SERVICIO, rutaEvento } from "@/lib/rutas";
 import { negocio, preguntasFrecuentes, sitioWeb } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
@@ -319,26 +320,23 @@ export default function Inicio() {
                 ) : undefined
               }
             />
-            {/* Todos los testimonios en una fila que se desliza (solo CSS: scroll-snap). En
-                celular asoma la siguiente tarjeta para que se note que hay más. */}
-            <ul
-              tabIndex={0}
-              aria-label="Testimonios: desliza para ver más"
-              className="-mx-(--gutter) mt-12 flex snap-x snap-mandatory scroll-px-(--gutter) gap-4 overflow-x-auto overscroll-x-contain px-(--gutter) pb-4 sm:gap-6"
-            >
+            {/* Todos los testimonios en una fila que se desliza, sin barra: contador, línea de
+                progreso y flechas. En celular asoma la siguiente tarjeta. */}
+            <CarruselTestimonios total={testimonios.length}>
               {testimonios.map((t) => {
                 const evento = eventos.find((e) => e.slug === t.evento);
                 return (
                   <li key={t.texto} className="w-[85%] min-w-0 shrink-0 snap-start sm:w-[22rem]">
                     <Cita
-                      texto={t.texto}
+                      texto={t.extracto ?? t.texto}
                       autor={t.autor}
                       detalle={evento?.titulo ?? (t.tipo === "boda" ? "Boda" : "15 años")}
+                      href={evento ? rutaEvento(evento.slug) : undefined}
                     />
                   </li>
                 );
               })}
-            </ul>
+            </CarruselTestimonios>
           </div>
         </section>
       )}

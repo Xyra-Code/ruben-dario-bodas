@@ -31,10 +31,6 @@ export type Evento = Omit<EventoArchivo, "lugar" | "titulo" | "fotos"> & {
   slug: string;
   titulo: string;
   lugar: Lugar;
-  /** "marzo de 2026" (o el texto [PENDIENTE: …]) */
-  fechaTexto: string;
-  /** "2026" (o el texto [PENDIENTE: …]) */
-  anio: string;
   fotos: (EventoArchivo["fotos"][number] & { ruta: string })[];
 };
 
@@ -102,16 +98,6 @@ function pendientes(valor: unknown, ruta = ""): string[] {
     return Object.entries(valor).flatMap(([k, v]) => pendientes(v, ruta ? `${ruta}.${k}` : k));
   }
   return [];
-}
-
-function fechaTexto(fecha: string) {
-  if (fecha.startsWith(MARCA_PENDIENTE)) return fecha;
-  const [anio, mes] = fecha.split("-").map(Number);
-  return new Intl.DateTimeFormat("es-CO", {
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(Date.UTC(anio, mes - 1, 1)));
 }
 
 // ── Validación completa ─────────────────────────────────────────────────────
@@ -241,24 +227,27 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       slug,
       lugar,
       titulo: datos.titulo ?? `${NOMBRE_TIPO[datos.tipo]} en ${lugar.nombre}, ${lugar.municipio}`,
-      fechaTexto: fechaTexto(datos.fecha),
-      anio: datos.fecha.startsWith(MARCA_PENDIENTE) ? datos.fecha : datos.fecha.slice(0, 4),
       fotos: datos.fotos.map((f) => ({ ...f, ruta: path.join(carpetaFotos, f.archivo) })),
     });
   }
 
-  // Más recientes primero; los de fecha [PENDIENTE] cuentan como los más nuevos.
-  const orden = (e: Evento) => (e.fecha.startsWith(MARCA_PENDIENTE) ? "9999" : e.fecha);
-  eventos.sort((a, b) => orden(b).localeCompare(orden(a)));
+  // Sin fecha (decisión del 2026-10-19: envejece el portafolio): los eventos quedan en el
+  // orden de sus carpetas.
 
   // Testimonios: referencias a eventos y autorización.
   const slugsEventos = new Set(eventos.map((e) => e.slug));
+  const conTestimonio = new Set<string>();
   for (const t of testimonios ?? []) {
     if (t.evento && !slugsEventos.has(t.evento)) {
       errores.push(
         `content/testimonios.json: "${t.autor}" apunta al evento "${t.evento}", que no existe`,
       );
     }
+    // La página del evento muestra uno solo: un segundo quedaría oculto sin aviso.
+    if (t.evento && conTestimonio.has(t.evento)) {
+      errores.push(`content/testimonios.json: el evento "${t.evento}" tiene más de un testimonio`);
+    }
+    if (t.evento) conTestimonio.add(t.evento);
     if (t.borrador)
       (estricto ? errores : avisos).push(
         `content/testimonios.json: "${t.autor}" es de ejemplo (borrador)`,
@@ -366,7 +355,7 @@ export function eventosRelacionados(evento: Evento, cantidad = 3) {
     (e.tipo === evento.tipo ? 2 : 0) + (e.lugar.municipio === evento.lugar.municipio ? 1 : 0);
   return obtenerContenido()
     .eventos.filter((e) => e.slug !== evento.slug)
-    .sort((a, b) => puntaje(b) - puntaje(a) || b.fecha.localeCompare(a.fecha))
+    .sort((a, b) => puntaje(b) - puntaje(a))
     .slice(0, cantidad);
 }
 

@@ -1,72 +1,112 @@
 [
   {
-    "texto": "Todavía vemos las fotos de nuestra boda y no podemos creer lo hermoso que quedó todo. Rubén entendió lo que queríamos incluso cuando nosotros mismos no sabíamos muy bien cómo explicarlo. Todo tenía sentido, cada detalle estaba en su lugar y el resultado fue mucho más lindo de lo que imaginábamos. ¡Nos casaríamos otra vez solo para volver a vivir ese día!",
-    "autor": "Pareja",
+    "texto": "A veces son las cosas pequeñas las que terminan haciendo que un día sea inolvidable. En nuestra boda sentimos que nada estaba puesto al azar y que todo tenía una razón de ser. Rubén cuidó cada detalle con muchísimo cariño y eso se reflejó en el resultado. Gracias por trabajar con tanta dedicación y por ayudarnos a celebrar nuestro amor de una manera tan bonita.",
+    "autor": "Naty & Milton",
     "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Yo era el que decía que con algo sencillo estábamos bien. Mi esposa tenía mil ideas y Rubén logró convertirlas en algo espectacular. Cuando entramos al salón nos quedamos sin palabras. Todo se veía elegante, delicado y perfectamente pensado. Ahora entiendo por qué ella insistía tanto en que trabajáramos con él. ¡Tenía toda la razón!",
-    "autor": "Novio",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Más allá de lo hermoso que quedó todo, quiero destacar la calidad humana de Rubén. Siempre estuvo dispuesto a escucharnos, a resolver nuestras dudas y a acompañarnos durante el proceso. En medio de tantos preparativos, contar con alguien que te transmita confianza hace una diferencia enorme. Nos sentimos acompañados desde el primer día hasta el momento de nuestra boda.",
-    "autor": "Novia",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Casarse es hermoso, pero organizar una boda puede ser una locura. Con Rubén sentimos que podíamos respirar tranquilos porque sabíamos que había alguien pendiente de todo. Nos escuchó, nos aconsejó y siempre buscó la manera de hacer realidad nuestras ideas. El día de la boda solo tuvimos que disfrutar. Y eso, sinceramente, no tiene precio.",
-    "autor": "Pareja",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "No quería una boda que se pareciera a todas las demás. Quería que tuviera nuestra esencia, que fuera romántica, elegante y que cada rincón tuviera algo especial. Rubén logró interpretar exactamente eso. No se trataba solamente de decorar un espacio, sino de contar nuestra historia a través de cada detalle. Fue demasiado especial.",
-    "autor": "Novia",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Hay personas que llegan a tu vida y te ayudan a convertir un sueño en realidad. Rubén fue una de ellas para nosotros. Gracias por tu dedicación, por tu paciencia y por poner tanto amor en nuestro día. Cuando recordamos nuestra boda, además de la felicidad que sentimos, nos queda una gratitud inmensa por haber contado contigo.",
-    "autor": "Pareja",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Confieso que soy de las que se fija hasta en el último detalle. Tenía referencias, fotografías, ideas y una lista interminable de cosas que quería para mi boda. Rubén supo escucharme y transformar todo eso en una propuesta hermosa, sin perder la elegancia. El resultado fue impecable y superó todas mis expectativas. Lo volvería a elegir con los ojos cerrados.",
-    "autor": "Novia",
-    "tipo": "boda",
+    "evento": "boda-capilla-las-heliconias-villavicencio",
     "autorizado": true
   },
   {
     "texto": "Desde pequeña imaginaba cómo sería mi boda, pero nunca pensé que al verla terminada sentiría tantas emociones juntas. Parecía sacada de un cuento, pero tenía algo todavía más bonito: era nuestra, hablaba de nosotros y reflejaba nuestra historia. Rubén hizo magia con cada espacio. Gracias por ayudarnos a vivir un día que guardaremos para siempre.",
-    "autor": "Novia",
+    "autor": "Marce & Criss",
     "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "¡Rubén, todavía estamos en las nubes! Todo quedó demasiado hermoso. Nuestros invitados no paraban de tomarse fotos y preguntarnos quién había diseñado la decoración. La verdad, no pudimos elegir mejor. Gracias por aguantarnos, por escucharnos y por lograr que todo quedara incluso más lindo de lo que esperábamos. ¡Te queremos muchísimo!",
-    "autor": "Pareja",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Llegamos donde Rubén con muchas ganas de casarnos, pero con muy poca claridad sobre cómo queríamos que se viera nuestra boda. Él nos fue orientando, nos mostró posibilidades y poco a poco construimos juntos una propuesta que nos encantó. Nunca sentimos que nos estuviera imponiendo sus ideas. Al contrario, sentimos que nos ayudó a descubrir lo que realmente queríamos.",
-    "autor": "Pareja",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Uno de los momentos más emocionantes de nuestra boda fue cuando vimos el salón terminado por primera vez. Recuerdo que miré a mi esposo y los dos nos quedamos callados. Era impresionante ver cómo un espacio se había transformado en algo tan nuestro. Rubén, nunca olvidaremos esa sensación. Gracias por convertir nuestra ilusión en una realidad tan hermosa.",
-    "autor": "Novia",
-    "tipo": "boda",
+    "evento": "boda-condominio-palma-real-villavicencio",
     "autorizado": true
   },
   {
     "texto": "Queríamos una boda elegante, sin excesos y con detalles que realmente marcaran la diferencia. Rubén entendió perfectamente nuestro estilo. La combinación de colores, las texturas, las flores y la manera de distribuir cada elemento hicieron que todo se viera armonioso. El resultado fue sofisticado, pero al mismo tiempo cálido y romántico. Justamente lo que habíamos soñado.",
+    "autor": "Caro & Andy",
+    "tipo": "boda",
+    "evento": "boda-el-campanario-restrepo",
+    "autorizado": true
+  },
+  {
+    "texto": "Si pudiera describir nuestra boda en tres palabras, serían amor, belleza y magia. Todo tenía una delicadeza que me enamoró desde el primer momento. Las flores, los colores y cada pequeño detalle crearon una atmósfera que todavía me emociona recordar. Gracias, Rubén, por poner tu talento al servicio de un día tan importante para nosotros.",
+    "autor": "Nathalya & Hairom",
+    "tipo": "boda",
+    "evento": "boda-finca-la-principesa-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Rubén, ¿cómo encontrar las palabras para agradecerte todo lo que hiciste por nosotros? Nos regalaste una boda hermosa, de esas que uno sueña toda la vida, y diseñaste nuestros trajes con ese talento y esa sensibilidad que te hacen tan especial. Gracias a ti, nos sentimos protagonistas de nuestra propia historia de amor, tal como siempre lo imaginamos. Y si hay algo que quiero que sepas, Rubén, es que para mí eres como un padre. La vida nos regaló el mismo apellido, la misma sangre y una historia que nos une, pero el cariño que siento por ti es de esos que no caben en una palabra. Muchas veces te siento como ese padre que la vida me permitió tener también en ti. Eres alguien a quien admiro, quiero y llevo profundamente en mi corazón. Tenerte diseñando nuestra boda y nuestros trajes, acompañándome en uno de los capítulos más importantes de mi vida, fue un regalo que jamás voy a olvidar. Porque ese día no solo confié en el talento de un gran diseñador: confié mis sueños a alguien que es parte de mi familia, de mi historia y de mi corazón.",
+    "extracto": "Rubén, ¿cómo encontrar las palabras para agradecerte todo lo que hiciste por nosotros? Nos regalaste una boda hermosa, de esas que uno sueña toda la vida, y diseñaste nuestros trajes con ese talento y esa sensibilidad que te hacen tan especial. Gracias a ti, nos sentimos protagonistas de nuestra propia historia de amor, tal como siempre lo imaginamos.",
+    "autor": "Angie & Samuel",
+    "tipo": "boda",
+    "evento": "boda-finca-los-pinos-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Lo que más nos gustó del trabajo de Rubén fue que nunca sentimos que nuestra boda fuera una más. Desde las primeras conversaciones buscó conocer nuestros gustos, nuestra historia y la manera en que imaginábamos ese día. El diseño final tenía personalidad, armonía y muchísima belleza. Cuando lo vimos terminado, sentimos que realmente nos representaba.",
+    "autor": "Luisa & Héctor",
+    "tipo": "boda",
+    "evento": "boda-finca-san-luis-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Todavía vemos las fotos de nuestra boda y no podemos creer lo hermoso que quedó todo. Rubén entendió lo que queríamos incluso cuando nosotros mismos no sabíamos muy bien cómo explicarlo. Todo tenía sentido, cada detalle estaba en su lugar y el resultado fue mucho más lindo de lo que imaginábamos. ¡Nos casaríamos otra vez solo para volver a vivir ese día!",
+    "autor": "Lida & Carlos",
+    "tipo": "boda",
+    "evento": "boda-flores-rosadas-hotel-brizantha-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Llegamos donde Rubén con muchas ganas de casarnos, pero con muy poca claridad sobre cómo queríamos que se viera nuestra boda. Él nos fue orientando, nos mostró posibilidades y poco a poco construimos juntos una propuesta que nos encantó. Nunca sentimos que nos estuviera imponiendo sus ideas. Al contrario, sentimos que nos ayudó a descubrir lo que realmente queríamos.",
+    "autor": "Laura & Sebastián",
+    "tipo": "boda",
+    "evento": "boda-hacienda-las-marias-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Yo era el que decía que con algo sencillo estábamos bien. Mi esposa tenía mil ideas y Rubén logró convertirlas en algo espectacular. Cuando entramos al salón nos quedamos sin palabras. Todo se veía elegante, delicado y perfectamente pensado. Ahora entiendo por qué ella insistía tanto en que trabajáramos con él. ¡Tenía toda la razón!",
+    "autor": "Alejandra & Fabián",
+    "tipo": "boda",
+    "evento": "boda-jardin-blanco-las-heliconias-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "No quería una boda que se pareciera a todas las demás. Quería que tuviera nuestra esencia, que fuera romántica, elegante y que cada rincón tuviera algo especial. Rubén logró interpretar exactamente eso. No se trataba solamente de decorar un espacio, sino de contar nuestra historia a través de cada detalle. Fue demasiado especial.",
+    "autor": "Lau & Jack",
+    "tipo": "boda",
+    "evento": "boda-la-topia-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Confieso que soy de las que se fija hasta en el último detalle. Tenía referencias, fotografías, ideas y una lista interminable de cosas que quería para mi boda. Rubén supo escucharme y transformar todo eso en una propuesta hermosa, sin perder la elegancia. El resultado fue impecable y superó todas mis expectativas. Lo volvería a elegir con los ojos cerrados.",
+    "autor": "Caro & Pipe",
+    "tipo": "boda",
+    "evento": "boda-romantica-hacienda-la-primavera-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "¡Rubén, todavía estamos en las nubes! Todo quedó demasiado hermoso. Nuestros invitados no paraban de tomarse fotos y preguntarnos quién había diseñado la decoración. La verdad, no pudimos elegir mejor. Gracias por aguantarnos, por escucharnos y por lograr que todo quedara incluso más lindo de lo que esperábamos. ¡Te queremos muchísimo!",
+    "autor": "Isa & Carlos",
+    "tipo": "boda",
+    "evento": "boda-rosa-las-heliconias-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Se nota cuando alguien ama lo que hace y tiene años de experiencia detrás. Rubén tiene una manera muy especial de entender los espacios y visualizar cosas que uno todavía no alcanza a imaginar. Nos sentimos en buenas manos durante todo el proceso. Nuestra boda quedó espectacular y estamos felices de haber confiado en su experiencia y su talento.",
+    "autor": "Yuliana & Jhony",
+    "tipo": "boda",
+    "evento": "boda-san-gabriel-de-las-palmas-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Más allá de lo hermoso que quedó todo, quiero destacar la calidad humana de Rubén. Siempre estuvo dispuesto a escucharnos, a resolver nuestras dudas y a acompañarnos durante el proceso. En medio de tantos preparativos, contar con alguien que te transmita confianza hace una diferencia enorme. Nos sentimos acompañados desde el primer día hasta el momento de nuestra boda.",
+    "autor": "Naty & Sebas",
+    "tipo": "boda",
+    "evento": "boda-verde-hacienda-la-primavera-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Casarse es hermoso, pero organizar una boda puede ser una locura. Con Rubén sentimos que podíamos respirar tranquilos porque sabíamos que había alguien pendiente de todo. Nos escuchó, nos aconsejó y siempre buscó la manera de hacer realidad nuestras ideas. El día de la boda solo tuvimos que disfrutar. Y eso, sinceramente, no tiene precio.",
+    "autor": "Mafe & Sebas",
+    "tipo": "boda",
+    "evento": "boda-verde-tropical-hotel-brizantha-villavicencio",
+    "autorizado": true
+  },
+  {
+    "texto": "Hay personas que llegan a tu vida y te ayudan a convertir un sueño en realidad. Rubén fue una de ellas para nosotros. Gracias por tu dedicación, por tu paciencia y por poner tanto amor en nuestro día. Cuando recordamos nuestra boda, además de la felicidad que sentimos, nos queda una gratitud inmensa por haber contado contigo.",
     "autor": "Pareja",
     "tipo": "boda",
     "autorizado": true
@@ -78,12 +118,6 @@
     "autorizado": true
   },
   {
-    "texto": "Si pudiera describir nuestra boda en tres palabras, serían amor, belleza y magia. Todo tenía una delicadeza que me enamoró desde el primer momento. Las flores, los colores y cada pequeño detalle crearon una atmósfera que todavía me emociona recordar. Gracias, Rubén, por poner tu talento al servicio de un día tan importante para nosotros.",
-    "autor": "Novia",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
     "texto": "Si alguien nos pregunta qué fue de las mejores decisiones que tomamos para nuestra boda, sin duda hablamos de Rubén. Desde el principio sentimos que estábamos trabajando con alguien que sabía lo que hacía y que se tomaba nuestro evento tan en serio como nosotros. Todo quedó precioso y la experiencia fue mucho mejor de lo que esperábamos. Lo recomendamos totalmente.",
     "autor": "Pareja",
     "tipo": "boda",
@@ -91,31 +125,20 @@
   },
   {
     "texto": "Ver la cara de felicidad de mi esposa cuando entramos al salón fue uno de los regalos más bonitos de ese día. Yo sabía cuánto había soñado con su boda y cuánto le importaban los detalles. Rubén consiguió que todo fuera exactamente como ella lo imaginaba, o incluso mejor. Como esposo, no puedo estar más agradecido por eso.",
-    "autor": "Novio",
+    "autor": "Shanelly & Sergio",
     "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Lo que más nos gustó del trabajo de Rubén fue que nunca sentimos que nuestra boda fuera una más. Desde las primeras conversaciones buscó conocer nuestros gustos, nuestra historia y la manera en que imaginábamos ese día. El diseño final tenía personalidad, armonía y muchísima belleza. Cuando lo vimos terminado, sentimos que realmente nos representaba.",
-    "autor": "Pareja",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "Se nota cuando alguien ama lo que hace y tiene años de experiencia detrás. Rubén tiene una manera muy especial de entender los espacios y visualizar cosas que uno todavía no alcanza a imaginar. Nos sentimos en buenas manos durante todo el proceso. Nuestra boda quedó espectacular y estamos felices de haber confiado en su experiencia y su talento.",
-    "autor": "Novia",
-    "tipo": "boda",
-    "autorizado": true
-  },
-  {
-    "texto": "A veces son las cosas pequeñas las que terminan haciendo que un día sea inolvidable. En nuestra boda sentimos que nada estaba puesto al azar y que todo tenía una razón de ser. Rubén cuidó cada detalle con muchísimo cariño y eso se reflejó en el resultado. Gracias por trabajar con tanta dedicación y por ayudarnos a celebrar nuestro amor de una manera tan bonita.",
-    "autor": "Pareja",
-    "tipo": "boda",
+    "evento": "boda-mediterranea-finca-la-principesa-villavicencio",
     "autorizado": true
   },
   {
     "texto": "El día de nuestra boda pasó demasiado rápido, pero los recuerdos que nos dejó se quedarán con nosotros toda la vida. Cada vez que vemos las fotografías volvemos a sentir la emoción de ese momento y recordamos lo felices que fuimos. Rubén, gracias por ser parte de nuestra historia y por ayudarnos a crear un escenario tan hermoso para comenzar nuestra vida juntos.",
     "autor": "Pareja",
+    "tipo": "boda",
+    "autorizado": true
+  },
+  {
+    "texto": "Uno de los momentos más emocionantes de nuestra boda fue cuando vimos el salón terminado por primera vez. Recuerdo que miré a mi esposo y los dos nos quedamos callados. Era impresionante ver cómo un espacio se había transformado en algo tan nuestro. Rubén, nunca olvidaremos esa sensación. Gracias por convertir nuestra ilusión en una realidad tan hermosa.",
+    "autor": "Novia",
     "tipo": "boda",
     "autorizado": true
   }

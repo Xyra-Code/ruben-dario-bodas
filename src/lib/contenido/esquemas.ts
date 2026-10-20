@@ -173,6 +173,9 @@ export const testimonio = z.strictObject({
   /** true = de ejemplo. Se ve en desarrollo; impide publicar. */
   borrador: z.boolean().optional(),
   texto,
+  /** Versión corta para las tarjetas (portada, servicios), si el texto es mucho más
+   *  largo que los demás. La página del evento siempre muestra el texto completo. */
+  extracto: texto.optional(),
   autor: texto,
   tipo: tipoEvento,
   /** Slug del evento, si el testimonio corresponde a uno del portafolio. */
@@ -207,15 +210,9 @@ export const evento = z.strictObject({
       (p) => p.length !== 1,
       "La paleta lleva al menos 2 colores (o queda vacía si está pendiente)",
     ),
-  /** Mes del evento: "2026-03", o "[PENDIENTE: …]" mientras no se conoce. */
-  fecha: z.union([
-    z.string().regex(/^20\d{2}-(0[1-9]|1[0-2])$/, "Formato AAAA-MM"),
-    z.string().startsWith("[PENDIENTE"),
-  ]),
   destacado: z.boolean(),
   /** Qué hizo especial el diseño (texto de la empresa). */
   descripcion: parrafos,
-  testimonio: z.strictObject({ texto, autor: texto }).optional(),
   proveedores: z.array(z.strictObject({ rol: texto, nombre: texto, url: z.url().optional() })),
   seo,
   /** Archivo de `fotos` usado como portada (tarjetas, Open Graph). */
