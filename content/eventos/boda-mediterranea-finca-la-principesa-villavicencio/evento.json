@@ -1,0 +1,140 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "finca-la-principesa",
+  "titulo": "Boda mediterránea en Finca La Principesa, Villavicencio",
+  "nombres": "Shanelly & Sergio",
+  "estilo": "Mediterráneo",
+  "paleta": [],
+  "destacado": false,
+  "descripcion": ["[PENDIENTE: texto de Rubén Darío sobre esta boda]"],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca La Principesa"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda mediterránea en Finca La Principesa, Villavicencio",
+    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda mediterránea en Finca La Principesa]"
+  },
+  "portada": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-escenario-cortinas-y-candelabros.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-novio-sendero-del-jardin.jpg",
+      "alt": "Novio en traje azul en el sendero del jardín antes de la boda"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-novio-entrada-iglesia-acompanado.jpg",
+      "alt": "Novio entrando a la iglesia acompañado por una invitada"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-iglesia-cuadros-religiosos.jpg",
+      "alt": "Pareja sonriente en la iglesia junto a cuadros religiosos"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-beso-iglesia-vitral.jpg",
+      "alt": "Pareja besándose en la iglesia bajo el vitral"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-salida-iglesia-lluvia-de-petalos.jpg",
+      "alt": "Pareja saliendo de la iglesia entre lluvia de pétalos"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-calle-guayacan-amarillo.jpg",
+      "alt": "Pareja en la calle bajo un guayacán amarillo florecido"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-cola-de-tul-guayacan-amarillo.jpg",
+      "alt": "Novia con cola de tul junto al novio bajo el guayacán amarillo"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-velo-largo-bajo-el-guayacan.jpg",
+      "alt": "Pareja con el velo largo extendido bajo el guayacán amarillo"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-cola-de-tul-calle-arborizada.jpg",
+      "alt": "Cola de tul de la novia en una calle arborizada"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-arco-de-tela-mural-al-aire-libre.jpg",
+      "alt": "Pareja frente a un arco de tela con mural de costa mediterránea al aire libre"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-mural-costa-mediterranea.jpg",
+      "alt": "Pareja abrazada frente al mural de costa mediterránea"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-mural-costa-y-palmas.jpg",
+      "alt": "Pareja frente al mural de mar, montaña y palmas"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-mural-mediterraneo-ramo.jpg",
+      "alt": "Pareja sonriente con el ramo frente al mural mediterráneo"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-abrazo-mural-y-flores.jpg",
+      "alt": "Pareja abrazada entre el mural mediterráneo y follaje con flores"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-votos-junto-al-mural.jpg",
+      "alt": "Novio leyendo sus votos a la novia junto al mural"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-cortinas-de-terciopelo-vino.jpg",
+      "alt": "Pareja sonriente frente a cortinas de terciopelo vino"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-abrazo-cortinas-vino.jpg",
+      "alt": "Pareja abrazada frente a las cortinas color vino"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-escenario-cortinas-vino-y-velas.jpg",
+      "alt": "Pareja en el escenario de cortinas vino, velas y flores"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-escenario-cortinas-y-candelabros.jpg",
+      "alt": "Pareja en el escenario de cortinas vino con candelabros dorados"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-novio-sentado-silla-dorada-y-flores.jpg",
+      "alt": "Novio sentado en una silla dorada entre flores y cortinas vino"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-novio-sentado-cortinas-de-terciopelo.jpg",
+      "alt": "Novio sentado frente a las cortinas de terciopelo vino"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-novio-ramo-de-amaranto-cortinas.jpg",
+      "alt": "Novio con el ramo de rosas durazno y amaranto frente a las cortinas"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-mesa-principal-arco-de-flores.jpg",
+      "alt": "Pareja en la mesa principal bajo un arco de flores y techo de rosas de tela"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-beso-mesa-principal-flores-rojas.jpg",
+      "alt": "Pareja besándose en la mesa principal con flores rojas y follaje"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-firma-mesa-principal-techo-de-rosas.jpg",
+      "alt": "Pareja firmando en la mesa principal bajo el techo de rosas de tela"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-mesa-invitados-flores-rojas-y-platos-dorados.jpg",
+      "alt": "Mesa de invitados con flores rojas y durazno y platos dorados"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-mesa-de-torta-palmeras-y-flores-rojas.jpg",
+      "alt": "Mesa de torta con palmeras pintadas y flores rojas"
+    },
+    {
+      "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-mesa-de-torta-palmeras-pintadas.jpg",
+      "alt": "Pareja junto a la mesa de torta con palmeras pintadas"
+    }
+  ]
+}
