@@ -22,10 +22,11 @@ const NOMBRE_FILTRO = { boda: "Bodas", quince: "15 años", otro: "Otros" } as co
 export default function Eventos() {
   const { eventos, sitio } = obtenerContenido();
   const unicos = (valores: string[]) => [...new Set(valores)];
-  const tipos = unicos(eventos.map((e) => e.tipo)).map((t) => ({
-    valor: t,
-    nombre: NOMBRE_FILTRO[t as keyof typeof NOMBRE_FILTRO],
-  }));
+  // Bodas y 15 años siempre (son los dos servicios, aunque uno aún no tenga eventos);
+  // "Otros" solo si hay alguno.
+  const tipos = (["boda", "quince", "otro"] as const)
+    .filter((t) => t !== "otro" || eventos.some((e) => e.tipo === "otro"))
+    .map((t) => ({ valor: t, nombre: NOMBRE_FILTRO[t] }));
   // Municipios en el orden de la cobertura (sede primero); estilos en orden alfabético.
   const orden = sitio.cobertura.zonas.flatMap((z) => z.municipios);
   const municipios = unicos(eventos.map((e) => e.lugar.municipio)).sort(
@@ -43,16 +44,9 @@ export default function Eventos() {
             { nombre: "Eventos", ruta: pagina.ruta },
           ]}
         />
-        <div className="mt-6 max-w-3xl lg:mt-10">
-          <p className="antetitulo">Portafolio</p>
-          <h1 className="mt-4 text-titulo-1">{pagina.h1}</h1>
-          <p className="mt-5 text-lg text-topo">
-            Cada evento, con su lugar, su estilo y su paleta. Toca uno para ver todas las fotos.
-          </p>
-        </div>
-
-        <div className="mt-10">
+        <div className="mt-4 lg:mt-6">
           <FiltroEventos
+            encabezado={<h1 className="text-titulo-2">{pagina.h1}</h1>}
             tipos={tipos}
             municipios={municipios}
             estilos={estilos}
