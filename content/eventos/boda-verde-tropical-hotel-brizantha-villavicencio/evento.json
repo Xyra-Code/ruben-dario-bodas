@@ -4,11 +4,29 @@
   "lugar": "hotel-brizantha",
   "titulo": "Boda verde tropical en el Hotel Brizantha, Villavicencio",
   "nombres": "Mafe & Sebas",
-  "estilo": "[PENDIENTE: estilo]",
-  "paleta": [],
+  "estilo": "Verde tropical",
+  "paleta": [
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Tonos naturales",
+      "hex": "#D8C6A8"
+    }
+  ],
   "destacado": true,
   "descripcion": [
-    "[PENDIENTE: qué hizo especial el diseño de este evento]"
+    "Una historia de amor entre naturaleza y romanticismo.",
+    "La boda de Mafe & Sebas fue una celebración maravillosa, de esas en las que cada detalle parece encontrar su lugar para contar una historia de amor, ¡en su amado Llano!",
+    "La ceremonia al aire libre, rodeada de árboles y envuelta en la belleza natural del entorno, fue el escenario perfecto para celebrar el comienzo de una nueva vida juntos. La delicadeza de las flores, la transparencia de los velos y los tonos suaves de la decoración crearon una atmósfera romántica, fresca y llena de encanto.",
+    "Para la recepción, transformé el diseño en un escenario de exuberancia y elegancia, donde el follaje tropical, las flores blancas y la iluminación cálida se encontraron con delicados detalles en tonos naturales. Las texturas, los contrastes y la armonía de cada elemento dieron vida a un ambiente íntimo, sofisticado y profundamente romántico.",
+    "Pensé cada espacio para acompañar la esencia de Mafe & Sebas: una celebración auténtica, llena de emociones y momentos inolvidables.",
+    "Porque hay bodas que se recuerdan por su belleza, pero hay otras que permanecen en el corazón por todo lo que nos hicieron sentir. La de Mafe & Sebas fue, sin duda, una de ellas."
   ],
   "proveedores": [
     {
@@ -22,7 +40,7 @@
   ],
   "seo": {
     "title": "Boda verde tropical en el Hotel Brizantha, Villavicencio",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda en Hotel Brizantha]"
+    "description": "Boda verde tropical en el Hotel Brizantha, Villavicencio: ceremonia al aire libre entre árboles y recepción con follaje tropical, flores blancas y luz cálida."
   },
   "portada": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-mesa-principal-follaje.jpg",
   "fotos": [

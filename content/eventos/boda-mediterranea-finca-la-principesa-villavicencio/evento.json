@@ -5,9 +5,32 @@
   "titulo": "Boda mediterránea en Finca La Principesa, Villavicencio",
   "nombres": "Shanelly & Sergio",
   "estilo": "Mediterráneo",
-  "paleta": [],
+  "paleta": [
+    {
+      "nombre": "Burdeos",
+      "hex": "#7A1F2B"
+    },
+    {
+      "nombre": "Rosa",
+      "hex": "#E8A9B0"
+    },
+    {
+      "nombre": "Naranja",
+      "hex": "#E07B39"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#6F8466"
+    }
+  ],
   "destacado": false,
-  "descripcion": ["[PENDIENTE: texto de Rubén Darío sobre esta boda]"],
+  "descripcion": [
+    "¡El escenario perfecto para el amor!",
+    "Esta pareja llegó desde Marbella, España. Soñaron con una boda muy colombiana en los Llanos Orientales (ellos no conocían Villavicencio; toda su familia es del Tolima), así que fue un privilegio ser el elegido para ese gran día.",
+    "Nos contactaron por Instagram y desde el primer momento hicimos clic; por eso quise sorprenderlos en cada detalle. Creé para ellos, junto a la piscina, un rincón de Marbella: su sorpresa fue hasta las lágrimas.",
+    "Luego, en el salón, usé flores en tonos vino, rosa y algo de naranja, con mucho follaje delicado y fragante. Pero el foco principal fue ese escenario con más de 130 metros de tela en color burdeos: un escenario perfecto donde hicimos unas fotos maravillosas para el recuerdo.",
+    "Amo esas parejas que me permiten soñar junto a ellos y darles más de lo que esperan."
+  ],
   "proveedores": [
     {
       "rol": "Lugar",
@@ -20,7 +43,7 @@
   ],
   "seo": {
     "title": "Boda mediterránea en Finca La Principesa, Villavicencio",
-    "description": "[PENDIENTE: descripción para Google, de 70 a 160 caracteres, de la boda mediterránea en Finca La Principesa]"
+    "description": "Boda mediterránea en Finca La Principesa, Villavicencio: un rincón de Marbella junto a la piscina y un escenario con 130 metros de tela burdeos."
   },
   "portada": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-escenario-cortinas-y-candelabros.jpg",
   "fotos": [
