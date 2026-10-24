@@ -185,6 +185,22 @@ export function galeriaEvento(e: Evento, ruta: string): Nodo {
 }
 
 export function paginaSobre(ruta: string): Nodo[] {
+  const { sobre } = obtenerContenido();
+  const video: Nodo[] = sobre.video
+    ? [
+        {
+          "@type": "VideoObject",
+          name: sobre.video.titulo,
+          description: sobre.video.descripcion,
+          thumbnailUrl: urlAbsoluta(`/video/${sobre.video.poster}`),
+          contentUrl: urlAbsoluta(`/video/${sobre.video.archivo}`),
+          uploadDate: sobre.video.publicado,
+          duration: sobre.video.duracion,
+          inLanguage: "es-CO",
+          about: { "@id": ids.fundador() },
+        },
+      ]
+    : [];
   return [
     {
       "@type": "AboutPage",
@@ -192,11 +208,18 @@ export function paginaSobre(ruta: string): Nodo[] {
       about: { "@id": ids.negocio() },
       mainEntity: { "@id": ids.fundador() },
     },
+    ...video,
     {
       "@type": "Person",
       "@id": ids.fundador(),
       name: "Rubén Darío",
       jobTitle: "Diseñador de bodas",
+      description: sobre.resumen,
+      knowsAbout: [
+        "Diseño de bodas",
+        "Diseño de escenarios y mobiliario para eventos",
+        "Alta costura",
+      ],
       worksFor: { "@id": ids.negocio() },
       url: urlAbsoluta(ruta),
     },

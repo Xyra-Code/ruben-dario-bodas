@@ -267,13 +267,35 @@ export const sobre = z.strictObject({
   frase: texto,
   /** Párrafo de la sección "Sobre Rubén Darío" en la portada. */
   resumen: texto,
+  /** Portada de /sobre-ruben-dario (y del inicio si no hay `retratoInicio`). */
   retrato: fotoSuelta.optional(),
+  /** Retrato de la sección "Sobre Rubén Darío" del inicio, distinto al de su página. */
+  retratoInicio: fotoSuelta.optional(),
   /**
    * Recorte cuadrado de la cara: firma circular junto a "Sobre el diseño" de cada evento
    * (solo cuando su descripción ya es el texto real de la empresa).
    */
   firma: fotoSuelta.optional(),
-  /** "Cómo empezó": historia en primera o tercera persona, 400–600 palabras en total. */
+  /**
+   * Video de presentación (archivos en public/video/): se descarga solo al tocar play y
+   * lleva subtítulos, porque en el celular casi siempre se ve sin sonido.
+   */
+  video: z
+    .strictObject({
+      archivo: z.string().regex(/^[a-z0-9-]+\.mp4$/, "MP4 con nombre limpio"),
+      /** Cuadro del video en WebP, 16:9. */
+      poster: z.string().regex(/^[a-z0-9-]+\.webp$/, "WebP con nombre limpio"),
+      subtitulos: z.string().regex(/^[a-z0-9.-]+\.vtt$/, "Archivo WebVTT"),
+      titulo: texto,
+      descripcion: texto,
+      /** ISO 8601, para VideoObject: "PT27S". */
+      duracion: z.string().regex(/^PT(\d+M)?\d+S$/, "Formato PT27S o PT1M05S"),
+      /** Fecha en que la empresa lo publicó por primera vez. */
+      publicado: z.string().regex(/^20\d{2}-\d{2}-\d{2}$/, "Formato AAAA-MM-DD"),
+      credito: texto.optional(),
+    })
+    .optional(),
+  /** "Su historia": historia en primera o tercera persona, 400–600 palabras en total. */
   historia: parrafos,
   /** Frase destacada dentro de la historia. */
   citaHistoria: texto.optional(),

@@ -17,6 +17,8 @@ export const CARPETA_CONTENIDO = path.join(process.cwd(), "content");
 const CARPETA_EVENTOS = path.join(CARPETA_CONTENIDO, "eventos");
 /** Fotos de las páginas de texto (retrato, equipo): se procesan con el slug "sobre". */
 export const CARPETA_FOTOS_SOBRE = path.join(CARPETA_CONTENIDO, "sobre", "fotos");
+/** Videos ya comprimidos: se sirven tal cual, sin pasar por el proceso de imágenes. */
+const CARPETA_VIDEO = path.join(process.cwd(), "public", "video");
 const MARCA_PENDIENTE = "[PENDIENTE";
 
 const NOMBRE_TIPO: Record<TipoEvento, string> = {
@@ -278,11 +280,24 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       errores.push(`content/sobre/sobre.json → eventosQueMarcaron: "${s}" no existe`);
     }
   }
-  const fotosSobre = [sobre?.retrato, sobre?.firma, ...(sobre?.equipo.map((m) => m.foto) ?? [])]
+  const fotosSobre = [
+    sobre?.retrato,
+    sobre?.retratoInicio,
+    sobre?.firma,
+    ...(sobre?.equipo.map((m) => m.foto) ?? []),
+  ]
     .filter((f) => f !== undefined)
     .map((f) => ({ archivo: f.archivo, ruta: path.join(CARPETA_FOTOS_SOBRE, f.archivo) }));
   for (const f of fotosSobre) {
     if (!existsSync(f.ruta)) errores.push(`content/sobre: falta el archivo fotos/${f.archivo}`);
+  }
+  if (sobre?.video) {
+    const { archivo, poster, subtitulos } = sobre.video;
+    for (const a of [archivo, poster, subtitulos]) {
+      if (!existsSync(path.join(CARPETA_VIDEO, a))) {
+        errores.push(`content/sobre/sobre.json → video: falta public/video/${a}`);
+      }
+    }
   }
 
   if (guiaLugares && !guiaLugares.revisadoPorLaEmpresa) {

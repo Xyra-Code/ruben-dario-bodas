@@ -33,48 +33,92 @@ export default function Sobre() {
 
       {/* Portada */}
       <section aria-labelledby="sobre-titulo" className="pt-4 pb-(--spacing-seccion)">
-        <div className="contenedor">
-          <Migas
-            items={[
-              { nombre: "Inicio", ruta: "/" },
-              { nombre: "Nosotros", ruta: pagina.ruta },
-            ]}
-          />
-          <div
-            className={`mt-6 grid items-center gap-10 lg:mt-10 lg:gap-16 ${
-              sobre.retrato ? "lg:grid-cols-2" : ""
-            }`}
-          >
-            {sobre.retrato && (
-              <div className="min-w-0 lg:order-2">
-                <Foto
-                  evento="sobre"
-                  archivo={sobre.retrato.archivo}
-                  alt={sobre.retrato.alt}
-                  prioridad
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="aspect-[4/5] w-full rounded-sm object-cover"
-                />
-              </div>
-            )}
-            <div className="max-w-3xl min-w-0">
-              <p className="antetitulo">Nosotros</p>
-              <h1 id="sobre-titulo" className="mt-4 text-titulo-1">
-                {pagina.h1}
-              </h1>
-              <p className="mt-6 font-titulo text-titulo-3 text-topo italic">{sobre.frase}</p>
+        {/* Celular: migas, foto y texto. Escritorio: la foto sube al nivel de las migas para
+            aprovechar el alto de la pantalla, y el texto se centra a su lado. */}
+        <div
+          className={`contenedor grid ${
+            sobre.retrato
+              ? "[grid-template-areas:'migas'_'foto'_'texto'] lg:grid-cols-[minmax(0,1fr)_auto] lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:[grid-template-areas:'migas_foto'_'texto_foto']"
+              : "[grid-template-areas:'migas'_'texto']"
+          }`}
+        >
+          <div className="min-w-0 [grid-area:migas]">
+            <Migas
+              items={[
+                { nombre: "Inicio", ruta: "/" },
+                { nombre: "Nosotros", ruta: pagina.ruta },
+              ]}
+            />
+          </div>
+          {sobre.retrato && (
+            /* Entera en la primera pantalla: proporción original (3:4) y un ancho tope que
+               la deja caber bajo el encabezado (y las migas, en celular) en cualquier alto. */
+            <div className="mx-auto mt-6 w-full max-w-[max(16rem,calc((100dvh_-_12rem)_*_3_/_4))] min-w-0 [grid-area:foto] lg:mt-0 lg:mr-0 lg:w-[min(40rem,48vw,max(16rem,calc((100dvh_-_8rem)_*_3_/_4)))] lg:max-w-none">
+              <Foto
+                evento="sobre"
+                archivo={sobre.retrato.archivo}
+                alt={sobre.retrato.alt}
+                prioridad
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="aspect-[3/4] w-full rounded-sm object-cover"
+              />
             </div>
+          )}
+          <div className="mt-10 max-w-3xl min-w-0 self-center [grid-area:texto] lg:mt-0">
+            <p className="antetitulo">Nosotros</p>
+            <h1 id="sobre-titulo" className="mt-4 text-titulo-1">
+              {pagina.h1}
+            </h1>
+            <p className="mt-6 font-titulo text-titulo-3 text-topo italic">{sobre.frase}</p>
           </div>
         </div>
       </section>
 
-      {/* Cómo empezó */}
+      {/* Video de presentación: preload="none", nada se descarga hasta tocar play. */}
+      {sobre.video && (
+        <section aria-labelledby="video-titulo" className={`${seccion} bg-rubor`}>
+          <div className="contenedor">
+            <TituloSeccion
+              id="video-titulo"
+              antetitulo="En sus palabras"
+              titulo="Conoce a Rubén Darío"
+              centrado
+            />
+            <figure className="mx-auto mt-10 max-w-5xl">
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster={`/video/${sobre.video.poster}`}
+                aria-label={sobre.video.titulo}
+                className="aspect-video w-full max-w-full rounded-sm bg-carbon object-cover"
+              >
+                <source src={`/video/${sobre.video.archivo}`} type="video/mp4" />
+                <track
+                  kind="captions"
+                  src={`/video/${sobre.video.subtitulos}`}
+                  srcLang="es"
+                  label="Español"
+                  default
+                />
+              </video>
+              {sobre.video.credito && (
+                <figcaption className="mt-3 text-center text-sm text-topo">
+                  {sobre.video.credito}
+                </figcaption>
+              )}
+            </figure>
+          </div>
+        </section>
+      )}
+
+      {/* Su historia */}
       <section aria-labelledby="historia-titulo" className={`${seccion} border-t border-linea`}>
         <div className="contenedor grid gap-10 lg:grid-cols-12">
           <div className="min-w-0 lg:col-span-4">
             <p className="antetitulo">Historia</p>
             <h2 id="historia-titulo" className="mt-3 text-titulo-2">
-              Cómo empezó
+              Su historia
             </h2>
           </div>
           <div className="min-w-0 lg:col-span-8">

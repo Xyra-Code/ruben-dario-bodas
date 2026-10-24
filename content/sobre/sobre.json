@@ -1,37 +1,66 @@
 {
-  "frase": "[PENDIENTE: una frase personal que defina a Rubén Darío como diseñador]",
-  "resumen": "[PENDIENTE: un párrafo sobre Rubén Darío y su trayectoria para la portada]",
+  "frase": "Mi historia nació entre telas y vestidos de novia, y hoy continúa entre flores, diseños y escenarios creados para sorprender.",
+  "resumen": "Rubén Darío estudió Diseño de Modas y se especializó en Alta Costura antes de dedicarse a las bodas. En 12 años ha diseñado más de 200, con muebles y escenarios propios y la mirada de la moda en cada proporción, textura y color.",
+  "retrato": {
+    "archivo": "ruben-dario-retrato-disenador-de-bodas-villavicencio.jpg",
+    "alt": "Rubén Darío de traje azul y brazos cruzados frente a un fondo verde con plantas: diseñador de bodas en Villavicencio"
+  },
+  "retratoInicio": {
+    "archivo": "ruben-dario-disenador-de-bodas-traje-azul.jpg",
+    "alt": "Rubén Darío, diseñador de bodas, de traje azul apoyado en una pared blanca junto a una puerta azul"
+  },
+  "video": {
+    "archivo": "ruben-dario-disenador-de-bodas.mp4",
+    "poster": "ruben-dario-disenador-de-bodas-poster.webp",
+    "subtitulos": "ruben-dario-disenador-de-bodas.es.vtt",
+    "titulo": "Rubén Darío, diseñador de bodas",
+    "descripcion": "Rubén Darío se presenta: «No seguimos tendencias, creamos atmósferas. Diseñamos bodas que se viven, se disfrutan y se recuerdan para siempre».",
+    "duracion": "PT27S",
+    "publicado": "2026-10-02",
+    "credito": "Video: Esteban Morales"
+  },
   "firma": {
     "archivo": "ruben-dario-disenador-de-bodas.jpg",
     "alt": "Rubén Darío, diseñador de bodas en Villavicencio"
   },
   "historia": [
-    "[PENDIENTE: cómo empezó: origen y primeros eventos]",
-    "[PENDIENTE: cómo creció: equipo, lugares, tipos de evento]",
-    "[PENDIENTE: hoy: qué lo diferencia y qué busca en cada evento]"
+    "Mi historia comenzó desde niño, con una fascinación especial por los vestidos de novia. Cuando llegó el momento de elegir mi camino profesional, decidí estudiar Diseño de Modas, incluso frente a la oposición de mis padres. Seguí mi intuición, fui un alumno destacado y posteriormente me especialicé en Alta Costura e Interpretación de Modas. Durante un tiempo también fui profesor de diseño de modas, patronaje y confección.",
+    "Pero había otra pasión esperando su momento: las bodas. Todo comenzó ayudando a algunas amigas a organizar sus celebraciones. Lo que parecía una simple colaboración terminó convirtiéndose en una nueva vocación. Empecé poco a poco, hasta construir una trayectoria de más de 200 bodas diseñadas a lo largo de 12 años.",
+    "Con el tiempo, mi manera de crear fue mucho más allá de la decoración. Hoy diseño mis propios muebles y escenarios, imaginando cada pieza y trabajando con profesionales que hacen realidad mis ideas. Soy exigente con los detalles, lo reconozco, porque muchas veces tengo tan claro lo que imagino que necesito verlo materializado tal como lo concebí.",
+    "Hay algo que define especialmente mi trabajo: la necesidad de crear cosas diferentes, de imaginar lo que todavía no existe y de atreverme a proponer nuevas formas de celebrar el amor. Me apasiona desarrollar conceptos propios, construir escenarios con identidad y sorprender a través de diseños que nacen de mi imaginación.",
+    "Mi formación en la moda sigue presente en cada proyecto, en el cuidado de las proporciones, las texturas, los colores y los detalles. Para mí, una boda es una composición completa, donde cada elemento debe tener un propósito y contribuir a una experiencia que emocione.",
+    "Después de tantos años, sigo sintiendo la misma ilusión por crear. Porque, aunque la experiencia me ha enseñado mucho, siempre hay una nueva idea por descubrir y una nueva historia de amor que merece ser contada de una manera especial. Mi mayor satisfacción es transformar una idea en algo único y hacer que cada pareja encuentre en su boda un reflejo de su propia historia."
   ],
-  "citaHistoria": "[PENDIENTE: una frase de Rubén Darío para destacar]",
+  "citaHistoria": "Nunca me ha interesado hacer una boda más.",
   "hitos": [
     {
-      "anio": "2010",
-      "texto": "[PENDIENTE: hito con su año (ejemplo de formato)]"
+      "anio": "2014",
+      "texto": "Ayudando a unas amigas a organizar sus bodas descubrí una nueva vocación. [PENDIENTE: confirmar el año (calculado con los 12 años) y agregar los años de la carrera de Modas, la especialización y la docencia]"
+    },
+    {
+      "anio": "2019",
+      "texto": "La boda de Liz & Yei en Finca Los Pinos: una de mis primeras bodas, que siempre llevaré en el corazón."
+    },
+    {
+      "anio": "2026",
+      "texto": "Más de 200 bodas diseñadas, con muebles y escenarios propios."
     }
   ],
   "principios": [
     {
-      "titulo": "[PENDIENTE: principio 1]",
-      "texto": "[PENDIENTE: texto corto]"
+      "titulo": "Nunca una boda más",
+      "texto": "Cada boda parte de un concepto propio: imaginar lo que todavía no existe y construir un escenario con identidad."
     },
     {
-      "titulo": "[PENDIENTE: principio 2]",
-      "texto": "[PENDIENTE: texto corto]"
+      "titulo": "Muebles y escenarios de autor",
+      "texto": "Diseño mis propios muebles y escenarios, y trabajo con profesionales que los hacen realidad tal como los imaginé."
     },
     {
-      "titulo": "[PENDIENTE: principio 3]",
-      "texto": "[PENDIENTE: texto corto]"
+      "titulo": "La mirada de la alta costura",
+      "texto": "Proporciones, texturas, colores y detalles: una boda es una composición completa, donde cada elemento tiene un propósito."
     }
   ],
   "equipo": [],
-  "eventosQueMarcaron": [],
+  "eventosQueMarcaron": ["boda-verde-menta-finca-los-pinos-villavicencio"],
   "reconocimientos": []
 }

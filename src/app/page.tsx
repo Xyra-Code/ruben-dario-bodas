@@ -48,6 +48,7 @@ export default function Inicio() {
     obtenerContenido();
   const destacados = eventos.filter((e) => e.destacado).slice(0, 6);
   const especial = eventos.find((e) => e.especial);
+  const retratoInicio = sobre.retratoInicio ?? sobre.retrato;
   const portada = destacados.find((e) => e.tipo === "boda") ?? eventos[0];
   const fotoPortada = portada?.fotos.find((f) => f.archivo === portada.portada);
   // Foto de cada servicio: un evento del tipo distinto al de la portada; si solo hay uno,
@@ -258,19 +259,21 @@ export default function Inicio() {
         aria-labelledby="sobre-titulo"
         className={`${seccion} border-t border-linea`}
       >
-        <div className="contenedor grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {sobre.retrato && (
-            <div className="min-w-0">
+        <div className="contenedor grid items-center gap-10 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-16">
+          {retratoInicio && (
+            /* Entera a la vista: proporción original (3:4) y alto tope de la pantalla menos
+               el encabezado fijo (y la barra inferior, en celular). */
+            <div className="mx-auto w-full max-w-[max(16rem,calc((100dvh_-_10rem)_*_3_/_4))] min-w-0 lg:mx-0 lg:w-[min(40rem,48vw,max(16rem,calc((100dvh_-_8rem)_*_3_/_4)))] lg:max-w-none">
               <Foto
                 evento="sobre"
-                archivo={sobre.retrato.archivo}
-                alt={sobre.retrato.alt}
+                archivo={retratoInicio.archivo}
+                alt={retratoInicio.alt}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="aspect-[4/5] w-full rounded-sm object-cover"
+                className="aspect-[3/4] w-full rounded-sm object-cover"
               />
             </div>
           )}
-          <div className={`min-w-0 ${sobre.retrato ? "" : "lg:col-span-2 lg:max-w-3xl"}`}>
+          <div className={`min-w-0 ${retratoInicio ? "" : "lg:col-span-2 lg:max-w-3xl"}`}>
             <p className="antetitulo">Sobre Rubén Darío</p>
             <h2 id="sobre-titulo" className="mt-3 text-titulo-2">
               Quién diseña tu evento
