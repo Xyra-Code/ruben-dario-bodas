@@ -8,9 +8,9 @@
     "imagenes": "tsx scripts/imagenes.ts",
     "fotos:importar": "tsx scripts/importar-fotos.ts",
     "prebuild": "npm run validar && npm run imagenes",
-    "build": "next build",
+    "build": "cross-env NODE_ENV=production next build",
     "postbuild": "node scripts/contar-archivos.mjs",
-    "build:produccion": "tsx scripts/validar-contenido.ts --estricto && tsx scripts/imagenes.ts && next build && node scripts/contar-archivos.mjs",
+    "build:produccion": "tsx scripts/validar-contenido.ts --estricto && tsx scripts/imagenes.ts && cross-env NODE_ENV=production next build && node scripts/contar-archivos.mjs",
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -19,7 +19,7 @@
     "deploy": "npm run build:produccion && wrangler deploy"
   },
   "dependencies": {
-    "next": "16.4.0",
+    "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "zod": "^4.6.5"
@@ -29,8 +29,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
-    "eslint-config-next": "16.4.0",
+    "eslint-config-next": "16.4.3",
     "playwright-core": "^1.64.0",
     "prettier": "^3.9.9",
     "prettier-plugin-tailwindcss": "^0.8.1",
