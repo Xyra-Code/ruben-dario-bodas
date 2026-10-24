@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
   // con el pipeline propio (scripts/imagenes) y se sirven ya en WebP.
   images: { unoptimized: true },
 
+  // Actualización asistida de Next.js limitada a parches de seguridad.
+  experimental: {
+    agentUpgrade: "security",
+  },
+
   // Tailwind v4 vía Turbopack (configuración generada por create-next-app 16.4).
   turbopack: {
     rules: {
