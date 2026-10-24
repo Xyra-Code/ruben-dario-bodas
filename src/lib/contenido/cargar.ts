@@ -211,6 +211,14 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       if (!listadas.has(archivo))
         avisos.push(`${base}: fotos/${archivo} no está en evento.json (no se publica)`);
     }
+    for (const capitulo of datos.especial?.capitulos ?? []) {
+      for (const archivo of capitulo.fotos) {
+        if (!listadas.has(archivo))
+          errores.push(
+            `${base}: el capítulo "${capitulo.titulo}" usa "${archivo}", que no está en la lista de fotos`,
+          );
+      }
+    }
     if (datos.fotos.length < 8) {
       avisos.push(`${base}: tiene ${datos.fotos.length} fotos; se recomiendan 15–20`);
     }
@@ -233,6 +241,14 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
 
   // Sin fecha (decisión del 2026-10-19: envejece el portafolio): los eventos quedan en el
   // orden de sus carpetas.
+
+  // Solo una boda puede ser especial: con dos o más dejaría de serlo.
+  const especiales = eventos.filter((e) => e.especial);
+  if (especiales.length > 1) {
+    errores.push(
+      `Solo un evento puede tener "especial"; hay ${especiales.length}: ${especiales.map((e) => e.slug).join(", ")}`,
+    );
+  }
 
   // Testimonios: referencias a eventos y autorización.
   const slugsEventos = new Set(eventos.map((e) => e.slug));

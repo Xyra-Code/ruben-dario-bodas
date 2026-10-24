@@ -1,0 +1,237 @@
+{
+  "borrador": true,
+  "tipo": "boda",
+  "lugar": "finca-los-pinos",
+  "titulo": "Boda verde menta en Finca Los Pinos, Villavicencio",
+  "nombres": "Liz & Yei",
+  "estilo": "Verde menta",
+  "paleta": [
+    {
+      "nombre": "Verde menta",
+      "hex": "#A8DCC8"
+    },
+    {
+      "nombre": "Rosa suave",
+      "hex": "#E8B4B8"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "Un amor inquebrantable.",
+    "Esta pareja, muy joven, llegó a mí con un sueño que veían lejano. Aún recuerdo el primer día que nos conocimos: fue impactante escuchar su historia y cómo querían una boda que dejara un recuerdo para siempre.",
+    "Fue un esfuerzo y un sueño de tres (en la recepción nos sorprendieron con la noticia de su embarazo). Cada rincón y cada detalle se crearon para sorprenderlos. El verde menta y las flores en tonos suaves hicieron un match perfecto para darle el toque juvenil y romántico que ellos merecían.",
+    "Además, tuve el privilegio de diseñar el vestido de novia. El vestido de Liz era en tono ivory con un fondo rosa suave; además de su romántico diseño, contaba una historia de vida y se complementaba perfecto con el traje de Yei.",
+    "Aunque fue una boda en mis inicios, siempre la llevaré en el corazón por lo mucho que nos dejaron con su historia. Hoy miro hacia atrás y agradezco a cada pareja que ha creído en mí y nos ha permitido evolucionar tanto. ¡Dios ha sido fiel!"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca Los Pinos"
+    },
+    {
+      "rol": "Vestido de novia",
+      "nombre": "Rubén Darío"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "Boda verde menta en Finca Los Pinos, Villavicencio",
+    "description": "Boda verde menta en Finca Los Pinos, Villavicencio: flores en tonos suaves, techo de telas con luces y el vestido de novia diseñado por Rubén Darío."
+  },
+  "especial": {
+    "etiqueta": "Donde empezó todo",
+    "anio": "2019",
+    "frase": "Aunque fue una boda en mis inicios, siempre la llevaré en el corazón.",
+    "capitulos": [
+      {
+        "titulo": "Un sueño de tres",
+        "texto": "Fue un esfuerzo y un sueño de tres: en la recepción nos sorprendieron con la noticia de su embarazo.",
+        "fotos": [
+          "boda-verde-menta-finca-los-pinos-villavicencio-anuncio-del-embarazo-abrazo-de-la-pareja.jpg",
+          "boda-verde-menta-finca-los-pinos-villavicencio-anuncio-del-embarazo-novio-emocionado.jpg",
+          "boda-verde-menta-finca-los-pinos-villavicencio-anuncio-del-embarazo-novio-con-microfono.jpg"
+        ]
+      },
+      {
+        "titulo": "El vestido de Liz",
+        "texto": "Tuve el privilegio de diseñar el vestido de novia: en tono ivory con un fondo rosa suave, contaba una historia de vida y se complementaba perfecto con el traje de Yei.",
+        "fotos": [
+          "boda-verde-menta-finca-los-pinos-villavicencio-novia-velo-extendido-y-paisaje.jpg",
+          "boda-verde-menta-finca-los-pinos-villavicencio-caja-del-vestido-con-logo-de-ruben-dario.jpg",
+          "boda-verde-menta-finca-los-pinos-villavicencio-novia-abriendo-la-caja-del-vestido.jpg"
+        ]
+      }
+    ],
+    "cierre": "Hoy miro hacia atrás y agradezco a cada pareja que ha creído en mí y nos ha permitido evolucionar tanto. ¡Dios ha sido fiel!"
+  },
+  "portada": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-bajo-el-techo-de-telas.jpg",
+  "fotos": [
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-caja-del-vestido-con-logo-de-ruben-dario.jpg",
+      "alt": "Caja del vestido de novia con el logo de Rubén Darío y cinta verde menta"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-abriendo-la-caja-del-vestido.jpg",
+      "alt": "Novia abriendo la caja de su vestido diseñado por Rubén Darío"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-colgado-en-el-jardin.jpg",
+      "alt": "Vestido de novia en tono ivory colgado entre el follaje del jardín"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-ivory-y-rosa.jpg",
+      "alt": "Vestido de novia ivory con fondo rosa suave diseñado por Rubén Darío"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-anillos-sobre-tronco-del-jardin.jpg",
+      "alt": "Anillos de matrimonio sobre un tronco con musgo en el jardín"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-ramo-de-rosas-lila-y-blancas.jpg",
+      "alt": "Ramo de novia con rosas lila y blancas y follaje"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novio-arreglandose-la-chaqueta.jpg",
+      "alt": "Novio en traje azul arreglándose la chaqueta en el jardín"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-con-ramo-retrato.jpg",
+      "alt": "Retrato de la novia con su ramo de rosas lila y blancas"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-vestido-y-velo-en-el-jardin.jpg",
+      "alt": "Novia con su vestido y velo largo en el jardín de Finca Los Pinos"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-velo-al-viento-jardin.jpg",
+      "alt": "Novia con el velo al viento en el jardín"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-velo-extendido-y-paisaje.jpg",
+      "alt": "Liz con su vestido y el velo extendido por el viento frente al paisaje de Finca Los Pinos"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-sentados-en-la-iglesia.jpg",
+      "alt": "Pareja sentada en la iglesia durante la ceremonia"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-beso-en-el-altar.jpg",
+      "alt": "Pareja besándose en el altar de la iglesia"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-arbol-iluminado-de-noche.jpg",
+      "alt": "Pareja abrazada bajo un árbol iluminado de noche"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-disenador-ultimos-detalles-del-salon.jpg",
+      "alt": "Rubén Darío arreglando los últimos detalles del salón en 2019"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-salon-centro-de-mesa-alto-y-telas.jpg",
+      "alt": "Salón con techo de telas blancas, centros de mesa altos y sillas verde menta"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-techo-de-telas-con-corona-de-flores.jpg",
+      "alt": "Techo de telas con luces y corona de flores rosadas sobre la mesa"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-centro-de-mesa-candelabros-dorados.jpg",
+      "alt": "Centro de mesa con flores, candelabros dorados y velas"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-mesa-de-invitados-sillas-verde-menta.jpg",
+      "alt": "Mesa de invitados con sillas verde menta y centro de flores"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-salon-sillas-verde-menta-y-luces.jpg",
+      "alt": "Salón con sillas verde menta, telas blancas y luces"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-mesa-principal-muro-de-flores-rosadas.jpg",
+      "alt": "Mesa principal con muro de flores rosadas y candelabros dorados"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-mesa-de-torta-muro-de-follaje.jpg",
+      "alt": "Mesa de torta con muro de follaje, candelabros y flores"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-mesa-de-torta-con-candelabros.jpg",
+      "alt": "Mesa de torta con candelabros dorados y flores en tonos suaves"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-sala-lounge-damasco-y-sofa.jpg",
+      "alt": "Sala lounge con panel de damasco, sofá y velas"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-con-el-disenador-mesa-principal.jpg",
+      "alt": "Pareja con el diseñador Rubén Darío en la mesa principal"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-mesa-principal-flores-rosadas.jpg",
+      "alt": "Pareja en la mesa principal con muro de flores rosadas"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-abrazo-muro-de-flores.jpg",
+      "alt": "Pareja abrazada frente al muro de flores rosadas"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-mesa-de-torta-velas.jpg",
+      "alt": "Pareja junto a la mesa de torta entre velas y follaje"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-vitrina-verde-menta.jpg",
+      "alt": "Pareja junto a una vitrina verde menta iluminada"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-bajo-el-techo-de-telas.jpg",
+      "alt": "Pareja abrazada bajo el techo de telas y la corona de flores"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-letras-iluminadas-you-and-me.jpg",
+      "alt": "Letras iluminadas YOU & ME reflejadas en el agua"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-letras-iluminadas.jpg",
+      "alt": "Pareja detrás de las letras iluminadas YOU & ME"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-entrada-de-la-pareja-chispas-frias.jpg",
+      "alt": "Entrada de la pareja entre chispas frías y alfombra roja"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-anuncio-del-embarazo-novio-con-microfono.jpg",
+      "alt": "Yei hablando con el micrófono en la recepción antes del anuncio del embarazo"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-anuncio-del-embarazo-novio-emocionado.jpg",
+      "alt": "Yei emocionado y Liz aplaudiendo al anunciar su embarazo"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-anuncio-del-embarazo-abrazo-de-la-pareja.jpg",
+      "alt": "Liz y Yei abrazados y conmovidos tras anunciar su embarazo"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-primer-baile-bajo-la-corona-de-flores.jpg",
+      "alt": "Primer baile de la pareja bajo la corona de flores"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-baile-lluvia-de-confeti.jpg",
+      "alt": "Pareja bailando bajo una lluvia de confeti"
+    },
+    {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-sofa-damasco.jpg",
+      "alt": "Pareja en el sofá de la sala lounge de damasco"
+    }
+  ]
+}

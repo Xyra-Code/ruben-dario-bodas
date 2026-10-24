@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { CapitulosEspeciales, CierreEspecial } from "@/components/evento/CapitulosEspeciales";
 import { Compartir } from "@/components/evento/Compartir";
 import { FichaEvento } from "@/components/evento/FichaEvento";
 import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
@@ -78,7 +79,10 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
         />
 
         <header className="mt-6 max-w-4xl lg:mt-10">
-          <Etiqueta tipo={e.tipo} />
+          <Etiqueta
+            tipo={e.tipo}
+            especial={e.especial && `${e.especial.etiqueta} · ${e.especial.anio}`}
+          />
           <h1 className="mt-4 text-titulo-1">{e.titulo}</h1>
           {e.nombres && (
             <p className="mt-3 font-titulo text-titulo-3 text-topo">
@@ -168,6 +172,9 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
         </div>
       </section>
 
+      {/* Solo la boda especial: capítulos con fotos ("Un sueño de tres", "El vestido…"). */}
+      <CapitulosEspeciales evento={e} />
+
       {testimonio && (
         <section aria-label="Testimonio" className={`${seccion} bg-rubor`}>
           <div className="contenedor">
@@ -175,6 +182,8 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
           </div>
         </section>
       )}
+
+      <CierreEspecial evento={e} firma={sobre.firma} />
 
       {/* Relacionados + enlace al servicio (cada evento enlaza a su servicio, no a la portada) */}
       {relacionados.length > 0 && (

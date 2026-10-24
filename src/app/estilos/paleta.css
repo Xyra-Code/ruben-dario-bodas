@@ -21,6 +21,9 @@
   --c-border: #e8ded6; /* Arcilla Atenuada · decorativo */
   --c-input-border: #9a8474; /* 3,4 : 1 */
   --c-error: #a3282f;
+  /* PRUEBA (2026-10-23): solo la franja "Donde empezó todo" de la portada (boda de Liz &
+     Yei, verde menta llevado a profundo). Sobre él: marfil 11,8 : 1; dorado 5,4 : 1. */
+  --c-bosque: #1f3a33; /* Verde Bosque */
   --radius-btn: 2px;
   color-scheme: light;
 }

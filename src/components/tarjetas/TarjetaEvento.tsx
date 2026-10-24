@@ -30,7 +30,11 @@ export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3" }: Props)
           className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-suave group-hover:scale-[1.03]"
         />
         <div className="absolute top-3 left-3">
-          <Etiqueta tipo={e.tipo} sobreFoto />
+          <Etiqueta
+            tipo={e.tipo}
+            sobreFoto
+            especial={e.especial && `${e.especial.etiqueta} · ${e.especial.anio}`}
+          />
         </div>
       </div>
       <Titulo className="mt-4 font-titulo text-[1.125rem] leading-snug sm:text-titulo-3">

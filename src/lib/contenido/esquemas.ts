@@ -215,6 +215,33 @@ export const evento = z.strictObject({
   descripcion: parrafos,
   proveedores: z.array(z.strictObject({ rol: texto, nombre: texto, url: z.url().optional() })),
   seo,
+  /**
+   * Solo para UNA boda del portafolio, la que marcó la carrera de Rubén Darío (Liz & Yei,
+   * 2019): etiqueta propia en vez del tipo, franja en la portada del sitio y capítulos
+   * extra en su página. Si se usara en varias dejaría de ser especial (la validación lo impide).
+   */
+  especial: z
+    .strictObject({
+      /** Reemplaza la etiqueta del tipo: "Donde empezó todo". */
+      etiqueta: texto,
+      /** Año del evento: aquí sí cuenta la trayectoria (los demás eventos no llevan fecha). */
+      anio: z.string().regex(/^(19|20)\d{2}$/, "Año: AAAA"),
+      /** Frase de Rubén Darío para la franja de la portada del sitio. */
+      frase: texto,
+      /** Capítulos con sus fotos (archivos de `fotos`), en el orden en que se muestran. */
+      capitulos: z
+        .array(
+          z.strictObject({
+            titulo: texto,
+            texto,
+            fotos: z.array(archivoFoto).min(1).max(3),
+          }),
+        )
+        .max(3),
+      /** Frase de cierre, antes de los eventos relacionados. */
+      cierre: texto.optional(),
+    })
+    .optional(),
   /** Archivo de `fotos` usado como portada (tarjetas, Open Graph). */
   portada: archivoFoto,
   fotos: z

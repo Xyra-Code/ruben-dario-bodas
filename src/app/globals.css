@@ -24,6 +24,7 @@
   --color-linea: var(--c-border); /* divisores decorativos */
   --color-borde: var(--c-input-border); /* bordes de campos (≥ 3:1) */
   --color-error: var(--c-error);
+  --color-bosque: var(--c-bosque); /* solo la franja "Donde empezó todo" */
 
   --radius-boton: var(--radius-btn);
 

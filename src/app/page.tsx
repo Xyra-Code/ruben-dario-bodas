@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { FranjaEspecial } from "@/components/evento/FranjaEspecial";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
@@ -46,6 +47,7 @@ export default function Inicio() {
   const { sitio, servicios, eventos, proceso, sobre, testimonios, preguntasGenerales } =
     obtenerContenido();
   const destacados = eventos.filter((e) => e.destacado).slice(0, 6);
+  const especial = eventos.find((e) => e.especial);
   const portada = destacados.find((e) => e.tipo === "boda") ?? eventos[0];
   const fotoPortada = portada?.fotos.find((f) => f.archivo === portada.portada);
   // Foto de cada servicio: un evento del tipo distinto al de la portada; si solo hay uno,
@@ -299,6 +301,9 @@ export default function Inicio() {
           </div>
         </div>
       </section>
+
+      {/* 5b · Donde empezó todo: la boda que marcó la carrera de Rubén Darío (solo una). */}
+      {especial && <FranjaEspecial evento={especial} />}
 
       {/* 6 · Testimonios */}
       {testimonios.length > 0 && (
