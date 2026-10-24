@@ -1,0 +1,218 @@
+@import "tailwindcss";
+/* Paleta 2 + tipografía 3, elegidas por la empresa (estilos/). */
+@import "./estilos/paleta.css";
+@import "./estilos/tipografia.css";
+
+/*
+ * Los componentes usan nombres semánticos (marfil = fondo, terracota = principal…). Apuntan
+ * a las variables de la paleta activa (estilos/paletas.css), así cambiar de paleta no toca
+ * ningún componente. Usos y contrastes: docs/brief-diseno.md §4.
+ */
+@theme inline {
+  --color-marfil: var(--c-bg); /* fondo general */
+  --color-rubor: var(--c-bg-alt); /* fondo alterno */
+  --color-superficie: var(--c-surface); /* tarjetas, campos */
+  --color-carbon: var(--c-ink); /* texto */
+  --color-carbon-suave: var(--c-ink-soft);
+  --color-topo: var(--c-muted); /* texto secundario */
+  --color-terracota: var(--c-primary); /* principal: botones, enlaces, foco */
+  --color-terracota-profundo: var(--c-primary-hover);
+  --color-sobre-principal: var(--c-on-primary); /* texto sobre botones principales */
+  --color-rosa: var(--c-accent); /* decorativo o texto ≥ 24px */
+  --color-dorado: var(--c-gold); /* filetes y ornamentos */
+  --color-dorado-texto: var(--c-gold-text); /* antetítulos y etiquetas */
+  --color-linea: var(--c-border); /* divisores decorativos */
+  --color-borde: var(--c-input-border); /* bordes de campos (≥ 3:1) */
+  --color-error: var(--c-error);
+
+  --radius-boton: var(--radius-btn);
+
+  --font-titulo: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+@theme {
+  /* Escala fluida de 320px a 1440px; los títulos se ajustan al ancho de cada fuente. */
+  --text-titulo-1: calc(clamp(2.125rem, 1.55rem + 2.9vw, 4rem) * var(--display-scale, 1));
+  --text-titulo-1--line-height: 1.08;
+  --text-titulo-2: calc(clamp(1.75rem, 1.4rem + 1.75vw, 2.875rem) * var(--display-scale, 1));
+  --text-titulo-2--line-height: 1.12;
+  --text-titulo-3: calc(clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem) * var(--display-scale, 1));
+  --text-titulo-3--line-height: 1.2;
+  --text-cuerpo: calc(clamp(1rem, 0.96rem + 0.2vw, 1.125rem) * var(--body-scale, 1));
+  --text-cuerpo--line-height: 1.65;
+  --text-antetitulo: 0.8125rem;
+  --text-antetitulo--line-height: 1.4;
+
+  /* Ritmo vertical entre secciones. */
+  --spacing-seccion: clamp(3.5rem, 2.4rem + 5.5vw, 7.5rem);
+
+  --ease-suave: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Degradados (eco del logo), con los colores de la paleta activa. */
+:root {
+  --degradado-terracota: linear-gradient(90deg, var(--c-accent), var(--c-primary));
+  --degradado-dorado: linear-gradient(
+    90deg,
+    var(--c-gold),
+    color-mix(in oklab, var(--c-gold), white 40%),
+    var(--c-gold)
+  );
+  /* Alto del encabezado fijo: las anclas (#contacto) no quedan tapadas. */
+  --alto-encabezado: 4rem;
+  scroll-padding-top: calc(var(--alto-encabezado) + 1rem);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-marfil);
+    color: var(--color-carbon);
+    font-family: var(--font-sans);
+    font-size: var(--text-cuerpo);
+    line-height: var(--text-cuerpo--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-titulo);
+    font-weight: var(--display-weight, 500);
+    text-transform: var(--display-transform, none);
+    letter-spacing: var(--display-tracking, 0);
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  /* Citas y frases en cursiva: la familia de cita de la tipografía activa. */
+  .font-titulo.italic,
+  .italic .font-titulo {
+    font-family: var(--font-cita), var(--font-titulo);
+  }
+  ::selection {
+    background-color: var(--color-rubor);
+    color: var(--color-carbon);
+  }
+  /* Foco visible y consistente solo con teclado. */
+  :focus-visible {
+    outline: 2px solid var(--color-terracota);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Utilidades del sistema ─────────────────────────────────────────────── */
+
+/* Contenedor de página: ancho máximo y margen lateral que crece con la pantalla. */
+@utility contenedor {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 0.6rem + 2vw, 2rem);
+}
+
+/* Ancho de lectura cómodo (~70 caracteres) para textos largos. */
+@utility lectura {
+  max-width: 68ch;
+}
+
+/* Antetítulo: mayúsculas espaciadas en el oro para texto de la paleta. */
+@utility antetitulo {
+  font-family: var(--font-eyebrow);
+  font-size: var(--text-antetitulo);
+  line-height: var(--text-antetitulo--line-height);
+  letter-spacing: var(--eyebrow-tracking, 0.2em);
+  text-transform: uppercase;
+  font-weight: var(--eyebrow-weight, 500);
+  color: var(--color-dorado-texto);
+}
+
+/* Línea dorada fina, eco de la línea del logo. */
+@utility filete-dorado {
+  height: 1px;
+  background-image: var(--degradado-dorado);
+}
+
+/* ── Botón flotante de WhatsApp (WhatsAppFlotante.tsx) ─────────────────────
+   Mismas animaciones del botón de xyracode.com: entrada, flotación, halo y saludo;
+   en hover se pausa la flotación y se despliega la etiqueta. */
+@keyframes rd-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes rd-flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes rd-halo {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+@keyframes rd-saludo {
+  0%,
+  88%,
+  100% {
+    transform: rotate(0deg);
+  }
+  91% {
+    transform: rotate(-11deg);
+  }
+  94% {
+    transform: rotate(9deg);
+  }
+  97% {
+    transform: rotate(-5deg);
+  }
+}
+.wa-fab {
+  animation: rd-aparecer 0.5s ease-out both;
+}
+.wa-fab:hover .wa-nucleo,
+.wa-fab:focus-visible .wa-nucleo {
+  transform: translateY(-2px) scale(1.05);
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .wa-nucleo {
+    animation: rd-flotar 3.4s ease-in-out infinite;
+  }
+  .wa-halo {
+    animation: rd-halo 2.8s ease-out infinite;
+  }
+  .wa-glifo {
+    animation: rd-saludo 5s ease-in-out infinite;
+  }
+}
