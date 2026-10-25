@@ -84,6 +84,21 @@ fina, pero cercana y regional, no fría ni de lujo inalcanzable.
 
 Proporciona un modo claro únicamente.
 
+### 4.1 Fondos de las secciones (desde el 2026-10-24, igual en todas las páginas)
+
+| Tono | Para qué | Regla |
+|---|---|---|
+| Marfil (fondo) | Contenido de lectura | Nunca más de dos seguidas; línea divisoria solo entre dos marfil |
+| Rubor (fondo alterno) | Prueba de trabajo (portafolio, testimonios, un vestido real) y bloques que cortan el ritmo | Nunca dos seguidas |
+| Terracota | Solo el cierre de conversión (formulario o cita por WhatsApp) | Una por página, la última antes del pie |
+| Bosque | Solo la franja de la boda especial | Una en todo el sitio |
+
+- Las tarjetas dentro de una sección rubor van en marfil, y al revés.
+- Grano de papel casi invisible en todos los fondos (body, secciones de color y pie).
+- En el código, los fondos de cada página se calculan con `src/lib/fondos.ts` según las
+  secciones que existan (una página de servicio sin galería, un evento sin testimonio), no
+  a mano.
+
 ## 5. Requisitos generales
 
 - **Un solo H1 por página** (indicado en cada pantalla). Úsalo tal cual.

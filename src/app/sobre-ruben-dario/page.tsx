@@ -1,12 +1,16 @@
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
-import { Migas } from "@/components/navegacion/Migas";
+import { PortadaConFoto } from "@/components/plantillas/PortadaConFoto";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
+import { Boton } from "@/components/ui/Boton";
 import { Foto } from "@/components/ui/Foto";
 import { LineaTiempo } from "@/components/ui/LineaTiempo";
+import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
-import { paginaSobre } from "@/lib/seo/jsonld";
+import { fondos } from "@/lib/fondos";
+import { RUTA_VESTIDOS } from "@/lib/rutas";
+import { paginaSobre, preguntasFrecuentes } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
 
@@ -27,56 +31,62 @@ export default function Sobre() {
     .map((s) => eventos.find((e) => e.slug === s))
     .filter((e) => e !== undefined);
 
+  // Fondos según las secciones con contenido; los eventos que lo marcaron (prueba de
+  // trabajo) van en rubor (src/lib/fondos.ts).
+  const presentes = {
+    video: Boolean(sobre.video),
+    equipo: sobre.equipo.length > 0,
+    marcaron: marcaron.length > 0,
+    reconocimientos: sobre.reconocimientos.length > 0,
+    preguntas: Boolean(sobre.preguntas),
+  };
+  const tramo = fondos([
+    ...(presentes.video ? [{}] : []),
+    {}, // historia
+    {}, // trayectoria
+    {}, // principios
+    ...(presentes.equipo ? [{}] : []),
+    ...(presentes.marcaron ? [{ prueba: true }] : []),
+    ...(presentes.reconocimientos ? [{}] : []),
+    ...(presentes.preguntas ? [{}] : []),
+  ]);
+  const fondo = {
+    video: presentes.video ? tramo.shift()! : "",
+    historia: tramo.shift()!,
+    trayectoria: tramo.shift()!,
+    principios: tramo.shift()!,
+    equipo: presentes.equipo ? tramo.shift()! : "",
+    marcaron: presentes.marcaron ? tramo.shift()! : "",
+    reconocimientos: presentes.reconocimientos ? tramo.shift()! : "",
+    preguntas: presentes.preguntas ? tramo.shift()! : "",
+  };
   return (
     <main>
-      <JsonLd datos={paginaSobre(pagina.ruta)} />
+      <JsonLd
+        datos={[
+          ...paginaSobre(pagina.ruta),
+          ...(sobre.preguntas ? [preguntasFrecuentes(sobre.preguntas)] : []),
+        ]}
+      />
 
-      {/* Portada */}
-      <section aria-labelledby="sobre-titulo" className="pt-4 pb-(--spacing-seccion)">
-        {/* Celular: migas, foto y texto. Escritorio: la foto sube al nivel de las migas para
-            aprovechar el alto de la pantalla, y el texto se centra a su lado. */}
-        <div
-          className={`contenedor grid ${
-            sobre.retrato
-              ? "[grid-template-areas:'migas'_'foto'_'texto'] lg:grid-cols-[minmax(0,1fr)_auto] lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:[grid-template-areas:'migas_foto'_'texto_foto']"
-              : "[grid-template-areas:'migas'_'texto']"
-          }`}
-        >
-          <div className="min-w-0 [grid-area:migas]">
-            <Migas
-              items={[
-                { nombre: "Inicio", ruta: "/" },
-                { nombre: "Nosotros", ruta: pagina.ruta },
-              ]}
-            />
-          </div>
-          {sobre.retrato && (
-            /* Entera en la primera pantalla: proporción original (3:4) y un ancho tope que
-               la deja caber bajo el encabezado (y las migas, en celular) en cualquier alto. */
-            <div className="mx-auto mt-6 w-full max-w-[max(16rem,calc((100dvh_-_12rem)_*_3_/_4))] min-w-0 [grid-area:foto] lg:mt-0 lg:mr-0 lg:w-[min(40rem,48vw,max(16rem,calc((100dvh_-_8rem)_*_3_/_4)))] lg:max-w-none">
-              <Foto
-                evento="sobre"
-                archivo={sobre.retrato.archivo}
-                alt={sobre.retrato.alt}
-                prioridad
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="aspect-[3/4] w-full rounded-sm object-cover"
-              />
-            </div>
-          )}
-          <div className="mt-10 max-w-3xl min-w-0 self-center [grid-area:texto] lg:mt-0">
-            <p className="antetitulo">Nosotros</p>
-            <h1 id="sobre-titulo" className="mt-4 text-titulo-1">
-              {pagina.h1}
-            </h1>
-            <p className="mt-6 font-titulo text-titulo-3 text-topo italic">{sobre.frase}</p>
-          </div>
-        </div>
-      </section>
+      <PortadaConFoto
+        idTitulo="sobre-titulo"
+        migas={[
+          { nombre: "Inicio", ruta: "/" },
+          { nombre: "Nosotros", ruta: pagina.ruta },
+        ]}
+        foto={sobre.retrato && { evento: "sobre", ...sobre.retrato }}
+      >
+        <p className="antetitulo">Nosotros</p>
+        <h1 id="sobre-titulo" className="mt-4 text-titulo-1">
+          {pagina.h1}
+        </h1>
+        <p className="mt-6 font-titulo text-titulo-3 text-topo italic">{sobre.frase}</p>
+      </PortadaConFoto>
 
       {/* Video de presentación: preload="none", nada se descarga hasta tocar play. */}
       {sobre.video && (
-        <section aria-labelledby="video-titulo" className={`${seccion} bg-rubor`}>
+        <section aria-labelledby="video-titulo" className={`${seccion} ${fondo.video}`}>
           <div className="contenedor">
             <TituloSeccion
               id="video-titulo"
@@ -113,7 +123,7 @@ export default function Sobre() {
       )}
 
       {/* Su historia */}
-      <section aria-labelledby="historia-titulo" className={`${seccion} border-t border-linea`}>
+      <section aria-labelledby="historia-titulo" className={`${seccion} ${fondo.historia}`}>
         <div className="contenedor grid gap-10 lg:grid-cols-12">
           <div className="min-w-0 lg:col-span-4">
             <p className="antetitulo">Historia</p>
@@ -132,12 +142,18 @@ export default function Sobre() {
                 <p>{sobre.citaHistoria}</p>
               </blockquote>
             )}
+            {/* Su historia nació en los vestidos de novia: hoy también los diseña a medida. */}
+            <div className="mt-8">
+              <Boton href={RUTA_VESTIDOS} variante="texto">
+                Vestidos de novia a medida
+              </Boton>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Trayectoria */}
-      <section aria-labelledby="trayectoria-titulo" className={`${seccion} bg-rubor`}>
+      <section aria-labelledby="trayectoria-titulo" className={`${seccion} ${fondo.trayectoria}`}>
         <div className="contenedor grid gap-10 lg:grid-cols-12">
           <div className="min-w-0 lg:col-span-4">
             <p className="antetitulo">Trayectoria</p>
@@ -152,7 +168,7 @@ export default function Sobre() {
       </section>
 
       {/* Su forma de diseñar */}
-      <section aria-labelledby="principios-titulo" className={seccion}>
+      <section aria-labelledby="principios-titulo" className={`${seccion} ${fondo.principios}`}>
         <div className="contenedor">
           <TituloSeccion
             id="principios-titulo"
@@ -175,7 +191,7 @@ export default function Sobre() {
 
       {/* El equipo */}
       {sobre.equipo.length > 0 && (
-        <section aria-labelledby="equipo-titulo" className={`${seccion} border-t border-linea`}>
+        <section aria-labelledby="equipo-titulo" className={`${seccion} ${fondo.equipo}`}>
           <div className="contenedor">
             <TituloSeccion
               id="equipo-titulo"
@@ -205,7 +221,7 @@ export default function Sobre() {
 
       {/* Eventos que lo marcaron */}
       {marcaron.length > 0 && (
-        <section aria-labelledby="marcaron-titulo" className={`${seccion} bg-rubor`}>
+        <section aria-labelledby="marcaron-titulo" className={`${seccion} ${fondo.marcaron}`}>
           <div className="contenedor">
             <TituloSeccion
               id="marcaron-titulo"
@@ -223,7 +239,10 @@ export default function Sobre() {
 
       {/* Reconocimientos */}
       {sobre.reconocimientos.length > 0 && (
-        <section aria-labelledby="reconocimientos-titulo" className={seccion}>
+        <section
+          aria-labelledby="reconocimientos-titulo"
+          className={`${seccion} ${fondo.reconocimientos}`}
+        >
           <div className="contenedor">
             <TituloSeccion
               id="reconocimientos-titulo"
@@ -239,6 +258,14 @@ export default function Sobre() {
             </ul>
           </div>
         </section>
+      )}
+
+      {sobre.preguntas && (
+        <SeccionPreguntas
+          titulo="Sobre Rubén Darío"
+          preguntas={sobre.preguntas}
+          className={fondo.preguntas}
+        />
       )}
 
       <SeccionContacto origen="sobre" />

@@ -20,10 +20,12 @@ Esto aplica especialmente a la **exportación estática**.
   para redes, vectorial). Las versiones web (monograma, horizontal, vertical, a una tinta)
   se extraen con `scripts/marca/extraer-logo.py` a `public/marca/`, y los íconos con
   `scripts/marca/iconos.mjs`. Paleta (2 · Terracota) y tipografía (3 · Alta Costura): `docs/brief-diseno.md` §4.
-- Diseño y decoración de eventos. **Su fuerte son las bodas**; también diseña **fiestas de 15 años**.
+- Diseño y decoración de eventos. **Su fuerte son las bodas** (también como **wedding planner**:
+  organización completa o solo diseño y decoración, también para 15 años); también diseña
+  **fiestas de 15 años** y **vestidos de novia y de 15 años a medida** (estudió Diseño de
+  Modas y Alta Costura).
 - **Cobertura** (definida el 2026-10-07): **Villavicencio como centro de operación**, municipios
-  del Meta, **Bogotá y municipios de Cundinamarca** (lista de Cundinamarca pendiente de la
-  empresa). Se configura en `content/sitio.json` → `cobertura` y debe coincidir con el área
+  del Meta, **Bogotá y la Sabana de Bogotá** (Chía, Tenjo, Subachoque; confirmado el 2026-10-24). Se configura en `content/sitio.json` → `cobertura` y debe coincidir con el área
   de servicio de Google Business.
 - Con el cliente: **trato formal (usted)** en documentos y mensajes. Referirse a "la empresa".
 - **Textos del sitio: todo en tú, nunca en usted** (decisión del 2026-10-13). Aplica a títulos,
@@ -126,8 +128,10 @@ Si el cliente pide luego un panel para publicar solo, eso exige servidor y base 
 
 Palabras clave objetivo (una principal por página):
 - Inicio: marca + *decoración de eventos en Villavicencio* (resume y enlaza; no compite con los servicios)
-- `/bodas`: *decoración de bodas Villavicencio* / *diseño de bodas en el Meta*
-- `/quince-anos`: *decoración de 15 años Villavicencio*
+- `/bodas`: *wedding planner Villavicencio* / *decoración de bodas Villavicencio*
+- `/vestidos-de-novia`: *vestidos de novia a medida Villavicencio* (página agregada el
+  2026-10-24, **fuera del alcance aprobado**: falta decidir si se cotiza o va como valor agregado)
+- `/quince-anos`: *decoración de 15 años Villavicencio* (+ organización y vestido de 15, como secciones)
 - Cada evento: *boda en [lugar], [municipio]* (salones y fincas de la zona)
 
 Mapa completo de rutas, secciones y SEO por página: `docs/mapa-del-sitio.md`.

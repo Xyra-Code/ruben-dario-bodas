@@ -15,7 +15,21 @@
     },
     {
       "tipo": "Hacienda",
-      "texto": "Las haciendas tienen carácter propio: corredores, madera y jardines. La decoración debe dialogar con la arquitectura en lugar de taparla. Ubique la ceremonia y la recepción en espacios distintos para que los invitados recorran el lugar."
+      "texto": "Las haciendas tienen carácter propio: corredores, madera y jardines. La decoración debe dialogar con la arquitectura en lugar de taparla. Ubica la ceremonia y la recepción en espacios distintos para que los invitados recorran el lugar."
+    }
+  ],
+  "preguntas": [
+    {
+      "pregunta": "¿Qué preguntar antes de reservar una finca para boda?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Decoran en cualquier finca o salón del Meta?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Qué tipo de lugar conviene según el número de invitados?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
     }
   ]
 }

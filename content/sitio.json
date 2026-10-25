@@ -38,7 +38,7 @@
   },
   "cobertura": {
     "sede": "Villavicencio",
-    "resumen": "Villavicencio, el Meta, Bogotá y Cundinamarca",
+    "resumen": "Villavicencio, el Meta y la Sabana de Bogotá",
     "zonas": [
       {
         "nombre": "Meta",
@@ -52,8 +52,9 @@
       },
       {
         "nombre": "Cundinamarca",
+        "etiqueta": "Sabana de Bogotá",
         "tipo": "departamento",
-        "municipios": ["[PENDIENTE: municipios de Cundinamarca donde trabaja la empresa]"]
+        "municipios": ["Chía", "Tenjo", "Subachoque"]
       }
     ]
   },

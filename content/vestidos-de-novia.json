@@ -1,0 +1,93 @@
+{
+  "revisadoPorLaEmpresa": false,
+  "nombre": "Vestidos de novia a medida",
+  "h1": "Vestidos de novia a medida en Villavicencio",
+  "seo": {
+    "title": "Vestidos de novia a medida en Villavicencio | Rubén Darío",
+    "description": "Diseño de vestidos de novia a medida en Villavicencio: boceto, telas y pruebas hasta tu día. Mira los diseños y agenda tu cita por WhatsApp."
+  },
+  "bajada": "Antes que las bodas, fueron los vestidos: Rubén Darío diseña el tuyo a medida, desde el primer boceto hasta la última prueba.",
+  "introduccion": [
+    "Rubén Darío estudió Diseño de Modas, se especializó en Alta Costura e Interpretación de Modas y fue profesor de patronaje y confección. Esa formación es la base de cada vestido que diseña.",
+    "[PENDIENTE: cómo diseña un vestido de novia: siluetas, telas y estilos que trabaja, y qué lo hace distinto]"
+  ],
+  "portada": {
+    "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
+    "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-ivory-y-rosa.jpg"
+  },
+  "compartir": {
+    "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
+    "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-vestido-y-velo-en-el-jardin.jpg"
+  },
+  "proceso": [
+    {
+      "titulo": "Primera cita",
+      "descripcion": "[PENDIENTE: cómo es la primera cita: qué conversan, qué traer]"
+    },
+    {
+      "titulo": "Boceto",
+      "descripcion": "[PENDIENTE: cómo se propone el diseño]"
+    },
+    {
+      "titulo": "Telas y medidas",
+      "descripcion": "[PENDIENTE: elección de telas y toma de medidas]"
+    },
+    {
+      "titulo": "Pruebas",
+      "descripcion": "[PENDIENTE: cuántas pruebas y con qué tiempo]"
+    },
+    {
+      "titulo": "Entrega",
+      "descripcion": "[PENDIENTE: cuándo y cómo se entrega el vestido]"
+    }
+  ],
+  "caso": {
+    "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
+    "titulo": "El vestido de Liz",
+    "texto": "Ivory con un fondo rosa suave, pensado para su boda verde menta en Finca Los Pinos: el vestido y la decoración, del mismo diseñador.",
+    "fotos": [
+      "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-colgado-en-el-jardin.jpg",
+      "boda-verde-menta-finca-los-pinos-villavicencio-caja-del-vestido-con-logo-de-ruben-dario.jpg",
+      "boda-verde-menta-finca-los-pinos-villavicencio-novia-abriendo-la-caja-del-vestido.jpg",
+      "boda-verde-menta-finca-los-pinos-villavicencio-novia-velo-al-viento-jardin.jpg"
+    ]
+  },
+  "inversion": {
+    "desde": "[PENDIENTE: valor desde]",
+    "nota": "El valor final depende del diseño, las telas y los detalles de confección."
+  },
+  "preguntas": [
+    {
+      "pregunta": "¿Cuánto cuesta un vestido de novia a medida?",
+      "respuesta": "[PENDIENTE: valor desde y qué hace variar el precio]"
+    },
+    {
+      "pregunta": "¿Con cuánto tiempo de anticipación debo encargar mi vestido?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Cuántas pruebas incluye el vestido?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Puedo llevar fotos de vestidos que me gustan?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Qué telas trabajan?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Atienden novias de Bogotá u otras ciudades?",
+      "respuesta": "[PENDIENTE: si atiende a distancia y cómo son las pruebas]"
+    },
+    {
+      "pregunta": "¿También alquilan o venden vestidos ya hechos?",
+      "respuesta": "[PENDIENTE: confirmar si solo diseña a medida o también alquila o vende]"
+    },
+    {
+      "pregunta": "¿Puedo encargar el vestido y la decoración de mi boda juntos?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    }
+  ]
+}

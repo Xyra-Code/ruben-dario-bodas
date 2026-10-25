@@ -8,9 +8,10 @@ const seccion = "py-(--spacing-seccion)";
 
 /**
  * Capítulos de la boda especial (Liz & Yei): cada uno con su texto y hasta 3 fotos, el
- * texto alternando de lado. Van después de "Sobre el diseño".
+ * texto alternando de lado. Van después de "Sobre el diseño". El fondo de cada uno lo
+ * calcula la página (src/lib/fondos.ts).
  */
-export function CapitulosEspeciales({ evento: e }: { evento: Evento }) {
+export function CapitulosEspeciales({ evento: e, fondos }: { evento: Evento; fondos: string[] }) {
   if (!e.especial) return null;
   return e.especial.capitulos.map((c, i) => {
     const fotos = c.fotos.map((a) => e.fotos.find((f) => f.archivo === a)!);
@@ -22,11 +23,7 @@ export function CapitulosEspeciales({ evento: e }: { evento: Evento }) {
     const medidas = obtenerImagen(e.slug, principal.archivo);
     const horizontal = medidas.ancho > medidas.alto;
     return (
-      <section
-        key={c.titulo}
-        aria-labelledby={id}
-        className={`${seccion} ${i % 2 === 0 ? "bg-rubor" : "border-t border-linea"}`}
-      >
+      <section key={c.titulo} aria-labelledby={id} className={`${seccion} ${fondos[i]}`}>
         <div className="contenedor grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className={`min-w-0 lg:col-span-5 ${i % 2 === 1 ? "lg:order-2" : ""}`}>
             <p className="antetitulo tabular-nums">{String(i + 1).padStart(2, "0")}</p>
@@ -78,10 +75,18 @@ export function CapitulosEspeciales({ evento: e }: { evento: Evento }) {
 }
 
 /** Cierre de la boda especial: la frase de Rubén Darío con su firma y el salto al portafolio. */
-export function CierreEspecial({ evento: e, firma }: { evento: Evento; firma?: Sobre["firma"] }) {
+export function CierreEspecial({
+  evento: e,
+  firma,
+  fondo,
+}: {
+  evento: Evento;
+  firma?: Sobre["firma"];
+  fondo: string;
+}) {
   if (!e.especial?.cierre) return null;
   return (
-    <section aria-label="Palabras de Rubén Darío" className={`${seccion} border-t border-linea`}>
+    <section aria-label="Palabras de Rubén Darío" className={`${seccion} ${fondo}`}>
       <div className="contenedor max-w-3xl text-center">
         <span aria-hidden="true" className="block font-titulo text-6xl leading-none text-dorado">
           “

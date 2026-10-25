@@ -48,6 +48,7 @@ export type Contenido = {
   eventos: Evento[];
   sobre: esquema.Sobre;
   guiaLugares: esquema.GuiaLugares;
+  vestidos: esquema.Vestidos;
   politica: esquema.Politica;
   /** Fotos fuera de los eventos (content/sobre/fotos), para el pipeline de imágenes. */
   fotosSobre: { archivo: string; ruta: string }[];
@@ -129,6 +130,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
   const testimonios = cargar("testimonios.json", esquema.testimonios);
   const sobre = cargar("sobre/sobre.json", esquema.sobre);
   const guiaLugares = cargar("guia-lugares.json", esquema.guiaLugares);
+  const vestidos = cargar("vestidos-de-novia.json", esquema.vestidos);
   const politica = cargar("politica-de-datos.json", esquema.politica);
   const servicios = ["bodas", "quince-anos"]
     .map((nombre) => cargar(`servicios/${nombre}.json`, esquema.servicio))
@@ -300,6 +302,27 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     }
   }
 
+  // Vestidos: sus fotos salen de los eventos del portafolio.
+  if (vestidos) {
+    const base = "content/vestidos-de-novia.json";
+    const fotoExiste = (slugEvento: string, archivo: string, campo: string) => {
+      const evento = eventos.find((e) => e.slug === slugEvento);
+      if (!evento) errores.push(`${base} → ${campo}: el evento "${slugEvento}" no existe`);
+      else if (!evento.fotos.some((f) => f.archivo === archivo))
+        errores.push(`${base} → ${campo}: "${archivo}" no está en las fotos de "${slugEvento}"`);
+    };
+    fotoExiste(vestidos.portada.evento, vestidos.portada.archivo, "portada");
+    fotoExiste(vestidos.compartir.evento, vestidos.compartir.archivo, "compartir");
+    for (const archivo of vestidos.caso?.fotos ?? []) {
+      fotoExiste(vestidos.caso!.evento, archivo, "caso.fotos");
+    }
+    if (!vestidos.revisadoPorLaEmpresa) {
+      (estricto ? errores : avisos).push(
+        `${base}: borrador de XyraCode sin aprobar (revisadoPorLaEmpresa: false)`,
+      );
+    }
+  }
+
   if (guiaLugares && !guiaLugares.revisadoPorLaEmpresa) {
     (estricto ? errores : avisos).push(
       "content/guia-lugares.json: borrador de XyraCode sin aprobar (revisadoPorLaEmpresa: false)",
@@ -326,6 +349,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     testimonios &&
     sobre &&
     guiaLugares &&
+    vestidos &&
     politica &&
     servicios.length === 2 &&
     !errores.length;
@@ -342,6 +366,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
           eventos,
           sobre,
           guiaLugares,
+          vestidos,
           politica,
           fotosSobre,
         }

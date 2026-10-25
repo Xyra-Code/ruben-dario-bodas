@@ -8,6 +8,7 @@ import { obtenerContenido } from "@/lib/contenido/cargar";
 import type { Lugar, PreguntaFrecuente, Servicio } from "@/lib/contenido/esquemas";
 import { correoAscii, esCorreo } from "@/lib/formato";
 import { obtenerImagen } from "@/lib/imagenes";
+import { RUTA_SERVICIO, RUTA_VESTIDOS } from "@/lib/rutas";
 import { urlAbsoluta } from "@/lib/seo/metadatos";
 
 type Nodo = Record<string, unknown>;
@@ -52,14 +53,14 @@ const direccionLugar = (l: Lugar) => ({
 
 /** Negocio completo (solo portada). */
 export function negocio(): Nodo {
-  const { sitio } = obtenerContenido();
+  const { sitio, servicios, vestidos } = obtenerContenido();
   const d = sitio.direccion;
   const redes = Object.values(sitio.redes).filter(Boolean);
   return {
     "@type": "LocalBusiness",
     "@id": ids.negocio(),
     name: sitio.nombre,
-    description: `Diseño y decoración de bodas y fiestas de 15 años en ${sitio.cobertura.resumen}.`,
+    description: `Wedding planner, diseño y decoración de bodas y fiestas de 15 años, y vestidos de novia a medida en ${sitio.cobertura.resumen}.`,
     url: urlAbsoluta("/"),
     logo: urlAbsoluta("/marca/icono-512.png"),
     image: urlAbsoluta("/img/og/sitio.jpg"),
@@ -83,7 +84,23 @@ export function negocio(): Nodo {
     })),
     ...(redes.length ? { sameAs: redes } : {}),
     founder: { "@id": ids.fundador() },
-    knowsAbout: ["Decoración de bodas", "Decoración de fiestas de 15 años", "Diseño de eventos"],
+    knowsAbout: [
+      "Wedding planner",
+      "Diseño y decoración de bodas",
+      "Decoración y organización de fiestas de 15 años",
+      "Vestidos de novia a medida",
+      "Vestidos de 15 años a medida",
+      "Flores para bodas",
+      "Techos y arcos para bodas",
+    ],
+    // Cada servicio con su página: así Google relaciona el negocio con cada búsqueda.
+    makesOffer: [
+      ...servicios.map((s) => ({ nombre: s.nombre, ruta: RUTA_SERVICIO[s.tipo]! })),
+      { nombre: vestidos.nombre, ruta: RUTA_VESTIDOS },
+    ].map(({ nombre, ruta }) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: nombre, url: urlAbsoluta(ruta) },
+    })),
   };
 }
 
@@ -129,7 +146,8 @@ function valorEnPesos(texto: string) {
   return /\d/.test(texto) && !texto.includes("[PENDIENTE") ? Number(digitos) : null;
 }
 
-export function servicio(s: Servicio, ruta: string): Nodo {
+/** Servicio de /bodas, /quince-anos o /vestidos-de-novia. */
+export function servicio(s: Pick<Servicio, "nombre" | "seo" | "inversion">, ruta: string): Nodo {
   const desde = valorEnPesos(s.inversion.desde);
   return {
     "@type": "Service",
@@ -213,11 +231,14 @@ export function paginaSobre(ruta: string): Nodo[] {
       "@type": "Person",
       "@id": ids.fundador(),
       name: "Rubén Darío",
-      jobTitle: "Diseñador de bodas",
+      jobTitle: "Diseñador de bodas y de vestidos de novia",
       description: sobre.resumen,
       knowsAbout: [
         "Diseño de bodas",
+        "Wedding planner",
         "Diseño de escenarios y mobiliario para eventos",
+        "Vestidos de novia a medida",
+        "Vestidos de 15 años a medida",
         "Alta costura",
       ],
       worksFor: { "@id": ids.negocio() },
