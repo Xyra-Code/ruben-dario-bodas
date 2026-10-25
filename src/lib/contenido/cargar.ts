@@ -282,6 +282,16 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       errores.push(`content/sobre/sobre.json → eventosQueMarcaron: "${s}" no existe`);
     }
   }
+  if (sobre?.fotoHistoria) {
+    const { evento, archivo } = sobre.fotoHistoria;
+    const e = eventos.find((x) => x.slug === evento);
+    if (!e)
+      errores.push(`content/sobre/sobre.json → fotoHistoria: el evento "${evento}" no existe`);
+    else if (!e.fotos.some((f) => f.archivo === archivo))
+      errores.push(
+        `content/sobre/sobre.json → fotoHistoria: "${archivo}" no está en las fotos de "${evento}"`,
+      );
+  }
   const fotosSobre = [
     sobre?.retrato,
     sobre?.retratoInicio,

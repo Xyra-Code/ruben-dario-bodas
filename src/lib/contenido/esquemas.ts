@@ -334,6 +334,8 @@ export const sobre = z.strictObject({
       credito: texto.optional(),
     })
     .optional(),
+  /** Foto de Rubén Darío con una pareja, junto a "Su historia" (de un evento del portafolio). */
+  fotoHistoria: fotoDeEvento.optional(),
   /** "Su historia": historia en primera o tercera persona, 400–600 palabras en total. */
   historia: parrafos,
   /** Frase destacada dentro de la historia. */

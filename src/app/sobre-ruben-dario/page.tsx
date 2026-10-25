@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { PortadaConFoto } from "@/components/plantillas/PortadaConFoto";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -9,7 +11,7 @@ import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { fondos } from "@/lib/fondos";
-import { RUTA_VESTIDOS } from "@/lib/rutas";
+import { RUTA_VESTIDOS, rutaEvento } from "@/lib/rutas";
 import { paginaSobre, preguntasFrecuentes } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
@@ -27,6 +29,13 @@ const seccion = "py-(--spacing-seccion)";
 /** Sobre Rubén Darío (brief §7.6): historia, trayectoria, forma de diseñar y equipo. */
 export default function Sobre() {
   const { sobre, eventos } = obtenerContenido();
+  // Foto de Rubén Darío con una pareja, junto a su historia (sale de un evento del portafolio).
+  const eventoFoto =
+    sobre.fotoHistoria && eventos.find((e) => e.slug === sobre.fotoHistoria!.evento);
+  const fotoHistoria = eventoFoto && {
+    evento: eventoFoto,
+    ...eventoFoto.fotos.find((f) => f.archivo === sobre.fotoHistoria!.archivo)!,
+  };
   const marcaron = sobre.eventosQueMarcaron
     .map((s) => eventos.find((e) => e.slug === s))
     .filter((e) => e !== undefined);
@@ -125,11 +134,39 @@ export default function Sobre() {
       {/* Su historia */}
       <section aria-labelledby="historia-titulo" className={`${seccion} ${fondo.historia}`}>
         <div className="contenedor grid gap-10 lg:grid-cols-12">
+          {/* Junto al texto: la foto con una pareja y la cita, que al final del texto casi
+              nadie alcanzaba a leer. Mide casi lo mismo que la historia, sin hacerla sticky. */}
           <div className="min-w-0 lg:col-span-4">
             <p className="antetitulo">Historia</p>
             <h2 id="historia-titulo" className="mt-3 text-titulo-2">
               Su historia
             </h2>
+            {fotoHistoria && (
+              <figure className="mt-8 max-w-sm">
+                <Foto
+                  evento={fotoHistoria.evento.slug}
+                  archivo={fotoHistoria.archivo}
+                  alt={fotoHistoria.alt}
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 24rem, 100vw"
+                  className="aspect-[2/3] w-full rounded-sm object-cover"
+                />
+                <figcaption className="mt-3 text-sm text-topo">
+                  <Link
+                    href={rutaEvento(fotoHistoria.evento.slug)}
+                    className="inline-flex min-h-11 items-center underline decoration-terracota/40 underline-offset-4 hover:text-terracota"
+                  >
+                    {fotoHistoria.evento.nombres
+                      ? `Con ${fotoHistoria.evento.nombres} en ${fotoHistoria.evento.lugar.nombre}`
+                      : fotoHistoria.evento.titulo}
+                  </Link>
+                </figcaption>
+              </figure>
+            )}
+            {sobre.citaHistoria && (
+              <blockquote className="mt-8 border-l-2 border-dorado pl-6 font-titulo text-titulo-3 italic">
+                <p>{sobre.citaHistoria}</p>
+              </blockquote>
+            )}
           </div>
           <div className="min-w-0 lg:col-span-8">
             <div className="lectura space-y-5 text-topo first-letter:float-left first-letter:mt-1 first-letter:mr-3 first-letter:font-titulo first-letter:text-7xl first-letter:leading-[0.8] first-letter:text-terracota">
@@ -137,11 +174,6 @@ export default function Sobre() {
                 <p key={p}>{p}</p>
               ))}
             </div>
-            {sobre.citaHistoria && (
-              <blockquote className="mt-10 lectura border-l-2 border-dorado pl-6 font-titulo text-titulo-3 italic">
-                <p>{sobre.citaHistoria}</p>
-              </blockquote>
-            )}
             {/* Su historia nació en los vestidos de novia: hoy también los diseña a medida. */}
             <div className="mt-8">
               <Boton href={RUTA_VESTIDOS} variante="texto">

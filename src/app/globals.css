@@ -167,8 +167,9 @@
 }
 
 /* ── Botón flotante de WhatsApp (WhatsAppFlotante.tsx) ─────────────────────
-   Mismas animaciones del botón de xyracode.com: entrada, flotación, halo y saludo;
-   en hover se pausa la flotación y se despliega la etiqueta. */
+   Animaciones del botón de xyracode.com, pero solo al llegar (2026-10-25): entrada, tres
+   pulsos del halo y un saludo, y luego quieto. En bucle competían con las fotos y movían
+   el botón de compartir que va encima. En hover sube un poco y se despliega la etiqueta. */
 @keyframes rd-aparecer {
   from {
     opacity: 0;
@@ -177,15 +178,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@keyframes rd-flotar {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
   }
 }
 @keyframes rd-halo {
@@ -221,16 +213,91 @@
 .wa-fab:hover .wa-nucleo,
 .wa-fab:focus-visible .wa-nucleo {
   transform: translateY(-2px) scale(1.05);
-  animation-play-state: paused;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .wa-nucleo {
-    animation: rd-flotar 3.4s ease-in-out infinite;
-  }
   .wa-halo {
-    animation: rd-halo 2.8s ease-out infinite;
+    opacity: 0;
+    animation: rd-halo 2.8s ease-out 0.6s 3 both;
   }
   .wa-glifo {
-    animation: rd-saludo 5s ease-in-out infinite;
+    animation: rd-saludo 5s ease-in-out 1;
+  }
+}
+
+/* ── Menú de celular (MenuMovil.tsx) ──────────────────────────────────────
+   El panel se despliega en círculo desde el botón (--menu-x/--menu-y, puestos al abrir) y
+   vuelve a él al cerrar; luego entran los enlaces uno a uno, el filete se dibuja y el
+   monograma gira hasta su sitio. Las dos líneas del botón se cruzan en una X. Con
+   movimiento reducido no hay nada de esto: el panel aparece ya completo. */
+@keyframes rd-menu-abrir {
+  from {
+    clip-path: circle(0 at var(--menu-x, 100%) var(--menu-y, 0));
+  }
+  to {
+    clip-path: circle(150% at var(--menu-x, 100%) var(--menu-y, 0));
+  }
+}
+@keyframes rd-menu-cerrar {
+  from {
+    clip-path: circle(150% at var(--menu-x, 100%) var(--menu-y, 0));
+  }
+  to {
+    clip-path: circle(0 at var(--menu-x, 100%) var(--menu-y, 0));
+  }
+}
+@keyframes rd-menu-pieza {
+  from {
+    opacity: 0;
+    translate: 0 1.25rem;
+  }
+}
+@keyframes rd-menu-filete {
+  from {
+    scale: 0 1;
+  }
+}
+@keyframes rd-menu-monograma {
+  from {
+    opacity: 0;
+    rotate: -30deg;
+    scale: 0.85;
+  }
+}
+@keyframes rd-menu-x-a {
+  from {
+    translate: 0 -5px;
+    rotate: 0deg;
+  }
+}
+@keyframes rd-menu-x-b {
+  from {
+    translate: 0 5px;
+    rotate: 0deg;
+    width: 1rem;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .menu-movil[open] {
+    animation: rd-menu-abrir 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .menu-movil[data-cerrando] {
+    animation: rd-menu-cerrar 0.38s cubic-bezier(0.55, 0, 0.75, 0.2) both;
+  }
+  .menu-movil[open] .menu-pieza {
+    animation: rd-menu-pieza 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(0.18s + var(--i, 0) * 0.06s);
+  }
+  .menu-movil[open] .menu-filete {
+    transform-origin: left;
+    animation: rd-menu-filete 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  }
+  .menu-movil[open] .menu-monograma {
+    animation: rd-menu-monograma 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  }
+  .menu-movil[open] .menu-x-a {
+    animation: rd-menu-x-a 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  }
+  .menu-movil[open] .menu-x-b {
+    animation: rd-menu-x-b 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
   }
 }

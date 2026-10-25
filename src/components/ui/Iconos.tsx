@@ -22,6 +22,29 @@ export function IconoWhatsApp({ className = "size-5" }: Props) {
   );
 }
 
+/**
+ * Logo de WhatsApp como burbuja rellena, sin círculo detrás: la burbuja en el color del
+ * texto (terracota en el flotante), con borde marfil para separarse de las fotos, y el
+ * teléfono en blanco. Mismos trazos de IconoWhatsApp (Simple Icons, CC0).
+ */
+export function IconoWhatsAppBurbuja({ className = "size-14" }: Props) {
+  return (
+    <svg viewBox="-1.5 -1.5 27 27" aria-hidden="true" className={`${base} ${className}`}>
+      <path
+        d="M20.464 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+        fill="currentColor"
+        stroke="var(--color-marfil)"
+        strokeWidth="1.25"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"
+        fill="#fff"
+      />
+    </svg>
+  );
+}
+
 export function IconoMenu({ className = "size-6" }: Props) {
   return (
     <svg
@@ -208,12 +231,31 @@ export function IconoGaleria({ className = "size-6" }: Props) {
   );
 }
 
-/** Compartir: caja con flecha hacia arriba (el gesto que la gente reconoce en el celular). */
+/** Calendario con corazón (Cotizar: la fecha es lo primero que se pide). */
+export function IconoFecha({ className = "size-5" }: Props) {
+  return (
+    <Linea className={className}>
+      <rect x="3.5" y="5" width="17" height="15" rx="1.5" />
+      <path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" />
+      <path
+        d="M12 17.6s-2.3-1.4-2.3-3a1.15 1.15 0 0 1 2.3-.4 1.15 1.15 0 0 1 2.3.4c0 1.6-2.3 3-2.3 3Z"
+        fill="currentColor"
+      />
+    </Linea>
+  );
+}
+
+/**
+ * Compartir: flecha curva hacia la derecha, la de Facebook, TikTok e Instagram. Rellena
+ * (no de línea): flota sobre fotos y un ícono sólido se pierde menos entre sus detalles.
+ */
 export function IconoCompartir({ className = "size-6" }: Props) {
   return (
     <Linea className={className}>
-      <path d="M12 3.5v11M8 7.5l4-4 4 4" />
-      <path d="M8.5 10.5H6.5a1 1 0 0 0-1 1V19a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-7.5a1 1 0 0 0-1-1h-2" />
+      <path
+        d="M13.5 4.5 20.5 11l-7 6.5v-3.75c-4.6 0-7.7 1.35-10 4.75.75-5.1 3.7-9.3 10-10.25V4.5Z"
+        fill="currentColor"
+      />
     </Linea>
   );
 }

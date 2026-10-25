@@ -24,6 +24,7 @@ const DERECHA: Pestana[] = [
 ];
 
 /**
+ * RETIRADA (2026-10-25: volvió el menú, MenuMovil; no se importa en ningún lado).
  * PRUEBA (2026-10-16): navegación de celular y tablet como barra de pestañas de app, en
  * lugar del menú hamburguesa y del botón flotante de WhatsApp (que pasa al centro).
  * - Se oculta al bajar y vuelve al subir, para dejar ver las fotos completas.

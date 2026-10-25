@@ -1,13 +1,19 @@
-import { IconoWhatsApp } from "@/components/ui/Iconos";
+import { IconoWhatsApp, IconoWhatsAppBurbuja } from "@/components/ui/Iconos";
 
 /**
- * Formas y colores del botón flotante de WhatsApp. "circulo" es la que usa el sitio; las
+ * Formas y colores del botón flotante de WhatsApp. "burbuja" es la que usa el sitio; las
  * demás son propuestas para elegir (se ven en /guia-de-estilos).
  */
-export type VarianteWhatsApp = "circulo" | "glifo" | "verde" | "claro" | "degradado" | "pildora";
+export type VarianteWhatsApp =
+  "burbuja" | "circulo" | "glifo" | "verde" | "claro" | "degradado" | "pildora";
 
 export const VARIANTES_WHATSAPP: { id: VarianteWhatsApp; nombre: string; nota: string }[] = [
-  { id: "circulo", nombre: "Círculo terracota", nota: "Actual: color de la marca, ícono blanco" },
+  {
+    id: "burbuja",
+    nombre: "Burbuja terracota",
+    nota: "Actual: el logo sin círculo, en café con el teléfono blanco y borde marfil",
+  },
+  { id: "circulo", nombre: "Círculo terracota", nota: "Color de la marca, ícono blanco" },
   { id: "glifo", nombre: "Ícono solo", nota: "Sin círculo, como en xyracode.com; más liviano" },
   {
     id: "verde",
@@ -38,6 +44,7 @@ type Props = {
 };
 
 const HALO: Record<VarianteWhatsApp, string> = {
+  burbuja: "var(--c-primary)",
   circulo: "var(--c-primary)",
   glifo: "var(--c-primary)",
   verde: "#1C6B47",
@@ -47,8 +54,11 @@ const HALO: Record<VarianteWhatsApp, string> = {
 };
 
 const NUCLEO: Record<VarianteWhatsApp, string> = {
+  // Sin círculo: el tamaño lo da el logo (IconoWhatsAppBurbuja), con borde marfil propio.
+  burbuja: "size-12 text-terracota lg:size-14",
+  // Anillo marfil: lo separa de fotos cálidas o con terracota.
   circulo:
-    "size-14 rounded-full bg-terracota text-sobre-principal shadow-[0_6px_20px_rgba(42,30,27,0.25)] lg:size-16",
+    "size-14 rounded-full bg-terracota text-sobre-principal shadow-[0_6px_20px_rgba(42,30,27,0.25)] ring-2 ring-marfil lg:size-16",
   glifo: "size-14 text-terracota lg:size-16",
   verde:
     "size-14 rounded-full bg-[#1C6B47] text-white shadow-[0_6px_20px_rgba(28,107,71,0.35)] lg:size-16",
@@ -105,9 +115,13 @@ export function BotonWhatsApp({
           }}
         />
         <span className={`relative inline-flex items-center justify-center ${NUCLEO[variante]}`}>
-          <IconoWhatsApp
-            className={`wa-glifo ${glifo ? "size-12 drop-shadow-[0_6px_14px_rgba(156,74,59,0.45)] lg:size-14" : "size-7"}`}
-          />
+          {variante === "burbuja" ? (
+            <IconoWhatsAppBurbuja className="wa-glifo size-12 drop-shadow-[0_6px_14px_rgba(42,30,27,0.3)] lg:size-14" />
+          ) : (
+            <IconoWhatsApp
+              className={`wa-glifo ${glifo ? "size-12 drop-shadow-[0_6px_14px_rgba(156,74,59,0.45)] lg:size-14" : "size-7"}`}
+            />
+          )}
           {variante === "pildora" && <span className="text-[0.9375rem] font-medium">Cotizar</span>}
         </span>
       </span>

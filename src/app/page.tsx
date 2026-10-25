@@ -79,15 +79,16 @@ export default function Inicio() {
       {/* 1 · Portada · PRUEBA (2026-10-16): foto de fondo a todo el ancho. Velo oscuro
           degradado (donde va el texto: arriba en celular, a la izquierda en escritorio) para que el texto
           blanco se lea sobre cualquier foto. Llena justo la primera pantalla y sube detrás del encabezado,
-          que es transparente hasta que se baja (CabeceraFija, data-foto-portada); en celular
-          descuenta la barra de pestañas de abajo. La versión
+          que es transparente hasta que se baja (CabeceraFija, data-foto-portada). En celular la
+          pareja queda en la mitad de abajo del recorte: el texto va compacto arriba, sobre la
+          decoración del techo, y el velo se desvanece antes de llegar a ella. La versión
           anterior (texto + foto en dos columnas) sigue abajo, desactivada con FOTO_DE_FONDO. */}
       {FOTO_DE_FONDO && fotoFondo ? (
         <section
           id="inicio"
           aria-labelledby="inicio-titulo"
           data-foto-portada
-          className="relative isolate -mt-16 flex min-h-[max(30rem,calc(100svh-4.5rem-env(safe-area-inset-bottom)))] items-start overflow-hidden lg:-mt-20 lg:min-h-[max(36rem,100svh)] lg:items-center"
+          className="relative isolate -mt-16 flex min-h-[max(34rem,100svh)] items-start overflow-hidden lg:-mt-20 lg:min-h-[max(36rem,100svh)] lg:items-center"
         >
           <Foto
             evento={FOTO_FONDO.evento}
@@ -95,29 +96,41 @@ export default function Inicio() {
             alt={fotoFondo.alt}
             prioridad
             sizes="100vw"
-            className="absolute inset-0 -z-20 h-full w-full object-cover object-[72%_50%] lg:object-center"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_50%] lg:object-center"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(42,30,27,0.85)_0%,rgba(42,30,27,0.55)_50%,rgba(42,30,27,0.1)_80%)] lg:bg-[linear-gradient(to_right,rgba(42,30,27,0.8)_0%,rgba(42,30,27,0.5)_45%,rgba(42,30,27,0.05)_80%)]"
+            className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(42,30,27,0.85)_0%,rgba(42,30,27,0.6)_38%,rgba(42,30,27,0)_58%)] lg:bg-[linear-gradient(to_right,rgba(42,30,27,0.8)_0%,rgba(42,30,27,0.5)_45%,rgba(42,30,27,0.05)_80%)]"
           />
           {/* Velo superior: el encabezado transparente se lee sobre cualquier foto. */}
           <div
             aria-hidden="true"
             className="absolute inset-x-0 top-0 -z-10 h-36 bg-[linear-gradient(to_bottom,rgba(42,30,27,0.55),transparent)]"
           />
-          <div className="contenedor w-full pt-24 pb-12 lg:py-24">
+          <div className="contenedor w-full pt-20 pb-12 lg:py-24">
             <div className="max-w-xl min-w-0">
               <p className="antetitulo text-[#f1d29b]!">Rubén Darío · Diseñador de bodas</p>
-              <h1 id="inicio-titulo" className="mt-4 text-titulo-1 text-white">
+              <h1 id="inicio-titulo" className="mt-3 text-titulo-1 text-white lg:mt-4">
                 {pagina.h1}
               </h1>
-              <p className="mt-6 max-w-md text-lg text-white/85">{sitio.lema}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Boton href="#contacto" origen="portada-cotizar">
+              {/* Bajo 360 px se oculta: los botones llegarían a la pareja (el H1 ya lo dice). */}
+              <p className="mt-3 max-w-md text-white/85 max-[359px]:hidden lg:mt-6 lg:text-lg">
+                {sitio.lema}
+              </p>
+              {/* Lado a lado: apilados bajarían el texto hasta la pareja. */}
+              <div className="mt-5 flex gap-3 lg:mt-8">
+                <Boton
+                  href="#contacto"
+                  origen="portada-cotizar"
+                  className="min-w-0 grow px-3! sm:grow-0 sm:px-6!"
+                >
                   Cotizar mi evento
                 </Boton>
-                <Boton href="/eventos" variante="claro">
+                <Boton
+                  href="/eventos"
+                  variante="claro"
+                  className="min-w-0 grow px-3! sm:grow-0 sm:px-6!"
+                >
                   Ver eventos
                 </Boton>
               </div>

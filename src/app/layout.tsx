@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Manrope, Poiret_One } from "next/font/google";
 
-import { BarraInferior } from "@/components/marco/BarraInferior";
 import { Encabezado } from "@/components/marco/Encabezado";
 import { Pie } from "@/components/marco/Pie";
 import { WhatsAppFlotante } from "@/components/marco/WhatsAppFlotante";
 import { obtenerContenido } from "@/lib/contenido/cargar";
-import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 
 import "./globals.css";
 
@@ -38,7 +36,7 @@ const poiret = Poiret_One({
   variable: "--f-poiret",
 });
 
-const { sitio } = obtenerContenido();
+const { sitio, eventos } = obtenerContenido();
 
 // Base de las URL absolutas (canonical, Open Graph). Cada página define el resto con
 // `metadatos()` de src/lib/seo/metadatos.ts.
@@ -58,8 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es-CO"
       className={`${bodoni.variable} ${bodoniCursiva.variable} ${manrope.variable} ${poiret.variable}`}
     >
-      {/* pb en celular: la barra inferior (PRUEBA) no tapa el final del pie. */}
-      <body className="flex min-h-dvh flex-col grano pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-0">
+      <body className="flex min-h-dvh flex-col grano">
         <a
           href="#contenido"
           className="sr-only z-50 bg-terracota px-4 py-3 text-sobre-principal focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
@@ -71,8 +68,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </div>
         <Pie />
-        <WhatsAppFlotante enlace={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)} />
-        <BarraInferior enlaceWhatsApp={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)} />
+        <WhatsAppFlotante
+          numero={sitio.whatsapp}
+          eventos={eventos.map((e) => ({ slug: e.slug, titulo: e.titulo, tipo: e.tipo }))}
+        />
       </body>
     </html>
   );

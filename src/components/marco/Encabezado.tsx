@@ -2,15 +2,16 @@ import Link from "next/link";
 
 import { BotonCotizar } from "@/components/marco/BotonCotizar";
 import { CabeceraFija } from "@/components/marco/CabeceraFija";
-import { CompartirEncabezado } from "@/components/marco/CompartirEncabezado";
 import { EnlacesNavegacion } from "@/components/marco/EnlacesNavegacion";
+import { MenuMovil } from "@/components/marco/MenuMovil";
 import { obtenerContenido } from "@/lib/contenido/cargar";
+import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 
 /**
  * Encabezado de todas las páginas.
- * - Celular: firma + (en la página de un evento) compartir + "Cotizar"; la navegación va
- *   en la barra inferior.
- * - Desde sm: la firma por altura. Desde lg: enlaces en línea.
+ * - Celular: firma + botón del menú (MenuMovil). Compartir un evento flota sobre WhatsApp
+ *   (CompartirFlotante).
+ * - Desde sm: la firma por altura y "Cotizar" a la vista. Desde lg: enlaces en línea.
  */
 export function Encabezado() {
   const { sitio } = obtenerContenido();
@@ -23,9 +24,9 @@ export function Encabezado() {
           aria-label={`${sitio.nombre}, inicio`}
           className="flex min-h-11 min-w-0 shrink items-center"
         >
-          {/* PRUEBA (2026-10-16): la firma completa también en celular (antes solo el
-              monograma). Sin hamburguesa hay espacio: en celular el ancho escala con la
-              pantalla (168 px a 320, ~187 a 390) y desde sm manda la altura. */}
+          {/* La firma completa también en celular: el ancho escala con la pantalla (168 px
+              a 320, ~187 a 390) y desde sm manda la altura. "Cotizar" solo aparece desde
+              sm para que quepa junto al menú. */}
           {/* eslint-disable-next-line @next/next/no-img-element -- SVG del logo: no necesita optimizador */}
           <img
             src="/marca/logo-firma.svg"
@@ -40,12 +41,13 @@ export function Encabezado() {
           <EnlacesNavegacion disposicion="barra" />
         </nav>
 
-        {/* PRUEBA (2026-10-16): en celular la navegación pasa a la barra inferior
-            (BarraInferior); aquí queda solo "Cotizar". El menú hamburguesa (MenuMovil) se
-            retiró del encabezado, pero el componente sigue en el repo por si se vuelve. */}
         <div className="flex shrink-0 items-center gap-1">
-          <CompartirEncabezado />
-          <BotonCotizar compacto />
+          <BotonCotizar compacto className="max-sm:hidden" />
+          <MenuMovil
+            enlaceWhatsApp={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)}
+            redes={sitio.redes}
+            cobertura={sitio.cobertura.resumen}
+          />
         </div>
       </div>
     </CabeceraFija>

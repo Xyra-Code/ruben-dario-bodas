@@ -23,11 +23,11 @@ export const ubicacion = (lugar: { municipio: string; departamento: string }) =>
     ? lugar.municipio
     : `${lugar.municipio}, ${lugar.departamento}`;
 
-/** Navegación principal (encabezado y menú móvil). Contacto lleva al formulario de la página. */
+/** Navegación principal (encabezado, menú móvil y pie). La descripción solo se ve en el menú móvil. */
 export const NAVEGACION = [
-  { nombre: "Bodas", ruta: "/bodas" },
-  { nombre: "15 años", ruta: "/quince-anos" },
-  { nombre: "Vestidos", ruta: RUTA_VESTIDOS },
-  { nombre: "Eventos", ruta: "/eventos" },
-  { nombre: "Nosotros", ruta: "/sobre-ruben-dario" },
+  { nombre: "Bodas", ruta: "/bodas", descripcion: "Wedding planner, diseño y decoración" },
+  { nombre: "15 años", ruta: "/quince-anos", descripcion: "Decoración, organización y vestido" },
+  { nombre: "Vestidos", ruta: RUTA_VESTIDOS, descripcion: "De novia y de 15 años, a medida" },
+  { nombre: "Eventos", ruta: "/eventos", descripcion: "Bodas y fiestas que hemos diseñado" },
+  { nombre: "Nosotros", ruta: "/sobre-ruben-dario", descripcion: "La historia de Rubén Darío" },
 ] as const;

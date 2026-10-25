@@ -80,7 +80,7 @@ Reglas:
 ## 3. Elementos comunes (todas las páginas)
 
 **Encabezado:** Logo → `/` · Bodas · 15 años · Vestidos · Eventos · Nosotros (→ `/sobre-ruben-dario`) ·
-Contacto (→ `/#contacto`) · botón **Cotizar**.
+botón **Cotizar** (→ formulario de la página, o `/#contacto`). Sin enlace "Contacto": duplicaba Cotizar (2026-10-25).
 
 **Botón flotante de WhatsApp:** acceso rápido, mensaje genérico, sin formulario.
 
@@ -133,8 +133,17 @@ Hola, quisiera cotizar la decoración de mi evento.
 
 | Origen | Mensaje |
 |---|---|
-| Flotante / encabezado | "Hola, quisiera información para decorar mi evento." |
+| Flotante en `/bodas` | "Hola, quisiera cotizar el diseño de mi boda." |
+| Flotante en `/quince-anos` | "Hola, quisiera cotizar mi fiesta de 15 años." |
+| Flotante en `/vestidos-de-novia` | "Hola, quisiera una cita para diseñar mi vestido de novia." |
+| Flotante en un evento | "Hola, vi la boda en Finca San Luis, Villavicencio y quisiera algo así." |
+| Flotante en las demás páginas · menú | "Hola, quisiera información para decorar mi evento." |
 | Tarjeta "Otros eventos" | "Hola, quisiera cotizar la decoración de un evento." |
+
+Botón flotante (2026-10-25): círculo terracota con anillo marfil; anima solo al llegar
+(entrada, tres pulsos del halo, un saludo). En celular, una burbuja con la etiqueta de la
+página ("¿Cotizamos tu boda?") sale una vez por visita al pasar la mitad de la página y
+se recoge a los 4,5 s. Mensajes en `src/lib/whatsapp.ts` → `flotanteSegunRuta`.
 
 ---
 
