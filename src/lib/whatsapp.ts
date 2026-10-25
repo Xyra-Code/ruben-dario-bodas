@@ -10,6 +10,8 @@ export const MENSAJES = {
   general: "Hola, quisiera información para decorar mi evento.",
   /** Tarjeta "Otros eventos". */
   otros: "Hola, quisiera cotizar la decoración de un evento.",
+  /** Página de vestidos de novia: agendar la primera cita. */
+  vestido: "Hola, quisiera una cita para diseñar mi vestido de novia.",
 } as const;
 
 export const NOMBRE_TIPO_MENSAJE: Record<TipoEvento, string> = {

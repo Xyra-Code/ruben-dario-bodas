@@ -15,38 +15,29 @@ type Props = {
   referencia?: string;
   origen: string;
   titulo?: string;
-  /** PRUEBA (2026-10-16, solo portada): la sección como única banda de acento en terracota. */
-  acento?: boolean;
+};
+
+// Sobre terracota, el texto va en blanco (5,8 : 1) y los números en oro claro (decorativos).
+const c = {
+  seccion: "grano bg-terracota text-sobre-principal",
+  ante: "text-sobre-principal/85!",
+  suave: "text-sobre-principal/85",
+  borde: "border-sobre-principal/25",
+  numero: "text-[#f1d29b]",
 };
 
 /**
  * Cierre de casi todas las páginas (#contacto): formulario + "Qué necesito para
- * cotizarte". En celular el bloque va arriba; desde lg, al lado.
+ * cotizarte". En celular el bloque va arriba; desde lg, al lado. Es la única banda
+ * terracota de cada página (src/lib/fondos.ts): en todas, terracota = aquí se cotiza.
  */
 export function SeccionContacto({
   tipoInicial,
   referencia,
   origen,
   titulo = "Cuéntanos de tu evento",
-  acento = false,
 }: Props) {
   const { sitio } = obtenerContenido();
-  // Sobre terracota, el texto va en blanco (5,8 : 1) y los números en oro claro (decorativos).
-  const c = acento
-    ? {
-        seccion: "grano bg-terracota text-sobre-principal",
-        ante: "text-sobre-principal/85!",
-        suave: "text-sobre-principal/85",
-        borde: "border-sobre-principal/25",
-        numero: "text-[#f1d29b]",
-      }
-    : {
-        seccion: "bg-rubor",
-        ante: "",
-        suave: "text-topo",
-        borde: "border-linea",
-        numero: "text-dorado-texto",
-      };
   return (
     <section
       id="contacto"

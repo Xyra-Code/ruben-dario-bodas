@@ -14,7 +14,7 @@ import { Pasos } from "@/components/ui/Pasos";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { esEnlace } from "@/lib/formato";
-import { RUTA_SERVICIO, rutaEvento } from "@/lib/rutas";
+import { RUTA_SERVICIO, RUTA_VESTIDOS, rutaEvento } from "@/lib/rutas";
 import { negocio, preguntasFrecuentes, sitioWeb } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
@@ -44,7 +44,7 @@ const FOTO_FONDO = {
  * cobertura, preguntas y contacto.
  */
 export default function Inicio() {
-  const { sitio, servicios, eventos, proceso, sobre, testimonios, preguntasGenerales } =
+  const { sitio, servicios, vestidos, eventos, proceso, sobre, testimonios, preguntasGenerales } =
     obtenerContenido();
   const destacados = eventos.filter((e) => e.destacado).slice(0, 6);
   const especial = eventos.find((e) => e.especial);
@@ -70,10 +70,10 @@ export default function Inicio() {
   const quince = servicios.find((s) => s.tipo === "quince")!;
 
   return (
-    // PRUEBA (2026-10-16): fondos con significado. Marfil = contenido, rubor = prueba de
-    // trabajo (portafolio y testimonios), terracota = la única banda de acento (cotizar).
-    // Grano de papel en todos los fondos de la portada.
-    <main className="grano">
+    // Fondos con significado, iguales en todo el sitio (src/lib/fondos.ts): marfil =
+    // contenido, rubor = prueba de trabajo (portafolio y testimonios), terracota = la única
+    // banda de acento (cotizar). El grano de papel va en el body.
+    <main>
       <JsonLd datos={[negocio(), sitioWeb(), preguntasFrecuentes(preguntasGenerales)]} />
 
       {/* 1 · Portada · PRUEBA (2026-10-16): foto de fondo a todo el ancho. Velo oscuro
@@ -190,7 +190,16 @@ export default function Inicio() {
                 ruta={RUTA_SERVICIO.quince!}
                 foto={fotoServicio("quince")}
               />
-              <article className="min-w-0 rounded-sm bg-rubor p-6 sm:p-8">
+              <article className="min-w-0 rounded-sm bg-rubor grano p-6 sm:p-8">
+                <h3 className="text-titulo-3">{vestidos.nombre}</h3>
+                <p className="mt-2 text-topo">{vestidos.bajada}</p>
+                <div className="mt-6">
+                  <Boton href={RUTA_VESTIDOS} variante="secundario">
+                    Conoce los vestidos
+                  </Boton>
+                </div>
+              </article>
+              <article className="min-w-0 rounded-sm bg-rubor grano p-6 sm:p-8">
                 <h3 className="text-titulo-3">Otros eventos</h3>
                 <p className="mt-2 text-topo">
                   Celebraciones especiales con el mismo cuidado en el diseño. Cuéntanos qué tienes
@@ -366,7 +375,7 @@ export default function Inicio() {
           <ul className="mt-12 grid gap-6 md:grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))]">
             {sitio.cobertura.zonas.map((z) => (
               <li key={z.nombre} className="min-w-0 border-t border-dorado/50 pt-5">
-                <h3 className="text-titulo-3">{z.nombre}</h3>
+                <h3 className="text-titulo-3">{z.etiqueta ?? z.nombre}</h3>
                 <p className="mt-2 text-topo">{z.municipios.join(" · ")}</p>
               </li>
             ))}
@@ -401,7 +410,7 @@ export default function Inicio() {
       </section>
 
       {/* 9 · Contacto */}
-      <SeccionContacto origen="inicio" acento />
+      <SeccionContacto origen="inicio" />
     </main>
   );
 }

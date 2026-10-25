@@ -12,6 +12,9 @@ export const NOMBRE_SERVICIO: Partial<Record<TipoEvento, string>> = {
   quince: "15 años",
 };
 
+/** Vestidos de novia a medida: no es un tipo de evento, tiene su propia página. */
+export const RUTA_VESTIDOS = "/vestidos-de-novia";
+
 export const rutaEvento = (slug: string) => `/eventos/${slug}`;
 
 /** "Restrepo, Meta"; en Bogotá solo "Bogotá". */
@@ -24,6 +27,7 @@ export const ubicacion = (lugar: { municipio: string; departamento: string }) =>
 export const NAVEGACION = [
   { nombre: "Bodas", ruta: "/bodas" },
   { nombre: "15 años", ruta: "/quince-anos" },
+  { nombre: "Vestidos", ruta: RUTA_VESTIDOS },
   { nombre: "Eventos", ruta: "/eventos" },
   { nombre: "Nosotros", ruta: "/sobre-ruben-dario" },
 ] as const;

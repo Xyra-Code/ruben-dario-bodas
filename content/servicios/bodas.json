@@ -1,16 +1,57 @@
 {
   "slug": "bodas",
   "tipo": "boda",
-  "nombre": "Decoración de bodas",
-  "h1": "Decoración de bodas en Villavicencio y el Meta",
+  "nombre": "Diseño de bodas y wedding planner",
+  "h1": "Wedding planner y diseño de bodas en Villavicencio",
   "seo": {
-    "title": "Decoración de bodas en Villavicencio y el Meta | Rubén Darío",
-    "description": "Diseño y decoración de bodas en Villavicencio, Restrepo, Acacías y todo el Meta: ceremonia, recepción y bodas en finca. Cotiza tu boda por WhatsApp."
+    "title": "Wedding planner y decoración de bodas en Villavicencio",
+    "description": "Diseño, decoración y organización de bodas en Villavicencio y el Meta: flores, techos, arcos y bodas en finca. Cotiza tu boda por WhatsApp."
   },
   "bajada": "[PENDIENTE: frase corta de presentación del servicio]",
   "introduccion": [
     "[PENDIENTE: párrafo 1, enfoque de la empresa en el diseño de bodas]",
     "[PENDIENTE: párrafo 2, estilos que trabaja y lugares de la región]"
+  ],
+  "secciones": [
+    {
+      "antetitulo": "Wedding planner",
+      "titulo": "Dos formas de trabajar contigo",
+      "intro": "Elige si quieres que organicemos tu boda de principio a fin o solo su diseño y decoración.",
+      "items": [
+        {
+          "nombre": "Wedding planner: tu boda de principio a fin",
+          "descripcion": "[PENDIENTE: qué incluye la organización completa: proveedores, cronograma, coordinación del día]"
+        },
+        {
+          "nombre": "Diseño y decoración",
+          "descripcion": "[PENDIENTE: qué incluye el servicio de solo diseño y decoración]"
+        }
+      ]
+    },
+    {
+      "antetitulo": "Especialidades",
+      "titulo": "Flores, techos y arcos para bodas",
+      "items": [
+        {
+          "nombre": "Flores para bodas",
+          "descripcion": "[PENDIENTE: flores que trabaja: ramos, centros de mesa, muros y arcos florales]"
+        },
+        {
+          "nombre": "Techos para bodas",
+          "descripcion": "[PENDIENTE: techos de telas, flores y luces]"
+        },
+        { "nombre": "Arcos de ceremonia", "descripcion": "[PENDIENTE: descripción corta]" },
+        {
+          "nombre": "Pedida de mano y compromiso",
+          "descripcion": "[PENDIENTE: confirmar si la empresa decora pedidas de mano y compromisos]"
+        },
+        {
+          "nombre": "Vestido de novia a medida",
+          "descripcion": "Rubén Darío estudió Diseño de Modas y Alta Costura: también puede diseñar tu vestido.",
+          "enlace": { "texto": "Vestidos de novia a medida", "ruta": "/vestidos-de-novia" }
+        }
+      ]
+    }
   ],
   "variantes": {
     "titulo": "Tipos de boda",
@@ -39,6 +80,37 @@
     "nota": "El valor final depende del número de invitados, el lugar y el diseño."
   },
   "preguntas": [
-    { "pregunta": "[PENDIENTE: pregunta frecuente sobre bodas]", "respuesta": "[PENDIENTE]" }
+    {
+      "pregunta": "¿Cuánto cuesta decorar una boda en Villavicencio?",
+      "respuesta": "[PENDIENTE: valor desde y qué hace variar el precio]"
+    },
+    {
+      "pregunta": "¿Qué diferencia hay entre wedding planner y solo diseño y decoración?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Qué hace el wedding planner el día de la boda?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Decoran bodas en finca o al aire libre? ¿Qué pasa si llueve?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa, con el plan de lluvia]"
+    },
+    {
+      "pregunta": "¿Las flores son naturales?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Hacen techos de telas, flores y luces?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Decoran la ceremonia y la recepción?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa (iglesia, arco de ceremonia, salón)]"
+    },
+    {
+      "pregunta": "¿Decoran pedidas de mano y compromisos?",
+      "respuesta": "[PENDIENTE: confirmar con la empresa]"
+    }
   ]
 }

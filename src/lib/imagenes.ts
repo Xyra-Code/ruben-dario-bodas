@@ -50,6 +50,15 @@ export const ogEvento = (slug: string, alt: string): ImagenOg => ({
   alt,
 });
 
+/** Páginas con imagen para compartir propia (no de un evento): public/img/og/paginas/<nombre>.jpg */
+export const OG_PAGINAS = { vestidos: "vestidos-de-novia" } as const;
+
+export const ogPagina = (pagina: keyof typeof OG_PAGINAS, alt: string): ImagenOg => ({
+  src: `/img/og/paginas/${OG_PAGINAS[pagina]}.jpg`,
+  ...OG,
+  alt,
+});
+
 // El manifiesto se relee si cambió en disco: con `npm run dev` corriendo, importar fotos y
 // correr `npm run imagenes` no exige reiniciar el servidor.
 let cache: Record<string, Imagen> | null = null;

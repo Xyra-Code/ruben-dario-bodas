@@ -14,7 +14,7 @@ export function FranjaEspecial({ evento: e }: { evento: Evento }) {
   return (
     <section
       aria-labelledby="especial-titulo"
-      className="bg-bosque py-(--spacing-seccion) text-marfil"
+      className="bg-bosque grano py-(--spacing-seccion) text-marfil"
     >
       <div className="contenedor grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="relative mx-auto w-full max-w-md min-w-0 lg:col-span-5 lg:max-w-none">

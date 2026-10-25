@@ -37,7 +37,7 @@ export function Pie() {
   const anio = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-linea bg-rubor">
+    <footer className="bg-rubor grano">
       <div className="contenedor pt-14 pb-6 lg:pt-20 lg:pb-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] lg:gap-16">
           <div className="min-w-0">
@@ -219,7 +219,8 @@ export function Pie() {
               <ul className="mt-3 space-y-2 text-sm leading-relaxed text-topo">
                 {sitio.cobertura.zonas.map((z) => (
                   <li key={z.nombre}>
-                    <span className="text-carbon">{z.nombre}:</span> {z.municipios.join(", ")}
+                    <span className="text-carbon">{z.etiqueta ?? z.nombre}:</span>{" "}
+                    {z.municipios.join(", ")}
                   </li>
                 ))}
               </ul>

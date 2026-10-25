@@ -31,6 +31,9 @@ export default function NoEncontrada() {
           <Boton href="/quince-anos" variante="secundario">
             Decoración de 15 años
           </Boton>
+          <Boton href="/vestidos-de-novia" variante="secundario">
+            Vestidos de novia
+          </Boton>
           <Boton href="/eventos" variante="secundario">
             Eventos realizados
           </Boton>

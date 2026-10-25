@@ -16,6 +16,7 @@ import { Foto } from "@/components/ui/Foto";
 import { IconoFlecha } from "@/components/ui/Iconos";
 import { eventosRelacionados, obtenerContenido, obtenerEvento } from "@/lib/contenido/cargar";
 import { ogEvento } from "@/lib/imagenes";
+import { fondos } from "@/lib/fondos";
 import { RUTA_SERVICIO, rutaEvento } from "@/lib/rutas";
 import { galeriaEvento } from "@/lib/seo/jsonld";
 import { metadatos, urlAbsoluta } from "@/lib/seo/metadatos";
@@ -40,7 +41,7 @@ export async function generateMetadata({
 }
 
 const ENLACE_SERVICIO = {
-  boda: "Conoce nuestro servicio de decoración de bodas",
+  boda: "Conoce nuestro servicio de wedding planner y decoración de bodas",
   quince: "Conoce nuestro servicio de decoración de 15 años",
 } as const;
 
@@ -64,6 +65,22 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
   const firma = e.descripcion.some((p) => p.includes("[PENDIENTE")) ? undefined : sobre.firma;
   // Los testimonios viven en content/testimonios.json (con su autorización); aquí, el de este evento.
   const testimonio = testimonios.find((t) => t.evento === e.slug);
+
+  // Fondos después de "Sobre el diseño", según lo que tenga el evento (src/lib/fondos.ts).
+  const capitulos = e.especial?.capitulos.length ?? 0;
+  const conCierre = Boolean(e.especial?.cierre);
+  const tramo = fondos([
+    ...Array.from({ length: capitulos }, () => ({})),
+    ...(testimonio ? [{ prueba: true }] : []),
+    ...(conCierre ? [{}] : []),
+    ...(relacionados.length ? [{}] : []),
+  ]);
+  const fondo = {
+    capitulos: Array.from({ length: capitulos }, () => tramo.shift()!),
+    testimonio: testimonio ? tramo.shift()! : "",
+    cierre: conCierre ? tramo.shift()! : "",
+    relacionados: relacionados.length ? tramo.shift()! : "",
+  };
 
   return (
     <main>
@@ -150,7 +167,14 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
                     <div key={p.rol} className="flex min-w-0 flex-wrap gap-x-2">
                       <dt className="text-topo">{p.rol}:</dt>
                       <dd className="min-w-0">
-                        {p.url ? (
+                        {p.ruta ? (
+                          <a
+                            href={p.ruta}
+                            className="inline-flex min-h-11 items-center text-terracota underline underline-offset-4"
+                          >
+                            {p.nombre}
+                          </a>
+                        ) : p.url ? (
                           <a
                             href={p.url}
                             target="_blank"
@@ -173,21 +197,24 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
       </section>
 
       {/* Solo la boda especial: capítulos con fotos ("Un sueño de tres", "El vestido…"). */}
-      <CapitulosEspeciales evento={e} />
+      <CapitulosEspeciales evento={e} fondos={fondo.capitulos} />
 
       {testimonio && (
-        <section aria-label="Testimonio" className={`${seccion} bg-rubor`}>
+        <section aria-label="Testimonio" className={`${seccion} ${fondo.testimonio}`}>
           <div className="contenedor">
             <TestimonioEvento evento={e} testimonio={testimonio} />
           </div>
         </section>
       )}
 
-      <CierreEspecial evento={e} firma={sobre.firma} />
+      <CierreEspecial evento={e} firma={sobre.firma} fondo={fondo.cierre} />
 
       {/* Relacionados + enlace al servicio (cada evento enlaza a su servicio, no a la portada) */}
       {relacionados.length > 0 && (
-        <section aria-labelledby="relacionados-titulo" className={seccion}>
+        <section
+          aria-labelledby="relacionados-titulo"
+          className={`${seccion} ${fondo.relacionados}`}
+        >
           <div className="contenedor">
             <p className="antetitulo">Portafolio</p>
             <h2 id="relacionados-titulo" className="mt-3 text-titulo-2">

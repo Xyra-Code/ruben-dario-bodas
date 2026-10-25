@@ -37,6 +37,14 @@ const seo = z.strictObject({
 
 const preguntaFrecuente = z.strictObject({ pregunta: texto, respuesta: texto });
 
+/** Ruta interna del sitio: "/vestidos-de-novia", "/bodas". */
+const rutaInterna = z
+  .string()
+  .regex(/^\/[a-z0-9-]*(?:\/[a-z0-9-]+)*$/, "Ruta interna del sitio: /vestidos-de-novia");
+
+/** Foto de un evento del portafolio, usada en otra página (el alt sale del evento). */
+const fotoDeEvento = z.strictObject({ evento: slug, archivo: archivoFoto });
+
 export const tiposEvento = ["boda", "quince", "otro"] as const;
 export const tipoEvento = z.enum(tiposEvento);
 
@@ -90,13 +98,15 @@ export const sitio = z.strictObject({
    */
   cobertura: z.strictObject({
     sede: texto,
-    /** Cómo se nombra en los textos: "Villavicencio, el Meta, Bogotá y Cundinamarca". */
+    /** Cómo se nombra en los textos: "Villavicencio, el Meta y la Sabana de Bogotá". */
     resumen: texto,
     zonas: z
       .array(
         z.strictObject({
           /** "Meta", "Bogotá D.C.", "Cundinamarca". */
           nombre: texto,
+          /** Cómo se muestra si no es el nombre del departamento: "Sabana de Bogotá". */
+          etiqueta: texto.optional(),
           tipo: z.enum(["departamento", "distrito"]),
           municipios: z.array(texto).min(1),
         }),
@@ -114,6 +124,25 @@ export const sitio = z.strictObject({
 
 // ── Servicios: /bodas y /quince-anos ────────────────────────────────────────
 
+/**
+ * Sección extra de un servicio, con H2 propio para una búsqueda concreta ("wedding
+ * planner", "flores para bodas"). Cada ítem puede enlazar a otra página del sitio.
+ */
+const seccionServicio = z.strictObject({
+  antetitulo: texto,
+  titulo: texto,
+  intro: texto.optional(),
+  items: z
+    .array(
+      z.strictObject({
+        nombre: texto,
+        descripcion: texto,
+        enlace: z.strictObject({ texto, ruta: rutaInterna }).optional(),
+      }),
+    )
+    .min(1),
+});
+
 export const servicio = z.strictObject({
   slug,
   tipo: tipoEvento,
@@ -124,6 +153,8 @@ export const servicio = z.strictObject({
   bajada: texto,
   /** 2–3 párrafos propios de la empresa (sin texto propio no se posiciona). */
   introduccion: parrafos,
+  /** Bodas: modalidades (wedding planner o solo diseño) y especialidades (flores, techos…). */
+  secciones: z.array(seccionServicio).optional(),
   /** Bodas: tipos de boda. 15 años: temáticas y estilos. */
   variantes: z.strictObject({
     titulo: texto,
@@ -213,7 +244,15 @@ export const evento = z.strictObject({
   destacado: z.boolean(),
   /** Qué hizo especial el diseño (texto de la empresa). */
   descripcion: parrafos,
-  proveedores: z.array(z.strictObject({ rol: texto, nombre: texto, url: z.url().optional() })),
+  /** `ruta` enlaza a una página del sitio en vez de afuera (vestido de Rubén Darío → /vestidos-de-novia). */
+  proveedores: z.array(
+    z.strictObject({
+      rol: texto,
+      nombre: texto,
+      url: z.url().optional(),
+      ruta: rutaInterna.optional(),
+    }),
+  ),
   seo,
   /**
    * Solo para UNA boda del portafolio, la que marcó la carrera de Rubén Darío (Liz & Yei,
@@ -311,6 +350,8 @@ export const sobre = z.strictObject({
   /** Hasta 3 slugs de eventos del portafolio. */
   eventosQueMarcaron: z.array(slug).max(3),
   reconocimientos: z.array(texto),
+  /** Preguntas sobre Rubén Darío (búsquedas por su nombre y respuestas de asistentes de IA). */
+  preguntas: z.array(preguntaFrecuente).min(1).optional(),
 });
 
 export const guiaLugares = z.strictObject({
@@ -320,6 +361,45 @@ export const guiaLugares = z.strictObject({
   introduccion: parrafos,
   /** Consejos de decoración por tipo de lugar (finca, salón, hacienda…). */
   consejos: z.array(z.strictObject({ tipo: texto, texto })).min(1),
+  /** Preguntas de quien aún está eligiendo lugar (sin repetir las de /bodas). */
+  preguntas: z.array(preguntaFrecuente).min(1).optional(),
+});
+
+// ── Vestidos de novia (/vestidos-de-novia) ─────────────────────────────────
+
+/**
+ * Página del diseño de vestidos de novia a medida: otra búsqueda y otro momento de la
+ * novia que /bodas, por eso tiene página propia. Las fotos salen de los eventos del
+ * portafolio donde la novia lleva un vestido de Rubén Darío.
+ */
+export const vestidos = z.strictObject({
+  /** Textos redactados por XyraCode como borrador: false hasta que la empresa los apruebe. */
+  revisadoPorLaEmpresa: z.boolean(),
+  nombre: texto,
+  h1: texto,
+  seo,
+  bajada: texto,
+  introduccion: parrafos,
+  /** Foto vertical junto al H1. */
+  portada: fotoDeEvento,
+  /** Foto horizontal para compartir (Open Graph 1200×630). */
+  compartir: fotoDeEvento,
+  /** Del primer encuentro a la entrega. */
+  proceso: z
+    .array(z.strictObject({ titulo: texto, descripcion: texto }))
+    .min(3)
+    .max(6),
+  /** Un vestido real del portafolio, enlazado a su boda. */
+  caso: z
+    .strictObject({
+      evento: slug,
+      titulo: texto,
+      texto,
+      fotos: z.array(archivoFoto).min(2).max(4),
+    })
+    .optional(),
+  inversion: z.strictObject({ desde: texto, nota: texto }),
+  preguntas: z.array(preguntaFrecuente).min(1),
 });
 
 export const politica = z.strictObject({
@@ -331,6 +411,7 @@ export const politica = z.strictObject({
 export type Sitio = z.infer<typeof sitio>;
 export type Sobre = z.infer<typeof sobre>;
 export type GuiaLugares = z.infer<typeof guiaLugares>;
+export type Vestidos = z.infer<typeof vestidos>;
 export type Politica = z.infer<typeof politica>;
 export type Servicio = z.infer<typeof servicio>;
 export type PreguntaFrecuente = z.infer<typeof preguntaFrecuente>;

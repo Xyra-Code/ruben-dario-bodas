@@ -3,7 +3,8 @@
  *   - WebP en los anchos de ANCHOS (sin agrandar fotos más pequeñas).
  *   - Color dominante y miniatura borrosa para mostrar mientras carga.
  *   - Manifiesto con medidas: src/generado/imagenes.json.
- *   - Imágenes para compartir (Open Graph, 1200×630 JPEG): una por evento y la del sitio.
+ *   - Imágenes para compartir (Open Graph, 1200×630 JPEG): una por evento, una por página
+ *     con foto propia (vestidos de novia) y la del sitio.
  *   - Borra lo generado de fotos o eventos que ya no existen (una foto retirada no
  *     debe seguir publicada: Ley 1581).
  * Es incremental: solo procesa las fotos nuevas o modificadas.
@@ -20,6 +21,7 @@ import {
   CARPETA_PUBLICA,
   MANIFIESTO,
   OG,
+  OG_PAGINAS,
   base,
   clave,
   rutaPublica,
@@ -33,9 +35,10 @@ const MARFIL = "#FAF7F2";
  * Open Graph sin texto: solo foto + monograma (vectores). Así no depende de las fuentes
  * instaladas en la máquina que compila; el título del evento lo muestra WhatsApp aparte.
  */
-async function generarOg(eventos: { slug: string; portada: string }[]) {
+async function generarOg(fotos: { destino: string; portada: string }[]) {
   rmSync(CARPETA_OG, { recursive: true, force: true });
   mkdirSync(path.join(CARPETA_OG, "eventos"), { recursive: true });
+  mkdirSync(path.join(CARPETA_OG, "paginas"), { recursive: true });
 
   const logo = await sharp("public/marca/logo-vertical.svg", { density: 300 })
     .resize({ height: 440 })
@@ -51,15 +54,15 @@ async function generarOg(eventos: { slug: string; portada: string }[]) {
     .resize(lado, lado)
     .png()
     .toBuffer();
-  for (const { slug, portada } of eventos) {
+  for (const { destino, portada } of fotos) {
     await sharp(portada)
       .rotate()
       .resize(OG.ancho, OG.alto, { fit: "cover", position: sharp.strategy.attention })
       .composite([{ input: monograma, left: OG.ancho - lado - 36, top: OG.alto - lado - 36 }])
       .jpeg({ quality: 82, mozjpeg: true })
-      .toFile(path.join(CARPETA_OG, "eventos", `${slug}.jpg`));
+      .toFile(path.join(CARPETA_OG, destino));
   }
-  return eventos.length + 1;
+  return fotos.length + 1;
 }
 
 type Tarea = { slug: string; archivo: string; origen: string };
@@ -187,12 +190,19 @@ async function main() {
   mkdirSync(path.dirname(MANIFIESTO), { recursive: true });
   writeFileSync(MANIFIESTO, JSON.stringify(manifiesto, null, 2) + "\n");
 
-  const og = await generarOg(
-    contenido.eventos.map((e) => ({
-      slug: e.slug,
-      portada: e.fotos.find((f) => f.archivo === e.portada)!.ruta,
+  const rutaFoto = (slug: string, archivo: string) =>
+    contenido.eventos.find((e) => e.slug === slug)!.fotos.find((f) => f.archivo === archivo)!.ruta;
+  const { compartir } = contenido.vestidos;
+  const og = await generarOg([
+    ...contenido.eventos.map((e) => ({
+      destino: `eventos/${e.slug}.jpg`,
+      portada: rutaFoto(e.slug, e.portada),
     })),
-  );
+    {
+      destino: `paginas/${OG_PAGINAS.vestidos}.jpg`,
+      portada: rutaFoto(compartir.evento, compartir.archivo),
+    },
+  ]);
 
   const total = [...esperados.values()].reduce((n, s) => n + s.size, 0);
   const segundos = ((Date.now() - inicio) / 1000).toFixed(1);

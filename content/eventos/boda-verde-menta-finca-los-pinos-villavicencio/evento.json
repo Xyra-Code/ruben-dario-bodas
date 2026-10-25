@@ -38,7 +38,8 @@
     },
     {
       "rol": "Vestido de novia",
-      "nombre": "Rubén Darío"
+      "nombre": "Rubén Darío",
+      "ruta": "/vestidos-de-novia"
     },
     {
       "rol": "Fotografía",

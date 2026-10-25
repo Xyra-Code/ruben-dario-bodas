@@ -62,5 +62,19 @@
   ],
   "equipo": [],
   "eventosQueMarcaron": ["boda-verde-menta-finca-los-pinos-villavicencio"],
-  "reconocimientos": []
+  "reconocimientos": [],
+  "preguntas": [
+    {
+      "pregunta": "¿Rubén Darío diseña personalmente cada boda?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Cuántas bodas ha diseñado Rubén Darío?",
+      "respuesta": "Más de 200 bodas en 12 años, en Villavicencio y el Meta, con muebles y escenarios de diseño propio."
+    },
+    {
+      "pregunta": "¿Dónde estudió Rubén Darío?",
+      "respuesta": "Rubén Darío estudió Diseño de Modas y se especializó en Alta Costura e Interpretación de Modas. También fue profesor de diseño de modas, patronaje y confección."
+    }
+  ]
 }

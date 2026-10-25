@@ -2,10 +2,12 @@ import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { Migas } from "@/components/navegacion/Migas";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FichaLugar } from "@/components/tarjetas/FichaLugar";
+import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { eventosEnLugar, obtenerContenido } from "@/lib/contenido/cargar";
+import { fondos } from "@/lib/fondos";
 import { ubicacion } from "@/lib/rutas";
-import { listaLugares } from "@/lib/seo/jsonld";
+import { listaLugares, preguntasFrecuentes } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
 
@@ -36,9 +38,25 @@ export default function Lugares() {
       .filter((g) => g.lugares.length > 0),
   );
 
+  // Fondos de municipios, consejos y preguntas, alternando (src/lib/fondos.ts).
+  const tramo = fondos(
+    [...grupos.map(() => ({})), {}, ...(guiaLugares.preguntas ? [{}] : [])],
+    "marfil",
+  );
+  const fondo = {
+    grupos: grupos.map(() => tramo.shift()!),
+    consejos: tramo.shift()!,
+    preguntas: guiaLugares.preguntas ? tramo.shift()! : "",
+  };
+
   return (
     <main>
-      <JsonLd datos={[listaLugares(enGuia)]} />
+      <JsonLd
+        datos={[
+          listaLugares(enGuia),
+          ...(guiaLugares.preguntas ? [preguntasFrecuentes(guiaLugares.preguntas)] : []),
+        ]}
+      />
 
       <section aria-labelledby="lugares-titulo" className="pt-4 pb-(--spacing-seccion)">
         <div className="contenedor">
@@ -65,11 +83,7 @@ export default function Lugares() {
       </section>
 
       {grupos.map((g, i) => (
-        <section
-          key={g.titulo}
-          aria-label={g.titulo}
-          className={`${seccion} ${i % 2 === 0 ? "border-t border-linea" : "bg-rubor"}`}
-        >
+        <section key={g.titulo} aria-label={g.titulo} className={`${seccion} ${fondo.grupos[i]}`}>
           <div className="contenedor">
             <h2 className="text-titulo-2">{g.titulo}</h2>
             {/* PRUEBA (2026-10-16): fichas por lugar, una debajo de otra (antes, tarjetas en
@@ -86,7 +100,7 @@ export default function Lugares() {
         </section>
       ))}
 
-      <section aria-labelledby="consejos-titulo" className={`${seccion} border-t border-linea`}>
+      <section aria-labelledby="consejos-titulo" className={`${seccion} ${fondo.consejos}`}>
         <div className="contenedor">
           <TituloSeccion
             id="consejos-titulo"
@@ -103,6 +117,14 @@ export default function Lugares() {
           </div>
         </div>
       </section>
+
+      {guiaLugares.preguntas && (
+        <SeccionPreguntas
+          titulo="Antes de elegir el lugar"
+          preguntas={guiaLugares.preguntas}
+          className={fondo.preguntas}
+        />
+      )}
 
       <SeccionContacto tipoInicial="boda" origen="lugares" />
     </main>

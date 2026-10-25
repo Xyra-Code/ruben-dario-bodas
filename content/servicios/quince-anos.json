@@ -5,12 +5,45 @@
   "h1": "Decoración de fiestas de 15 años en Villavicencio",
   "seo": {
     "title": "Decoración de 15 años en Villavicencio | Rubén Darío",
-    "description": "Decoración de fiestas de 15 años en Villavicencio y el Meta: temáticas clásicas, modernas y personalizadas, con diseño de autor. Cotiza por WhatsApp."
+    "description": "Decoración y organización de fiestas de 15 años en Villavicencio y el Meta, y vestido de 15 a medida. Cotiza tu fiesta de 15 por WhatsApp."
   },
   "bajada": "[PENDIENTE: frase corta de presentación del servicio]",
   "introduccion": [
     "[PENDIENTE: párrafo 1, enfoque de la empresa en las fiestas de 15 años]",
     "[PENDIENTE: párrafo 2, temáticas y estilos]"
+  ],
+  "secciones": [
+    {
+      "antetitulo": "Organización",
+      "titulo": "Dos formas de trabajar contigo",
+      "intro": "Elige si quieres que organicemos tu fiesta de 15 de principio a fin o solo su diseño y decoración.",
+      "items": [
+        {
+          "nombre": "Organización completa de tu fiesta de 15",
+          "descripcion": "[PENDIENTE: qué incluye la organización completa: proveedores, cronograma, coordinación del día]"
+        },
+        {
+          "nombre": "Diseño y decoración",
+          "descripcion": "[PENDIENTE: qué incluye el servicio de solo diseño y decoración]"
+        }
+      ]
+    },
+    {
+      "antetitulo": "Diseño de autor",
+      "titulo": "Vestido de 15 años a medida",
+      "intro": "Rubén Darío estudió Diseño de Modas y Alta Costura: además de decorar tu fiesta, puede diseñar tu vestido.",
+      "items": [
+        {
+          "nombre": "Diseñado para ti",
+          "descripcion": "[PENDIENTE: cómo es el proceso del vestido de 15: cita, boceto, pruebas y con cuánto tiempo encargarlo]"
+        },
+        {
+          "nombre": "Vestido y decoración, del mismo diseñador",
+          "descripcion": "[PENDIENTE: cómo se piensan juntos el vestido, la paleta y la decoración de la fiesta]",
+          "enlace": { "texto": "Así diseña sus vestidos", "ruta": "/vestidos-de-novia" }
+        }
+      ]
+    }
   ],
   "variantes": {
     "titulo": "Temáticas y estilos",
@@ -35,6 +68,29 @@
     "nota": "El valor final depende del número de invitados, el lugar y la temática."
   },
   "preguntas": [
-    { "pregunta": "[PENDIENTE: pregunta frecuente sobre 15 años]", "respuesta": "[PENDIENTE]" }
+    {
+      "pregunta": "¿Cuánto cuesta decorar una fiesta de 15 en Villavicencio?",
+      "respuesta": "[PENDIENTE: valor desde y qué hace variar el precio]"
+    },
+    {
+      "pregunta": "¿También organizan la fiesta de 15 completa?",
+      "respuesta": "Sí. Puedes elegir entre la organización completa de tu fiesta de 15 o solo su diseño y decoración."
+    },
+    {
+      "pregunta": "¿Diseñan el vestido de 15 años?",
+      "respuesta": "Sí. Rubén Darío, formado en Diseño de Modas y Alta Costura, diseña vestidos de 15 años a medida."
+    },
+    {
+      "pregunta": "¿Qué temáticas manejan para fiestas de 15?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Pueden diseñar la decoración a partir del vestido y los colores de la quinceañera?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    },
+    {
+      "pregunta": "¿Decoran la entrada, el vals y el espacio para fotos?",
+      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+    }
   ]
 }

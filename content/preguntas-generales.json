@@ -4,10 +4,22 @@
     "respuesta": "[PENDIENTE: respuesta de la empresa]"
   },
   {
-    "pregunta": "¿Atienden fuera de Villavicencio?",
-    "respuesta": "[PENDIENTE: municipios y si se cobra desplazamiento]"
+    "pregunta": "¿Qué tipo de eventos diseñan?",
+    "respuesta": "[PENDIENTE: bodas, fiestas de 15 años, vestidos de novia y de 15, pedidas de mano y otros eventos que haga la empresa]"
+  },
+  {
+    "pregunta": "¿Hacen eventos en Bogotá, Chía o Tenjo?",
+    "respuesta": "[PENDIENTE: confirmar la cobertura en Bogotá y la Sabana de Bogotá (Chía, Tenjo, Subachoque)]"
+  },
+  {
+    "pregunta": "¿Cobran desplazamiento fuera de Villavicencio?",
+    "respuesta": "[PENDIENTE: si se cobra y cómo se calcula]"
   },
   { "pregunta": "¿Cómo se separa la fecha?", "respuesta": "[PENDIENTE: anticipo y forma de pago]" },
+  {
+    "pregunta": "¿Hacen visita al lugar antes del evento?",
+    "respuesta": "[PENDIENTE: respuesta de la empresa]"
+  },
   {
     "pregunta": "¿Qué necesito para pedir una cotización?",
     "respuesta": "La fecha, el lugar, el número aproximado de invitados, el estilo o las referencias que te gustan y un rango de presupuesto. Con eso te respondemos más rápido."

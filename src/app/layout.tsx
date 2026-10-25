@@ -59,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${bodoni.variable} ${bodoniCursiva.variable} ${manrope.variable} ${poiret.variable}`}
     >
       {/* pb en celular: la barra inferior (PRUEBA) no tapa el final del pie. */}
-      <body className="flex min-h-dvh flex-col pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-0">
+      <body className="flex min-h-dvh flex-col grano pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-0">
         <a
           href="#contenido"
           className="sr-only z-50 bg-terracota px-4 py-3 text-sobre-principal focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
