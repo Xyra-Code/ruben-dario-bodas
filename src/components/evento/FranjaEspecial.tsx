@@ -1,4 +1,5 @@
 import { ConAmpersand } from "@/components/ui/ConAmpersand";
+import { EnlaceLugar } from "@/components/ui/EnlaceLugar";
 import { Foto } from "@/components/ui/Foto";
 import type { Evento } from "@/lib/contenido/cargar";
 import { rutaEvento } from "@/lib/rutas";
@@ -26,6 +27,7 @@ export function FranjaEspecial({ evento: e }: { evento: Evento }) {
             evento={e.slug}
             archivo={foto.archivo}
             alt={foto.alt}
+            posicion={foto.encuadre}
             sizes="(min-width: 1024px) 40vw, (min-width: 448px) 28rem, 100vw"
             className="relative aspect-4/5 w-full rounded-sm object-cover"
           />
@@ -49,7 +51,8 @@ export function FranjaEspecial({ evento: e }: { evento: Evento }) {
           </blockquote>
           <p className="mt-5 text-marfil/75">
             Rubén Darío, sobre la boda de{" "}
-            {e.nombres ? <ConAmpersand texto={e.nombres} /> : e.titulo} · {e.lugar.nombre}
+            {e.nombres ? <ConAmpersand texto={e.nombres} /> : e.titulo} ·{" "}
+            <EnlaceLugar lugar={e.lugar} sobreOscuro />
           </p>
           <a
             href={rutaEvento(e.slug)}

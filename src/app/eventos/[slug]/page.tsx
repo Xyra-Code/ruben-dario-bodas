@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 import { CapitulosEspeciales, CierreEspecial } from "@/components/evento/CapitulosEspeciales";
 import { Compartir } from "@/components/evento/Compartir";
-import { FichaEvento } from "@/components/evento/FichaEvento";
+import { FichaEvento, FichaEventoCompacta } from "@/components/evento/FichaEvento";
+import { MosaicoEvento } from "@/components/evento/MosaicoEvento";
 import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { Galeria } from "@/components/galeria/Galeria";
@@ -11,6 +12,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { Boton } from "@/components/ui/Boton";
 import { ConAmpersand } from "@/components/ui/ConAmpersand";
+import { EnlaceLugar } from "@/components/ui/EnlaceLugar";
 import { Etiqueta } from "@/components/ui/Etiqueta";
 import { Foto } from "@/components/ui/Foto";
 import { IconoFlecha } from "@/components/ui/Iconos";
@@ -54,6 +56,13 @@ const DE_QUIEN = {
 
 const seccion = "py-(--spacing-seccion)";
 
+/**
+ * PRUEBA (2026-10-25): al entrar, título corto + mosaico de fotos (MosaicoEvento) + ficha
+ * compacta, para que las fotos se vean en la primera pantalla. false = versión anterior
+ * (título grande, ficha completa y la galería debajo), intacta abajo.
+ */
+const MOSAICO = true;
+
 /** Página de un evento (brief §7.5): long-tail "boda en [lugar], [municipio]". */
 export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
   const e = obtenerEvento((await params).slug)!;
@@ -95,33 +104,83 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
           ]}
         />
 
-        <header className="mt-6 max-w-4xl lg:mt-10">
-          <Etiqueta
-            tipo={e.tipo}
-            especial={e.especial && `${e.especial.etiqueta} · ${e.especial.anio}`}
-          />
-          <h1 className="mt-4 text-titulo-1">{e.titulo}</h1>
-          {e.nombres && (
-            <p className="mt-3 font-titulo text-titulo-3 text-topo">
-              {DE_QUIEN[e.tipo]}
-              <ConAmpersand texto={e.nombres} />
-            </p>
-          )}
-        </header>
-        <div className="mt-8">
-          <FichaEvento evento={e} />
-        </div>
+        {MOSAICO ? (
+          <>
+            {/* Título corto arriba y de inmediato el mosaico: fotos en la primera pantalla. */}
+            <header className="mt-6 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 lg:mt-8">
+              <div className="max-w-4xl min-w-0">
+                <Etiqueta
+                  tipo={e.tipo}
+                  especial={e.especial && `${e.especial.etiqueta} · ${e.especial.anio}`}
+                />
+                <h1 className="mt-3 text-titulo-2">{e.titulo}</h1>
+                {e.nombres && (
+                  <p className="mt-2 font-titulo text-titulo-3 text-topo">
+                    {DE_QUIEN[e.tipo]}
+                    <ConAmpersand texto={e.nombres} />
+                  </p>
+                )}
+              </div>
+              {/* En celular, compartir flota sobre WhatsApp (CompartirFlotante). */}
+              <div className="max-lg:hidden">
+                <Compartir titulo={e.titulo} url={urlAbsoluta(ruta)} />
+              </div>
+            </header>
+            <div className="mt-6">
+              <MosaicoEvento evento={e} />
+            </div>
+            <div className="mt-6 flex flex-col gap-5 border-b border-linea pb-8 md:flex-row md:items-center md:justify-between md:gap-8">
+              <FichaEventoCompacta evento={e} />
+              <div className="shrink-0">
+                <Boton href="#contacto" origen="evento-quiero-algo-asi">
+                  Quiero algo así
+                </Boton>
+              </div>
+            </div>
 
-        <div className="mt-10">
-          <Galeria evento={e} />
-        </div>
+            <h2 className="mt-10 antetitulo">Todas las fotos ({e.fotos.length})</h2>
+            <div className="mt-5">
+              <Galeria evento={e} prioridad={false} />
+            </div>
 
-        <div className="mt-10 flex flex-wrap items-start gap-3">
-          <Boton href="#contacto" origen="evento-quiero-algo-asi">
-            Quiero algo así
-          </Boton>
-          <Compartir titulo={e.titulo} url={urlAbsoluta(ruta)} />
-        </div>
+            <div className="mt-10 flex flex-wrap items-start gap-3">
+              <Boton href="#contacto" origen="evento-quiero-algo-asi-galeria">
+                Quiero algo así
+              </Boton>
+              <Compartir titulo={e.titulo} url={urlAbsoluta(ruta)} />
+            </div>
+          </>
+        ) : (
+          <>
+            <header className="mt-6 max-w-4xl lg:mt-10">
+              <Etiqueta
+                tipo={e.tipo}
+                especial={e.especial && `${e.especial.etiqueta} · ${e.especial.anio}`}
+              />
+              <h1 className="mt-4 text-titulo-1">{e.titulo}</h1>
+              {e.nombres && (
+                <p className="mt-3 font-titulo text-titulo-3 text-topo">
+                  {DE_QUIEN[e.tipo]}
+                  <ConAmpersand texto={e.nombres} />
+                </p>
+              )}
+            </header>
+            <div className="mt-8">
+              <FichaEvento evento={e} />
+            </div>
+
+            <div className="mt-10">
+              <Galeria evento={e} />
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-start gap-3">
+              <Boton href="#contacto" origen="evento-quiero-algo-asi">
+                Quiero algo así
+              </Boton>
+              <Compartir titulo={e.titulo} url={urlAbsoluta(ruta)} />
+            </div>
+          </>
+        )}
       </div>
 
       {/* Sobre el diseño + testimonio + proveedores */}
@@ -164,10 +223,16 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
                 <h3 className="antetitulo">Proveedores</h3>
                 <dl className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                   {e.proveedores.map((p) => (
-                    <div key={p.rol} className="flex min-w-0 flex-wrap gap-x-2">
+                    <div key={p.rol} className="flex min-w-0 flex-wrap items-baseline gap-x-2">
                       <dt className="text-topo">{p.rol}:</dt>
                       <dd className="min-w-0">
-                        {p.ruta ? (
+                        {p.rol === "Lugar" && !p.ruta && !p.url ? (
+                          // El lugar del evento lleva a su ficha en la guía de lugares.
+                          <EnlaceLugar
+                            lugar={e.lugar}
+                            className="inline-flex min-h-11 items-center text-terracota"
+                          />
+                        ) : p.ruta ? (
                           <a
                             href={p.ruta}
                             className="inline-flex min-h-11 items-center text-terracota underline underline-offset-4"

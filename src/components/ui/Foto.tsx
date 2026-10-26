@@ -16,6 +16,11 @@ type Props = {
   prioridad?: boolean;
   /** Para recortes (tarjetas 4:5, portadas) agregue aspect-* y object-cover. */
   className?: string;
+  /**
+   * Punto del recorte con object-cover, p. ej. "75% 50%" (por defecto, el centro). En las
+   * fotos de eventos sale de `encuadre` en evento.json.
+   */
+  posicion?: string;
 };
 
 /**
@@ -23,14 +28,23 @@ type Props = {
  * Sin JavaScript en el navegador: es un <img> con srcset, medidas reales (no hay saltos
  * al cargar) y el color dominante + miniatura borrosa de fondo mientras llega.
  */
-export function Foto({ evento, archivo, alt, sizes, prioridad = false, className = "" }: Props) {
+export function Foto({
+  evento,
+  archivo,
+  alt,
+  sizes,
+  prioridad = false,
+  className = "",
+  posicion,
+}: Props) {
   const imagen = obtenerImagen(evento, archivo);
   const mayor = imagen.variantes[imagen.variantes.length - 1];
   const fondo: CSSProperties = {
     backgroundColor: imagen.color,
     backgroundImage: `url("${imagen.lqip}")`,
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: posicion ?? "center",
+    ...(posicion ? { objectPosition: posicion } : {}),
   };
 
   return (

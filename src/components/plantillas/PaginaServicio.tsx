@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { PortadaConFoto } from "@/components/plantillas/PortadaConFoto";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
+import { TarjetaTestimonio } from "@/components/tarjetas/TarjetaTestimonio";
 import { Boton } from "@/components/ui/Boton";
-import { Cita } from "@/components/ui/Cita";
 import { Foto } from "@/components/ui/Foto";
 import { IconoFlecha } from "@/components/ui/Iconos";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
@@ -18,6 +19,7 @@ import { OG_SITIO, ogEvento } from "@/lib/imagenes";
 import { NOMBRE_SERVICIO, RUTA_SERVICIO } from "@/lib/rutas";
 import { preguntasFrecuentes, servicio as servicioJsonLd } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
+import { testimoniosDelServicio } from "@/lib/testimonios";
 
 /** Metadata de /bodas o /quince-anos; para compartir, la portada del evento más reciente del tipo. */
 export function metadatosServicio(tipo: TipoEvento): Metadata {
@@ -56,7 +58,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
   const ruta = RUTA_SERVICIO[tipo]!;
   const { eventos: todos, testimonios: todosTestimonios } = obtenerContenido();
   const eventos = todos.filter((e) => e.tipo === tipo);
-  const testimonios = todosTestimonios.filter((t) => t.tipo === tipo).slice(0, 3);
+  const testimonios = testimoniosDelServicio(tipo, todosTestimonios, todos);
   const textos = TEXTOS[tipo];
 
   // Portada: la foto principal del evento más reciente; presentación: otra foto vertical.
@@ -70,7 +72,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
   // Fondos según las secciones que existen: galería y testimonios (la prueba de trabajo)
   // en rubor, el resto alternando (src/lib/fondos.ts).
   const conGaleria = eventos.length > 0;
-  const conTestimonios = testimonios.length > 0;
+  const conTestimonios = testimonios.cortos.length > 0;
   const tramo = fondos(
     [
       {}, // presentación
@@ -273,8 +275,9 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
         </div>
       </section>
 
-      {/* Testimonios del tipo */}
-      {testimonios.length > 0 && (
+      {/* Testimonios del tipo: como en el inicio (uno grande con foto y tres cortos), con
+          otro destacado y sin el pie de reseñas: el cierre de esta página es el formulario. */}
+      {conTestimonios && (
         <section aria-labelledby="testimonios-titulo" className={`${seccion} ${fondo.testimonios}`}>
           <div className="contenedor">
             <TituloSeccion
@@ -282,16 +285,30 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
               antetitulo="Testimonios"
               titulo={textos.testimonios}
             />
-            <div className="mt-12 grid gap-6 md:grid-cols-[repeat(auto-fit,minmax(min(18rem,100%),1fr))]">
-              {testimonios.map((t) => (
-                <Cita
-                  key={t.texto}
-                  texto={t.extracto ?? t.texto}
-                  autor={t.autor}
-                  detalle={todos.find((e) => e.slug === t.evento)?.titulo}
+            {testimonios.destacado && (
+              <div className="mt-12">
+                <TestimonioEvento
+                  evento={testimonios.destacado.evento}
+                  testimonio={testimonios.destacado.testimonio}
+                  corto
+                  enlazar
                 />
+              </div>
+            )}
+            <ul
+              className={`-mx-(--gutter) flex snap-x snap-mandatory scroll-px-(--gutter) [scrollbar-width:none] gap-4 overflow-x-auto px-(--gutter) pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden ${
+                testimonios.destacado ? "mt-16" : "mt-12"
+              }`}
+            >
+              {testimonios.cortos.map(({ testimonio, evento }) => (
+                <li
+                  key={testimonio.texto}
+                  className="w-[85%] max-w-sm min-w-0 shrink-0 snap-start md:w-auto md:max-w-none"
+                >
+                  <TarjetaTestimonio evento={evento} testimonio={testimonio} />
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
       )}
@@ -300,6 +317,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
       <SeccionPreguntas
         titulo={tipo === "boda" ? "Sobre el diseño de tu boda" : "Sobre la decoración de 15 años"}
         preguntas={s.preguntas}
+        origen={tipo === "boda" ? "boda" : "quince"}
         className={fondo.preguntas}
       />
 

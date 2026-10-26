@@ -164,6 +164,7 @@ export default function Vestidos() {
 
       <SeccionPreguntas
         titulo="Sobre tu vestido"
+        origen="vestido"
         preguntas={vestidos.preguntas}
         className={fondo.preguntas}
       />

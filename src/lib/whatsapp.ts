@@ -17,6 +17,16 @@ export const MENSAJES = {
   quince: "Hola, quisiera cotizar mi fiesta de 15 años.",
 } as const;
 
+/** Cierre de las preguntas frecuentes ("¿No encuentras tu pregunta?"), uno por página. */
+export const MENSAJES_PREGUNTA = {
+  inicio: "Hola, tengo una pregunta sobre la decoración de mi evento.",
+  boda: "Hola, tengo una pregunta sobre el diseño de mi boda.",
+  quince: "Hola, tengo una pregunta sobre la decoración de 15 años.",
+  vestido: "Hola, tengo una pregunta sobre los vestidos de novia a medida.",
+  sobre: "Hola, tengo una pregunta para Rubén Darío.",
+  lugares: "Hola, tengo una pregunta sobre el lugar para mi boda.",
+} as const;
+
 /** Evento del portafolio, lo justo para armar el mensaje del botón flotante. */
 export type EventoMensaje = { slug: string; titulo: string; tipo: TipoEvento };
 

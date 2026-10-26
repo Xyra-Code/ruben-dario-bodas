@@ -263,6 +263,16 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
         `content/testimonios.json: "${t.autor}" apunta al evento "${t.evento}", que no existe`,
       );
     }
+    if (t.foto) {
+      const e = eventos.find((x) => x.slug === t.evento);
+      if (!e) {
+        errores.push(`content/testimonios.json: "${t.autor}" tiene foto pero no evento`);
+      } else if (!e.fotos.some((f) => f.archivo === t.foto!.archivo)) {
+        errores.push(
+          `content/testimonios.json: la foto de "${t.autor}" (${t.foto.archivo}) no está en las fotos de "${t.evento}"`,
+        );
+      }
+    }
     // La página del evento muestra uno solo: un segundo quedaría oculto sin aviso.
     if (t.evento && conTestimonio.has(t.evento)) {
       errores.push(`content/testimonios.json: el evento "${t.evento}" tiene más de un testimonio`);
@@ -276,8 +286,23 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       avisos.push(`content/testimonios.json: "${t.autor}" sin autorización (no se publica)`);
   }
 
+  // Testimonios del inicio: uno destacado y hasta tres fijos, todos con su evento (la foto
+  // de la pareja y el enlace salen de él).
+  const delInicio = (testimonios ?? []).filter((t) => t.inicio);
+  if (delInicio.filter((t) => t.inicio === "destacado").length > 1) {
+    errores.push(`content/testimonios.json: solo un testimonio puede ser "destacado" en el inicio`);
+  }
+  if (delInicio.filter((t) => t.inicio === "fijo").length > 3) {
+    errores.push(`content/testimonios.json: el inicio muestra tres cortos; hay más de tres "fijo"`);
+  }
+  for (const t of delInicio) {
+    if (!t.evento)
+      errores.push(`content/testimonios.json: "${t.autor}" va en el inicio pero no tiene evento`);
+  }
+
   // Sobre: eventos que lo marcaron y fotos en disco.
-  for (const s of sobre?.eventosQueMarcaron ?? []) {
+  for (const m of sobre?.eventosQueMarcaron ?? []) {
+    const s = typeof m === "string" ? m : m.evento;
     if (!slugsEventos.has(s)) {
       errores.push(`content/sobre/sobre.json → eventosQueMarcaron: "${s}" no existe`);
     }

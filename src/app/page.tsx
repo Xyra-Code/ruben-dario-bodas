@@ -1,23 +1,22 @@
-import Link from "next/link";
-
 import { FranjaEspecial } from "@/components/evento/FranjaEspecial";
+import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { TarjetaServicio } from "@/components/tarjetas/TarjetaServicio";
-import { Acordeon } from "@/components/ui/Acordeon";
+import { TarjetaTestimonio } from "@/components/tarjetas/TarjetaTestimonio";
 import { Boton } from "@/components/ui/Boton";
-import { CarruselTestimonios } from "@/components/ui/CarruselTestimonios";
-import { Cita } from "@/components/ui/Cita";
 import { Foto } from "@/components/ui/Foto";
 import { Pasos } from "@/components/ui/Pasos";
+import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { esEnlace } from "@/lib/formato";
-import { RUTA_SERVICIO, RUTA_VESTIDOS, rutaEvento } from "@/lib/rutas";
+import { RUTA_SERVICIO, RUTA_VESTIDOS } from "@/lib/rutas";
 import { negocio, preguntasFrecuentes, sitioWeb } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
+import { testimoniosDelInicio } from "@/lib/testimonios";
 import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 
 const pagina = PAGINAS.inicio;
@@ -66,6 +65,13 @@ export default function Inicio() {
   const fotoFondo = eventos
     .find((e) => e.slug === FOTO_FONDO.evento)
     ?.fotos.find((f) => f.archivo === FOTO_FONDO.archivo);
+  // Vestidos: la foto horizontal de su página (la novia con el velo), del evento donde está.
+  const fotoVestidos = (() => {
+    const { evento, archivo } = vestidos.compartir;
+    const f = eventos.find((e) => e.slug === evento)?.fotos.find((x) => x.archivo === archivo);
+    return f && { evento, archivo, alt: f.alt };
+  })();
+  const { destacado, cortos } = testimoniosDelInicio(testimonios, eventos);
   const bodas = servicios.find((s) => s.tipo === "boda")!;
   const quince = servicios.find((s) => s.tipo === "quince")!;
 
@@ -185,52 +191,61 @@ export default function Inicio() {
           <TituloSeccion
             id="servicios-titulo"
             antetitulo="Servicios"
-            titulo="Bodas y fiestas de 15 años con diseño de autor"
+            titulo="Bodas, fiestas de 15 y vestidos con diseño de autor"
             intro="Cada evento se diseña con un estilo y una paleta propios: nada de decoración genérica de alquiler."
           />
-          <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <TarjetaServicio
-              titulo={bodas.nombre}
-              texto={bodas.bajada}
-              ruta={RUTA_SERVICIO.boda!}
-              foto={fotoServicio("boda")}
-              destacada
-            />
-            <div className="grid min-w-0 content-start gap-12">
+          {/* Bodas destacada (su fuerte) y, al lado, 15 años y vestidos con el mismo formato:
+              las dos tarjetas horizontales suman casi el alto de la foto vertical de bodas. */}
+          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="min-w-0 lg:col-span-7">
+              <TarjetaServicio
+                titulo={bodas.nombre}
+                texto={bodas.bajada}
+                ruta={RUTA_SERVICIO.boda!}
+                foto={fotoServicio("boda")}
+                destacada
+              />
+            </div>
+            <div className="grid min-w-0 content-start gap-12 lg:col-span-5">
               <TarjetaServicio
                 titulo={quince.nombre}
                 texto={quince.bajada}
                 ruta={RUTA_SERVICIO.quince!}
                 foto={fotoServicio("quince")}
               />
-              <article className="min-w-0 rounded-sm bg-rubor grano p-6 sm:p-8">
-                <h3 className="text-titulo-3">{vestidos.nombre}</h3>
-                <p className="mt-2 text-topo">{vestidos.bajada}</p>
-                <div className="mt-6">
-                  <Boton href={RUTA_VESTIDOS} variante="secundario">
-                    Conoce los vestidos
-                  </Boton>
-                </div>
-              </article>
-              <article className="min-w-0 rounded-sm bg-rubor grano p-6 sm:p-8">
-                <h3 className="text-titulo-3">Otros eventos</h3>
-                <p className="mt-2 text-topo">
-                  Celebraciones especiales con el mismo cuidado en el diseño. Cuéntanos qué tienes
-                  en mente.
-                </p>
-                <div className="mt-6">
-                  <Boton
-                    href={enlaceWhatsApp(sitio.whatsapp, MENSAJES.otros)}
-                    whatsapp
-                    variante="secundario"
-                    origen="servicios-otros"
-                  >
-                    Escríbenos
-                  </Boton>
-                </div>
-              </article>
+              <TarjetaServicio
+                titulo={vestidos.nombre}
+                texto={vestidos.bajada}
+                ruta={RUTA_VESTIDOS}
+                foto={fotoVestidos}
+              />
             </div>
           </div>
+          {/* Otros eventos: sin página ni fotos, va como franja ("¿buscas otra cosa?"). */}
+          <aside
+            aria-labelledby="otros-titulo"
+            className="mt-12 flex flex-col gap-5 rounded-sm bg-rubor grano p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:p-8"
+          >
+            <div className="min-w-0">
+              <h3 id="otros-titulo" className="text-titulo-3">
+                Otros eventos
+              </h3>
+              <p className="mt-1 text-topo">
+                Celebraciones especiales con el mismo cuidado en el diseño. Cuéntanos qué tienes en
+                mente.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Boton
+                href={enlaceWhatsApp(sitio.whatsapp, MENSAJES.otros)}
+                whatsapp
+                variante="secundario"
+                origen="servicios-otros"
+              >
+                Escríbenos
+              </Boton>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -330,8 +345,9 @@ export default function Inicio() {
       {/* 5b · Donde empezó todo: la boda que marcó la carrera de Rubén Darío (solo una). */}
       {especial && <FranjaEspecial evento={especial} />}
 
-      {/* 6 · Testimonios */}
-      {testimonios.length > 0 && (
+      {/* 6 · Testimonios: uno destacado con la foto de la pareja y tres cortos (los demás
+          viven en la página de cada boda). En celular los cortos se deslizan con el dedo. */}
+      {destacado && (
         <section
           id="testimonios"
           aria-labelledby="testimonios-titulo"
@@ -342,31 +358,37 @@ export default function Inicio() {
               id="testimonios-titulo"
               antetitulo="Testimonios"
               titulo="Lo que dicen quienes celebraron con nosotros"
-              accion={
-                esEnlace(sitio.google.perfil) ? (
-                  <Boton href={sitio.google.perfil} variante="texto">
-                    Mira nuestras reseñas en Google
-                  </Boton>
-                ) : undefined
-              }
             />
-            {/* Todos los testimonios en una fila que se desliza, sin barra: contador, línea de
-                progreso y flechas. En celular asoma la siguiente tarjeta. */}
-            <CarruselTestimonios total={testimonios.length}>
-              {testimonios.map((t) => {
-                const evento = eventos.find((e) => e.slug === t.evento);
-                return (
-                  <li key={t.texto} className="w-[85%] min-w-0 shrink-0 snap-start sm:w-[22rem]">
-                    <Cita
-                      texto={t.extracto ?? t.texto}
-                      autor={t.autor}
-                      detalle={evento?.titulo ?? (t.tipo === "boda" ? "Boda" : "15 años")}
-                      href={evento ? rutaEvento(evento.slug) : undefined}
-                    />
+            <div className="mt-12">
+              <TestimonioEvento
+                evento={destacado.evento}
+                testimonio={destacado.testimonio}
+                corto
+                enlazar
+              />
+            </div>
+            {cortos.length > 0 && (
+              <ul className="-mx-(--gutter) mt-16 flex snap-x snap-mandatory scroll-px-(--gutter) [scrollbar-width:none] gap-4 overflow-x-auto px-(--gutter) pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
+                {cortos.map(({ testimonio, evento }) => (
+                  <li
+                    key={testimonio.texto}
+                    className="w-[85%] max-w-sm min-w-0 shrink-0 snap-start md:w-auto md:max-w-none"
+                  >
+                    <TarjetaTestimonio evento={evento} testimonio={testimonio} />
                   </li>
-                );
-              })}
-            </CarruselTestimonios>
+                ))}
+              </ul>
+            )}
+            <div className="mt-12 flex flex-col gap-4 border-t border-linea pt-8 sm:flex-row sm:items-center sm:justify-between">
+              {esEnlace(sitio.google.perfil) && (
+                <Boton href={sitio.google.perfil} variante="texto">
+                  Mira nuestras reseñas en Google
+                </Boton>
+              )}
+              <Boton href={PAGINAS.eventos.ruta} variante="secundario">
+                Ver más bodas
+              </Boton>
+            </div>
           </div>
         </section>
       )}
@@ -397,30 +419,12 @@ export default function Inicio() {
       </section>
 
       {/* 8 · Preguntas frecuentes */}
-      <section
+      <SeccionPreguntas
         id="preguntas"
-        aria-labelledby="preguntas-titulo"
-        className={`${seccion} border-t border-linea`}
-      >
-        <div className="contenedor grid gap-10 lg:grid-cols-12">
-          <div className="min-w-0 lg:col-span-4">
-            <p className="antetitulo">Preguntas frecuentes</p>
-            <h2 id="preguntas-titulo" className="mt-3 text-titulo-2">
-              Antes de cotizar
-            </h2>
-            <p className="mt-4 text-topo">
-              ¿Tu pregunta no está aquí?{" "}
-              <Link href="#contacto" className="text-terracota underline underline-offset-4">
-                Escríbenos
-              </Link>
-              .
-            </p>
-          </div>
-          <div className="min-w-0 lg:col-span-8">
-            <Acordeon preguntas={preguntasGenerales} />
-          </div>
-        </div>
-      </section>
+        titulo="Antes de cotizar"
+        preguntas={preguntasGenerales}
+        origen="inicio"
+      />
 
       {/* 9 · Contacto */}
       <SeccionContacto origen="inicio" />

@@ -121,6 +121,7 @@ export default function Lugares() {
       {guiaLugares.preguntas && (
         <SeccionPreguntas
           titulo="Antes de elegir el lugar"
+          origen="lugares"
           preguntas={guiaLugares.preguntas}
           className={fondo.preguntas}
         />

@@ -5,6 +5,7 @@ import { PortadaConFoto } from "@/components/plantillas/PortadaConFoto";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { Boton } from "@/components/ui/Boton";
+import { EnlaceLugar } from "@/components/ui/EnlaceLugar";
 import { Foto } from "@/components/ui/Foto";
 import { LineaTiempo } from "@/components/ui/LineaTiempo";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
@@ -36,9 +37,12 @@ export default function Sobre() {
     evento: eventoFoto,
     ...eventoFoto.fotos.find((f) => f.archivo === sobre.fotoHistoria!.archivo)!,
   };
-  const marcaron = sobre.eventosQueMarcaron
-    .map((s) => eventos.find((e) => e.slug === s))
-    .filter((e) => e !== undefined);
+  const marcaron = sobre.eventosQueMarcaron.flatMap((m) => {
+    const { evento: slug, etiqueta } =
+      typeof m === "string" ? { evento: m, etiqueta: undefined } : m;
+    const evento = eventos.find((e) => e.slug === slug);
+    return evento ? [{ evento, etiqueta }] : [];
+  });
 
   // Fondos según las secciones con contenido; los eventos que lo marcaron (prueba de
   // trabajo) van en rubor (src/lib/fondos.ts).
@@ -150,15 +154,25 @@ export default function Sobre() {
                   sizes="(min-width: 1024px) 30vw, (min-width: 640px) 24rem, 100vw"
                   className="aspect-[2/3] w-full rounded-sm object-cover"
                 />
+                {/* La pareja lleva a su boda; el lugar, a su ficha en la guía de lugares. */}
                 <figcaption className="mt-3 text-sm text-topo">
                   <Link
                     href={rutaEvento(fotoHistoria.evento.slug)}
                     className="inline-flex min-h-11 items-center underline decoration-terracota/40 underline-offset-4 hover:text-terracota"
                   >
                     {fotoHistoria.evento.nombres
-                      ? `Con ${fotoHistoria.evento.nombres} en ${fotoHistoria.evento.lugar.nombre}`
+                      ? `Con ${fotoHistoria.evento.nombres}`
                       : fotoHistoria.evento.titulo}
                   </Link>
+                  {fotoHistoria.evento.nombres && (
+                    <>
+                      {" en "}
+                      <EnlaceLugar
+                        lugar={fotoHistoria.evento.lugar}
+                        className="inline-flex min-h-11 items-center"
+                      />
+                    </>
+                  )}
                 </figcaption>
               </figure>
             )}
@@ -261,8 +275,13 @@ export default function Sobre() {
               titulo="Eventos que lo marcaron"
             />
             <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-3 lg:gap-x-8">
-              {marcaron.map((e) => (
-                <TarjetaEvento key={e.slug} evento={e} sizes="(min-width: 1024px) 33vw, 50vw" />
+              {marcaron.map(({ evento, etiqueta }) => (
+                <TarjetaEvento
+                  key={evento.slug}
+                  evento={evento}
+                  etiqueta={etiqueta}
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                />
               ))}
             </div>
           </div>
@@ -295,6 +314,7 @@ export default function Sobre() {
       {sobre.preguntas && (
         <SeccionPreguntas
           titulo="Sobre Rubén Darío"
+          origen="sobre"
           preguntas={sobre.preguntas}
           className={fondo.preguntas}
         />

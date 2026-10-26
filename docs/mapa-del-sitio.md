@@ -71,6 +71,10 @@ Reglas:
 - Un solo H1 por página, con palabra clave + ciudad.
 - Enlaces internos con texto clave ("decoración de bodas" → `/bodas`), nunca "ver más".
 - Cada evento enlaza a su página de servicio, no a la portada.
+- Toda mención suelta de un lugar (salón, finca, hacienda) enlaza a su ficha en la guía:
+  `/lugares-para-bodas-villavicencio#<slug-del-lugar>` (componente `EnlaceLugar`; solo si el
+  lugar tiene `enGuia`). Dentro de otro enlace (tarjetas de evento, títulos) no se anida: esos
+  llevan al evento, que enlaza al lugar.
 - `LocalBusiness` completo solo en la portada; el resto lo referencia por `@id`.
 - Preguntas frecuentes: generales en la portada, específicas en cada servicio, sin repetirse.
 - Nombre, dirección y teléfono idénticos a Google Business.

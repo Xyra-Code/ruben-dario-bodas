@@ -11,13 +11,15 @@ type Props = {
   sizes: string;
   /** Nivel del título según la página (h2 en /eventos, h3 dentro de una sección). */
   nivel?: "h2" | "h3";
+  /** Texto propio de la etiqueta en lugar del tipo ("Boda de mi hijo"), solo donde se pase. */
+  etiqueta?: string;
 };
 
 /**
  * Tarjeta de evento: foto 4:5, tipo, título ("Boda en Hacienda El Caney") y municipio · año.
  * Toda la tarjeta es un enlace; el hover acerca un poco la foto (es clicable de verdad).
  */
-export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3" }: Props) {
+export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3", etiqueta }: Props) {
   const portada = e.fotos.find((f) => f.archivo === e.portada)!;
   return (
     <article className="group relative min-w-0">
@@ -26,6 +28,7 @@ export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3" }: Props)
           evento={e.slug}
           archivo={portada.archivo}
           alt={portada.alt}
+          posicion={portada.encuadre}
           sizes={sizes}
           className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-suave group-hover:scale-[1.03]"
         />
@@ -33,6 +36,7 @@ export function TarjetaEvento({ evento: e, sizes, nivel: Titulo = "h3" }: Props)
           <Etiqueta
             tipo={e.tipo}
             sobreFoto
+            texto={etiqueta}
             especial={e.especial && `${e.especial.etiqueta} · ${e.especial.anio}`}
           />
         </div>

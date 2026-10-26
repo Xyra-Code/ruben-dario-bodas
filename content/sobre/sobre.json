@@ -65,7 +65,10 @@
     }
   ],
   "equipo": [],
-  "eventosQueMarcaron": ["boda-verde-menta-finca-los-pinos-villavicencio"],
+  "eventosQueMarcaron": [
+    "boda-verde-menta-finca-los-pinos-villavicencio",
+    { "evento": "boda-finca-los-pinos-villavicencio", "etiqueta": "Boda de mi hijo" }
+  ],
   "reconocimientos": [],
   "preguntas": [
     {

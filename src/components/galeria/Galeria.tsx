@@ -16,8 +16,9 @@ import { obtenerImagen } from "@/lib/imagenes";
  * Las medidas reales vienen del manifiesto (no hay saltos al cargar). Cada foto es un botón
  * que abre el visor a pantalla completa. Solo la primera carga con prioridad (LCP).
  */
-export function Galeria({ evento: e }: { evento: Evento }) {
-  const fotos: FotoVisor[] = e.fotos.map((f) => {
+/** Fotos del evento para el visor, en el orden de evento.json (las usan galería y mosaico). */
+export function fotosVisor(e: Evento): FotoVisor[] {
+  return e.fotos.map((f) => {
     const img = obtenerImagen(e.slug, f.archivo);
     return {
       src: img.variantes.at(-1)!.src,
@@ -27,6 +28,11 @@ export function Galeria({ evento: e }: { evento: Evento }) {
       alto: img.alto,
     };
   });
+}
+
+/** `prioridad`: la primera foto carga ya (LCP); false cuando arriba va el mosaico. */
+export function Galeria({ evento: e, prioridad = true }: { evento: Evento; prioridad?: boolean }) {
+  const fotos = fotosVisor(e);
 
   return (
     <VisorGaleria fotos={fotos}>
@@ -54,7 +60,7 @@ export function Galeria({ evento: e }: { evento: Evento }) {
                   evento={e.slug}
                   archivo={f.archivo}
                   alt=""
-                  prioridad={i === 0}
+                  prioridad={prioridad && i === 0}
                   sizes="(min-width: 1024px) 33vw, 50vw"
                   className="w-full transition-transform duration-700 ease-suave group-hover:scale-[1.03]"
                 />

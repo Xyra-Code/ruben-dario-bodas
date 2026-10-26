@@ -33,6 +33,20 @@
     "autor": "Angie & Samuel",
     "tipo": "boda",
     "evento": "boda-finca-los-pinos-villavicencio",
+    "inicio": "fijo",
+    "autorizado": true
+  },
+  {
+    "texto": "Queremos de todo corazón agradecerle por este evento tan maravilloso, por cada detalle: cuando todo se hace con amor, se ve reflejado. Muchas gracias por las palabras que nos dio; con nosotros también puede contar incondicionalmente. Gracias a usted, nuestro sueño se hizo realidad. Todos quedaron muy contentos, porque cada vez que les contábamos no creían que todo iba a quedar tan bello y como un cuento de hadas. Que su empresa llegue súper alto, haciendo realidad el sueño de las parejas que, así como nosotros, con mucho esfuerzo y amor luchamos por hacer de ese día algo que nunca olvidaremos. ¡Muchas, muchas, muchas gracias!",
+    "extracto": "Queremos de todo corazón agradecerle por este evento tan maravilloso, por cada detalle: cuando todo se hace con amor, se ve reflejado. Gracias a usted, nuestro sueño se hizo realidad. Todos quedaron muy contentos, porque no creían que todo iba a quedar tan bello y como un cuento de hadas.",
+    "autor": "Liz & Yei",
+    "tipo": "boda",
+    "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
+    "foto": {
+      "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-pareja-abrazo-muro-de-flores.jpg",
+      "encuadre": 72
+    },
+    "inicio": "destacado",
     "autorizado": true
   },
   {
@@ -96,6 +110,7 @@
     "autor": "Naty & Sebas",
     "tipo": "boda",
     "evento": "boda-verde-hacienda-la-primavera-villavicencio",
+    "servicio": "destacado",
     "autorizado": true
   },
   {

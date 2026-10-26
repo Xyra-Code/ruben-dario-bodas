@@ -47,7 +47,12 @@ export function FichaLugar({
   const cuantas = eventos.length;
 
   return (
-    <article className="grid min-w-0 items-center gap-6 rounded-sm border border-linea bg-superficie p-4 shadow-[0_1px_24px_rgba(43,39,36,0.05)] sm:p-6 lg:grid-cols-12 lg:gap-10 lg:p-8">
+    // id = slug: cada mención del lugar en el sitio enlaza aquí (EnlaceLugar). Al llegar por
+    // el enlace, el salto deja aire bajo el encabezado fijo y la ficha se marca en dorado.
+    <article
+      id={lugar.slug}
+      className="grid min-w-0 scroll-mt-28 items-center gap-6 rounded-sm border border-linea bg-superficie p-4 shadow-[0_1px_24px_rgba(43,39,36,0.05)] target:border-dorado target:ring-1 target:ring-dorado sm:p-6 lg:grid-cols-12 lg:gap-10 lg:p-8"
+    >
       {primero && grande && (
         <Link
           href={rutaEvento(primero.slug)}
@@ -58,6 +63,7 @@ export function FichaLugar({
             evento={primero.slug}
             archivo={grande.archivo}
             alt={grande.alt}
+            posicion={grande.encuadre}
             sizes="(min-width: 1024px) 58vw, 100vw"
             className="aspect-[3/2] w-full object-cover transition-transform duration-700 ease-suave group-hover:scale-[1.03]"
           />
@@ -92,6 +98,7 @@ export function FichaLugar({
                         evento={e.slug}
                         archivo={portada.archivo}
                         alt=""
+                        posicion={portada.encuadre}
                         sizes="(min-width: 640px) 180px, 128px"
                         className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-suave group-hover:scale-[1.04]"
                       />

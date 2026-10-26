@@ -13,7 +13,7 @@ type Props = {
   destacada?: boolean;
 };
 
-/** Tarjeta de servicio con foto: toda la tarjeta enlaza a /bodas o /quince-anos. */
+/** Tarjeta de servicio con foto: toda la tarjeta enlaza a /bodas, /quince-anos o /vestidos-de-novia. */
 export function TarjetaServicio({ titulo, texto, ruta, foto, destacada = false }: Props) {
   return (
     <article className="group relative flex h-full min-w-0 flex-col">
@@ -24,7 +24,7 @@ export function TarjetaServicio({ titulo, texto, ruta, foto, destacada = false }
             archivo={foto.archivo}
             alt={foto.alt}
             sizes={
-              destacada ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 25vw, 100vw"
+              destacada ? "(min-width: 1024px) 55vw, 100vw" : "(min-width: 1024px) 40vw, 100vw"
             }
             className={`w-full object-cover transition-transform duration-700 ease-suave group-hover:scale-[1.03] ${
               destacada ? "aspect-[4/5] lg:aspect-[4/5]" : "aspect-[3/2]"

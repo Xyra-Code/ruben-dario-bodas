@@ -1,26 +1,37 @@
+import Link from "next/link";
+
 import { ConAmpersand } from "@/components/ui/ConAmpersand";
 import { Foto } from "@/components/ui/Foto";
 import type { Evento } from "@/lib/contenido/cargar";
 import type { Testimonio } from "@/lib/contenido/esquemas";
+import { rutaEvento } from "@/lib/rutas";
+import { fotoDelTestimonio } from "@/lib/testimonios";
 
 /**
- * Testimonio en la página del evento, en dos columnas: la portada del evento en vertical
- * (4:5, con un filete dorado desplazado detrás) y la cita con la firma de la pareja.
+ * Testimonio en dos columnas: una foto de la pareja en vertical (4:5, con un filete dorado
+ * desplazado detrás; nunca la portada, ver fotoDelTestimonio) y la cita con la firma.
  * En celular la tarjeta de la cita se monta sobre el borde inferior de la foto.
- * En escritorio la foto va siempre a la derecha: a la izquierda, más arriba, está la
- * firma con la foto de Rubén Darío, y no deben quedar alineadas.
+ * En escritorio la foto va siempre a la derecha: en la página del evento, a la izquierda y
+ * más arriba está la firma con la foto de Rubén Darío, y no deben quedar alineadas.
+ * Lo usan la página del evento y el testimonio destacado del inicio (`corto`: el extracto;
+ * `enlazar`: el nombre del evento lleva a su página).
  */
 export function TestimonioEvento({
   evento: e,
   testimonio: t,
+  corto = false,
+  enlazar = false,
 }: {
   evento: Evento;
   testimonio: Testimonio;
+  corto?: boolean;
+  enlazar?: boolean;
 }) {
-  const portada = e.fotos.find((f) => f.archivo === e.portada)!;
+  const foto = fotoDelTestimonio(e, t);
+  const texto = corto ? (t.extracto ?? t.texto) : t.texto;
   // Los testimonios rondan los 350 caracteres; uno mucho más largo baja de tamaño
   // para no convertirse en un muro de texto junto a la foto.
-  const largo = t.texto.length > 600;
+  const largo = texto.length > 600;
 
   return (
     <figure className="grid items-center lg:grid-cols-12 lg:gap-16">
@@ -31,10 +42,11 @@ export function TestimonioEvento({
         />
         <Foto
           evento={e.slug}
-          archivo={portada.archivo}
-          alt={portada.alt}
+          archivo={foto.archivo}
+          alt={foto.alt}
           sizes="(min-width: 1024px) 40vw, (min-width: 448px) 28rem, 100vw"
           className="relative aspect-[4/5] w-full rounded-sm object-cover"
+          posicion={foto.posicion}
         />
       </div>
 
@@ -50,7 +62,7 @@ export function TestimonioEvento({
             largo ? "text-lg leading-snug sm:text-xl" : "text-titulo-3"
           }`}
         >
-          <p>{t.texto}</p>
+          <p>{texto}</p>
         </blockquote>
         <figcaption className="mt-8 flex items-center gap-4">
           <span aria-hidden="true" className="h-px w-10 shrink-0 bg-dorado" />
@@ -58,7 +70,17 @@ export function TestimonioEvento({
             <span className="block font-titulo text-titulo-3">
               <ConAmpersand texto={t.autor} />
             </span>
-            <span className="mt-1 block text-sm text-topo">{e.titulo}</span>
+            {enlazar ? (
+              <Link
+                href={rutaEvento(e.slug)}
+                className="mt-1 inline-flex min-h-11 items-center gap-1.5 text-sm text-terracota underline-offset-4 hover:underline"
+              >
+                <span className="min-w-0">{e.titulo}</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            ) : (
+              <span className="mt-1 block text-sm text-topo">{e.titulo}</span>
+            )}
           </span>
         </figcaption>
       </div>

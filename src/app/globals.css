@@ -89,6 +89,20 @@
   p {
     text-wrap: pretty;
   }
+  /* Todo lo que lleva a algo o hace algo muestra la mano: Tailwind 4 deja los botones con
+     la flecha. Las utilidades (cursor-zoom-in de la galería, cursor-grab del carrusel,
+     disabled:cursor-not-allowed) ganan sobre esta base. */
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary,
+  label[for],
+  label:has(input[type="radio"], input[type="checkbox"]),
+  select,
+  input[type="checkbox"],
+  input[type="radio"] {
+    cursor: pointer;
+  }
   /* Citas y frases en cursiva: la familia de cita de la tipografía activa. */
   .font-titulo.italic,
   .italic .font-titulo {

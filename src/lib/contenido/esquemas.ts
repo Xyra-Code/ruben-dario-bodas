@@ -211,6 +211,25 @@ export const testimonio = z.strictObject({
   tipo: tipoEvento,
   /** Slug del evento, si el testimonio corresponde a uno del portafolio. */
   evento: slug.optional(),
+  /**
+   * Foto junto al testimonio en la página del evento (de sus `fotos`). Opcional: sin ella
+   * se elige sola una de la pareja distinta de la portada (TestimonioEvento). `encuadre`:
+   * posición horizontal del recorte vertical, de 0 (izquierda) a 100 (derecha); por
+   * defecto, el centro.
+   */
+  foto: z
+    .strictObject({ archivo: archivoFoto, encuadre: z.number().min(0).max(100).optional() })
+    .optional(),
+  /**
+   * Lugar en el inicio: "destacado" (uno solo, grande con la foto de la pareja) o "fijo"
+   * (siempre entre los tres cortos). El resto de los cortos se sortea al compilar.
+   */
+  inicio: z.enum(["destacado", "fijo"]).optional(),
+  /**
+   * "destacado": el grande de la página de su servicio (/bodas o /quince-anos, según
+   * `tipo`). Sin marca, se elige el primero del tipo que no sea el destacado del inicio.
+   */
+  servicio: z.literal("destacado").optional(),
   /** La persona autorizó publicar su testimonio (Ley 1581 de 2012). */
   autorizado: z.boolean(),
 });
@@ -288,6 +307,15 @@ export const evento = z.strictObject({
       z.strictObject({
         archivo: archivoFoto,
         alt: texto.min(15, "El alt debe describir la foto (mínimo 15 caracteres)"),
+        /**
+         * Punto que no se debe recortar cuando la foto llena un marco de otra proporción
+         * (mosaico, tarjetas): "50% 10%" = centro horizontal, casi arriba. Sin él, se
+         * recorta desde el centro. Ponerlo solo cuando el centro corte a la pareja.
+         */
+        encuadre: z
+          .string()
+          .regex(/^\d{1,3}% \d{1,3}%$/, 'Encuadre como "50% 20%" (horizontal vertical)')
+          .optional(),
       }),
     )
     .min(1),
@@ -349,8 +377,13 @@ export const sobre = z.strictObject({
     .min(1)
     .max(4),
   equipo: z.array(z.strictObject({ nombre: texto, rol: texto, foto: fotoSuelta.optional() })),
-  /** Hasta 3 slugs de eventos del portafolio. */
-  eventosQueMarcaron: z.array(slug).max(3),
+  /**
+   * Hasta 3 eventos del portafolio: el slug, o { evento, etiqueta } para cambiar la etiqueta
+   * de la foto solo en esta sección ("Boda de mi hijo"); en el resto del sitio dice "Boda".
+   */
+  eventosQueMarcaron: z
+    .array(z.union([slug, z.strictObject({ evento: slug, etiqueta: texto })]))
+    .max(3),
   reconocimientos: z.array(texto),
   /** Preguntas sobre Rubén Darío (búsquedas por su nombre y respuestas de asistentes de IA). */
   preguntas: z.array(preguntaFrecuente).min(1).optional(),

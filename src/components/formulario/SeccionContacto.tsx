@@ -28,8 +28,10 @@ const c = {
 
 /**
  * Cierre de casi todas las páginas (#contacto): formulario + "Qué necesito para
- * cotizarte". En celular el bloque va arriba; desde lg, al lado. Es la única banda
- * terracota de cada página (src/lib/fondos.ts): en todas, terracota = aquí se cotiza.
+ * cotizarte". En celular va primero el formulario y la lista debajo (`contents` +
+ * `order-last`): quien toca "Cotizar" llega a llenar, no a leer. Desde lg, al lado. Es la
+ * única banda terracota de cada página (src/lib/fondos.ts): en todas, terracota = aquí se
+ * cotiza.
  */
 export function SeccionContacto({
   tipoInicial,
@@ -45,14 +47,18 @@ export function SeccionContacto({
       className={`${c.seccion} py-(--spacing-seccion)`}
     >
       <div className="contenedor grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        <div className="min-w-0">
-          <p className={`antetitulo ${c.ante}`}>Cotización</p>
-          <h2 id="contacto-titulo" className="mt-3 text-titulo-2">
-            {titulo}
-          </h2>
-          <p className={`mt-4 ${c.suave}`}>Con la fecha y el lugar te respondemos más rápido.</p>
+        <div className="contents lg:block lg:min-w-0">
+          <div className="min-w-0">
+            <p className={`antetitulo ${c.ante}`}>Cotización</p>
+            <h2 id="contacto-titulo" className="mt-3 text-titulo-2">
+              {titulo}
+            </h2>
+            <p className={`mt-4 ${c.suave}`}>Con la fecha y el lugar te respondemos más rápido.</p>
+          </div>
 
-          <div className={`mt-8 border-t pt-8 ${c.borde}`}>
+          <div
+            className={`order-last min-w-0 lg:order-none lg:mt-8 lg:border-t lg:pt-8 ${c.borde}`}
+          >
             <h3 className="text-titulo-3">Qué necesito para cotizarte</h3>
             {/* Lista ordenada (no <dl>): el número es decorativo y el orden lo da la lista. */}
             <ol className="mt-5 grid gap-4">

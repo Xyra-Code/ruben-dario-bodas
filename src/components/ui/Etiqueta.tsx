@@ -11,10 +11,13 @@ export function Etiqueta({
   tipo,
   sobreFoto = false,
   especial,
+  texto,
 }: {
   tipo: TipoEvento;
   sobreFoto?: boolean;
   especial?: string;
+  /** Reemplaza el nombre del tipo con el estilo normal (no el dorado de `especial`). */
+  texto?: string;
 }) {
   const estilo = especial
     ? "bg-dorado-texto text-white"
@@ -25,7 +28,7 @@ export function Etiqueta({
     <span
       className={`inline-flex items-center rounded-sm px-2.5 py-1 text-xs font-medium tracking-[0.12em] uppercase ${estilo}`}
     >
-      {especial ?? NOMBRE[tipo]}
+      {especial ?? texto ?? NOMBRE[tipo]}
     </span>
   );
 }
