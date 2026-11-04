@@ -140,14 +140,22 @@ export function migas(items: Miga[]): Nodo {
   };
 }
 
-/** "$3.500.000" → 3500000; null si aún no es un valor (p. ej. [PENDIENTE]). */
+/** "$3.500.000" → 3500000; "30 millones de pesos" → 30000000; null si aún no es un valor (p. ej. [PENDIENTE]). */
 function valorEnPesos(texto: string) {
+  if (texto.includes("[PENDIENTE")) return null;
+  // "30 millones de pesos", "2,5 millones"
+  const millones = texto.match(/(\d+(?:[.,]\d+)?)\s*millon(?:es)?/i);
+  if (millones) return Math.round(Number(millones[1]!.replace(",", ".")) * 1_000_000);
+  // "$3.500.000"
   const digitos = texto.replace(/[^\d]/g, "");
-  return /\d/.test(texto) && !texto.includes("[PENDIENTE") ? Number(digitos) : null;
+  return digitos ? Number(digitos) : null;
 }
 
 /** Servicio de /bodas, /quince-anos o /vestidos-de-novia. */
-export function servicio(s: Pick<Servicio, "nombre" | "seo" | "inversion">, ruta: string): Nodo {
+export function servicio(
+  s: Pick<Servicio, "nombre" | "seo"> & { inversion: { desde: string } },
+  ruta: string,
+): Nodo {
   const desde = valorEnPesos(s.inversion.desde);
   return {
     "@type": "Service",

@@ -259,3 +259,87 @@ export function IconoCompartir({ className = "size-6" }: Props) {
     </Linea>
   );
 }
+
+/** Dos personas (número de invitados). */
+export function IconoInvitados({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5" />
+      <path d="M15.5 5.2a3 3 0 0 1 0 5.6M17 14.3c2.1.6 3.5 2.6 3.5 5.2" />
+    </Linea>
+  );
+}
+
+/** Pin de ubicación (el lugar del evento). */
+export function IconoLugar({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
+      <circle cx="12" cy="10" r="2.3" />
+    </Linea>
+  );
+}
+
+/** Flor de cinco pétalos (el diseño: flores, techos, montaje). */
+export function IconoFlor({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <circle cx="12" cy="10" r="2" />
+      <path d="M12 8c-1.6-2.6-.9-4.5 0-5 .9.5 1.6 2.4 0 5ZM14 10c2.6-1.6 4.5-.9 5 0-.5.9-2.4 1.6-5 0ZM10 10c-2.6-1.6-4.5-.9-5 0 .5.9 2.4 1.6 5 0ZM13.4 11.5c1.6 2.4 1.3 4.4.4 4.9-.9-.3-1.9-2.1-.4-4.9ZM10.6 11.5c-1.6 2.4-1.3 4.4-.4 4.9.9-.3 1.9-2.1.4-4.9Z" />
+      <path d="M12 16.5v4.5" />
+    </Linea>
+  );
+}
+
+/** Destello (la temática de la fiesta). */
+export function IconoTematica({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <path d="M12 3.5c.6 4.4 2.1 5.9 6.5 6.5-4.4.6-5.9 2.1-6.5 6.5-.6-4.4-2.1-5.9-6.5-6.5 4.4-.6 5.9-2.1 6.5-6.5Z" />
+      <path d="M18.5 15.5c.25 1.6.9 2.25 2.5 2.5-1.6.25-2.25.9-2.5 2.5-.25-1.6-.9-2.25-2.5-2.5 1.6-.25 2.25-.9 2.5-2.5Z" />
+    </Linea>
+  );
+}
+
+/** Sol bajo (la luz a la hora del evento). */
+export function IconoSol({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <path d="M7 16a5 5 0 0 1 10 0" />
+      <path d="M3.5 19.5h17M12 5.5v2.5M5.6 9.6l1.7 1.7M18.4 9.6l-1.7 1.7M3 16h1.5M19.5 16H21" />
+    </Linea>
+  );
+}
+
+/** Nube con lluvia (el plan de lluvia). */
+export function IconoLluvia({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <path d="M7 15.5a4 4 0 0 1-.4-8A5.5 5.5 0 0 1 17.2 8a3.75 3.75 0 0 1-.2 7.5H7Z" />
+      <path d="M8.5 18.5 7.5 20.5M12.5 18.5l-1 2M16.5 18.5l-1 2" />
+    </Linea>
+  );
+}
+
+/** Reloj (horarios de montaje y desmontaje). */
+export function IconoReloj({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 7.5V12l3 2" />
+    </Linea>
+  );
+}
+
+/** Carro (parqueadero). */
+export function IconoCarro({ className = "size-6" }: Props) {
+  return (
+    <Linea className={className}>
+      <path d="M4 16.5v-4l1.8-4.6a1.5 1.5 0 0 1 1.4-.9h9.6a1.5 1.5 0 0 1 1.4.9L20 12.5v4" />
+      <path d="M3.5 12.5h17v4h-17zM6 16.5v2M18 16.5v2" />
+      <circle cx="7.5" cy="14.5" r="0.6" />
+      <circle cx="16.5" cy="14.5" r="0.6" />
+    </Linea>
+  );
+}

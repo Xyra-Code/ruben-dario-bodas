@@ -76,8 +76,29 @@
     "[PENDIENTE: confirmar con la empresa qué incluye]"
   ],
   "inversion": {
-    "desde": "[PENDIENTE: valor desde]",
-    "nota": "El valor final depende del número de invitados, el lugar y el diseño."
+    "desde": "30 millones de pesos",
+    "nota": "Es un valor de referencia: tu propuesta se arma a la medida de tu evento.",
+    "foto": {
+      "evento": "boda-finca-los-pinos-villavicencio",
+      "archivo": "boda-finca-los-pinos-villavicencio-salon-mesa-principal-techo-de-telas.jpg"
+    },
+    "factores": [
+      {
+        "icono": "invitados",
+        "titulo": "Número de invitados",
+        "descripcion": "Cada invitado suma mesa, silla, mantelería y centro de mesa: el montaje crece con la lista."
+      },
+      {
+        "icono": "lugar",
+        "titulo": "El lugar",
+        "descripcion": "Salón, finca o hacienda: cada espacio pide un montaje distinto, y cuenta la distancia desde Villavicencio."
+      },
+      {
+        "icono": "diseno",
+        "titulo": "El diseño",
+        "descripcion": "Flores, techos de telas, iluminación y mobiliario: lo que imaginas define cuánto se construye."
+      }
+    ]
   },
   "preguntas": [
     {
@@ -86,31 +107,31 @@
     },
     {
       "pregunta": "¿Qué diferencia hay entre wedding planner y solo diseño y decoración?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Como wedding planner organizamos tu boda de principio a fin: te ayudamos a elegir el lugar y los proveedores, armamos el cronograma y coordinamos todo el día. Con el servicio de diseño y decoración nos encargamos del concepto y la ambientación (flores, mobiliario, iluminación, montaje y desmontaje), y la organización general queda en tus manos o en las de tu planner."
     },
     {
       "pregunta": "¿Qué hace el wedding planner el día de la boda?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Estamos desde el montaje hasta el final de la fiesta: supervisamos cada detalle de la decoración, coordinamos a los proveedores y seguimos el cronograma para que la ceremonia, la entrada, el brindis y cada momento pasen a tiempo. Tú solo te ocupas de disfrutar."
     },
     {
       "pregunta": "¿Decoran bodas en finca o al aire libre? ¿Qué pasa si llueve?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa, con el plan de lluvia]"
+      "respuesta": "Sí, y es de las bodas que más diseñamos: fincas, haciendas y ceremonias al aire libre entre árboles y jardines. En el Llano el clima cambia rápido, así que toda boda al aire libre se planea con un plan de lluvia: un espacio cubierto o carpas listas para mover la ceremonia o la recepción sin perder el diseño."
     },
     {
       "pregunta": "¿Las flores son naturales?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Sí. Trabajamos con flores naturales como rosas, hortensias y follajes frescos, elegidas según tu paleta, la temporada y el clima del lugar."
     },
     {
       "pregunta": "¿Hacen techos de telas, flores y luces?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Sí. Los techos de telas con luces son uno de los sellos de nuestras bodas: entelamos salones, capillas y carpas, y los combinamos con flores e iluminación cálida para transformar por completo el espacio."
     },
     {
       "pregunta": "¿Decoran la ceremonia y la recepción?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa (iglesia, arco de ceremonia, salón)]"
+      "respuesta": "Sí. Diseñamos los dos momentos como una sola historia: la ceremonia en iglesia, capilla o al aire libre, con arco, altar y pasillo, y la recepción con mesas, centros de mesa, techos, iluminación y pista."
     },
     {
       "pregunta": "¿Decoran pedidas de mano y compromisos?",
-      "respuesta": "[PENDIENTE: confirmar con la empresa]"
+      "respuesta": "Sí. Diseñamos pedidas de mano, compromisos y cenas íntimas con el mismo cuidado que una boda. Cuéntanos la idea y la fecha, y la preparamos con total discreción si es una sorpresa."
     }
   ]
 }

@@ -7,7 +7,7 @@ import { Foto } from "@/components/ui/Foto";
 import { IconoFlecha } from "@/components/ui/Iconos";
 import { Pasos } from "@/components/ui/Pasos";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
-import { TituloSeccion } from "@/components/ui/TituloSeccion";
+import { AccionAlFinal, TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido, obtenerEvento } from "@/lib/contenido/cargar";
 import { fondos } from "@/lib/fondos";
 import { ogPagina } from "@/lib/imagenes";
@@ -124,6 +124,7 @@ export default function Vestidos() {
               antetitulo="Un vestido real"
               titulo={caso.titulo}
               intro={caso.texto}
+              accionAlFinal
               accion={
                 <Boton href={rutaEvento(caso.evento.slug)} variante="secundario">
                   Mira la boda completa
@@ -141,6 +142,11 @@ export default function Vestidos() {
                 </li>
               ))}
             </ul>
+            <AccionAlFinal>
+              <Boton href={rutaEvento(caso.evento.slug)} variante="secundario" ancho>
+                Mira la boda completa
+              </Boton>
+            </AccionAlFinal>
           </div>
         </section>
       )}

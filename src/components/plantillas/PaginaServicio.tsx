@@ -3,15 +3,23 @@ import Link from "next/link";
 
 import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
-import { PortadaConFoto } from "@/components/plantillas/PortadaConFoto";
+import { GrillaConMas } from "@/components/galeria/GrillaConMas";
+import {
+  CLASES_IMG_PORTADA,
+  MEDIDAS_FOTO_PORTADA,
+  PortadaConFoto,
+  SIZES_FOTO_PORTADA,
+} from "@/components/plantillas/PortadaConFoto";
+import { SeccionInversion } from "@/components/plantillas/SeccionInversion";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TarjetaEvento } from "@/components/tarjetas/TarjetaEvento";
 import { TarjetaTestimonio } from "@/components/tarjetas/TarjetaTestimonio";
 import { Boton } from "@/components/ui/Boton";
+import { CreditoEvento } from "@/components/ui/CreditoEvento";
 import { Foto } from "@/components/ui/Foto";
 import { IconoFlecha } from "@/components/ui/Iconos";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
-import { TituloSeccion } from "@/components/ui/TituloSeccion";
+import { AccionAlFinal, TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido, obtenerServicio } from "@/lib/contenido/cargar";
 import type { TipoEvento } from "@/lib/contenido/esquemas";
 import { esRubor, fondos } from "@/lib/fondos";
@@ -19,6 +27,7 @@ import { OG_SITIO, ogEvento } from "@/lib/imagenes";
 import { NOMBRE_SERVICIO, RUTA_SERVICIO } from "@/lib/rutas";
 import { preguntasFrecuentes, servicio as servicioJsonLd } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
+import { PAGINAS } from "@/lib/seo/paginas";
 import { testimoniosDelServicio } from "@/lib/testimonios";
 
 /** Metadata de /bodas o /quince-anos; para compartir, la portada del evento más reciente del tipo. */
@@ -33,19 +42,23 @@ export function metadatosServicio(tipo: TipoEvento): Metadata {
   });
 }
 
-const TEXTOS: Record<"boda" | "quince", { cotizar: string; galeria: string; testimonios: string }> =
-  {
-    boda: {
-      cotizar: "Cotizar mi boda",
-      galeria: "Bodas que hemos diseñado",
-      testimonios: "Lo que dicen las parejas",
-    },
-    quince: {
-      cotizar: "Cotizar mi fiesta",
-      galeria: "Fiestas de 15 años que hemos diseñado",
-      testimonios: "Lo que dicen las familias",
-    },
-  };
+const TEXTOS: Record<
+  "boda" | "quince",
+  { cotizar: string; galeria: string; verMas: string; testimonios: string }
+> = {
+  boda: {
+    cotizar: "Cotizar mi boda",
+    galeria: "Bodas que hemos diseñado",
+    verMas: "Ver más bodas",
+    testimonios: "Lo que dicen las parejas",
+  },
+  quince: {
+    cotizar: "Cotizar mi fiesta",
+    galeria: "Fiestas de 15 años que hemos diseñado",
+    verMas: "Ver más fiestas de 15 años",
+    testimonios: "Lo que dicen las familias",
+  },
+};
 
 const seccion = "py-(--spacing-seccion)";
 
@@ -125,10 +138,12 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
         </div>
       </PortadaConFoto>
 
-      {/* Presentación (texto propio de la empresa) */}
+      {/* Presentación (texto propio de la empresa). En escritorio la foto va a la izquierda,
+          al revés que en la portada (texto | foto), para que las dos secciones no se repitan.
+          En el celular sigue texto → foto: la foto de la portada ya quedó arriba. */}
       <section aria-label="Presentación" className={`${seccion} ${fondo.presentacion}`}>
-        <div className="contenedor grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="min-w-0 lg:col-span-7">
+        <div className="contenedor grid items-center gap-10 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-16">
+          <div className="min-w-0">
             <div className="lectura space-y-5">
               {s.introduccion.map((p, i) => (
                 <p
@@ -141,15 +156,16 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
             </div>
           </div>
           {eventoPresentacion && fotoPresentacion && (
-            <div className="min-w-0 lg:col-span-5">
+            <figure className={`relative min-w-0 lg:order-first lg:ml-0 ${MEDIDAS_FOTO_PORTADA}`}>
               <Foto
                 evento={eventoPresentacion.slug}
                 archivo={fotoPresentacion.archivo}
                 alt={fotoPresentacion.alt}
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="aspect-[4/5] w-full rounded-sm object-cover"
+                sizes={SIZES_FOTO_PORTADA}
+                className={CLASES_IMG_PORTADA}
               />
-            </div>
+              <CreditoEvento evento={eventoPresentacion.slug} enlace />
+            </figure>
           )}
         </div>
       </section>
@@ -240,40 +256,40 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
               id="galeria-titulo"
               antetitulo="Portafolio"
               titulo={textos.galeria}
+              accionAlFinal
               accion={
-                <Boton href="/eventos" variante="secundario">
-                  Ver todos los eventos
+                // La guía de lugares compite por "fincas y salones para bodas / 15 años".
+                <Boton href={PAGINAS.lugares.ruta} variante="texto">
+                  Lugares donde hemos decorado
                 </Boton>
               }
             />
-            <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14">
-              {eventos.slice(0, 9).map((e) => (
+            {/* Todos los eventos del tipo en el HTML (enlaces internos a cada uno); los
+                primeros a la vista y el resto tras "Ver más", sin salir del tema. */}
+            <GrillaConMas
+              className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14"
+              textoMas={textos.verMas}
+            >
+              {eventos.map((e) => (
                 <TarjetaEvento key={e.slug} evento={e} sizes="(min-width: 1024px) 33vw, 50vw" />
               ))}
-            </div>
+            </GrillaConMas>
+            <AccionAlFinal>
+              <Boton href={PAGINAS.lugares.ruta} variante="texto">
+                Lugares donde hemos decorado
+              </Boton>
+            </AccionAlFinal>
           </div>
         </section>
       )}
 
-      {/* Inversión */}
-      <section aria-labelledby="inversion-titulo" className={`${seccion} ${fondo.inversion}`}>
-        <div className="contenedor">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="antetitulo">Inversión</p>
-            <h2 id="inversion-titulo" className="mt-3 text-titulo-2">
-              Desde{" "}
-              <span className="[overflow-wrap:anywhere] text-terracota">{s.inversion.desde}</span>
-            </h2>
-            <div className="mx-auto mt-6 filete-dorado w-24" />
-            <p className="mx-auto mt-6 max-w-xl text-topo">{s.inversion.nota}</p>
-            <div className="mt-8">
-              <Boton href="#contacto" origen={`${s.slug}-inversion`}>
-                {textos.cotizar}
-              </Boton>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Inversión: precio "desde" sobre foto y qué hace variar el valor. */}
+      <SeccionInversion
+        inversion={s.inversion}
+        cotizar={textos.cotizar}
+        origen={`${s.slug}-inversion`}
+        fondo={fondo.inversion}
+      />
 
       {/* Testimonios del tipo: como en el inicio (uno grande con foto y tres cortos), con
           otro destacado y sin el pie de reseñas: el cierre de esta página es el formulario. */}

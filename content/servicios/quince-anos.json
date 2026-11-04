@@ -64,8 +64,29 @@
     "[PENDIENTE: confirmar con la empresa qué incluye]"
   ],
   "inversion": {
-    "desde": "[PENDIENTE: valor desde]",
-    "nota": "El valor final depende del número de invitados, el lugar y la temática."
+    "desde": "30 millones de pesos",
+    "nota": "Es un valor de referencia: tu propuesta se arma a la medida de tu evento.",
+    "foto": {
+      "evento": "quince-palo-de-rosa-finca-la-principesa-villavicencio",
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-pista-led-bajo-techo-de-faroles.jpg"
+    },
+    "factores": [
+      {
+        "icono": "invitados",
+        "titulo": "Número de invitados",
+        "descripcion": "Cada invitado suma mesa, silla, mantelería y centro de mesa: el montaje crece con la lista."
+      },
+      {
+        "icono": "lugar",
+        "titulo": "El lugar",
+        "descripcion": "Salón, finca o club: cada espacio pide un montaje distinto, y cuenta la distancia desde Villavicencio."
+      },
+      {
+        "icono": "tematica",
+        "titulo": "La temática",
+        "descripcion": "Colores, flores, techos, pista y escenografía para las fotos: tu idea define cuánto se construye."
+      }
+    ]
   },
   "preguntas": [
     {
@@ -82,15 +103,15 @@
     },
     {
       "pregunta": "¿Qué temáticas manejan para fiestas de 15?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Trabajamos estilos clásicos y elegantes, modernos, encantados o con luces neón, pero preferimos crear un concepto propio a partir de los gustos, los colores y la personalidad de la quinceañera, para que su fiesta no se parezca a ninguna otra."
     },
     {
       "pregunta": "¿Pueden diseñar la decoración a partir del vestido y los colores de la quinceañera?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Sí, y es una de nuestras fortalezas: como Rubén Darío también diseña vestidos, puede pensar el vestido, la paleta y la decoración como un solo diseño. Si el vestido ya está listo, partimos de sus colores y texturas para crear el escenario."
     },
     {
       "pregunta": "¿Decoran la entrada, el vals y el espacio para fotos?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Sí. Diseñamos los momentos clave de la noche: la entrada de la quinceañera, el espacio del vals, la mesa principal y un rincón para fotos que tus invitados no van a querer dejar."
     }
   ]
 }
