@@ -140,6 +140,24 @@ export function IconoInstagram({ className = "size-5" }: Props) {
   );
 }
 
+/** Auricular de teléfono (llamar). */
+export function IconoTelefono({ className = "size-5" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={`${base} ${className}`}
+    >
+      <path d="M6.6 3.5H4.5a1.5 1.5 0 0 0-1.5 1.6 16.5 16.5 0 0 0 15.9 15.9 1.5 1.5 0 0 0 1.6-1.5v-2.1a1.5 1.5 0 0 0-1.1-1.4l-3-.8a1.5 1.5 0 0 0-1.5.4l-1 1a12 12 0 0 1-5-5l1-1a1.5 1.5 0 0 0 .4-1.5l-.8-3a1.5 1.5 0 0 0-1.4-1.1Z" />
+    </svg>
+  );
+}
+
 export function IconoFacebook({ className = "size-5" }: Props) {
   return (
     <svg
@@ -298,48 +316,6 @@ export function IconoTematica({ className = "size-6" }: Props) {
     <Linea className={className}>
       <path d="M12 3.5c.6 4.4 2.1 5.9 6.5 6.5-4.4.6-5.9 2.1-6.5 6.5-.6-4.4-2.1-5.9-6.5-6.5 4.4-.6 5.9-2.1 6.5-6.5Z" />
       <path d="M18.5 15.5c.25 1.6.9 2.25 2.5 2.5-1.6.25-2.25.9-2.5 2.5-.25-1.6-.9-2.25-2.5-2.5 1.6-.25 2.25-.9 2.5-2.5Z" />
-    </Linea>
-  );
-}
-
-/** Sol bajo (la luz a la hora del evento). */
-export function IconoSol({ className = "size-6" }: Props) {
-  return (
-    <Linea className={className}>
-      <path d="M7 16a5 5 0 0 1 10 0" />
-      <path d="M3.5 19.5h17M12 5.5v2.5M5.6 9.6l1.7 1.7M18.4 9.6l-1.7 1.7M3 16h1.5M19.5 16H21" />
-    </Linea>
-  );
-}
-
-/** Nube con lluvia (el plan de lluvia). */
-export function IconoLluvia({ className = "size-6" }: Props) {
-  return (
-    <Linea className={className}>
-      <path d="M7 15.5a4 4 0 0 1-.4-8A5.5 5.5 0 0 1 17.2 8a3.75 3.75 0 0 1-.2 7.5H7Z" />
-      <path d="M8.5 18.5 7.5 20.5M12.5 18.5l-1 2M16.5 18.5l-1 2" />
-    </Linea>
-  );
-}
-
-/** Reloj (horarios de montaje y desmontaje). */
-export function IconoReloj({ className = "size-6" }: Props) {
-  return (
-    <Linea className={className}>
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M12 7.5V12l3 2" />
-    </Linea>
-  );
-}
-
-/** Carro (parqueadero). */
-export function IconoCarro({ className = "size-6" }: Props) {
-  return (
-    <Linea className={className}>
-      <path d="M4 16.5v-4l1.8-4.6a1.5 1.5 0 0 1 1.4-.9h9.6a1.5 1.5 0 0 1 1.4.9L20 12.5v4" />
-      <path d="M3.5 12.5h17v4h-17zM6 16.5v2M18 16.5v2" />
-      <circle cx="7.5" cy="14.5" r="0.6" />
-      <circle cx="16.5" cy="14.5" r="0.6" />
     </Linea>
   );
 }

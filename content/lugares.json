@@ -21,7 +21,11 @@
     "tipo": "finca",
     "municipio": "Villavicencio",
     "departamento": "Meta",
-    "enGuia": true
+    "enGuia": true,
+    "fotoFicha": {
+      "evento": "boda-finca-los-pinos-villavicencio",
+      "archivo": "boda-finca-los-pinos-villavicencio-salon-montaje-general-telas.jpg"
+    }
   },
   {
     "slug": "el-campanario",

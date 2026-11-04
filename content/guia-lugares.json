@@ -5,48 +5,79 @@
     "parrafo": "Es la primera gran decisión de tu boda o de tu fiesta de 15 años. En Villavicencio y el Meta hay haciendas, fincas y salones para casi cualquier idea, desde una celebración íntima al aire libre hasta una recepción grande con pista de baile.",
     "antesDeReservar": [
       {
-        "icono": "luz",
-        "titulo": "La luz a la hora del evento",
-        "texto": "Visita el lugar a la misma hora: la luz de la tarde en el Llano cambia por completo una ceremonia o una entrada."
+        "titulo": "La luz",
+        "texto": "Visita el lugar a la misma hora: la luz de la tarde en el Llano cambia por completo una ceremonia.",
+        "foto": {
+          "evento": "boda-el-campanario-restrepo",
+          "archivo": "boda-el-campanario-restrepo-pareja-potrero-atardecer.jpg"
+        }
       },
       {
-        "icono": "lluvia",
         "titulo": "El plan de lluvia",
-        "texto": "Un espacio cubierto o una carpa lista para mover la ceremonia o la recepción sin perder el diseño."
+        "texto": "Un espacio cubierto o una carpa lista para mover la ceremonia o la recepción sin perder el diseño.",
+        "foto": {
+          "evento": "boda-el-campanario-restrepo",
+          "archivo": "boda-el-campanario-restrepo-salon-montaje-general-lamparas-colgantes.jpg"
+        }
       },
       {
-        "icono": "horario",
-        "titulo": "Montaje y desmontaje",
-        "texto": "Desde qué hora se puede entrar a montar y hasta qué hora hay que entregar el lugar."
+        "titulo": "El montaje",
+        "texto": "Desde qué hora se puede entrar a montar y hasta qué hora hay que entregar el lugar.",
+        "foto": {
+          "evento": "quince-verde-tropical-finca-los-pinos-villavicencio",
+          "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-salon-montaje-general-con-centros-de-palmas.jpg"
+        }
       },
       {
-        "icono": "parqueadero",
         "titulo": "El parqueadero",
-        "texto": "Cuántos carros caben y si el acceso es cómodo para tus invitados."
+        "texto": "Cuántos carros caben y si el acceso es cómodo para tus invitados.",
+        "foto": {
+          "evento": "boda-mediterranea-finca-la-principesa-villavicencio",
+          "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-cola-de-tul-calle-arborizada.jpg"
+        }
       },
       {
-        "icono": "distancia",
         "titulo": "La distancia",
-        "texto": "Cuánto tardan en llegar tus invitados que vienen de Villavicencio o de Bogotá."
+        "texto": "Cuánto tardan en llegar tus invitados que vienen de Villavicencio o de Bogotá.",
+        "foto": {
+          "evento": "boda-la-topia-villavicencio",
+          "archivo": "boda-la-topia-villavicencio-paisaje-palmas-y-lago.jpg"
+        }
       }
     ]
   },
   "consejos": [
     {
       "tipo": "Finca o aire libre",
-      "texto": "Aprovecha el paisaje: pocos elementos, bien ubicados, lucen más que llenar el espacio. Una carpa o un plan B bajo techo es indispensable, y la iluminación cálida (bombillos colgantes, velas en faroles) hace que la fiesta continúe cuando cae la noche."
+      "foto": {
+        "evento": "boda-rosa-las-heliconias-villavicencio",
+        "archivo": "boda-rosa-las-heliconias-villavicencio-ceremonia-jardin-vista-lateral.jpg"
+      },
+      "texto": "Aquí la naturaleza es la protagonista, y el diseño debe encontrar su lugar sin perder la esencia del entorno: en el bosque de [Luisa & Héctor](boda-finca-san-luis-villavicencio), las flores blancas y los follajes verdes se unieron a los árboles. Piensa también en los sentidos: en [otra boda](boda-finca-la-principesa-villavicencio), todos comentaron el aroma a eucalipto recién cortado. Ten siempre un plan B bajo techo y, cuando cae la noche, deja que la iluminación cálida mantenga la magia."
     },
     {
       "tipo": "Salón",
-      "texto": "El salón es un lienzo en blanco: el diseño lo transforma con telas, flores e iluminación. Conviene conocer la altura del techo, los colores de paredes y piso, y si se pueden colgar elementos, porque de eso depende cuánto cambia el espacio."
+      "foto": {
+        "evento": "boda-jardin-blanco-las-heliconias-villavicencio",
+        "archivo": "boda-jardin-blanco-las-heliconias-villavicencio-salon-lamparas-geometricas-pista-ajedrez.jpg"
+      },
+      "texto": "Un salón se transforma por completo con telas, flores y luces. El de [Marce & Criss](boda-condominio-palma-real-villavicencio) lo entelé en forma de rosetones, con flores blancas y follajes que se mezclaban entre luces y detalles en dorado: fue como entrar a un cuento de hadas. Eso sí, revisa antes la altura del techo, los colores de paredes y piso, y si se pueden colgar elementos, porque de eso depende cuánto cambia el espacio."
     },
     {
       "tipo": "Hacienda",
-      "texto": "Las haciendas tienen carácter propio: corredores, madera y jardines. La decoración debe dialogar con la arquitectura en lugar de taparla. Ubica la ceremonia y la recepción en espacios distintos para que los invitados recorran el lugar."
+      "foto": {
+        "evento": "boda-hacienda-las-marias-villavicencio",
+        "archivo": "boda-hacienda-las-marias-villavicencio-arcos-de-flores-blancas-ventanales.jpg"
+      },
+      "texto": "Una hacienda ya tiene su propia arquitectura, y el reto es estar a la altura del lugar, no taparlo. Si tiene capilla, empieza por su entrada: para [Naty & Sebas](boda-verde-hacienda-la-primavera-villavicencio) pensé un jardín de flores blancas, enmarcadas en mucho follaje de eucalipto. Ubica la ceremonia y la recepción en espacios distintos, para que tus invitados recorran cada rincón y se sorprendan en cada uno."
     },
     {
       "tipo": "Fiesta de 15 años",
-      "texto": "Piensa el lugar alrededor de los momentos de la quinceañera: un recorrido despejado para la entrada, una pista amplia para el vals y la coreografía, y un fondo para las fotos que no compita con el vestido. En fincas y haciendas, la entrada puede aprovechar un corredor o un jardín; en un salón, la iluminación hace la mayor parte del cambio."
+      "foto": {
+        "evento": "quince-coral-finca-la-principesa-villavicencio",
+        "archivo": "quince-coral-finca-la-principesa-villavicencio-letras-xv-bajo-techo-de-flores-colgantes.jpg"
+      },
+      "texto": "La protagonista es la quinceañera, y cada rincón se piensa para ella: un recorrido despejado para su entrada, una pista amplia para el vals y la coreografía, y un escenario para las fotos que no compita con el vestido. Un tema puede marcar todo el diseño, como las mariposas en lila de [Valeria](quince-finca-privada-guamal) o los faroles de [Ayeleen](quince-faroles-finca-los-pinos-villavicencio). En fincas y haciendas, la entrada puede aprovechar un corredor o un jardín; en un salón, las luces hacen la mayor parte del cambio."
     }
   ],
   "preguntas": [

@@ -3,8 +3,9 @@ import { Migas } from "@/components/navegacion/Migas";
 import { CollageLugares, type FotoCollage } from "@/components/plantillas/CollageLugares";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FichaLugar } from "@/components/tarjetas/FichaLugar";
-import { IconoCarro, IconoLluvia, IconoLugar, IconoReloj, IconoSol } from "@/components/ui/Iconos";
+import { Foto } from "@/components/ui/Foto";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
+import { TextoConEventos } from "@/components/ui/TextoConEventos";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { type Evento, eventosEnLugar, obtenerContenido } from "@/lib/contenido/cargar";
 import type { Lugar } from "@/lib/contenido/esquemas";
@@ -24,13 +25,8 @@ export const metadata = metadatos({
 
 const seccion = "py-(--spacing-seccion)";
 
-const ICONOS_VISITA = {
-  luz: IconoSol,
-  lluvia: IconoLluvia,
-  horario: IconoReloj,
-  parqueadero: IconoCarro,
-  distancia: IconoLugar,
-} as const;
+/** Un municipio tiene sección propia desde esta cantidad de lugares. */
+const MINIMO_POR_SECCION = 3;
 
 /** Ancla de la sección de un municipio: "Villavicencio, Meta" → "villavicencio-meta". */
 const ancla = (titulo: string) =>
@@ -66,11 +62,14 @@ function collageAutomatico(enGuia: Lugar[]): FotoCollage[] {
   const elegidos = candidatos.filter((c) => !tipos.has(c.l.tipo) && tipos.add(c.l.tipo));
   for (const c of candidatos) if (!elegidos.includes(c)) elegidos.push(c);
 
-  return elegidos.slice(0, 3).map(({ eventos }) => {
+  return elegidos.slice(0, 3).map(({ l, eventos }) => {
     const evento: Evento = eventos[0]!;
-    // La grande de la ficha (FichaLugar): la primera de montaje que no es portada.
-    const deLaFicha = evento.fotos.find(
-      (f) => f.archivo !== evento.portada && /salon|mesa|montaje|vista/.test(f.archivo),
+    // La grande de la ficha (FichaLugar): la fijada en el lugar o la primera de montaje que no
+    // es portada.
+    const deLaFicha = evento.fotos.find((f) =>
+      l.fotoFicha
+        ? f.archivo === l.fotoFicha.archivo
+        : f.archivo !== evento.portada && /salon|mesa|montaje|vista/.test(f.archivo),
     );
     const opciones = evento.fotos
       .filter((f) => f.archivo !== evento.portada && f !== deLaFicha && pesoLugar(f.archivo) > 0)
@@ -82,14 +81,16 @@ function collageAutomatico(enGuia: Lugar[]): FotoCollage[] {
 }
 
 /**
- * Guía de lugares (brief §7.7): haciendas, fincas y salones agrupados por municipio, con
- * montajes reales de bodas y fiestas de 15 años. Solo se nombran los lugares que dieron permiso (enGuia).
+ * Guía de lugares (brief §7.7): haciendas, fincas y salones con montajes reales de bodas y
+ * fiestas de 15 años. Solo se nombran los lugares que dieron permiso (enGuia). Van en una
+ * sola lista, con el municipio en cada ficha; se separan por municipio cuando al menos dos
+ * tienen MINIMO_POR_SECCION lugares, y los demás quedan en "Otros municipios".
  */
 export default function Lugares() {
   const { lugares, sitio, guiaLugares, eventos } = obtenerContenido();
   const enGuia = lugares.filter((l) => l.enGuia);
   // Orden de sitio.json (sede primero); solo municipios con lugares nombrables.
-  const grupos = sitio.cobertura.zonas.flatMap((z) =>
+  const municipios = sitio.cobertura.zonas.flatMap((z) =>
     z.municipios
       .map((m) => ({
         titulo: ubicacion({ municipio: m, departamento: z.nombre }),
@@ -97,6 +98,40 @@ export default function Lugares() {
       }))
       .filter((g) => g.lugares.length > 0),
   );
+  const conSeccion = municipios.filter((m) => m.lugares.length >= MINIMO_POR_SECCION);
+  const sinSeccion = municipios
+    .filter((m) => m.lugares.length < MINIMO_POR_SECCION)
+    .flatMap((m) => m.lugares);
+  const grupos: { id: string; titulo: string; atajo: string; cantidad?: number; lugares: Lugar[] }[] =
+    conSeccion.length < 2
+      ? [
+          {
+            id: "lugares",
+            titulo: "Haciendas, fincas y salones en Villavicencio y el Meta",
+            atajo: `Ver los ${enGuia.length} lugares`,
+            lugares: enGuia,
+          },
+        ]
+      : [
+          ...conSeccion.map((m) => ({
+            id: ancla(m.titulo),
+            titulo: m.titulo,
+            atajo: m.titulo.split(",")[0]!,
+            cantidad: m.lugares.length,
+            lugares: m.lugares,
+          })),
+          ...(sinSeccion.length > 0
+            ? [
+                {
+                  id: "otros-municipios",
+                  titulo: "Otros municipios",
+                  atajo: "Otros municipios",
+                  cantidad: sinSeccion.length,
+                  lugares: sinSeccion,
+                },
+              ]
+            : []),
+        ];
 
   // Collage de la portada: el de guia-lugares.json si lo hay; si no, automático.
   const collage: FotoCollage[] = guiaLugares.portada
@@ -107,7 +142,7 @@ export default function Lugares() {
     : collageAutomatico(enGuia);
   const cifra = [
     enGuia.length === 1 ? "1 lugar" : `${enGuia.length} lugares`,
-    grupos.length === 1 ? "1 municipio" : `${grupos.length} municipios`,
+    municipios.length === 1 ? "1 municipio" : `${municipios.length} municipios`,
   ].join(" · ");
 
   // Fondos de municipios, consejos y preguntas, alternando (src/lib/fondos.ts).
@@ -131,7 +166,7 @@ export default function Lugares() {
         ]}
       />
 
-      {/* Portada: collage de lugares reales, título, cifra y atajos a cada municipio. En
+      {/* Portada: collage de lugares reales, título, cifra y atajos a la lista. En
           celular, el collage va primero: la guía vende con los espacios montados. */}
       <section aria-labelledby="lugares-titulo" className="pt-4 pb-(--spacing-seccion)">
         <div className="contenedor">
@@ -153,16 +188,16 @@ export default function Lugares() {
                 {pagina.h1}
               </h1>
               <p className="mt-5 text-titulo-3 text-terracota">{cifra}</p>
-              <nav aria-label="Lugares por municipio" className="mt-8">
+              <nav aria-label="Ir a los lugares" className="mt-8">
                 <ul className="flex flex-wrap gap-2">
                   {grupos.map((g) => (
-                    <li key={g.titulo} className="min-w-0">
+                    <li key={g.id} className="min-w-0">
                       <a
-                        href={`#${ancla(g.titulo)}`}
+                        href={`#${g.id}`}
                         className="inline-flex min-h-11 items-center gap-2 rounded-full border border-linea bg-superficie px-4 text-sm text-carbon transition-colors hover:border-terracota hover:text-terracota"
                       >
-                        {g.titulo.split(",")[0]}
-                        <span className="text-topo">{g.lugares.length}</span>
+                        {g.atajo}
+                        {g.cantidad && <span className="text-topo">{g.cantidad}</span>}
                       </a>
                     </li>
                   ))}
@@ -173,47 +208,59 @@ export default function Lugares() {
         </div>
       </section>
 
-      {/* Cómo elegir el lugar: la idea en grande y, al lado, qué revisar en la visita.
+      {/* Cómo elegir el lugar: arriba la idea y el contexto; debajo, una tarjeta con foto por
+          cada punto de la visita (en celular y tablet se deslizan dentro de su contenedor).
           Va después de ver los espacios, no antes. */}
       <section aria-labelledby="elegir-titulo" className={`${seccion} ${fondo.elegir}`}>
-        <div className="contenedor grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="min-w-0 lg:col-span-6">
-            <h2 id="elegir-titulo" className="antetitulo">
-              Cómo elegir el lugar
-            </h2>
-            <p className="mt-5 font-titulo text-titulo-2 text-terracota">
-              {guiaLugares.introduccion.entrada}
+        <div className="contenedor">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-16">
+            <div className="min-w-0 lg:col-span-7">
+              <h2 id="elegir-titulo" className="antetitulo">
+                Cómo elegir el lugar
+              </h2>
+              <p className="mt-5 font-titulo text-titulo-2 text-terracota">
+                {guiaLugares.introduccion.entrada}
+              </p>
+            </div>
+            <p className="min-w-0 lectura text-topo lg:col-span-5">
+              {guiaLugares.introduccion.parrafo}
             </p>
-            <div className="mt-6 filete-dorado w-24" />
-            <p className="mt-6 lectura text-topo">{guiaLugares.introduccion.parrafo}</p>
           </div>
 
-          <div className="min-w-0 rounded-sm border border-linea bg-superficie p-6 shadow-[0_1px_24px_rgba(43,39,36,0.05)] sm:p-8 lg:col-span-6">
-            <h3 className="antetitulo">Antes de reservar, revisa</h3>
-            <ul className="mt-6 space-y-5">
-              {guiaLugares.introduccion.antesDeReservar.map((item) => {
-                const Icono = ICONOS_VISITA[item.icono];
-                return (
-                  <li key={item.titulo} className="flex gap-4">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-dorado/70 text-terracota">
-                      <Icono className="size-5" />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="font-medium text-carbon">{item.titulo}</p>
-                      <p className="mt-0.5 text-topo">{item.texto}</p>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <h3 className="mt-12 antetitulo lg:mt-16">Antes de reservar, revisa</h3>
+          <ul className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 xl:grid xl:grid-cols-5 xl:overflow-visible xl:pb-0">
+            {guiaLugares.introduccion.antesDeReservar.map((item) => {
+              const foto = eventos
+                .find((e) => e.slug === item.foto.evento)!
+                .fotos.find((f) => f.archivo === item.foto.archivo)!;
+              return (
+                <li
+                  key={item.titulo}
+                  className="w-[70vw] max-w-72 min-w-0 shrink-0 snap-start overflow-hidden rounded-sm border border-linea bg-superficie xl:w-auto xl:max-w-none"
+                >
+                  <Foto
+                    evento={item.foto.evento}
+                    archivo={foto.archivo}
+                    alt={foto.alt}
+                    posicion={foto.encuadre}
+                    sizes="(min-width: 1280px) 18vw, (min-width: 412px) 288px, 70vw"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  <div className="p-4">
+                    <p className="font-medium text-carbon">{item.titulo}</p>
+                    <p className="mt-1 text-sm text-topo">{item.texto}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 
       {grupos.map((g, i) => (
         <section
-          key={g.titulo}
-          id={ancla(g.titulo)}
+          key={g.id}
+          id={g.id}
           aria-label={g.titulo}
           className={`${seccion} ${fondo.grupos[i]}`}
         >
@@ -240,13 +287,35 @@ export default function Lugares() {
             antetitulo="Consejos de decoración"
             titulo="Cómo decorar según el lugar"
           />
-          <div className="mt-12 grid gap-8 md:grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))]">
-            {guiaLugares.consejos.map((c) => (
-              <article key={c.tipo} className="min-w-0 border-t border-dorado/60 pt-6">
-                <h3 className="text-titulo-3">{c.tipo}</h3>
-                <p className="mt-3 text-topo">{c.texto}</p>
-              </article>
-            ))}
+          {/* Filas editoriales: título, texto y foto de referencia, separadas por filetes. En
+              celular la foto va más baja y antes del texto, para no alargar la página. */}
+          <div className="mt-10 border-t border-dorado/60 lg:mt-12">
+            {guiaLugares.consejos.map((c) => {
+              const foto = eventos
+                .find((e) => e.slug === c.foto.evento)!
+                .fotos.find((f) => f.archivo === c.foto.archivo)!;
+              return (
+                <article
+                  key={c.tipo}
+                  className="grid min-w-0 gap-5 border-b border-dorado/60 py-8 lg:grid-cols-12 lg:items-center lg:gap-10"
+                >
+                  <h3 className="min-w-0 text-titulo-2 lg:col-span-3">{c.tipo}</h3>
+                  <div className="min-w-0 overflow-hidden rounded-sm lg:order-last lg:col-span-4">
+                    <Foto
+                      evento={c.foto.evento}
+                      archivo={foto.archivo}
+                      alt={foto.alt}
+                      posicion={foto.encuadre}
+                      sizes="(min-width: 1024px) 30vw, 100vw"
+                      className="aspect-[16/9] w-full object-cover lg:aspect-[3/2]"
+                    />
+                  </div>
+                  <p className="min-w-0 text-topo lg:col-span-5">
+                    <TextoConEventos texto={c.texto} />
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
