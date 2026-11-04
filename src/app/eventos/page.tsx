@@ -73,7 +73,7 @@ export default function Eventos() {
         </div>
       </div>
 
-      <SeccionContacto titulo="¿Te gustó lo que viste? Cuéntanos de tu evento" origen="eventos" />
+      <SeccionContacto origen="eventos" />
     </main>
   );
 }

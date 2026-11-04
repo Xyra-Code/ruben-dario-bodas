@@ -307,6 +307,7 @@ export default async function Evento({ params }: PageProps<"/eventos/[slug]">) {
         tipoInicial={e.tipo}
         referencia={e.nombres ? `${e.titulo} (${e.nombres})` : e.titulo}
         origen="evento"
+        eventoActual={e.slug}
       />
     </main>
   );
