@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Migas } from "@/components/navegacion/Migas";
+import { CreditoEvento } from "@/components/ui/CreditoEvento";
 import { Foto } from "@/components/ui/Foto";
 import type { Miga } from "@/lib/seo/jsonld";
 
@@ -13,6 +14,16 @@ type Props = {
   /** Antetítulo, H1, bajada y botones. */
   children: ReactNode;
 };
+
+/**
+ * Medidas de la foto de portada (3:4): en el celular, un ancho tope que la deja caber bajo
+ * el encabezado; en escritorio, el ancho que la deja entera en la primera pantalla. Las
+ * comparte la foto de la presentación de los servicios para que ambas midan igual.
+ */
+export const MEDIDAS_FOTO_PORTADA =
+  "mx-auto w-full max-w-[max(16rem,calc((100dvh_-_12rem)_*_3_/_4))] lg:w-[min(40rem,48vw,max(16rem,calc((100dvh_-_8rem)_*_3_/_4)))] lg:max-w-none";
+export const CLASES_IMG_PORTADA = "aspect-[3/4] w-full rounded-sm object-cover";
+export const SIZES_FOTO_PORTADA = "(min-width: 1024px) 50vw, 100vw";
 
 /**
  * Portada de las páginas internas con foto (servicios, vestidos, sobre): la foto se ve
@@ -36,14 +47,13 @@ export function PortadaConFoto({ idTitulo, migas, foto, children }: Props) {
           <Migas items={migas} />
         </div>
         {foto && (
-          <div className="mx-auto mt-6 w-full max-w-[max(16rem,calc((100dvh_-_12rem)_*_3_/_4))] min-w-0 [grid-area:foto] lg:mt-0 lg:mr-0 lg:w-[min(40rem,48vw,max(16rem,calc((100dvh_-_8rem)_*_3_/_4)))] lg:max-w-none">
-            <Foto
-              {...foto}
-              prioridad
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="aspect-[3/4] w-full rounded-sm object-cover"
-            />
-          </div>
+          <figure
+            className={`relative mt-6 min-w-0 [grid-area:foto] lg:mt-0 lg:mr-0 ${MEDIDAS_FOTO_PORTADA}`}
+          >
+            <Foto {...foto} prioridad sizes={SIZES_FOTO_PORTADA} className={CLASES_IMG_PORTADA} />
+            {/* Crédito solo en fotos del portafolio (no en las sueltas de Sobre). */}
+            {foto.evento !== "sobre" && <CreditoEvento evento={foto.evento} enlace />}
+          </figure>
         )}
         <div className="mt-10 max-w-3xl min-w-0 self-center [grid-area:texto] lg:mt-0">
           {children}

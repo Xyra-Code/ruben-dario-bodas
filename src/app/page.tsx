@@ -1,3 +1,4 @@
+import { MapaCobertura } from "@/components/cobertura/MapaCobertura";
 import { FranjaEspecial } from "@/components/evento/FranjaEspecial";
 import { TestimonioEvento } from "@/components/evento/TestimonioEvento";
 import { SeccionContacto } from "@/components/formulario/SeccionContacto";
@@ -9,7 +10,7 @@ import { Boton } from "@/components/ui/Boton";
 import { Foto } from "@/components/ui/Foto";
 import { Pasos } from "@/components/ui/Pasos";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
-import { TituloSeccion } from "@/components/ui/TituloSeccion";
+import { AccionAlFinal, TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { esEnlace } from "@/lib/formato";
 import { RUTA_SERVICIO, RUTA_VESTIDOS } from "@/lib/rutas";
@@ -50,17 +51,25 @@ export default function Inicio() {
   const retratoInicio = sobre.retratoInicio ?? sobre.retrato;
   const portada = destacados.find((e) => e.tipo === "boda") ?? eventos[0];
   const fotoPortada = portada?.fotos.find((f) => f.archivo === portada.portada);
-  // Foto de cada servicio: un evento del tipo distinto al de la portada; si solo hay uno,
-  // otra foto de ese mismo evento. Así la portada y la tarjeta no repiten imagen.
+  // Foto de cada servicio: la portada del evento marcado con `enServicios`; sin marca, el
+  // primero del tipo distinto al de la portada del inicio. Si coincide con la portada del
+  // inicio, otra foto de ese mismo evento: así la portada y la tarjeta no repiten imagen.
   const fotoServicio = (tipo: "boda" | "quince") => {
-    const otro = eventos.find((e) => e.tipo === tipo && e.slug !== portada?.slug);
+    const elegido = eventos.find((e) => e.tipo === tipo && e.enServicios);
+    const otro = elegido
+      ? elegido.slug !== portada?.slug
+        ? elegido
+        : undefined
+      : eventos.find((e) => e.tipo === tipo && e.slug !== portada?.slug);
     if (otro) {
       const f = otro.fotos.find((x) => x.archivo === otro.portada)!;
-      return { evento: otro.slug, archivo: f.archivo, alt: f.alt };
+      return { evento: otro.slug, archivo: f.archivo, alt: f.alt, encuadre: f.encuadre };
     }
-    const mismo = eventos.find((e) => e.tipo === tipo);
+    const mismo = elegido ?? eventos.find((e) => e.tipo === tipo);
     const f = mismo?.fotos.find((x) => x.archivo !== mismo.portada) ?? mismo?.fotos[0];
-    return mismo && f ? { evento: mismo.slug, archivo: f.archivo, alt: f.alt } : undefined;
+    return mismo && f
+      ? { evento: mismo.slug, archivo: f.archivo, alt: f.alt, encuadre: f.encuadre }
+      : undefined;
   };
   const fotoFondo = eventos
     .find((e) => e.slug === FOTO_FONDO.evento)
@@ -69,7 +78,7 @@ export default function Inicio() {
   const fotoVestidos = (() => {
     const { evento, archivo } = vestidos.compartir;
     const f = eventos.find((e) => e.slug === evento)?.fotos.find((x) => x.archivo === archivo);
-    return f && { evento, archivo, alt: f.alt };
+    return f && { evento, archivo, alt: f.alt, encuadre: f.encuadre };
   })();
   const { destacado, cortos } = testimoniosDelInicio(testimonios, eventos);
   const bodas = servicios.find((s) => s.tipo === "boda")!;
@@ -194,33 +203,36 @@ export default function Inicio() {
             titulo="Bodas, fiestas de 15 y vestidos con diseño de autor"
             intro="Cada evento se diseña con un estilo y una paleta propios: nada de decoración genérica de alquiler."
           />
-          {/* Bodas destacada (su fuerte) y, al lado, 15 años y vestidos con el mismo formato:
-              las dos tarjetas horizontales suman casi el alto de la foto vertical de bodas. */}
-          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="min-w-0 lg:col-span-7">
+          {/* Tres tarjetas iguales con foto vertical (las portadas de los eventos suelen ser
+              verticales): bodas primero, marcada como especialidad, sin agrandarla. En el
+              celular van apiladas; desde tableta, una al lado de otra. */}
+          <ul className="mt-12 grid gap-8 md:grid-cols-3 md:gap-6 lg:gap-8">
+            <li className="min-w-0">
               <TarjetaServicio
                 titulo={bodas.nombre}
                 texto={bodas.bajada}
                 ruta={RUTA_SERVICIO.boda!}
                 foto={fotoServicio("boda")}
-                destacada
+                etiqueta="Nuestra especialidad"
               />
-            </div>
-            <div className="grid min-w-0 content-start gap-12 lg:col-span-5">
+            </li>
+            <li className="min-w-0">
               <TarjetaServicio
                 titulo={quince.nombre}
                 texto={quince.bajada}
                 ruta={RUTA_SERVICIO.quince!}
                 foto={fotoServicio("quince")}
               />
+            </li>
+            <li className="min-w-0">
               <TarjetaServicio
                 titulo={vestidos.nombre}
                 texto={vestidos.bajada}
                 ruta={RUTA_VESTIDOS}
                 foto={fotoVestidos}
               />
-            </div>
-          </div>
+            </li>
+          </ul>
           {/* Otros eventos: sin página ni fotos, va como franja ("¿buscas otra cosa?"). */}
           <aside
             aria-labelledby="otros-titulo"
@@ -261,6 +273,7 @@ export default function Inicio() {
               id="eventos-titulo"
               antetitulo="Portafolio"
               titulo="Eventos destacados"
+              accionAlFinal
               accion={
                 <Boton href="/eventos" variante="secundario">
                   Ver todos los eventos
@@ -272,6 +285,11 @@ export default function Inicio() {
                 <TarjetaEvento key={e.slug} evento={e} sizes="(min-width: 1024px) 33vw, 50vw" />
               ))}
             </div>
+            <AccionAlFinal>
+              <Boton href="/eventos" variante="secundario" ancho>
+                Ver todos los eventos
+              </Boton>
+            </AccionAlFinal>
           </div>
         </section>
       )}
@@ -396,25 +414,23 @@ export default function Inicio() {
       {/* 7 · Cobertura */}
       <section id="cobertura" aria-labelledby="cobertura-titulo" className={seccion}>
         <div className="contenedor">
-          <TituloSeccion
-            id="cobertura-titulo"
-            antetitulo="Cobertura"
-            titulo={`Llegamos a ${sitio.cobertura.resumen}`}
-            intro={`Nuestro centro de operación está en ${sitio.cobertura.sede}. Desde allí diseñamos y montamos eventos en salones, haciendas y fincas de toda la región.`}
+          <MapaCobertura
+            zonas={sitio.cobertura.zonas}
+            sede={sitio.cobertura.sede}
+            encabezado={
+              <TituloSeccion
+                id="cobertura-titulo"
+                antetitulo="Cobertura"
+                titulo={`Llegamos a ${sitio.cobertura.resumen}`}
+                intro={`Nuestro centro de operación está en ${sitio.cobertura.sede}. Desde allí diseñamos y montamos eventos en salones, haciendas y fincas de toda la región.`}
+              />
+            }
             accion={
               <Boton href={PAGINAS.lugares.ruta} variante="texto">
-                Lugares para bodas en Villavicencio
+                Lugares para bodas y 15 años
               </Boton>
             }
           />
-          <ul className="mt-12 grid gap-6 md:grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))]">
-            {sitio.cobertura.zonas.map((z) => (
-              <li key={z.nombre} className="min-w-0 border-t border-dorado/50 pt-5">
-                <h3 className="text-titulo-3">{z.etiqueta ?? z.nombre}</h3>
-                <p className="mt-2 text-topo">{z.municipios.join(" · ")}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
