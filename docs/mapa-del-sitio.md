@@ -95,18 +95,24 @@ sin embed) · municipios de cobertura en texto · correo corporativo · reseñas
 
 ### Formulario de cotización (componente único, reutilizado)
 
-| Campo | Obligatorio (todos, decisión de la empresa del 2026-10-09) |
+Título dentro de la tarjeta: **"Cotiza tu evento"**. Campos en este orden (2026-11-04: el evento
+primero y el nombre al final; el mensaje pasa a opcional y queda por confirmar con la empresa, que
+el 2026-10-09 había pedido todos obligatorios):
+
+| Campo | Obligatorio |
 |---|---|
-| Nombre | ✅ |
-| Tipo de evento (Boda / 15 años / Otro) | ✅ (ya elegido según la página) |
+| Tipo de evento: lista (Boda / 15 años / Otro) | ✅ (ya elegido según la página) |
+| N.º aproximado de invitados: lista con los rangos de `content/sitio.json` | ✅ |
 | Fecha del evento | ✅ |
 | Municipio o lugar | ✅ |
-| N.º aproximado de invitados | ✅ |
-| Presupuesto aproximado: botones con los rangos de `content/sitio.json` | ✅ |
-| Mensaje | ✅ |
+| Presupuesto aproximado: lista con los rangos de `content/sitio.json` | ✅ |
+| Nombre | ✅ |
+| Mensaje | Opcional |
 
 - Botón: **"Enviar por WhatsApp"**. Debajo: *"Se abrirá WhatsApp con tu mensaje listo para enviar."*
-- Junto al formulario: bloque **"Qué necesito para cotizarte"** (fecha, lugar, invitados, estilo).
+- Junto al formulario (solo escritorio): foto y testimonio apilados, o una foto de un evento si el
+  tipo no tiene testimonios. Debajo, en todos los tamaños, una línea discreta: **"¿Prefieres
+  directo?"** (WhatsApp, teléfono e Instagram).
 - Al enviar, se abre `wa.me` con el mensaje armado. El visitante confirma el envío en WhatsApp
   (sitio estático: no hay envío automático sin servidor).
 
@@ -169,7 +175,7 @@ se recoge a los 4,5 s. Mensajes en `src/lib/whatsapp.ts` → `flotanteSegunRuta`
 | 6 | Testimonios `#testimonios` | 3 mezclados + enlace a reseñas en Google |
 | 7 | Cobertura `#cobertura` | Villavicencio (centro de operación), municipios del Meta, Bogotá y la Sabana de Bogotá + mapa estático + enlace a la guía de lugares |
 | 8 | Preguntas frecuentes `#preguntas` | Generales: cobertura, anticipación, reserva, cómo cotizar |
-| 9 | Contacto `#contacto` | Formulario + "Qué necesito para cotizarte" |
+| 9 | Contacto `#contacto` | Formulario + contacto directo + testimonio con foto (escritorio) |
 
 **Datos estructurados:** `LocalBusiness` (areaServed, `makesOffer` con las 3 páginas de servicio, `@id` global) · `WebSite` · `FAQPage`.
 
@@ -275,7 +281,7 @@ Rubén Darío" lleva `"ruta": "/vestidos-de-novia"` y enlaza aquí.
 | # | Sección | Contenido |
 |---|---|---|
 | 1 | Migas + H1 + intro | Cómo elegir lugar, qué tener en cuenta |
-| 2 | Lugares por municipio | Por cada salón o finca: foto de un montaje de la empresa, tipo de lugar, capacidad aproximada, bodas y fiestas de 15 realizadas allí (enlaces) |
+| 2 | Lugares (lista única; por municipio cuando al menos dos tengan 3 o más) | Por cada salón o finca: foto de un montaje de la empresa, tipo de lugar, capacidad aproximada, bodas y fiestas de 15 realizadas allí (enlaces) |
 | 3 | Consejos de decoración por tipo de lugar | Finca, salón, hacienda y fiesta de 15 años |
 | 4 | Cierre | Formulario (sin tipo preseleccionado) |
 

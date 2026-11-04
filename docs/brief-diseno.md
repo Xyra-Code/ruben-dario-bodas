@@ -125,14 +125,14 @@ Proporciona un modo claro únicamente.
 ### Formulario de cotización (componente reutilizable)
 Aparece al final de casi todas las páginas. Diseño cálido, no de "formulario de oficina".
 
-- Título: **"Cuéntenos de su evento"**
-- Subtítulo: "Con la fecha y el lugar le respondemos más rápido."
-- Campos: Nombre* · Tipo de evento* (selector tipo botones: Boda / 15 años / Otro) ·
-  Fecha del evento* · Municipio o lugar · Número aproximado de invitados · Mensaje (opcional).
+- Título dentro de la tarjeta: **"Cotiza tu evento"**.
+- Campos: Tipo de evento* e invitados* (listas) · Fecha* · Municipio o lugar* · Presupuesto*
+  (lista) · Nombre* · Mensaje (opcional).
 - Botón: **"Enviar por WhatsApp"** con ícono.
-- Texto bajo el botón: *"Se abrirá WhatsApp con su mensaje listo para enviar."*
-- Al lado (escritorio) o arriba (móvil), bloque **"Qué necesito para cotizarle"**: fecha,
-  lugar, número de invitados, estilo o referencias.
+- Texto bajo el botón: *"Se abrirá WhatsApp con tu mensaje listo para enviar."*
+- Al lado, solo en escritorio, foto y testimonio apilados (decisión de 2026-11-04: reemplaza "Qué
+  necesito para cotizarte", redundante junto al formulario). Debajo, una línea discreta de
+  contacto directo, que no compite con el botón.
 - Variante: cuando viene desde un evento, muestra una etiqueta arriba:
   "Referencia: Boda en Hacienda El Caney, Restrepo".
 - Diseña también el estado de error (campo obligatorio vacío).
@@ -258,8 +258,8 @@ Misma estructura que Bodas, con estas diferencias:
 **H1:** "Lugares para bodas en Villavicencio y el Meta"
 
 1. Migas + H1 + introducción: cómo elegir el lugar de su boda.
-2. **Lugares agrupados por municipio** (Villavicencio, Restrepo, Acacías…). Cada lugar es
-   una tarjeta: foto de un montaje de la empresa en ese lugar, nombre, tipo (Hacienda,
+2. **Lugares en una sola lista**, con el municipio en cada ficha; se separan por municipio
+   cuando al menos dos tienen 3 lugares o más. Cada lugar es una tarjeta: foto de un montaje de la empresa en ese lugar, nombre, tipo (Hacienda,
    Salón, Finca, Club), capacidad aproximada y "Ver eventos aquí (2)".
 3. **Consejos de decoración según el lugar:** 3 bloques (Finca o aire libre · Salón · Hacienda).
 4. **Formulario** con "Boda" preseleccionado.
