@@ -308,39 +308,54 @@ export default function Inicio() {
         </div>
       </section>
 
-      {/* 5 · Sobre Rubén Darío */}
+      {/* 5 · Sobre Rubén Darío: su voz como título y su cara como foto. La foto va a la derecha
+          en escritorio porque la franja de abajo la lleva a la izquierda; en celular, arriba. */}
       <section
         id="sobre"
         aria-labelledby="sobre-titulo"
         className={`${seccion} border-t border-linea`}
       >
-        <div className="contenedor grid items-center gap-10 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-16">
+        <div className="contenedor grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           {retratoInicio && (
-            /* Entera a la vista: proporción original (3:4) y alto tope de la pantalla menos
-               el encabezado fijo (y la barra inferior, en celular). */
-            <div className="mx-auto w-full max-w-[max(16rem,calc((100dvh_-_10rem)_*_3_/_4))] min-w-0 lg:mx-0 lg:w-[min(40rem,48vw,max(16rem,calc((100dvh_-_8rem)_*_3_/_4)))] lg:max-w-none">
-              <Foto
-                evento="sobre"
-                archivo={retratoInicio.archivo}
-                alt={retratoInicio.alt}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="aspect-[3/4] w-full rounded-sm object-cover"
-              />
+            /* Recorte a mano para este retrato: de la cintura para arriba, con la mano en el
+               pecho y un filo de la puerta azul. Si cambia la foto, hay que ajustar top y ancho. */
+            <div className="mx-auto w-full max-w-md min-w-0 lg:order-2 lg:col-span-6 lg:mr-0 lg:max-w-120">
+              <div className="relative aspect-4/5 overflow-hidden rounded-sm">
+                <Foto
+                  evento="sobre"
+                  archivo={retratoInicio.archivo}
+                  alt={retratoInicio.alt}
+                  sizes="(min-width: 1024px) 912px, (min-width: 448px) 854px, 190vw"
+                  className="absolute top-[-24.3%] left-0 w-[190%] max-w-none!"
+                />
+              </div>
             </div>
           )}
-          <div className={`min-w-0 ${retratoInicio ? "" : "lg:col-span-2 lg:max-w-3xl"}`}>
-            <p className="antetitulo">Sobre Rubén Darío</p>
-            <h2 id="sobre-titulo" className="mt-3 text-titulo-2">
-              Quién diseña tu evento
+          <div
+            className={`min-w-0 ${retratoInicio ? "lg:col-span-6" : "lg:col-span-12 lg:max-w-3xl"}`}
+          >
+            <p className="antetitulo">
+              {sobre.citaHistoria ? "Quién diseña tu evento" : "Sobre Rubén Darío"}
+            </p>
+            <h2
+              id="sobre-titulo"
+              className={`mt-4 ${sobre.citaHistoria ? "text-titulo-1" : "text-titulo-2"}`}
+            >
+              {sobre.citaHistoria ? `“${sobre.citaHistoria}”` : "Quién diseña tu evento"}
             </h2>
-            <p className="mt-5 text-topo">{sobre.resumen}</p>
+            {sobre.citaHistoria && (
+              <p className="mt-4 text-sm font-medium text-carbon">
+                Rubén Darío, diseñador de bodas
+              </p>
+            )}
+            <p className="mt-6 max-w-xl text-topo">{sobre.resumen}</p>
             {sitio.cifras.length > 0 && (
-              <dl className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(min(8rem,100%),1fr))] gap-6 border-y border-linea py-6">
+              <dl className="mt-8 grid max-w-xl grid-cols-3 gap-x-3 border-y border-linea py-6 sm:gap-x-6">
                 {sitio.cifras.map((c) => (
                   <div key={c.etiqueta} className="min-w-0">
                     <dt className="sr-only">{c.etiqueta}</dt>
                     <dd>
-                      <span className="block font-titulo text-4xl [overflow-wrap:anywhere] text-terracota">
+                      <span className="block font-titulo text-3xl [overflow-wrap:anywhere] text-terracota sm:text-4xl">
                         {c.valor}
                       </span>
                       <span className="mt-1 block text-sm text-topo" aria-hidden="true">
