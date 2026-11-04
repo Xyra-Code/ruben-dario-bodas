@@ -52,7 +52,19 @@ export const tipoEvento = z.enum(tiposEvento);
 
 const dias = z.enum(["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]);
 
+/** Foto vertical de una sección de preguntas. `encuadre`: punto del recorte ("50% 25%"). */
+const fotoPreguntas = fotoDeEvento.extend({ encuadre: texto });
+
 export const sitio = z.strictObject({
+  /** Foto junto a las preguntas frecuentes de cada página (del portafolio). */
+  fotosPreguntas: z.strictObject({
+    inicio: fotoPreguntas,
+    boda: fotoPreguntas,
+    quince: fotoPreguntas,
+    vestido: fotoPreguntas,
+    sobre: fotoPreguntas,
+    lugares: fotoPreguntas,
+  }),
   nombre: texto,
   /** Frase corta bajo el logo y en el footer. */
   lema: texto,
@@ -120,6 +132,8 @@ export const sitio = z.strictObject({
    * llegan en el mensaje ("$20 a $30 millones").
    */
   presupuestos: z.array(texto).min(2).max(6),
+  /** Rangos de invitados del formulario de cotización. */
+  invitados: z.array(texto).min(2).max(8),
 });
 
 // ── Servicios: /bodas y /quince-anos ────────────────────────────────────────
@@ -211,6 +225,11 @@ export const lugar = z.strictObject({
   capacidad: texto.optional(),
   /** Solo se nombra en la guía de lugares si el lugar dio permiso. */
   enGuia: z.boolean(),
+  /**
+   * Foto grande de su ficha en la guía (de un evento de este lugar). Opcional: sin ella se
+   * elige sola, la primera de montaje del evento más reciente.
+   */
+  fotoFicha: fotoDeEvento.optional(),
 });
 export const lugares = z.array(lugar);
 
@@ -246,6 +265,12 @@ export const testimonio = z.strictObject({
    * `tipo`). Sin marca, se elige el primero del tipo que no sea el destacado del inicio.
    */
   servicio: z.literal("destacado").optional(),
+  /**
+   * Reservado para la sección de contacto: sale de los sorteos del inicio y de los servicios,
+   * para que la misma frase no aparezca dos veces en una página. Se usa el primero del tipo que
+   * no sea del evento que se está viendo: conviene marcar dos por tipo.
+   */
+  contacto: z.literal(true).optional(),
   /** La persona autorizó publicar su testimonio (Ley 1581 de 2012). */
   autorizado: z.boolean(),
 });
@@ -410,6 +435,9 @@ export const sobre = z.strictObject({
   preguntas: z.array(preguntaFrecuente).min(1).optional(),
 });
 
+/** Mención a un evento dentro de un texto: "[nombre visible](slug-del-evento)". */
+export const MENCION_EVENTO = /\[([^\]]+)\]\(([a-z0-9-]+)\)/g;
+
 export const guiaLugares = z.strictObject({
   /** Textos redactados por XyraCode como borrador: false hasta que la empresa los apruebe. */
   revisadoPorLaEmpresa: z.boolean(),
@@ -423,9 +451,10 @@ export const guiaLugares = z.strictObject({
     antesDeReservar: z
       .array(
         z.strictObject({
-          icono: z.enum(["luz", "lluvia", "horario", "parqueadero", "distancia"]),
           titulo: texto,
           texto,
+          /** Foto de la tarjeta, de un evento de un lugar que esté en la guía. */
+          foto: z.strictObject({ evento: slug, archivo: archivoFoto }),
         }),
       )
       .min(3)
@@ -439,8 +468,20 @@ export const guiaLugares = z.strictObject({
     .array(z.strictObject({ evento: slug, archivo: archivoFoto }))
     .length(3)
     .optional(),
-  /** Consejos de decoración por tipo de lugar (finca, salón, hacienda…). */
-  consejos: z.array(z.strictObject({ tipo: texto, texto })).min(1),
+  /**
+   * Consejos de decoración por tipo de lugar (finca, salón, hacienda…). El texto puede
+   * mencionar eventos con enlace: "[Luisa & Héctor](slug-del-evento)". La foto es de
+   * referencia, de otro evento del mismo estilo de lugar y de un lugar que esté en la guía.
+   */
+  consejos: z
+    .array(
+      z.strictObject({
+        tipo: texto,
+        foto: z.strictObject({ evento: slug, archivo: archivoFoto }),
+        texto,
+      }),
+    )
+    .min(1),
   /** Preguntas de quien aún está eligiendo lugar (sin repetir las de /bodas). */
   preguntas: z.array(preguntaFrecuente).min(1).optional(),
 });

@@ -347,6 +347,17 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
       errores.push(`${base}: "${archivo}" no está en las fotos de "${slugEvento}"`);
   }
 
+  // Preguntas frecuentes: la foto de cada página sale de un evento del portafolio.
+  for (const [pagina, { evento: slugEvento, archivo }] of Object.entries(
+    sitio?.fotosPreguntas ?? {},
+  )) {
+    const evento = eventos.find((e) => e.slug === slugEvento);
+    const base = `content/sitio.json → fotosPreguntas.${pagina}`;
+    if (!evento) errores.push(`${base}: el evento "${slugEvento}" no existe`);
+    else if (!evento.fotos.some((f) => f.archivo === archivo))
+      errores.push(`${base}: "${archivo}" no está en las fotos de "${slugEvento}"`);
+  }
+
   // Vestidos: sus fotos salen de los eventos del portafolio.
   if (vestidos) {
     const base = "content/vestidos-de-novia.json";
@@ -368,15 +379,43 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     }
   }
 
-  // Guía de lugares: las fotos del collage salen de eventos del portafolio.
-  for (const { evento: slugEvento, archivo } of guiaLugares?.portada ?? []) {
+  // Lugares: la foto de la ficha sale de un evento realizado en ese lugar.
+  for (const l of lugares ?? []) {
+    if (!l.fotoFicha) continue;
+    const { evento: slugEvento, archivo } = l.fotoFicha;
     const evento = eventos.find((e) => e.slug === slugEvento);
-    const base = "content/guia-lugares.json → portada";
+    const base = `content/lugares.json → "${l.slug}" → fotoFicha`;
+    if (!evento) errores.push(`${base}: el evento "${slugEvento}" no existe`);
+    else if (evento.lugar.slug !== l.slug)
+      errores.push(`${base}: el evento "${slugEvento}" no se hizo en este lugar`);
+    else if (!evento.fotos.some((f) => f.archivo === archivo))
+      errores.push(`${base}: "${archivo}" no está en las fotos de "${slugEvento}"`);
+  }
+
+  // Guía de lugares: las fotos del collage, de "Antes de reservar" y de los consejos salen
+  // de eventos del portafolio, de lugares que están en la guía.
+  for (const { evento: slugEvento, archivo } of [
+    ...(guiaLugares?.portada ?? []),
+    ...(guiaLugares?.introduccion.antesDeReservar.map((p) => p.foto) ?? []),
+    ...(guiaLugares?.consejos.map((c) => c.foto) ?? []),
+  ]) {
+    const evento = eventos.find((e) => e.slug === slugEvento);
+    const base = "content/guia-lugares.json";
     if (!evento) errores.push(`${base}: el evento "${slugEvento}" no existe`);
     else if (!evento.fotos.some((f) => f.archivo === archivo))
       errores.push(`${base}: "${archivo}" no está en las fotos de "${slugEvento}"`);
     else if (!evento.lugar.enGuia)
       errores.push(`${base}: "${evento.lugar.nombre}" no está en la guía (enGuia: false)`);
+  }
+
+  // Menciones a eventos dentro de los consejos: cada enlace debe llevar a un evento real.
+  for (const { tipo, texto } of guiaLugares?.consejos ?? []) {
+    for (const [, nombre, slugEvento] of texto.matchAll(esquema.MENCION_EVENTO)) {
+      if (!eventos.some((e) => e.slug === slugEvento))
+        errores.push(
+          `content/guia-lugares.json → consejo "${tipo}": "${nombre}" enlaza al evento "${slugEvento}", que no existe`,
+        );
+    }
   }
 
   if (guiaLugares && !guiaLugares.revisadoPorLaEmpresa) {

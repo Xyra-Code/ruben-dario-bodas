@@ -42,7 +42,7 @@ export function fotoDelTestimonio(e: Evento, t: Testimonio) {
  */
 export function testimoniosDelInicio(testimonios: Testimonio[], eventos: Evento[]) {
   const conEvento = testimonios.flatMap((t) => {
-    const evento = eventos.find((e) => e.slug === t.evento);
+    const evento = t.contacto ? undefined : eventos.find((e) => e.slug === t.evento);
     return evento ? [{ testimonio: t, evento }] : [];
   });
   const destacado =
@@ -68,7 +68,8 @@ export function testimoniosDelServicio(
   eventos: Evento[],
 ) {
   const conEvento = testimonios.flatMap((t) => {
-    const evento = t.tipo === tipo ? eventos.find((e) => e.slug === t.evento) : undefined;
+    const evento =
+      t.tipo === tipo && !t.contacto ? eventos.find((e) => e.slug === t.evento) : undefined;
     return evento ? [{ testimonio: t, evento }] : [];
   });
   const sortear = (lista: typeof conEvento) =>
@@ -83,6 +84,25 @@ export function testimoniosDelServicio(
     conEvento.find(({ testimonio }) => testimonio.servicio === "destacado") ??
     conEvento.find(({ testimonio }) => testimonio.inicio !== "destacado")!;
   return { destacado, cortos: sortear(conEvento.filter((x) => x !== destacado)) };
+}
+
+/**
+ * Testimonio de la sección de contacto (con su evento): el primero marcado con `contacto`
+ * del tipo de la página, sin el del evento que se está viendo. Sin tipo, cualquiera. Si no hay
+ * ninguno del tipo (hoy, 15 años) no se muestra: una boda no respalda una fiesta de 15.
+ */
+export function testimonioDeContacto(
+  testimonios: Testimonio[],
+  eventos: Evento[],
+  tipo?: TipoEvento,
+  eventoActual?: string,
+) {
+  for (const t of testimonios) {
+    if (!t.contacto || (tipo && t.tipo !== tipo) || t.evento === eventoActual) continue;
+    const evento = eventos.find((e) => e.slug === t.evento);
+    if (evento) return { testimonio: t, evento };
+  }
+  return undefined;
 }
 
 /**

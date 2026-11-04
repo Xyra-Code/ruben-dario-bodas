@@ -118,6 +118,8 @@
     "autor": "Mafe & Sebas",
     "tipo": "boda",
     "evento": "boda-verde-tropical-hotel-brizantha-villavicencio",
+    "foto": { "archivo": "boda-verde-tropical-hotel-brizantha-villavicencio-pareja-sentados-fondo-iluminado.jpg" },
+    "contacto": true,
     "autorizado": true
   },
   {
@@ -143,6 +145,8 @@
     "autor": "Shanelly & Sergio",
     "tipo": "boda",
     "evento": "boda-mediterranea-finca-la-principesa-villavicencio",
+    "foto": { "archivo": "boda-mediterranea-finca-la-principesa-villavicencio-pareja-mural-mediterraneo-ramo.jpg" },
+    "contacto": true,
     "autorizado": true
   },
   {

@@ -8,6 +8,38 @@
     "e164": "+573144431139"
   },
   "whatsapp": "573144431139",
+  "fotosPreguntas": {
+    "inicio": {
+      "evento": "boda-san-gabriel-de-las-palmas-villavicencio",
+      "archivo": "boda-san-gabriel-de-las-palmas-villavicencio-pasillo-ceremonia-flores-y-velas.jpg",
+      "encuadre": "50% 40%"
+    },
+    "boda": {
+      "evento": "boda-finca-san-luis-villavicencio",
+      "archivo": "boda-finca-san-luis-villavicencio-pareja-beso-arco-de-flores.jpg",
+      "encuadre": "50% 25%"
+    },
+    "quince": {
+      "evento": "quince-finca-privada-guamal",
+      "archivo": "quince-finca-privada-guamal-quinceanera-con-alas-de-mariposa.jpg",
+      "encuadre": "50% 25%"
+    },
+    "vestido": {
+      "evento": "boda-romantica-hacienda-la-primavera-villavicencio",
+      "archivo": "boda-romantica-hacienda-la-primavera-villavicencio-novia-retrato-ventana.jpg",
+      "encuadre": "50% 20%"
+    },
+    "sobre": {
+      "evento": "quince-coral-finca-la-principesa-villavicencio",
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-y-ruben-dario-con-velas-y-flores.jpg",
+      "encuadre": "50% 10%"
+    },
+    "lugares": {
+      "evento": "boda-flores-rosadas-hotel-brizantha-villavicencio",
+      "archivo": "boda-flores-rosadas-hotel-brizantha-villavicencio-altar-ceremonia-kiosco-de-flores.jpg",
+      "encuadre": "50% 35%"
+    }
+  },
   "correo": "cotizaciones@rubendariodiseñadordebodas.com",
   "direccion": {
     "publica": false,
@@ -81,8 +113,8 @@
       "etiqueta": "bodas diseñadas"
     },
     {
-      "valor": "[PENDIENTE]",
-      "etiqueta": "municipios del Meta"
+      "valor": "+30",
+      "etiqueta": "fiestas de 15 años"
     }
   ],
   "presupuestos": [
@@ -90,5 +122,12 @@
     "$35 a $45 millones",
     "$50 a $60 millones",
     "$60 millones en adelante"
+  ],
+  "invitados": [
+    "Hasta 50",
+    "51 a 100",
+    "101 a 200",
+    "201 a 300",
+    "301 o más"
   ]
 }
