@@ -16,6 +16,13 @@ export function irAlFormulario(evento: MouseEvent<HTMLAnchorElement>, alNavegar?
   if (!formulario) return; // sigue el href: /#contacto
   evento.preventDefault();
   formulario.scrollIntoView({ behavior: "smooth", block: "start" });
+  // En páginas largas, lo que carga durante el recorrido mueve el destino: al terminar, se
+  // realinea para que el formulario no quede bajo el encabezado.
+  window.addEventListener(
+    "scrollend",
+    () => formulario.scrollIntoView({ behavior: "instant", block: "start" }),
+    { once: true },
+  );
   formulario
     .querySelector<HTMLInputElement>("input, select, textarea")
     ?.focus({ preventScroll: true });
