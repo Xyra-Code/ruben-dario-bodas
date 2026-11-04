@@ -1,0 +1,151 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-privada-villavicencio",
+  "titulo": "Fiesta de 15 años en finca privada, Villavicencio",
+  "nombres": "Lauren Juliana",
+  "estilo": "Lila y dorado",
+  "paleta": [
+    {
+      "nombre": "Lila",
+      "hex": "#B39DDB"
+    },
+    {
+      "nombre": "Morado",
+      "hex": "#6A4C93"
+    },
+    {
+      "nombre": "Marfil",
+      "hex": "#F3EBDD"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años en finca privada, Villavicencio | Rubén Darío",
+    "description": "Fiesta de 15 años en una finca privada de Villavicencio: celosía iluminada, hortensias lilas, techo de faroles, pista LED y mariachis."
+  },
+  "portada": "quince-finca-privada-villavicencio-quinceanera-vestido-lila-con-cola-bajo-faroles-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-vestido-lila-con-cola-bajo-faroles-portada.jpg",
+      "alt": "Quinceañera vestido lila con cola bajo faroles"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-letras-xv-iluminadas-con-ventanal-de-flores.jpg",
+      "alt": "Letras XV iluminadas con ventanal de flores"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-con-mariachis.jpg",
+      "alt": "Quinceañera con mariachis"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-puesto-de-mesa-plato-floral-y-numero-de-mesa.jpg",
+      "alt": "Puesto de mesa plato floral y número de mesa"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-vestido-lila-frente-a-celosia-iluminada.jpg",
+      "alt": "Quinceañera vestido lila frente a celosía iluminada"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesa-principal-con-flores-lilas-y-globos-de-luz.jpg",
+      "alt": "Mesa principal con flores lilas y globos de luz"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-fondo-de-celosia-con-flores-lilas-y-banca-tallada.jpg",
+      "alt": "Fondo de celosía con flores lilas y banca tallada"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesa-redonda-de-invitados-con-hortensias-lilas.jpg",
+      "alt": "Mesa redonda de invitados con hortensias lilas"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-salon-techo-de-faroles-y-pista-led.jpg",
+      "alt": "Salón techo de faroles y pista LED"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-sentada-frente-a-celosia-iluminada.jpg",
+      "alt": "Quinceañera sentada frente a celosía iluminada"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-de-espaldas-entre-mesas-del-salon.jpg",
+      "alt": "Quinceañera de espaldas entre mesas del salón"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-consola-con-lamparas-y-ventanales-con-flores.jpg",
+      "alt": "Consola con lámparas y ventanales con flores"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-salon-panoramico-pista-led-y-faroles.jpg",
+      "alt": "Salón panorámico pista LED y faroles"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesa-de-torta-con-muro-de-flores-lilas.jpg",
+      "alt": "Mesa de torta con muro de flores lilas"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-florero-dorado-con-flores-lilas-y-lamparas.jpg",
+      "alt": "Florero dorado con flores lilas y lámparas"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesa-redonda-mantel-lila-y-platos-florales.jpg",
+      "alt": "Mesa redonda mantel lila y platos florales"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-techo-de-faroles-con-flores-rosadas.jpg",
+      "alt": "Techo de faroles con flores rosadas"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-salon-montaje-general-y-pista-led.jpg",
+      "alt": "Salón montaje general y pista LED"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesas-redondas-del-salon-con-centros-de-mesa-altos.jpg",
+      "alt": "Mesas redondas del salón con centros de mesa altos"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-centro-de-mesa-alto-de-hortensias-lilas.jpg",
+      "alt": "Centro de mesa alto de hortensias lilas"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-de-espaldas-con-cola-lila.jpg",
+      "alt": "Quinceañera de espaldas con cola lila"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-y-ruben-dario-frente-a-celosia.jpg",
+      "alt": "Quinceañera y Rubén Darío frente a celosía"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesa-redonda-con-centro-de-mesa-alto-y-candelabros.jpg",
+      "alt": "Mesa redonda con centro de mesa alto y candelabros"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-techo-de-faroles-con-flores-y-flecos.jpg",
+      "alt": "Techo de faroles con flores y flecos"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-mesa-de-invitados-mantel-lila-brillante.jpg",
+      "alt": "Mesa de invitados mantel lila brillante"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-quinceanera-junto-a-mesa-de-torta.jpg",
+      "alt": "Quinceañera junto a mesa de torta"
+    },
+    {
+      "archivo": "quince-finca-privada-villavicencio-torta-de-15-anos-con-flores-pintadas-y-candelabros.jpg",
+      "alt": "Torta de 15 años con flores pintadas y candelabros"
+    }
+  ]
+}

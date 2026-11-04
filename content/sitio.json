@@ -43,7 +43,15 @@
       {
         "nombre": "Meta",
         "tipo": "departamento",
-        "municipios": ["Villavicencio", "Restrepo", "Acacías", "Cumaral", "Puerto López", "Granada"]
+        "municipios": [
+          "Villavicencio",
+          "Restrepo",
+          "Acacías",
+          "Cumaral",
+          "Puerto López",
+          "Granada",
+          "Guamal"
+        ]
       },
       {
         "nombre": "Bogotá D.C.",
@@ -54,7 +62,12 @@
         "nombre": "Cundinamarca",
         "etiqueta": "Sabana de Bogotá",
         "tipo": "departamento",
-        "municipios": ["Chía", "Tenjo", "Subachoque"]
+        "municipios": ["Chía", "Tenjo", "Subachoque", "Cajicá"]
+      },
+      {
+        "nombre": "Casanare",
+        "tipo": "departamento",
+        "municipios": ["Villanueva"]
       }
     ]
   },

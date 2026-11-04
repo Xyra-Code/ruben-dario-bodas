@@ -1,0 +1,151 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "lenos-y-parrilla",
+  "titulo": "Fiesta de 15 años en Leños y Parrilla, Villavicencio",
+  "nombres": "Mafe",
+  "estilo": "Rojo pasión",
+  "paleta": [
+    {
+      "nombre": "Rojo",
+      "hex": "#B3122E"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#4F6B3A"
+    },
+    {
+      "nombre": "Marfil",
+      "hex": "#F3EBDD"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Restaurante Leños y Parrilla"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años en Leños y Parrilla, Villavicencio | Rubén Darío",
+    "description": "Fiesta de 15 años en Leños y Parrilla, Villavicencio: rosas rojas, follaje colgante, lámparas de mimbre y velas para una noche en rojo."
+  },
+  "portada": "quince-lenos-y-parrilla-villavicencio-quinceanera-cola-roja-en-el-salon-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-cola-roja-en-el-salon-portada.jpg",
+      "alt": "Quinceañera cola roja en el salón"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-vestido-rojo-con-cola-entre-follaje.jpg",
+      "alt": "Quinceañera vestido rojo con cola entre follaje"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-vestido-rojo-bajo-helechos-colgantes.jpg",
+      "alt": "Quinceañera vestido rojo bajo helechos colgantes"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-puesto-de-mesa-con-vela-y-recordatorio.jpg",
+      "alt": "Puesto de mesa con vela y recordatorio"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-camino-de-mesa-de-rosas-rojas.jpg",
+      "alt": "Camino de mesa de rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-mesa-imperial-rosas-rojas-y-nichos-con-velas.jpg",
+      "alt": "Mesa imperial rosas rojas y nichos con velas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-centro-de-mesa-de-rosas-rojas-y-follaje.jpg",
+      "alt": "Centro de mesa de rosas rojas y follaje"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-mesa-imperial-sillas-de-rejilla-y-rosas-rojas.jpg",
+      "alt": "Mesa imperial sillas de rejilla y rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-mesa-imperial-bajo-lamparas-de-mimbre.jpg",
+      "alt": "Mesa imperial bajo lámparas de mimbre"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-rosas-rojas-y-velas-sobre-camino-de-encaje.jpg",
+      "alt": "Rosas rojas y velas sobre camino de encaje"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-candelabro-dorado-con-vela-y-rosas-rojas.jpg",
+      "alt": "Candelabro dorado con vela y rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-tras-la-mesa-con-velas.jpg",
+      "alt": "Quinceañera tras la mesa con velas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-sentada-vestido-rojo.jpg",
+      "alt": "Quinceañera sentada vestido rojo"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-en-mesa-bajo-lamparas-de-mimbre.jpg",
+      "alt": "Quinceañera en mesa bajo lámparas de mimbre"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-mesa-con-candelabros-y-sillas-de-rejilla.jpg",
+      "alt": "Mesa con candelabros y sillas de rejilla"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-sentada-junto-a-pared-naranja.jpg",
+      "alt": "Quinceañera sentada junto a pared naranja"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-cola-del-vestido-rojo-de-espaldas.jpg",
+      "alt": "Cola del vestido rojo de espaldas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-frente-a-muro-de-rosas-rojas.jpg",
+      "alt": "Quinceañera frente a muro de rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-espejo-de-bienvenida-con-rosas-rojas.jpg",
+      "alt": "Espejo de bienvenida con rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-mesa-de-noche-dorada-lamparas-y-rosas-rojas.jpg",
+      "alt": "Mesa de noche dorada lámparas y rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-y-ruben-dario-frente-a-nichos-con-velas.jpg",
+      "alt": "Quinceañera y Rubén Darío frente a nichos con velas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-ruben-dario-frente-a-nichos-con-velas-y-rosas.jpg",
+      "alt": "Rubén Darío frente a nichos con velas y rosas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-espejo-faroles-dorados-y-rosas-rojas.jpg",
+      "alt": "Espejo faroles dorados y rosas rojas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-quinceanera-de-espaldas-con-fuegos-artificiales.jpg",
+      "alt": "Quinceañera de espaldas con fuegos artificiales"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-nichos-con-velas-y-rosas.jpg",
+      "alt": "Nichos con velas y rosas"
+    },
+    {
+      "archivo": "quince-lenos-y-parrilla-villavicencio-lamparas-de-cristal-sobre-mesa-de-noche.jpg",
+      "alt": "Lámparas de cristal sobre mesa de noche"
+    }
+  ]
+}

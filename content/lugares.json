@@ -86,5 +86,53 @@
     "municipio": "Villavicencio",
     "departamento": "Meta",
     "enGuia": true
+  },
+  {
+    "slug": "lenos-y-parrilla",
+    "nombre": "Restaurante Leños y Parrilla",
+    "tipo": "otro",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": false
+  },
+  {
+    "slug": "hacienda-salamanca",
+    "nombre": "Hacienda Salamanca",
+    "tipo": "hacienda",
+    "municipio": "Tenjo",
+    "departamento": "Cundinamarca",
+    "enGuia": false
+  },
+  {
+    "slug": "finca-privada-villavicencio",
+    "nombre": "Finca privada",
+    "tipo": "finca",
+    "municipio": "Villavicencio",
+    "departamento": "Meta",
+    "enGuia": false
+  },
+  {
+    "slug": "finca-privada-guamal",
+    "nombre": "Finca privada",
+    "tipo": "finca",
+    "municipio": "Guamal",
+    "departamento": "Meta",
+    "enGuia": false
+  },
+  {
+    "slug": "finca-privada-villanueva",
+    "nombre": "Finca privada",
+    "tipo": "finca",
+    "municipio": "Villanueva",
+    "departamento": "Casanare",
+    "enGuia": false
+  },
+  {
+    "slug": "finca-privada-cajica",
+    "nombre": "Finca privada",
+    "tipo": "finca",
+    "municipio": "Cajicá",
+    "departamento": "Cundinamarca",
+    "enGuia": false
   }
 ]

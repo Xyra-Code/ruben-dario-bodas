@@ -1,0 +1,115 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-privada-cajica",
+  "titulo": "Fiesta de 15 años en finca privada, Cajicá",
+  "nombres": "Mariana",
+  "estilo": "Rosa y fucsia",
+  "paleta": [
+    {
+      "nombre": "Palo de rosa",
+      "hex": "#D8A7A0"
+    },
+    {
+      "nombre": "Fucsia",
+      "hex": "#D81B60"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#4F7A3A"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años en finca privada, Cajicá | Rubén Darío",
+    "description": "Fiesta de 15 años en una finca privada de Cajicá, Cundinamarca: muro de flores rosadas, ventanales con rosas fucsia y vestido palo de rosa."
+  },
+  "portada": "quince-finca-privada-cajica-quinceanera-junto-a-arbol-dorado-y-rosas-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-junto-a-arbol-dorado-y-rosas-portada.jpg",
+      "alt": "Quinceañera junto a árbol dorado y rosas"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-junto-a-consola-con-ventanal-de-flores.jpg",
+      "alt": "Quinceañera junto a consola con ventanal de flores"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-mesa-de-invitados-con-centro-de-mesa-de-rosas-fucsia.jpg",
+      "alt": "Mesa de invitados con centro de mesa de rosas fucsia"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-girando-vestido-palo-de-rosa.jpg",
+      "alt": "Quinceañera girando vestido palo de rosa"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-tras-centro-de-mesa-en-aro-dorado.jpg",
+      "alt": "Quinceañera tras centro de mesa en aro dorado"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-entre-sillas-con-lazos-rosados.jpg",
+      "alt": "Quinceañera entre sillas con lazos rosados"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-tras-mesa-principal-de-rosas-fucsia.jpg",
+      "alt": "Quinceañera tras mesa principal de rosas fucsia"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-lampara-y-rosas-fucsia-en-la-mesa-principal.jpg",
+      "alt": "Lámpara y rosas fucsia en la mesa principal"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-mesa-principal-con-ventanales-de-flores-y-faroles.jpg",
+      "alt": "Mesa principal con ventanales de flores y faroles"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-junto-a-consola-con-flores.jpg",
+      "alt": "Quinceañera junto a consola con flores"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-vals-frente-a-muro-de-flores.jpg",
+      "alt": "Vals frente a muro de flores"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-tras-mesa-principal-con-lamparas.jpg",
+      "alt": "Quinceañera tras mesa principal con lámparas"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-y-ruben-dario-frente-a-muro-de-flores.jpg",
+      "alt": "Quinceañera y Rubén Darío frente a muro de flores"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-entre-flores-del-centro-de-mesa.jpg",
+      "alt": "Quinceañera entre flores del centro de mesa"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-centro-de-mesa-de-rosas-y-numero-de-mesa.jpg",
+      "alt": "Centro de mesa de rosas y número de mesa"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-sentada-frente-a-muro-de-flores.jpg",
+      "alt": "Quinceañera sentada frente a muro de flores"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-con-letras-xv-y-petalos.jpg",
+      "alt": "Quinceañera con letras XV y pétalos"
+    },
+    {
+      "archivo": "quince-finca-privada-cajica-quinceanera-sentada-junto-a-muro-de-flores-rosadas.jpg",
+      "alt": "Quinceañera sentada junto a muro de flores rosadas"
+    }
+  ]
+}

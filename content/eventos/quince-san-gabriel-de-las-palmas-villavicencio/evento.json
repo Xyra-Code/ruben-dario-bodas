@@ -1,0 +1,147 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "san-gabriel-de-las-palmas",
+  "titulo": "Fiesta de 15 años en San Gabriel de las Palmas, Villavicencio",
+  "nombres": "Camila",
+  "estilo": "Rosa fucsia y blanco",
+  "paleta": [
+    {
+      "nombre": "Fucsia",
+      "hex": "#C2185B"
+    },
+    {
+      "nombre": "Rosa",
+      "hex": "#F2A7C3"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Centro Vacacional San Gabriel de las Palmas"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años en San Gabriel de las Palmas | Rubén Darío",
+    "description": "Fiesta de 15 años en San Gabriel de las Palmas, Villavicencio: arcos de flores fucsia, celosía iluminada, techo de faroles y vestido blanco."
+  },
+  "portada": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-vestido-blanco-bajo-arco-de-flores-fucsia-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-vestido-blanco-bajo-arco-de-flores-fucsia-portada.jpg",
+      "alt": "Quinceañera vestido blanco bajo arco de flores fucsia"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-centro-de-mesa-de-rosas-fucsia-y-aro-dorado.jpg",
+      "alt": "Centro de mesa de rosas fucsia y aro dorado"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-mesa-principal-con-flores-fucsia-y-celosia-iluminada.jpg",
+      "alt": "Mesa principal con flores fucsia y celosía iluminada"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-con-sus-padres-bajo-arco-de-flores.jpg",
+      "alt": "Quinceañera con sus padres bajo arco de flores"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-mesa-de-postres-con-flores-fucsia.jpg",
+      "alt": "Mesa de postres con flores fucsia"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-mesa-principal-con-muro-de-flores-y-celosia.jpg",
+      "alt": "Mesa principal con muro de flores y celosía"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-frente-a-mesa-principal.jpg",
+      "alt": "Quinceañera frente a mesa principal"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-sonriendo-bajo-arco-de-flores.jpg",
+      "alt": "Quinceañera sonriendo bajo arco de flores"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-salon-techo-de-faroles-y-mesa-principal.jpg",
+      "alt": "Salón techo de faroles y mesa principal"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-bajo-techo-de-faroles-y-glicinas.jpg",
+      "alt": "Quinceañera bajo techo de faroles y glicinas"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-techo-de-faroles-y-flores-rosadas.jpg",
+      "alt": "Techo de faroles y flores rosadas"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-ventanales-con-muro-de-flores-fucsia.jpg",
+      "alt": "Ventanales con muro de flores fucsia"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-mesa-imperial-con-centros-de-mesa-altos.jpg",
+      "alt": "Mesa imperial con centros de mesa altos"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-en-pista-frente-a-mesa-principal.jpg",
+      "alt": "Quinceañera en pista frente a mesa principal"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-vestido-blanco-junto-a-cortinas.jpg",
+      "alt": "Quinceañera vestido blanco junto a cortinas"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-centro-de-mesa-con-aro-dorado-y-copas.jpg",
+      "alt": "Centro de mesa con aro dorado y copas"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-con-su-madre.jpg",
+      "alt": "Quinceañera con su madre"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-entre-mesas-del-salon.jpg",
+      "alt": "Quinceañera entre mesas del salón"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-entre-candelabros-y-flores.jpg",
+      "alt": "Quinceañera entre candelabros y flores"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-frente-a-celosia-iluminada.jpg",
+      "alt": "Quinceañera frente a celosía iluminada"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-bajo-arco-de-flores-y-velas.jpg",
+      "alt": "Quinceañera bajo arco de flores y velas"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-mesa-imperial-con-flores-fucsia-y-faroles.jpg",
+      "alt": "Mesa imperial con flores fucsia y faroles"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-quinceanera-bajo-faroles-en-la-pista.jpg",
+      "alt": "Quinceañera bajo faroles en la pista"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-mesa-de-invitados-con-centro-de-mesa-alto.jpg",
+      "alt": "Mesa de invitados con centro de mesa alto"
+    },
+    {
+      "archivo": "quince-san-gabriel-de-las-palmas-villavicencio-entrada-con-cortinas-y-torta-entre-flores.jpg",
+      "alt": "Entrada con cortinas y torta entre flores"
+    }
+  ]
+}

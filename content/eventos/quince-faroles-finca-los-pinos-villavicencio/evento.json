@@ -1,0 +1,155 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-los-pinos",
+  "titulo": "Fiesta de 15 años con faroles en Finca Los Pinos, Villavicencio",
+  "nombres": "Ayeleen",
+  "estilo": "Verde esmeralda y flores pastel",
+  "paleta": [
+    {
+      "nombre": "Verde esmeralda",
+      "hex": "#0F5C4D"
+    },
+    {
+      "nombre": "Durazno",
+      "hex": "#F4B9A0"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca Los Pinos"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años con faroles en Finca Los Pinos | Rubén Darío",
+    "description": "Fiesta de 15 años en Finca Los Pinos, Villavicencio: techo de faroles con flores pastel, vestido verde esmeralda y pista LED."
+  },
+  "portada": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-girando-entre-faroles-y-velas-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-girando-entre-faroles-y-velas-portada.jpg",
+      "alt": "Quinceañera girando entre faroles y velas"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-principal-con-fondo-de-mariposas-y-velas.jpg",
+      "alt": "Mesa principal con fondo de mariposas y velas"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-vestido-verde-esmeralda-con-invitados.jpg",
+      "alt": "Quinceañera vestido verde esmeralda con invitados"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-con-capa-verde-bajo-techo-de-faroles.jpg",
+      "alt": "Quinceañera con capa verde bajo techo de faroles"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-vestido-verde-esmeralda-girando-en-pista-led.jpg",
+      "alt": "Vestido verde esmeralda girando en pista LED"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-con-capa-verde-en-pista-led.jpg",
+      "alt": "Quinceañera con capa verde en pista LED"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-principal-con-flores-y-candelabros.jpg",
+      "alt": "Mesa principal con flores y candelabros"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-sentada-con-capa-verde-frente-a-mesa-principal.jpg",
+      "alt": "Quinceañera sentada con capa verde frente a mesa principal"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-redonda-de-invitados-con-flores-pastel.jpg",
+      "alt": "Mesa redonda de invitados con flores pastel"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-de-invitados-con-centro-de-mesa-en-aro.jpg",
+      "alt": "Mesa de invitados con centro de mesa en aro"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-centro-de-mesa-de-flores-pastel-y-neon.jpg",
+      "alt": "Centro de mesa de flores pastel y neón"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-salon-techo-de-faroles-y-pista-led.jpg",
+      "alt": "Salón techo de faroles y pista LED"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-entre-faroles-colgantes.jpg",
+      "alt": "Quinceañera entre faroles colgantes"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-salon-techo-de-faroles-y-mesa-principal.jpg",
+      "alt": "Salón techo de faroles y mesa principal"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-puesto-de-mesa-plato-dorado-y-camino-de-mariposas.jpg",
+      "alt": "Puesto de mesa plato dorado y camino de mariposas"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-imperial-con-centros-de-mesa-en-aro.jpg",
+      "alt": "Mesa imperial con centros de mesa en aro"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-de-torta-entre-letras-xv-y-flores.jpg",
+      "alt": "Mesa de torta entre letras XV y flores"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-salon-panoramico-techo-de-faroles-y-flores.jpg",
+      "alt": "Salón panorámico techo de faroles y flores"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-de-torta-con-arco-dorado-y-flores.jpg",
+      "alt": "Mesa de torta con arco dorado y flores"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-mesa-de-recuerdos-con-flores-y-banca-tallada.jpg",
+      "alt": "Mesa de recuerdos con flores y banca tallada"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-y-ruben-dario-en-pista-led.jpg",
+      "alt": "Quinceañera y Rubén Darío en pista LED"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-sentada-bajo-faroles-y-velas.jpg",
+      "alt": "Quinceañera sentada bajo faroles y velas"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-quinceanera-frente-a-muro-de-flores-con-neon.jpg",
+      "alt": "Quinceañera frente a muro de flores con neón"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-salon-montaje-general-con-luz-verde.jpg",
+      "alt": "Salón montaje general con luz verde"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-salon-pista-led-y-mesa-principal-al-fondo.jpg",
+      "alt": "Salón pista LED y mesa principal al fondo"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-salon-faroles-con-flores-y-glicinas.jpg",
+      "alt": "Salón faroles con flores y glicinas"
+    },
+    {
+      "archivo": "quince-faroles-finca-los-pinos-villavicencio-centro-de-mesa-en-aro-con-rosas-y-mariposa.jpg",
+      "alt": "Centro de mesa en aro con rosas y mariposa"
+    }
+  ]
+}

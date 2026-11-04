@@ -1,0 +1,167 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-la-principesa",
+  "titulo": "Fiesta de 15 años coral en Finca La Principesa, Villavicencio",
+  "nombres": "Valentina",
+  "estilo": "Coral y dorado",
+  "paleta": [
+    {
+      "nombre": "Coral",
+      "hex": "#F26B4F"
+    },
+    {
+      "nombre": "Rosa",
+      "hex": "#F2A7B5"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#4F7A3A"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca La Principesa"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años coral en Finca La Principesa | Rubén Darío",
+    "description": "Fiesta de 15 años coral en Finca La Principesa, Villavicencio: celosía con flores, techo de faroles, esculturas de show y vestido coral."
+  },
+  "portada": "quince-coral-finca-la-principesa-villavicencio-quinceanera-en-pista-led-bajo-faroles-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-en-pista-led-bajo-faroles-portada.jpg",
+      "alt": "Quinceañera en pista LED bajo faroles"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-vestido-coral-en-banca-de-flores.jpg",
+      "alt": "Quinceañera vestido coral en banca de flores"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-de-postres-con-arco-dorado-y-flores.jpg",
+      "alt": "Mesa de postres con arco dorado y flores"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-imperial-con-centro-de-mesa-alto-de-rosas.jpg",
+      "alt": "Mesa imperial con centro de mesa alto de rosas"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-vestido-coral-entre-letras-xv.jpg",
+      "alt": "Quinceañera vestido coral entre letras XV"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-salon-techo-de-faroles-y-mesa-principal.jpg",
+      "alt": "Salón techo de faroles y mesa principal"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-sentada-frente-a-celosia-con-flores.jpg",
+      "alt": "Quinceañera sentada frente a celosía con flores"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-con-esculturas-de-show.jpg",
+      "alt": "Quinceañera con esculturas de show"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-de-invitados-plato-dorado-y-rosas.jpg",
+      "alt": "Mesa de invitados plato dorado y rosas"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-con-su-familia-y-ruben-dario.jpg",
+      "alt": "Quinceañera con su familia y Rubén Darío"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-torta-de-15-anos-y-velas-con-la-familia.jpg",
+      "alt": "Torta de 15 años y velas con la familia"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-letras-xv-con-arco-de-flores-y-petalos.jpg",
+      "alt": "Letras XV con arco de flores y pétalos"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-imperial-con-flores-y-faroles.jpg",
+      "alt": "Mesa imperial con flores y faroles"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-letras-xv-bajo-techo-de-flores-colgantes.jpg",
+      "alt": "Letras XV bajo techo de flores colgantes"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-centro-de-mesa-alto-de-rosas-y-follaje.jpg",
+      "alt": "Centro de mesa alto de rosas y follaje"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-imperial-junto-a-pista-led.jpg",
+      "alt": "Mesa imperial junto a pista LED"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-y-ruben-dario-con-velas-y-flores.jpg",
+      "alt": "Quinceañera y Rubén Darío con velas y flores"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-imperial-con-arbol-de-rosas.jpg",
+      "alt": "Mesa imperial con árbol de rosas"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-ruben-dario-con-esculturas-de-show-en-pista-led.jpg",
+      "alt": "Rubén Darío con esculturas de show en pista LED"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-salon-panoramico-pista-led-y-faroles.jpg",
+      "alt": "Salón panorámico pista LED y faroles"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-ruben-dario-con-bicicleta-de-flores-y-letras-gigantes.jpg",
+      "alt": "Rubén Darío con bicicleta de flores y letras gigantes"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-salon-pista-led-y-techo-de-flecos.jpg",
+      "alt": "Salón pista LED y techo de flecos"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-banca-tallada-frente-a-celosia-con-flores.jpg",
+      "alt": "Banca tallada frente a celosía con flores"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-retrato-de-la-quinceanera-con-marco-de-flores.jpg",
+      "alt": "Retrato de la quinceañera con marco de flores"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-y-padre-brindando.jpg",
+      "alt": "Quinceañera y padre brindando"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-vals-con-chispas-frias-en-pista-led.jpg",
+      "alt": "Vals con chispas frías en pista LED"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-imperial-con-sillas-blancas-y-rosas.jpg",
+      "alt": "Mesa imperial con sillas blancas y rosas"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-girando-vestido-coral-con-mono.jpg",
+      "alt": "Quinceañera girando vestido coral con moño"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-de-torta-con-muro-de-flores-y-luces.jpg",
+      "alt": "Mesa de torta con muro de flores y luces"
+    },
+    {
+      "archivo": "quince-coral-finca-la-principesa-villavicencio-consola-tallada-con-arco-dorado-y-flores.jpg",
+      "alt": "Consola tallada con arco dorado y flores"
+    }
+  ]
+}

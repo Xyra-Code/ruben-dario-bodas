@@ -1,0 +1,203 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-la-principesa",
+  "titulo": "Fiesta de 15 años palo de rosa en Finca La Principesa, Villavicencio",
+  "nombres": "Laura",
+  "estilo": "Palo de rosa",
+  "paleta": [
+    {
+      "nombre": "Palo de rosa",
+      "hex": "#C99A9E"
+    },
+    {
+      "nombre": "Rosa",
+      "hex": "#F2B8C6"
+    },
+    {
+      "nombre": "Lila",
+      "hex": "#B9A3D6"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca La Principesa"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años palo de rosa en Finca La Principesa | Rubén Darío",
+    "description": "Fiesta de 15 años palo de rosa en Finca La Principesa, Villavicencio: techo de faroles con glicinas, hortensias, pista LED y torta iluminada."
+  },
+  "portada": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-de-frente-en-pista-led-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-de-frente-en-pista-led-portada.jpg",
+      "alt": "Quinceañera de frente en pista LED"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-mesa-de-invitados-con-sillas-rosadas.jpg",
+      "alt": "Salón mesa de invitados con sillas rosadas"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-de-torta-redonda-con-anillo-de-flores-iluminadas.jpg",
+      "alt": "Mesa de torta redonda con anillo de flores iluminadas"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-vestido-palo-de-rosa-entre-follaje.jpg",
+      "alt": "Quinceañera vestido palo de rosa entre follaje"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-junto-a-mesa-principal-con-cuadro-y-flores.jpg",
+      "alt": "Quinceañera junto a mesa principal con cuadro y flores"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-retrato-de-la-quinceanera-con-corona.jpg",
+      "alt": "Retrato de la quinceañera con corona"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-junto-a-mesa-imperial-con-lazos.jpg",
+      "alt": "Quinceañera junto a mesa imperial con lazos"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-con-centro-de-mesa-alto-de-hortensias.jpg",
+      "alt": "Mesa imperial con centro de mesa alto de hortensias"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-techo-de-faroles-con-flores-rosadas-y-glicinas.jpg",
+      "alt": "Techo de faroles con flores rosadas y glicinas"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-pista-led-bajo-techo-de-faroles.jpg",
+      "alt": "Salón pista LED bajo techo de faroles"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-junto-a-mesa-de-torta-con-flores.jpg",
+      "alt": "Quinceañera junto a mesa de torta con flores"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-frente-a-mesa-principal-iluminada.jpg",
+      "alt": "Quinceañera frente a mesa principal iluminada"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-en-terraza-con-lamparas-de-mimbre.jpg",
+      "alt": "Mesa imperial en terraza con lámparas de mimbre"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-en-pista-led-bajo-faroles.jpg",
+      "alt": "Quinceañera en pista LED bajo faroles"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-principal-con-ventanales-y-flores-iluminadas.jpg",
+      "alt": "Mesa principal con ventanales y flores iluminadas"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-puesto-de-mesa-plato-dorado-y-servilleta-floral.jpg",
+      "alt": "Puesto de mesa plato dorado y servilleta floral"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-y-ruben-dario-en-pista-led.jpg",
+      "alt": "Quinceañera y Rubén Darío en pista LED"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-vals-con-chispas-frias-en-pista-led.jpg",
+      "alt": "Vals con chispas frías en pista LED"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-con-flores-y-platos-dorados.jpg",
+      "alt": "Mesa imperial con flores y platos dorados"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-torta-de-15-anos-y-galeria-de-fotos.jpg",
+      "alt": "Torta de 15 años y galería de fotos"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-montaje-general-con-lamparas-de-mimbre.jpg",
+      "alt": "Salón montaje general con lámparas de mimbre"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-junto-a-mesa-principal-de-flores.jpg",
+      "alt": "Quinceañera junto a mesa principal de flores"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-de-frente-bajo-techo-de-faroles.jpg",
+      "alt": "Quinceañera de frente bajo techo de faroles"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-vestido-palo-de-rosa-en-el-jardin.jpg",
+      "alt": "Quinceañera vestido palo de rosa en el jardín"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-girando-en-pista-led.jpg",
+      "alt": "Quinceañera girando en pista LED"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-redonda-con-centro-de-mesa-alto-de-hortensias.jpg",
+      "alt": "Mesa redonda con centro de mesa alto de hortensias"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-muro-de-flores-fucsia-y-banca-tallada.jpg",
+      "alt": "Muro de flores fucsia y banca tallada"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-ruben-dario-junto-a-mesa-de-torta.jpg",
+      "alt": "Rubén Darío junto a mesa de torta"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-letras-gigantes-iluminadas-y-mesa-de-torta.jpg",
+      "alt": "Letras gigantes iluminadas y mesa de torta"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-mesas-con-lazos-rosados-y-flores.jpg",
+      "alt": "Salón mesas con lazos rosados y flores"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-con-sillas-de-lazos-blancos.jpg",
+      "alt": "Mesa imperial con sillas de lazos blancos"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-tras-letras-gigantes-iluminadas.jpg",
+      "alt": "Quinceañera tras letras gigantes iluminadas"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-con-ramo-y-acompanante-en-pista.jpg",
+      "alt": "Quinceañera con ramo y acompañante en pista"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-mesas-de-invitados-y-lamparas-de-flecos.jpg",
+      "alt": "Salón mesas de invitados y lámparas de flecos"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-con-centros-de-mesa-altos.jpg",
+      "alt": "Mesa imperial con centros de mesa altos"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-con-hortensias-junto-a-pista-led.jpg",
+      "alt": "Mesa imperial con hortensias junto a pista LED"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-salon-panoramico-pista-led-y-muro-de-flores.jpg",
+      "alt": "Salón panorámico pista LED y muro de flores"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-quinceanera-en-puente-del-jardin-tropical.jpg",
+      "alt": "Quinceañera en puente del jardín tropical"
+    },
+    {
+      "archivo": "quince-palo-de-rosa-finca-la-principesa-villavicencio-mesa-imperial-con-platos-dorados-y-hortensias.jpg",
+      "alt": "Mesa imperial con platos dorados y hortensias"
+    }
+  ]
+}

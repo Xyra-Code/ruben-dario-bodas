@@ -41,6 +41,10 @@ definen cada archivo están en `src/lib/contenido/esquemas.ts`.
    - **Nombres de la pareja o la quinceañera** (opcional, solo con autorización):
      `"nombres": "Juan & Caro"`. Se muestran bajo el H1 ("La boda de Juan & Caro") y en
      el mensaje de WhatsApp; nunca en el slug ni en `seo`.
+   - **En el inicio:** `"destacado": true` lo pone en "Eventos destacados" (3 a 6, en orden de
+     carpeta: bodas primero; la primera boda destacada da la foto grande de la portada).
+     `"enServicios": true` usa su portada en la tarjeta de su servicio (Bodas o 15 años) de
+     la sección Servicios; uno por tipo. Sin marca, se elige el primero por orden de carpeta.
 5. `npm run validar`: dice exactamente qué falta o qué está mal.
 6. Commit y push: Cloudflare publica. El sitemap, la galería, los filtros, los relacionados,
    los destacados y la guía de lugares se actualizan solos.

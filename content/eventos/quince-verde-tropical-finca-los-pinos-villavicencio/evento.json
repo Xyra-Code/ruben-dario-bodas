@@ -1,0 +1,139 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-los-pinos",
+  "titulo": "Fiesta de 15 años verde tropical en Finca Los Pinos, Villavicencio",
+  "nombres": "María Camila",
+  "estilo": "Verde tropical",
+  "paleta": [
+    {
+      "nombre": "Verde esmeralda",
+      "hex": "#0F5C4D"
+    },
+    {
+      "nombre": "Verde follaje",
+      "hex": "#4F7A3A"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": true,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca Los Pinos"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años verde tropical en Finca Los Pinos | Rubén Darío",
+    "description": "Fiesta de 15 años verde tropical en Finca Los Pinos, Villavicencio: palmas, arco de flores blancas, faroles colgantes y letras gigantes."
+  },
+  "portada": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-de-espaldas-en-pista-led-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-de-espaldas-en-pista-led-portada.jpg",
+      "alt": "Quinceañera de espaldas en pista LED"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-de-fotos-con-follaje-tropical-y-lamparas.jpg",
+      "alt": "Mesa de fotos con follaje tropical y lámparas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-de-invitados-con-centro-de-mesa-de-palmas.jpg",
+      "alt": "Mesa de invitados con centro de mesa de palmas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-vals-de-la-quinceanera-vestido-verde-esmeralda.jpg",
+      "alt": "Vals de la quinceañera vestido verde esmeralda"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-de-torta-con-ventanal-de-flores-blancas-y-follaje.jpg",
+      "alt": "Mesa de torta con ventanal de flores blancas y follaje"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-retrato-de-la-quinceanera-vestido-verde-satinado.jpg",
+      "alt": "Retrato de la quinceañera vestido verde satinado"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-frente-a-arco-de-flores-blancas-y-follaje.jpg",
+      "alt": "Quinceañera frente a arco de flores blancas y follaje"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-salon-techo-de-faroles-y-follaje-verde.jpg",
+      "alt": "Salón techo de faroles y follaje verde"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-de-fotos-con-lamparas-y-hojas-tropicales.jpg",
+      "alt": "Mesa de fotos con lámparas y hojas tropicales"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-con-sus-padres.jpg",
+      "alt": "Quinceañera con sus padres"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-imperial-con-palmas-y-velas.jpg",
+      "alt": "Mesa imperial con palmas y velas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-con-su-familia-y-ruben-dario.jpg",
+      "alt": "Quinceañera con su familia y Rubén Darío"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-sentada-bajo-arco-de-flores-blancas.jpg",
+      "alt": "Quinceañera sentada bajo arco de flores blancas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-salon-montaje-general-con-centros-de-palmas.jpg",
+      "alt": "Salón montaje general con centros de palmas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-de-fotos-con-follaje-tropical.jpg",
+      "alt": "Mesa de fotos con follaje tropical"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-imperial-con-centro-de-mesa-de-palmas.jpg",
+      "alt": "Mesa imperial con centro de mesa de palmas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-salon-panoramico-pista-led-y-arco-de-flores.jpg",
+      "alt": "Salón panorámico pista LED y arco de flores"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-con-letras-gigantes-reflejadas.jpg",
+      "alt": "Quinceañera con letras gigantes reflejadas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-arco-de-flores-blancas-y-follaje-tropical.jpg",
+      "alt": "Arco de flores blancas y follaje tropical"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-torta-de-15-anos-verde-con-hojas-doradas.jpg",
+      "alt": "Torta de 15 años verde con hojas doradas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-junto-a-letras-gigantes-iluminadas.jpg",
+      "alt": "Quinceañera junto a letras gigantes iluminadas"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-vestido-verde-esmeralda-girando-en-pista-led.jpg",
+      "alt": "Vestido verde esmeralda girando en pista LED"
+    },
+    {
+      "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-junto-a-mesa-imperial.jpg",
+      "alt": "Quinceañera junto a mesa imperial"
+    }
+  ]
+}

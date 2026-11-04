@@ -1,0 +1,163 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-la-principesa",
+  "titulo": "Fiesta de 15 años azul cielo en Finca La Principesa, Villavicencio",
+  "nombres": "Mariana",
+  "estilo": "Azul cielo",
+  "paleta": [
+    {
+      "nombre": "Azul cielo",
+      "hex": "#A9C8E8"
+    },
+    {
+      "nombre": "Lila",
+      "hex": "#B9A3D6"
+    },
+    {
+      "nombre": "Rosa",
+      "hex": "#E8B4B8"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Finca La Principesa"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años azul cielo en Finca La Principesa | Rubén Darío",
+    "description": "Fiesta de 15 años azul cielo en Finca La Principesa, Villavicencio: techo de lámparas de flecos, faroles con flores y hortensias pastel."
+  },
+  "portada": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-junto-a-mesa-principal-con-velas-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-junto-a-mesa-principal-con-velas-portada.jpg",
+      "alt": "Quinceañera junto a mesa principal con velas"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-vestido-azul-frente-a-ventanal-con-flores.jpg",
+      "alt": "Quinceañera vestido azul frente a ventanal con flores"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-salon-techo-de-lamparas-de-flecos.jpg",
+      "alt": "Salón techo de lámparas de flecos"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-mesa-de-torta-con-muro-de-flores.jpg",
+      "alt": "Mesa de torta con muro de flores"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-techo-de-faroles-con-flores-colgantes.jpg",
+      "alt": "Techo de faroles con flores colgantes"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-mesa-de-fotos-con-hortensias-y-faroles.jpg",
+      "alt": "Mesa de fotos con hortensias y faroles"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-tras-mesa-principal-de-hortensias.jpg",
+      "alt": "Quinceañera tras mesa principal de hortensias"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-ruben-dario-frente-a-ventanal-iluminado.jpg",
+      "alt": "Rubén Darío frente a ventanal iluminado"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-vestido-azul-entre-letras-xv.jpg",
+      "alt": "Quinceañera vestido azul entre letras XV"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-salon-con-faroles-y-flores-colgantes.jpg",
+      "alt": "Salón con faroles y flores colgantes"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-ruben-dario-entre-letras-xv-bajo-techo-de-flecos.jpg",
+      "alt": "Rubén Darío entre letras XV bajo techo de flecos"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-torta-azul-entre-muro-de-flores.jpg",
+      "alt": "Torta azul entre muro de flores"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-mesa-de-invitados-con-centro-de-mesa-de-hortensias.jpg",
+      "alt": "Mesa de invitados con centro de mesa de hortensias"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-vals-de-la-quinceanera.jpg",
+      "alt": "Vals de la quinceañera"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-ventanal-iluminado-con-flores-moradas.jpg",
+      "alt": "Ventanal iluminado con flores moradas"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-mesa-de-fotos-con-hortensias-en-el-salon.jpg",
+      "alt": "Mesa de fotos con hortensias en el salón"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-salon-montaje-general-con-invitados.jpg",
+      "alt": "Salón montaje general con invitados"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-salon-techo-de-faroles-y-flecos.jpg",
+      "alt": "Salón techo de faroles y flecos"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-asomada-al-ventanal-con-flores.jpg",
+      "alt": "Quinceañera asomada al ventanal con flores"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-frente-al-ventanal-iluminado.jpg",
+      "alt": "Quinceañera frente al ventanal iluminado"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-salon-mesas-de-invitados-y-lamparas.jpg",
+      "alt": "Salón mesas de invitados y lámparas"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-al-fondo-del-salon-de-faroles.jpg",
+      "alt": "Quinceañera al fondo del salón de faroles"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-fondo-de-ventanal-con-luz-morada.jpg",
+      "alt": "Fondo de ventanal con luz morada"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-entre-luces-del-salon.jpg",
+      "alt": "Quinceañera entre luces del salón"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-ventanal-con-flores-moradas-y-lamparas-de-flecos.jpg",
+      "alt": "Ventanal con flores moradas y lámparas de flecos"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-salon-panoramico-faroles-y-flores.jpg",
+      "alt": "Salón panorámico faroles y flores"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-mesa-principal-de-hortensias-y-velas.jpg",
+      "alt": "Mesa principal de hortensias y velas"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-centro-de-mesa-alto-de-rosas-y-hortensias.jpg",
+      "alt": "Centro de mesa alto de rosas y hortensias"
+    },
+    {
+      "archivo": "quince-azul-cielo-finca-la-principesa-villavicencio-quinceanera-vestido-azul-en-el-salon.jpg",
+      "alt": "Quinceañera vestido azul en el salón"
+    }
+  ]
+}

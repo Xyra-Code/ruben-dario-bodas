@@ -6,7 +6,8 @@
  * Por cada foto: corrige la rotación, BORRA LOS METADATOS (incluida la ubicación GPS de
  * los celulares), la deja en máximo 2400 px en JPEG sRGB y la guarda con nombre limpio en
  * content/eventos/<slug>/fotos/. Si existe evento.json, agrega las fotos nuevas con un alt
- * [PENDIENTE] para completar a mano.
+ * [PENDIENTE] para completar a mano. La portada es la foto cuyo nombre termina en
+ * "-portada" (solo una; si ninguna lo tiene, queda la primera).
  *
  * Las originales en máxima calidad no van al repo: se guardan en el Drive de la empresa.
  * Renombre antes las originales con lo que muestran ("mesa principal.jpg"): el nombre
@@ -59,6 +60,13 @@ async function main() {
     process.exit(1);
   }
 
+  const conPortada = archivos.filter((a) => limpiar(path.parse(a).name).endsWith("portada"));
+  if (conPortada.length > 1) {
+    console.error(`✖ Hay ${conPortada.length} fotos marcadas como portada; deje solo una:`);
+    for (const a of conPortada) console.error(`  - ${a}`);
+    process.exit(1);
+  }
+
   const importadas: string[] = [];
   const avisos: string[] = [];
   for (const original of archivos) {
@@ -86,6 +94,12 @@ async function main() {
     importadas.push(final);
   }
 
+  // Portada: la foto cuyo nombre termina en "-portada" (se marca al renombrar).
+  const marcadas = importadas.filter((a) => /-portada\.jpg$/.test(a));
+  if (!marcadas.length) {
+    avisos.push('Ninguna foto termina en "-portada": la portada queda en la primera foto');
+  }
+
   // Agregar las fotos nuevas a evento.json (si existe).
   const rutaJson = path.join(carpetaEvento, "evento.json");
   let agregadas = 0;
@@ -101,7 +115,8 @@ async function main() {
       evento.fotos.push({ archivo, alt: "[PENDIENTE: describir lo que muestra la foto]" });
       agregadas++;
     }
-    evento.portada ??= importadas[0];
+    if (marcadas.length === 1) evento.portada = marcadas[0];
+    else evento.portada ??= importadas[0];
     writeFileSync(rutaJson, JSON.stringify(evento, null, 2) + "\n");
   }
 

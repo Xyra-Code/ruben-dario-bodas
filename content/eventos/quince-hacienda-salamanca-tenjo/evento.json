@@ -1,0 +1,154 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "hacienda-salamanca",
+  "nombres": "Mariana",
+  "estilo": "Rosa romántico",
+  "paleta": [
+    {
+      "nombre": "Rosa",
+      "hex": "#F2B5C4"
+    },
+    {
+      "nombre": "Fucsia",
+      "hex": "#D94F86"
+    },
+    {
+      "nombre": "Blanco",
+      "hex": "#FFFFFF"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Lugar",
+      "nombre": "Hacienda Salamanca"
+    },
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años en Hacienda Salamanca, Tenjo | Rubén Darío",
+    "description": "Fiesta de 15 años en Hacienda Salamanca, Tenjo: cortinas rosadas, ventanales con flores, pista LED y show de personajes con flores plateadas."
+  },
+  "portada": "quince-hacienda-salamanca-tenjo-quinceanera-cola-rosada-en-el-jardin-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-cola-rosada-en-el-jardin-portada.jpg",
+      "alt": "Quinceañera cola rosada en el jardín"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-detalles-zapatos-anillo-y-joyas-de-la-quinceanera.jpg",
+      "alt": "Detalles zapatos anillo y joyas de la quinceañera"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-con-personajes-de-show-flores-plateadas.jpg",
+      "alt": "Quinceañera con personajes de show flores plateadas"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-segundo-vestido-corto-entre-cortinas-rosadas.jpg",
+      "alt": "Quinceañera segundo vestido corto entre cortinas rosadas"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-vestido-rosado-frente-a-ventanales-con-flores.jpg",
+      "alt": "Quinceañera vestido rosado frente a ventanales con flores"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-puesto-de-mesa-plato-dorado-y-servilleta-rosada.jpg",
+      "alt": "Puesto de mesa plato dorado y servilleta rosada"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-mesa-de-torta-con-esfera-de-flores-y-vitrina.jpg",
+      "alt": "Mesa de torta con esfera de flores y vitrina"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-show-de-personajes-con-la-quinceanera.jpg",
+      "alt": "Show de personajes con la quinceañera"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-bajo-arco-de-flores-y-cortinas-rosadas.jpg",
+      "alt": "Quinceañera bajo arco de flores y cortinas rosadas"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-personaje-de-show-flor-plateada.jpg",
+      "alt": "Personaje de show flor plateada"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-vestido-rosado-en-el-jardin-de-cipreses.jpg",
+      "alt": "Quinceañera vestido rosado en el jardín de cipreses"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-mesa-principal-con-ventanales-y-flores.jpg",
+      "alt": "Mesa principal con ventanales y flores"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-sentada-en-la-mesa-principal.jpg",
+      "alt": "Quinceañera sentada en la mesa principal"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-en-marco-de-bienvenida.jpg",
+      "alt": "Quinceañera en marco de bienvenida"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-mesa-de-invitados-candelabros-y-copas-rosadas.jpg",
+      "alt": "Mesa de invitados candelabros y copas rosadas"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-salon-techo-de-glicinas-y-centros-de-mesa-altos.jpg",
+      "alt": "Salón techo de glicinas y centros de mesa altos"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-personaje-de-show-alas-blancas-en-pista-led.jpg",
+      "alt": "Personaje de show alas blancas en pista LED"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-y-acompanante-en-pista-led.jpg",
+      "alt": "Quinceañera y acompañante en pista LED"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-sentada-en-pista-led.jpg",
+      "alt": "Quinceañera sentada en pista LED"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-centro-de-mesa-alto-sobre-mesa-dorada.jpg",
+      "alt": "Centro de mesa alto sobre mesa dorada"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-mesa-de-postres-y-fotos-en-el-jardin.jpg",
+      "alt": "Mesa de postres y fotos en el jardín"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-y-ruben-dario-frente-a-fondo-plateado.jpg",
+      "alt": "Quinceañera y Rubén Darío frente a fondo plateado"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-velas-y-flores-junto-a-fondo-plateado.jpg",
+      "alt": "Velas y flores junto a fondo plateado"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-galeria-de-fotos-en-el-jardin.jpg",
+      "alt": "Galería de fotos en el jardín"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-quinceanera-bailando-con-humo-en-pista-led.jpg",
+      "alt": "Quinceañera bailando con humo en pista LED"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-carreta-de-postres-con-flores.jpg",
+      "alt": "Carreta de postres con flores"
+    },
+    {
+      "archivo": "quince-hacienda-salamanca-tenjo-cortinas-rosadas-y-velas.jpg",
+      "alt": "Cortinas rosadas y velas"
+    }
+  ]
+}

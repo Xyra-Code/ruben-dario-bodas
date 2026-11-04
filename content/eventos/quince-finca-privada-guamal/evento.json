@@ -1,0 +1,148 @@
+{
+  "borrador": true,
+  "tipo": "quince",
+  "lugar": "finca-privada-guamal",
+  "titulo": "Fiesta de 15 años en finca privada, Guamal",
+  "nombres": "Valeria",
+  "estilo": "Lila con mariposas",
+  "paleta": [
+    {
+      "nombre": "Lila",
+      "hex": "#B7A6E0"
+    },
+    {
+      "nombre": "Rosa",
+      "hex": "#E9A9C2"
+    },
+    {
+      "nombre": "Melocotón",
+      "hex": "#F2C1A0"
+    },
+    {
+      "nombre": "Dorado",
+      "hex": "#C9A45C"
+    }
+  ],
+  "destacado": false,
+  "enServicios": true,
+  "descripcion": [
+    "[PENDIENTE: texto de la empresa sobre el diseño de esta fiesta de 15 años]"
+  ],
+  "proveedores": [
+    {
+      "rol": "Fotografía",
+      "nombre": "[PENDIENTE]"
+    }
+  ],
+  "seo": {
+    "title": "15 años en finca privada, Guamal (Meta) | Rubén Darío",
+    "description": "Fiesta de 15 años en una finca privada de Guamal, Meta: muros de flores lilas y rosadas, techo de faroles, mariposas y pista LED."
+  },
+  "portada": "quince-finca-privada-guamal-quinceanera-tras-cascada-de-rosas-portada.jpg",
+  "fotos": [
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-tras-cascada-de-rosas-portada.jpg",
+      "alt": "Quinceañera tras cascada de rosas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-torta-de-15-anos-con-mariposas-doradas.jpg",
+      "alt": "Torta de 15 años con mariposas doradas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-carreta-de-postres-con-muro-de-flores-lilas.jpg",
+      "alt": "Carreta de postres con muro de flores lilas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-mesa-principal-con-flores-lilas-y-rosadas.jpg",
+      "alt": "Mesa principal con flores lilas y rosadas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-cambio-de-zapatos-entre-petalos.jpg",
+      "alt": "Cambio de zapatos entre pétalos"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-mesa-de-invitados-lamparas-y-flores-lilas.jpg",
+      "alt": "Mesa de invitados lámparas y flores lilas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-vestido-lila-en-banca-de-hierro-con-flores.jpg",
+      "alt": "Quinceañera vestido lila en banca de hierro con flores"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-vestido-lila-en-pista-led.jpg",
+      "alt": "Quinceañera vestido lila en pista LED"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-retrato-de-la-quinceanera-con-corona.jpg",
+      "alt": "Retrato de la quinceañera con corona"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-centro-de-mesa-alto-lila-y-mesa-redonda.jpg",
+      "alt": "Centro de mesa alto lila y mesa redonda"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-banca-de-hierro-con-muro-de-flores-y-neon.jpg",
+      "alt": "Banca de hierro con muro de flores y neón"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-con-alas-de-mariposa.jpg",
+      "alt": "Quinceañera con alas de mariposa"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-techo-de-faroles-con-flores.jpg",
+      "alt": "Techo de faroles con flores"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-bajo-techo-de-faroles-y-flores.jpg",
+      "alt": "Quinceañera bajo techo de faroles y flores"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-y-ruben-dario-frente-a-muro-de-flores.jpg",
+      "alt": "Quinceañera y Rubén Darío frente a muro de flores"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-entrega-del-anillo-a-la-quinceanera.jpg",
+      "alt": "Entrega del anillo a la quinceañera"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-vals-de-la-quinceanera-con-capa.jpg",
+      "alt": "Vals de la quinceañera con capa"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-sentada-entre-flores-y-lamparas.jpg",
+      "alt": "Quinceañera sentada entre flores y lámparas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-entre-letras-xv-iluminadas.jpg",
+      "alt": "Quinceañera entre letras XV iluminadas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-vals-en-pista-led-bajo-faroles.jpg",
+      "alt": "Vals en pista LED bajo faroles"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-junto-a-letras-gigantes-iluminadas.jpg",
+      "alt": "Quinceañera junto a letras gigantes iluminadas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-mesa-de-postres-con-cortinas-blancas.jpg",
+      "alt": "Mesa de postres con cortinas blancas"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-girando-bajo-techo-de-faroles.jpg",
+      "alt": "Quinceañera girando bajo techo de faroles"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-frente-a-muro-de-flores-con-neon.jpg",
+      "alt": "Quinceañera frente a muro de flores con neón"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-junto-a-mesa-imperial-lila.jpg",
+      "alt": "Quinceañera junto a mesa imperial lila"
+    },
+    {
+      "archivo": "quince-finca-privada-guamal-quinceanera-junto-a-carreta-de-postres.jpg",
+      "alt": "Quinceañera junto a carreta de postres"
+    }
+  ]
+}
