@@ -26,11 +26,11 @@ export const PAGINAS = {
       "Conoce a Rubén Darío, diseñador de bodas y de vestidos de novia en Villavicencio: su historia en la alta costura, su equipo y los eventos que lo marcaron.",
   },
   lugares: {
-    ruta: "/lugares-para-bodas-villavicencio",
-    h1: "Lugares para bodas en Villavicencio y el Meta",
-    titulo: "Lugares para bodas en Villavicencio y el Meta | Rubén Darío",
+    ruta: "/lugares-para-bodas-y-quince-villavicencio",
+    h1: "Lugares para bodas y 15 años en Villavicencio y el Meta",
+    titulo: "Fincas y salones para bodas y 15 años en Villavicencio | Rubén Darío",
     descripcion:
-      "Guía de haciendas, fincas y salones para bodas en Villavicencio y el Meta, con montajes reales y consejos para decorar cada tipo de lugar.",
+      "Guía de haciendas, fincas y salones para bodas y fiestas de 15 años en Villavicencio y el Meta, con montajes reales y consejos para decorar cada tipo de lugar.",
   },
   politica: {
     ruta: "/politica-de-datos",

@@ -337,6 +337,16 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     }
   }
 
+  // Servicios: la foto de fondo de la inversión sale de un evento del portafolio.
+  for (const s of servicios) {
+    const { evento: slugEvento, archivo } = s.inversion.foto;
+    const evento = eventos.find((e) => e.slug === slugEvento);
+    const base = `content/servicios/${s.slug}.json → inversion.foto`;
+    if (!evento) errores.push(`${base}: el evento "${slugEvento}" no existe`);
+    else if (!evento.fotos.some((f) => f.archivo === archivo))
+      errores.push(`${base}: "${archivo}" no está en las fotos de "${slugEvento}"`);
+  }
+
   // Vestidos: sus fotos salen de los eventos del portafolio.
   if (vestidos) {
     const base = "content/vestidos-de-novia.json";
@@ -358,6 +368,17 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     }
   }
 
+  // Guía de lugares: las fotos del collage salen de eventos del portafolio.
+  for (const { evento: slugEvento, archivo } of guiaLugares?.portada ?? []) {
+    const evento = eventos.find((e) => e.slug === slugEvento);
+    const base = "content/guia-lugares.json → portada";
+    if (!evento) errores.push(`${base}: el evento "${slugEvento}" no existe`);
+    else if (!evento.fotos.some((f) => f.archivo === archivo))
+      errores.push(`${base}: "${archivo}" no está en las fotos de "${slugEvento}"`);
+    else if (!evento.lugar.enGuia)
+      errores.push(`${base}: "${evento.lugar.nombre}" no está en la guía (enGuia: false)`);
+  }
+
   if (guiaLugares && !guiaLugares.revisadoPorLaEmpresa) {
     (estricto ? errores : avisos).push(
       "content/guia-lugares.json: borrador de XyraCode sin aprobar (revisadoPorLaEmpresa: false)",
@@ -365,6 +386,15 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
   }
 
   // Destacados de la portada.
+  for (const tipo of esquema.tiposEvento) {
+    const marcados = eventos.filter((e) => e.tipo === tipo && e.enServicios);
+    if (marcados.length > 1) {
+      errores.push(
+        `Solo un evento de tipo "${tipo}" puede tener "enServicios"; hay ${marcados.length}: ${marcados.map((e) => e.slug).join(", ")}`,
+      );
+    }
+  }
+
   const destacados = eventos.filter((e) => e.destacado).length;
   if (eventos.length && (destacados < 3 || destacados > 6)) {
     avisos.push(`Hay ${destacados} eventos destacados; la portada muestra entre 3 y 6`);

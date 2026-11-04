@@ -162,10 +162,26 @@ export const servicio = z.strictObject({
   }),
   incluye: z.array(texto).min(1),
   inversion: z.strictObject({
-    /** Valor de referencia, como se muestra: "$3.500.000". */
+    /**
+     * Valor de referencia, como se muestra tras "Desde": "30 millones de pesos" o
+     * "$3.500.000". Si termina en "de pesos", esa parte va más pequeña bajo la cifra.
+     */
     desde: texto,
-    /** Qué hace variar el precio. */
+    /** Frase corta bajo el precio: que es una referencia y la propuesta se arma a la medida. */
     nota: texto,
+    /** Foto de fondo de la sección: una del portafolio, de preferencia un salón montado. */
+    foto: z.strictObject({ evento: slug, archivo: archivoFoto }),
+    /** Qué hace variar el precio, con su ícono. */
+    factores: z
+      .array(
+        z.strictObject({
+          icono: z.enum(["invitados", "lugar", "diseno", "tematica"]),
+          titulo: texto,
+          descripcion: texto,
+        }),
+      )
+      .min(2)
+      .max(4),
   }),
   preguntas: z.array(preguntaFrecuente).min(1),
 });
@@ -261,6 +277,11 @@ export const evento = z.strictObject({
       "La paleta lleva al menos 2 colores (o queda vacía si está pendiente)",
     ),
   destacado: z.boolean(),
+  /**
+   * Su portada es la foto de la tarjeta de su servicio (Bodas o 15 años) en la sección
+   * Servicios del inicio. Uno por tipo; sin marca, se elige el primero por orden de carpeta.
+   */
+  enServicios: z.boolean().optional(),
   /** Qué hizo especial el diseño (texto de la empresa). */
   descripcion: parrafos,
   /** `ruta` enlaza a una página del sitio en vez de afuera (vestido de Rubén Darío → /vestidos-de-novia). */
@@ -392,8 +413,32 @@ export const sobre = z.strictObject({
 export const guiaLugares = z.strictObject({
   /** Textos redactados por XyraCode como borrador: false hasta que la empresa los apruebe. */
   revisadoPorLaEmpresa: z.boolean(),
-  /** Cómo elegir el lugar de la boda. */
-  introduccion: parrafos,
+  /** Cómo elegir el lugar de la boda o de la fiesta de 15 años. */
+  introduccion: z.strictObject({
+    /** Frase corta y fuerte, en grande: la idea que debe quedar. */
+    entrada: texto,
+    /** El resto de la introducción, en texto normal. */
+    parrafo: texto,
+    /** Lista de "Antes de reservar, revisa": qué mirar en la visita al lugar. */
+    antesDeReservar: z
+      .array(
+        z.strictObject({
+          icono: z.enum(["luz", "lluvia", "horario", "parqueadero", "distancia"]),
+          titulo: texto,
+          texto,
+        }),
+      )
+      .min(3)
+      .max(6),
+  }),
+  /**
+   * Collage de la portada: 3 fotos de lugares distintos (la primera va grande). Opcional:
+   * sin él se eligen solas, de los lugares con más eventos y de tipos distintos.
+   */
+  portada: z
+    .array(z.strictObject({ evento: slug, archivo: archivoFoto }))
+    .length(3)
+    .optional(),
   /** Consejos de decoración por tipo de lugar (finca, salón, hacienda…). */
   consejos: z.array(z.strictObject({ tipo: texto, texto })).min(1),
   /** Preguntas de quien aún está eligiendo lugar (sin repetir las de /bodas). */

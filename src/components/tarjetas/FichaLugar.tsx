@@ -25,8 +25,8 @@ const etiqueta = (e: Evento) => (e.nombres ? `${DE_QUIEN[e.tipo]} ${e.nombres}` 
 /**
  * PRUEBA (2026-10-16): ficha de un lugar en la guía. Foto grande de un montaje allí (otra
  * que no sea la portada de un evento, para no repetirla en las miniaturas) y, al lado, el
- * tipo, el nombre, cuántas bodas se diseñaron ahí y cada una como miniatura con foto
- * (long-tail "boda en [lugar]"). Cada lugar va en su propia tarjeta (fondo, borde y aire)
+ * tipo, el nombre, cuántas bodas y fiestas de 15 se diseñaron ahí y cada una como miniatura con foto
+ * (long-tail "boda en [lugar]", "15 años en [lugar]"). Cada lugar va en su propia tarjeta (fondo, borde y aire)
  * para que no se confunda con el siguiente. La foto alterna de lado; en celular se apila.
  */
 export function FichaLugar({
@@ -45,6 +45,23 @@ export function FichaLugar({
       (f) => f.archivo !== primero.portada && /salon|mesa|montaje|vista/.test(f.archivo),
     ) ?? primero?.fotos.find((f) => f.archivo === primero.portada);
   const cuantas = eventos.length;
+  // "3 bodas · 2 fiestas de 15 diseñadas aquí": la guía sirve para los dos tipos de evento.
+  const bodas = eventos.filter((e) => e.tipo === "boda").length;
+  const quince = eventos.filter((e) => e.tipo === "quince").length;
+  const resumen = [
+    bodas && (bodas === 1 ? "1 boda" : `${bodas} bodas`),
+    quince && (quince === 1 ? "1 fiesta de 15" : `${quince} fiestas de 15`),
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  const participio =
+    cuantas === 1
+      ? resumen
+        ? "diseñada aquí"
+        : "diseñado aquí"
+      : resumen
+        ? "diseñadas aquí"
+        : "diseñados aquí";
 
   return (
     // id = slug: cada mención del lugar en el sitio enlaza aquí (EnlaceLugar). Al llegar por
@@ -78,12 +95,12 @@ export function FichaLugar({
         {lugar.capacidad && <p className="mt-2 text-topo">{lugar.capacidad}</p>}
         {cuantas > 0 && (
           <p className="mt-3 text-topo">
-            {cuantas === 1 ? "1 boda diseñada aquí" : `${cuantas} bodas diseñadas aquí`}
+            {resumen || (cuantas === 1 ? "1 evento" : `${cuantas} eventos`)} {participio}
           </p>
         )}
 
         {cuantas > 0 && (
-          // Miniaturas en cuadrícula fija, sin deslizar: filas de 3; con 4 bodas, 2×2 para que
+          // Miniaturas en cuadrícula fija, sin deslizar: filas de 3; con 4 eventos, 2×2 para que
           // no quede una sola abajo.
           <ul
             className={`mt-6 grid gap-2 sm:gap-3 ${cuantas === 4 ? "max-w-xs grid-cols-2 sm:max-w-sm" : "grid-cols-3"}`}

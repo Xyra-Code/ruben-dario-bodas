@@ -80,7 +80,7 @@ docs/                    Brief de diseño, mapa del sitio, checklist de arranque
 | `/eventos` | Portafolio con filtros por tipo, municipio y estilo |
 | `/eventos/[slug]` | Página de cada evento (galería, ficha, "Quiero algo así") |
 | `/sobre-ruben-dario` | Trayectoria, principios y equipo |
-| `/lugares-para-bodas-villavicencio` | Guía de salones, haciendas y fincas |
+| `/lugares-para-bodas-y-quince-villavicencio` | Guía de salones, haciendas y fincas (bodas y 15 años) |
 | `/politica-de-datos` | Política de tratamiento de datos (Ley 1581 de 2012) |
 | `/guia-de-estilos` | Colores, tipografía y componentes (noindex, fuera del sitemap) |
 

@@ -19,7 +19,7 @@ Lo que depende de contenido de la empresa se marca con **[contenido]**.
 ├── /eventos                            Portafolio (filtros en el navegador)
 │   └── /eventos/[slug]                 Evento · "boda en [lugar], [municipio]"
 ├── /sobre-ruben-dario                  Historia y equipo · búsquedas de marca
-├── /lugares-para-bodas-villavicencio   Guía de salones y fincas · "fincas para bodas Villavicencio"
+├── /lugares-para-bodas-y-quince-villavicencio   Guía de salones y fincas · "fincas / salones para bodas y 15 años Villavicencio"
 ├── /politica-de-datos                  Tratamiento de datos (Ley 1581 de 2012)
 ├── /404                                No encontrada (con enlaces útiles)
 ├── /sitemap.xml · /robots.txt          Generados al compilar
@@ -45,7 +45,7 @@ Reglas de rutas:
 | `/quince-anos` | *decoración de 15 años Villavicencio* | Mamá o quinceañera |
 | `/vestidos-de-novia` | *vestidos de novia (a medida) Villavicencio* / *diseñador de vestidos de novia* | Novias, en otro momento de la compra que `/bodas` |
 | `/eventos/[slug]` | *boda en [lugar], [municipio]* | Long-tail de salones y fincas |
-| `/lugares-para-bodas-villavicencio` | *fincas / salones para bodas en Villavicencio* | Parejas en etapa de elegir lugar |
+| `/lugares-para-bodas-y-quince-villavicencio` | *fincas / salones para bodas en Villavicencio* + *salones / fincas para 15 años* | Parejas y familias en etapa de elegir lugar (ampliada a 15 años el 2026-11-03: los mismos lugares tienen montajes de los dos tipos; una sola guía en vez de dos casi duplicadas) |
 | `/sobre-ruben-dario` | *Rubén Darío decorador*, búsquedas de marca | Quien quiere saber quién diseña |
 
 Revisión con la empresa (2026-10-24, documento de palabras clave):
@@ -72,7 +72,7 @@ Reglas:
 - Enlaces internos con texto clave ("decoración de bodas" → `/bodas`), nunca "ver más".
 - Cada evento enlaza a su página de servicio, no a la portada.
 - Toda mención suelta de un lugar (salón, finca, hacienda) enlaza a su ficha en la guía:
-  `/lugares-para-bodas-villavicencio#<slug-del-lugar>` (componente `EnlaceLugar`; solo si el
+  `/lugares-para-bodas-y-quince-villavicencio#<slug-del-lugar>` (componente `EnlaceLugar`; solo si el
   lugar tiene `enGuia`). Dentro de otro enlace (tarjetas de evento, títulos) no se anida: esos
   llevan al evento, que enlaza al lugar.
 - `LocalBusiness` completo solo en la portada; el resto lo referencia por `@id`.
@@ -131,7 +131,7 @@ Hola, quisiera cotizar la decoración de mi evento.
 | `/quince-anos` | Cierre | 15 años |
 | `/eventos/[slug]` | Cierre (al que lleva "Quiero algo así") | Tipo + referencia del evento |
 | `/sobre-ruben-dario` | Cierre | — |
-| `/lugares-para-bodas-villavicencio` | Cierre | Boda |
+| `/lugares-para-bodas-y-quince-villavicencio` | Cierre | — |
 
 ### Mensajes de WhatsApp de los botones sueltos
 
@@ -268,16 +268,16 @@ Rubén Darío" lleva `"ruta": "/vestidos-de-novia"` y enlaza aquí.
 
 **Datos estructurados:** `AboutPage` · `Person` (founder del negocio) · `BreadcrumbList` · `FAQPage` (preguntas sobre Rubén Darío, antes del cierre).
 
-### `/lugares-para-bodas-villavicencio` **[contenido: lista de lugares + permiso de cada uno]**
+### `/lugares-para-bodas-y-quince-villavicencio` **[contenido: lista de lugares + permiso de cada uno]**
 
-- **H1:** Lugares para bodas en Villavicencio y el Meta
+- **H1:** Lugares para bodas y 15 años en Villavicencio y el Meta
 
 | # | Sección | Contenido |
 |---|---|---|
 | 1 | Migas + H1 + intro | Cómo elegir lugar, qué tener en cuenta |
-| 2 | Lugares por municipio | Por cada salón o finca: foto de un montaje de la empresa, tipo de lugar, capacidad aproximada, eventos realizados allí (enlaces) |
-| 3 | Consejos de decoración por tipo de lugar | Finca, salón, aire libre |
-| 4 | Cierre | Formulario (Boda) |
+| 2 | Lugares por municipio | Por cada salón o finca: foto de un montaje de la empresa, tipo de lugar, capacidad aproximada, bodas y fiestas de 15 realizadas allí (enlaces) |
+| 3 | Consejos de decoración por tipo de lugar | Finca, salón, hacienda y fiesta de 15 años |
+| 4 | Cierre | Formulario (sin tipo preseleccionado) |
 
 **Datos estructurados:** `BreadcrumbList` · `ItemList` de lugares · `FAQPage` (preguntas para elegir lugar, antes del cierre).
 

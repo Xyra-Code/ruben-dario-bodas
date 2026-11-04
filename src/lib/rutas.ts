@@ -18,7 +18,7 @@ export const RUTA_VESTIDOS = "/vestidos-de-novia";
 export const rutaEvento = (slug: string) => `/eventos/${slug}`;
 
 /** Ficha de un lugar en la guía de lugares (cada ficha tiene el slug del lugar como id). */
-export const rutaLugar = (slug: string) => `/lugares-para-bodas-villavicencio#${slug}`;
+export const rutaLugar = (slug: string) => `/lugares-para-bodas-y-quince-villavicencio#${slug}`;
 
 /** "Restrepo, Meta"; en Bogotá solo "Bogotá". */
 export const ubicacion = (lugar: { municipio: string; departamento: string }) =>

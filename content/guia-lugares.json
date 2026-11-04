@@ -1,9 +1,36 @@
 {
   "revisadoPorLaEmpresa": false,
-  "introduccion": [
-    "Elegir el lugar es la primera gran decisión de tu boda: define la fecha posible, el número de invitados, el estilo de la decoración y buena parte de la inversión. En Villavicencio y el Meta hay haciendas, fincas y salones para casi cualquier idea, desde una boda íntima al aire libre hasta una recepción grande con pista de baile.",
-    "Antes de reservar, visita el lugar a la misma hora en que será tu evento: la luz de la tarde en el Llano cambia por completo una ceremonia. Pregunta por el plan de lluvia, los horarios de montaje y desmontaje, el parqueadero y la distancia para tus invitados que vienen de Villavicencio o Bogotá."
-  ],
+  "introduccion": {
+    "entrada": "El lugar define la fecha, los invitados, el estilo y buena parte de la inversión.",
+    "parrafo": "Es la primera gran decisión de tu boda o de tu fiesta de 15 años. En Villavicencio y el Meta hay haciendas, fincas y salones para casi cualquier idea, desde una celebración íntima al aire libre hasta una recepción grande con pista de baile.",
+    "antesDeReservar": [
+      {
+        "icono": "luz",
+        "titulo": "La luz a la hora del evento",
+        "texto": "Visita el lugar a la misma hora: la luz de la tarde en el Llano cambia por completo una ceremonia o una entrada."
+      },
+      {
+        "icono": "lluvia",
+        "titulo": "El plan de lluvia",
+        "texto": "Un espacio cubierto o una carpa lista para mover la ceremonia o la recepción sin perder el diseño."
+      },
+      {
+        "icono": "horario",
+        "titulo": "Montaje y desmontaje",
+        "texto": "Desde qué hora se puede entrar a montar y hasta qué hora hay que entregar el lugar."
+      },
+      {
+        "icono": "parqueadero",
+        "titulo": "El parqueadero",
+        "texto": "Cuántos carros caben y si el acceso es cómodo para tus invitados."
+      },
+      {
+        "icono": "distancia",
+        "titulo": "La distancia",
+        "texto": "Cuánto tardan en llegar tus invitados que vienen de Villavicencio o de Bogotá."
+      }
+    ]
+  },
   "consejos": [
     {
       "tipo": "Finca o aire libre",
@@ -16,20 +43,28 @@
     {
       "tipo": "Hacienda",
       "texto": "Las haciendas tienen carácter propio: corredores, madera y jardines. La decoración debe dialogar con la arquitectura en lugar de taparla. Ubica la ceremonia y la recepción en espacios distintos para que los invitados recorran el lugar."
+    },
+    {
+      "tipo": "Fiesta de 15 años",
+      "texto": "Piensa el lugar alrededor de los momentos de la quinceañera: un recorrido despejado para la entrada, una pista amplia para el vals y la coreografía, y un fondo para las fotos que no compita con el vestido. En fincas y haciendas, la entrada puede aprovechar un corredor o un jardín; en un salón, la iluminación hace la mayor parte del cambio."
     }
   ],
   "preguntas": [
     {
       "pregunta": "¿Qué preguntar antes de reservar una finca para boda?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Además de visitarlo, pregunta qué incluye el alquiler (mobiliario, mantelería, planta eléctrica), cuántos invitados caben sentados, hasta qué hora se permite la música, si exigen proveedores propios o cobran por traer los tuyos, y cuánto es el anticipo y qué pasa si necesitas cambiar la fecha."
     },
     {
       "pregunta": "¿Decoran en cualquier finca o salón del Meta?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Sí. Decoramos bodas y fiestas de 15 años en fincas, haciendas, hoteles y salones de Villavicencio y el Meta, como Hacienda La Primavera, Finca Los Pinos, Las Heliconias o el Hotel Brizantha, y también en la Sabana de Bogotá. Si el lugar es nuevo para nosotros, lo visitamos antes para diseñar sobre el espacio real."
     },
     {
       "pregunta": "¿Qué tipo de lugar conviene según el número de invitados?",
-      "respuesta": "[PENDIENTE: respuesta de la empresa]"
+      "respuesta": "Para una boda íntima, de menos de 80 invitados, funcionan bien una finca pequeña o un jardín. Entre 100 y 200, una hacienda o un centro de eventos con zona cubierta. Para más de 200, un salón o una hacienda grande con buen parqueadero. En todos los casos, revisa que haya espacio para la ceremonia, la recepción y la pista sin apretar."
+    },
+    {
+      "pregunta": "¿Qué lugar conviene para una fiesta de 15 años?",
+      "respuesta": "Depende del número de invitados y del estilo que quiera la quinceañera. Una finca o una hacienda funciona muy bien para una fiesta al aire libre con una entrada especial; un salón da más control sobre la iluminación y el sonido, y no depende del clima. En ambos casos, revisa que la pista tenga espacio para el vals y la coreografía, y que haya un lugar para cambiarse si habrá cambio de vestido."
     }
   ]
 }

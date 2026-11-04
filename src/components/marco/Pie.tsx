@@ -203,7 +203,7 @@ export function Pie() {
                 ))}
                 <li>
                   <Link href={PAGINAS.lugares.ruta} className={enlaceClase}>
-                    Lugares para bodas
+                    Lugares para bodas y 15 años
                   </Link>
                 </li>
               </ul>

@@ -55,7 +55,7 @@ export function GET() {
     "## Más información",
     "",
     `- ${enlace("Sobre Rubén Darío", PAGINAS.sobre.ruta)}: historia y equipo.`,
-    `- ${enlace("Lugares para bodas en Villavicencio y el Meta", PAGINAS.lugares.ruta)}: ${lugares.filter((l) => l.enGuia).length} haciendas, fincas y salones con montajes reales.`,
+    `- ${enlace("Lugares para bodas y 15 años en Villavicencio y el Meta", PAGINAS.lugares.ruta)}: ${lugares.filter((l) => l.enGuia).length} haciendas, fincas y salones con montajes reales.`,
     `- ${enlace("Todos los eventos", PAGINAS.eventos.ruta)}`,
     "",
   ];
