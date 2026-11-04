@@ -11,6 +11,8 @@ type Props = {
    * (TarjetaServicio: toda la tarjeta lleva a su servicio).
    */
   enlace?: boolean;
+  /** Clases extra del pie de foto (p. ej. ocultarlo en el celular). */
+  className?: string;
 };
 
 /**
@@ -18,14 +20,16 @@ type Props = {
  * para que se lea sobre cualquier imagen). El padre debe ser `relative`: un <figure> con
  * la foto. Se usa donde una foto del portafolio ilustra un servicio.
  */
-export function CreditoEvento({ evento, enlace = false }: Props) {
+export function CreditoEvento({ evento, enlace = false, className = "" }: Props) {
   const e = obtenerEvento(evento);
   if (!e) return null;
   const clases =
     "block min-w-0 px-3 pt-8 pb-2.5 text-xs leading-snug text-white/90 [text-shadow:0_1px_2px_rgba(42,30,27,0.6)] sm:px-4 sm:pb-3 sm:text-sm";
 
   return (
-    <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 rounded-b-sm bg-[linear-gradient(to_top,rgba(42,30,27,0.7),rgba(42,30,27,0))]">
+    <figcaption
+      className={`pointer-events-none absolute inset-x-0 bottom-0 rounded-b-sm bg-[linear-gradient(to_top,rgba(42,30,27,0.7),rgba(42,30,27,0))] ${className}`}
+    >
       {enlace ? (
         <Link
           href={rutaEvento(e.slug)}

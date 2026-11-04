@@ -11,7 +11,7 @@ import { Boton } from "@/components/ui/Boton";
 import { BotonWhatsApp, VARIANTES_WHATSAPP } from "@/components/ui/BotonWhatsApp";
 import { Cita } from "@/components/ui/Cita";
 import { Etiqueta } from "@/components/ui/Etiqueta";
-import { Pasos } from "@/components/ui/Pasos";
+import { RecorridoProceso } from "@/components/ui/RecorridoProceso";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { metadatos, urlAbsoluta } from "@/lib/seo/metadatos";
 import { rutaEvento } from "@/lib/rutas";
@@ -159,8 +159,8 @@ export default function GuiaDeEstilos() {
           </div>
         </Bloque>
 
-        <Bloque titulo="Cómo trabajamos · pasos numerados">
-          <Pasos pasos={proceso} />
+        <Bloque titulo="Cómo trabajamos · recorrido">
+          <RecorridoProceso pasos={proceso} />
         </Bloque>
 
         <Bloque titulo="Testimonios">

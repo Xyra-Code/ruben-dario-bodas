@@ -8,7 +8,7 @@ import { TarjetaServicio } from "@/components/tarjetas/TarjetaServicio";
 import { TarjetaTestimonio } from "@/components/tarjetas/TarjetaTestimonio";
 import { Boton } from "@/components/ui/Boton";
 import { Foto } from "@/components/ui/Foto";
-import { Pasos } from "@/components/ui/Pasos";
+import { RecorridoProceso } from "@/components/ui/RecorridoProceso";
 import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
 import { AccionAlFinal, TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
@@ -36,6 +36,12 @@ const FOTO_DE_FONDO = true;
 const FOTO_FONDO = {
   evento: "boda-jardin-blanco-las-heliconias-villavicencio",
   archivo: "boda-jardin-blanco-las-heliconias-villavicencio-pareja-salon-lamparas-colgantes.jpg",
+};
+/** Cierre de "Cómo trabajamos": la pareja con el diseño terminado, de un evento que no sale en el inicio. */
+const FOTO_TU_DIA = {
+  evento: "boda-hacienda-las-marias-villavicencio",
+  archivo: "boda-hacienda-las-marias-villavicencio-pareja-mesa-principal-flores-blancas.jpg",
+  alt: "Novios sonriendo a cada lado de la mesa principal, cubierta de flores blancas",
 };
 
 /**
@@ -83,6 +89,17 @@ export default function Inicio() {
   const { destacado, cortos } = testimoniosDelInicio(testimonios, eventos);
   const bodas = servicios.find((s) => s.tipo === "boda")!;
   const quince = servicios.find((s) => s.tipo === "quince")!;
+  // Va en dos lugares según la pantalla: junto al título en escritorio, al final en celular.
+  const accionProceso = (
+    <>
+      <Boton href="#contacto" origen="proceso-cotizar" className="w-full sm:w-auto">
+        Cotizar mi evento
+      </Boton>
+      <p className="mt-3 text-sm text-topo">
+        Empieza con tu fecha y el lugar: te contamos si tenemos disponibilidad.
+      </p>
+    </>
+  );
 
   return (
     // Fondos con significado, iguales en todo el sitio (src/lib/fondos.ts): marfil =
@@ -203,17 +220,18 @@ export default function Inicio() {
             titulo="Bodas, fiestas de 15 y vestidos con diseño de autor"
             intro="Cada evento se diseña con un estilo y una paleta propios: nada de decoración genérica de alquiler."
           />
-          {/* Tres tarjetas iguales con foto vertical (las portadas de los eventos suelen ser
-              verticales): bodas primero, marcada como especialidad, sin agrandarla. En el
-              celular van apiladas; desde tableta, una al lado de otra. */}
-          <ul className="mt-12 grid gap-8 md:grid-cols-3 md:gap-6 lg:gap-8">
-            <li className="min-w-0">
+          {/* Bodas primero, marcada como especialidad. En el celular va a todo el ancho y los
+              otros dos servicios debajo, en 2 columnas, para no ocupar una pantalla por servicio.
+              Desde tableta, tres tarjetas iguales con foto vertical, una al lado de otra. */}
+          <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:gap-8">
+            <li className="col-span-2 min-w-0 md:col-span-1">
               <TarjetaServicio
                 titulo={bodas.nombre}
                 texto={bodas.bajada}
                 ruta={RUTA_SERVICIO.boda!}
                 foto={fotoServicio("boda")}
                 etiqueta="Nuestra especialidad"
+                variante="destacada"
               />
             </li>
             <li className="min-w-0">
@@ -222,6 +240,7 @@ export default function Inicio() {
                 texto={quince.bajada}
                 ruta={RUTA_SERVICIO.quince!}
                 foto={fotoServicio("quince")}
+                variante="compacta"
               />
             </li>
             <li className="min-w-0">
@@ -230,6 +249,7 @@ export default function Inicio() {
                 texto={vestidos.bajada}
                 ruta={RUTA_VESTIDOS}
                 foto={fotoVestidos}
+                variante="compacta"
               />
             </li>
           </ul>
@@ -294,16 +314,34 @@ export default function Inicio() {
         </section>
       )}
 
-      {/* 4 · Cómo trabajamos */}
+      {/* 4 · Cómo trabajamos: recorrido vertical que termina en la foto de "Tu día". En
+          escritorio el título y la acción acompañan la lectura (sticky); en celular la acción
+          va al final, cuando ya se leyó el proceso. */}
       <section id="como-trabajamos" aria-labelledby="proceso-titulo" className={seccion}>
-        <div className="contenedor">
-          <TituloSeccion
-            id="proceso-titulo"
-            antetitulo="Cómo trabajamos"
-            titulo="De la primera conversación a tu día"
-          />
-          <div className="mt-12">
-            <Pasos pasos={proceso} />
+        <div className="contenedor grid gap-10 lg:grid-cols-12 lg:gap-x-12">
+          <div className="min-w-0 lg:sticky lg:top-28 lg:col-span-5 lg:self-start">
+            <TituloSeccion
+              id="proceso-titulo"
+              antetitulo="Cómo trabajamos"
+              titulo="De la primera conversación a tu día"
+              intro="Un camino claro, para que siempre sepas qué sigue. Lo ideal es escribirnos entre 6 y 12 meses antes de tu fecha."
+            />
+            <div className="mt-8 hidden lg:block">{accionProceso}</div>
+          </div>
+          <div className="min-w-0 lg:col-span-7">
+            <RecorridoProceso
+              pasos={proceso}
+              final={
+                <Foto
+                  evento={FOTO_TU_DIA.evento}
+                  archivo={FOTO_TU_DIA.archivo}
+                  alt={FOTO_TU_DIA.alt}
+                  sizes="(min-width: 1280px) 580px, (min-width: 1024px) 46vw, (min-width: 640px) 590px, 100vw"
+                  className="aspect-[3/2] w-full rounded-sm object-cover"
+                />
+              }
+            />
+            <div className="mt-10 lg:hidden">{accionProceso}</div>
           </div>
         </div>
       </section>
