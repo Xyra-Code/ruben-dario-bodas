@@ -3,7 +3,8 @@
 // verifica que ninguna página tenga scroll horizontal. Densidad 1×: Chromium no captura
 // más de 16.384 px de alto y las páginas largas a 2× se cortan y repiten.
 //
-//   npm run build && node scripts/capturas.mjs [carpeta-salida] [/ruta …]
+//   node scripts/capturas.mjs [carpeta-salida] [/ruta …]            (sitio compilado en ./out)
+//   CAPTURAS_URL=http://localhost:3000 node scripts/capturas.mjs …    (servidor de desarrollo, sin build)
 import { createReadStream, existsSync, mkdirSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import path from "node:path";
@@ -53,8 +54,10 @@ const servidor = createServer((req, res) => {
   });
   createReadStream(final).pipe(res);
 });
-await new Promise((r) => servidor.listen(0, r));
-const base = `http://localhost:${servidor.address().port}`;
+// Con CAPTURAS_URL se usa el `npm run dev` que ya esté corriendo: no hace falta compilar.
+const externa = process.env.CAPTURAS_URL?.replace(/\/$/, "");
+if (!externa) await new Promise((r) => servidor.listen(0, r));
+const base = externa ?? `http://localhost:${servidor.address().port}`;
 
 const navegador = await chromium
   .launch({ channel: "msedge" })
@@ -70,7 +73,11 @@ for (const t of TAMANOS) {
   });
   const pagina = await contexto.newPage();
   for (const ruta of rutas) {
-    await pagina.goto(base + ruta, { waitUntil: "networkidle" });
+    // En dev, la conexión de recarga en caliente nunca deja la red en reposo: basta con "load".
+    await pagina.goto(base + ruta, {
+      waitUntil: externa ? "load" : "networkidle",
+      timeout: 120000,
+    });
     // Fuerza la carga de las fotos diferidas antes de capturar la página completa.
     await pagina.evaluate(async () => {
       document.querySelectorAll("img[loading=lazy]").forEach((i) => (i.loading = "eager"));
@@ -92,7 +99,7 @@ for (const t of TAMANOS) {
 }
 
 await navegador.close();
-servidor.close();
+if (!externa) servidor.close();
 if (desbordes) {
   console.error(`\n✖ ${desbordes} página(s) con scroll horizontal`);
   process.exit(1);

@@ -181,6 +181,14 @@ Reglas:
    eventos del año (uno cada ~2 meses); pedir testimonio y permiso para usar el caso en el
    portafolio de XyraCode.
 
+**Verificar cambios sin compilar** (regla del 2026-11-03: se trabaja con 3–4 sesiones a la vez
+sobre esta misma carpeta). Después de cada cambio, solo `npx tsc --noEmit` y `npx eslint <archivos>`.
+Para ver cómo se ve, usar el `npm run dev` que ya esté corriendo (puerto 3000; si no hay, levantarlo
+una vez y dejarlo) y sacar capturas con `CAPTURAS_URL=http://localhost:3000 node scripts/capturas.mjs …`.
+**No correr `npm run build`** por cada cambio: regenera todas las imágenes, exporta el sitio entero
+y las sesiones se pisan en `.next/` y `out/`. El build se corre solo cuando el usuario lo pida o una
+vez antes del commit, comprobando antes que no haya otro build corriendo.
+
 Herramientas del repo para QA: `node scripts/capturas.mjs <carpeta> [/rutas]` (capturas a
 320/390/1440 con el Edge instalado y verificación de scroll horizontal; en Git Bash anteponer
 `MSYS_NO_PATHCONV=1`). `/guia-de-estilos` (noindex, fuera del sitemap) muestra colores,
