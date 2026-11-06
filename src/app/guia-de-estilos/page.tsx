@@ -87,7 +87,7 @@ export default function GuiaDeEstilos() {
             <p className="font-titulo text-titulo-2">Eventos destacados</p>
             <p className="font-titulo text-titulo-3">Boda en Hacienda El Caney, Restrepo</p>
             <p className="lectura">
-              Títulos en Bodoni Moda y texto de lectura en Manrope, mínimo 16 px en celular. Cada
+              Títulos en Poiret One y texto de lectura en Manrope, mínimo 16 px en celular. Cada
               evento se diseña con un estilo y una paleta propios, en salones, haciendas y fincas de
               los Llanos.
             </p>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Manrope, Poiret_One } from "next/font/google";
+import localFont from "next/font/local";
 
 import { Encabezado } from "@/components/marco/Encabezado";
 import { Pie } from "@/components/marco/Pie";
@@ -8,32 +8,31 @@ import { obtenerContenido } from "@/lib/contenido/cargar";
 
 import "./globals.css";
 
-// Fuentes descargadas al compilar y servidas desde el propio sitio (sin peticiones a Google).
-// Tipografía 3 · Alta Costura, elegida por la empresa: Bodoni Moda (títulos, con eje de
-// tamaño óptico para que los trazos finos aguanten en tamaños pequeños) y Manrope (texto).
-// La cursiva de Bodoni (citas) va sin precarga para no competir con la foto principal.
-const bodoni = Bodoni_Moda({
-  subsets: ["latin"],
-  display: "swap",
-  style: "normal",
-  axes: ["opsz"],
-  variable: "--f-bodoni",
-});
-const bodoniCursiva = Bodoni_Moda({
-  subsets: ["latin"],
-  display: "swap",
-  style: "italic",
-  axes: ["opsz"],
-  variable: "--f-bodoni-cursiva",
-  preload: false,
-});
-const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--f-manrope" });
-// PRUEBA (2026-10-16): Poiret One, la letra de "Rubén Darío" en el logo, en los títulos.
-const poiret = Poiret_One({
-  subsets: ["latin"],
+// Fuentes guardadas en src/fuentes/ (subconjunto latino de Google Fonts, licencia OFL): ni el
+// desarrollo ni la compilación dependen de la conexión con Google, y el sitio las sirve él mismo.
+// Títulos en Poiret One, la letra de "Rubén Darío" en el logo; texto en Manrope.
+const poiret = localFont({
+  src: "../fuentes/poiret-one-latin.woff2",
   weight: "400",
   display: "swap",
   variable: "--f-poiret",
+});
+const manrope = localFont({
+  src: "../fuentes/manrope-variable-latin.woff2",
+  weight: "200 800",
+  display: "swap",
+  variable: "--f-manrope",
+});
+// Citas en la cursiva de Bodoni Moda, con eje de tamaño óptico para que los trazos finos aguanten
+// en tamaños pequeños. Va sin precarga para no competir con la foto principal.
+const bodoniCursiva = localFont({
+  src: "../fuentes/bodoni-moda-cursiva-variable-latin.woff2",
+  weight: "400 900",
+  style: "italic",
+  display: "swap",
+  variable: "--f-bodoni-cursiva",
+  preload: false,
+  adjustFontFallback: "Times New Roman",
 });
 
 const { sitio, eventos } = obtenerContenido();
@@ -54,7 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es-CO"
-      className={`${bodoni.variable} ${bodoniCursiva.variable} ${manrope.variable} ${poiret.variable}`}
+      className={`${poiret.variable} ${manrope.variable} ${bodoniCursiva.variable}`}
     >
       <body className="flex min-h-dvh flex-col grano">
         <a

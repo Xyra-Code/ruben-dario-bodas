@@ -1,15 +1,14 @@
 /*
- * Tipografía del sitio: 3 · Alta Costura, elegida por la empresa el 2026-10-09.
- * Titulares y citas en Bodoni Moda (con eje de tamaño óptico: a tamaños pequeños los trazos
- * finos se engrosan solos y no se rompen); texto e interfaz en Manrope. Las familias las
- * declara next/font en layout.tsx (--f-*).
+ * Tipografía oficial del sitio: títulos en Poiret One (la letra de "Rubén Darío" en el logo),
+ * texto e interfaz en Manrope y citas en la cursiva de Bodoni Moda, con eje de tamaño óptico
+ * (a tamaños pequeños los trazos finos se engrosan solos y no se rompen). Las familias las
+ * declara next/font en layout.tsx (--f-*), con los archivos de src/fuentes/.
  */
 :root {
-  /* PRUEBA (2026-10-16): Poiret One en títulos. Para volver: var(--f-bodoni), Didot, Georgia, serif */
-  --font-display: var(--f-poiret), var(--f-bodoni), Didot, Georgia, serif;
+  --font-display: var(--f-poiret), system-ui, sans-serif;
   --font-body: var(--f-manrope), system-ui, sans-serif;
   --font-eyebrow: var(--font-body);
-  --font-cita: var(--f-bodoni-cursiva), var(--f-bodoni), Georgia, serif;
+  --font-cita: var(--f-bodoni-cursiva), Georgia, serif;
   --display-weight: 400;
   --display-transform: none;
   --display-tracking: 0;
