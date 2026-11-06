@@ -73,10 +73,11 @@ fina, pero cercana y regional, no fría ni de lujo inalcanzable.
 
   - El terracota sale del centro de la flor del logo; el melocotón, del círculo del monograma.
   - El botón de WhatsApp usa la terracota de la marca; el **ícono** de WhatsApp se reconoce.
-- **Tipografía: 3 · Alta Costura.** Títulos y citas en **Bodoni Moda** (400, cursiva en
-  citas; con tamaño óptico para que los trazos finos aguanten en tamaños pequeños). Texto,
-  menú, botones y antetítulos en **Manrope** (antetítulos en 600, mayúsculas espaciadas).
-  Cuerpo de texto mínimo 16 px en móvil.
+- **Tipografía:** títulos en **Poiret One** (400), la letra de "Rubén Darío" en el logo;
+  oficial desde el 2026-11-06, reemplaza a Bodoni Moda de la opción 3 · Alta Costura. Citas en
+  **Bodoni Moda cursiva** (con tamaño óptico para que los trazos finos aguanten en tamaños
+  pequeños). Texto, menú, botones y antetítulos en **Manrope** (antetítulos en 600, mayúsculas
+  espaciadas). Cuerpo de texto mínimo 16 px en móvil. Los archivos están en `src/fuentes/`.
 - **Detalles:** líneas finas, esquinas suaves o rectas (evitar estilo "app" muy redondeado),
   numeración editorial en los pasos, transiciones sutiles. Nada recargado.
 - **Evitar:** estética de plantilla genérica, exceso de íconos, fondos oscuros pesados,
@@ -199,7 +200,7 @@ En todas las páginas internas: `Inicio › Bodas`, `Inicio › Eventos › Boda
 9. **Preguntas frecuentes** sobre bodas (acordeón).
 10. **Formulario** con "Boda" preseleccionado.
 
-### 7.3 Servicio: 15 años `/quince-anos`
+### 7.3 Servicio: 15 años `/fiestas-de-15`
 
 **H1:** "Decoración de fiestas de 15 años en Villavicencio"
 
@@ -272,8 +273,11 @@ cómodo (≈ 70 caracteres), títulos claros.
 
 ### 7.9 Página no encontrada (404)
 
-Mensaje amable ("Esta página no existe, pero su evento sí puede"), y accesos a Bodas,
-15 años, Eventos y botón de WhatsApp. Una foto suave de decoración.
+Rediseñada el 2026-11-06: a propósito no se parece a las demás páginas, para que se entienda
+de inmediato que la página no existe. Centrada y sin foto, con "404" como elemento dominante,
+título literal ("Esta página no existe"), botón principal "Volver al inicio", enlaces de texto a
+Bodas, Fiestas de 15, Eventos, Vestidos de novia y Vestidos de 15, y enlace a WhatsApp. Todo cabe
+en una sola pantalla, sin scroll: esta es la única página sin pie.
 
 ---
 

@@ -48,7 +48,7 @@ contenido incompleto o de ejemplo.**
 ```
 content/                 Todo el texto y las fotos del sitio (guía: content/LEEME.md)
   sitio.json             Nombre, contacto, horario, redes, cobertura (= Google Business)
-  servicios/             /bodas y /quince-anos
+  servicios/             /bodas y /fiestas-de-15
   eventos/<slug>/        Un evento: evento.json + fotos/ (másters de 2400 px)
   sobre/ lugares.json testimonios.json proceso.json preguntas-generales.json …
 src/
@@ -76,7 +76,7 @@ docs/                    Brief de diseño, mapa del sitio, checklist de arranque
 |---|---|
 | `/` | Portada: servicios, destacados, proceso, sobre, testimonios, cobertura, preguntas, contacto |
 | `/bodas` | Servicio de bodas (*decoración de bodas Villavicencio*) |
-| `/quince-anos` | Servicio de 15 años (*decoración de 15 años Villavicencio*) |
+| `/fiestas-de-15` | Servicio de 15 años (*decoración de 15 años Villavicencio*) |
 | `/eventos` | Portafolio con filtros por tipo, municipio y estilo |
 | `/eventos/[slug]` | Página de cada evento (galería, ficha, "Quiero algo así") |
 | `/sobre-ruben-dario` | Trayectoria, principios y equipo |

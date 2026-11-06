@@ -14,8 +14,9 @@ Lo que depende de contenido de la empresa se marca con **[contenido]**.
 ```
 /                                       Inicio · marca + "decoración de eventos en Villavicencio"
 ├── /bodas                              Servicio · "wedding planner / decoración de bodas Villavicencio"
-├── /quince-anos                        Servicio · "decoración de 15 años Villavicencio"
-├── /vestidos-de-novia                  Servicio · "vestidos de novia a medida Villavicencio"
+├── /fiestas-de-15                        Servicio · "decoración de 15 años Villavicencio"
+├── /vestidos-de-novia                  Servicio · "vestidos de novia a medida Villavicencio" (+ traje de novio)
+├── /vestidos-de-15                Servicio · "vestidos de 15 años a medida Villavicencio"
 ├── /eventos                            Portafolio (filtros en el navegador)
 │   └── /eventos/[slug]                 Evento · "boda en [lugar], [municipio]"
 ├── /sobre-ruben-dario                  Historia y equipo · búsquedas de marca
@@ -30,7 +31,7 @@ Reglas de rutas:
 - Slug de evento: `tipo-lugar-municipio`, minúsculas, sin tildes ni ñ
   (`boda-hacienda-el-caney-restrepo`, `quince-salon-rosales-villavicencio`).
 - Los filtros de `/eventos` no crean URLs indexables (sin `/eventos/bodas` ni `?tipo=`):
-  competirían con `/bodas` y `/quince-anos`.
+  competirían con `/bodas` y `/fiestas-de-15`.
 - Sin páginas por municipio (contenido delgado) ni blog (envejece sin publicación constante).
 - Canonical propio en cada página.
 
@@ -42,8 +43,9 @@ Reglas de rutas:
 |---|---|---|
 | `/` | Marca + *decoración de eventos en Villavicencio* / *decorador de eventos en el Meta* | Busca el nombre, no ha definido el evento, llega de Google Business o Instagram |
 | `/bodas` | *wedding planner Villavicencio* / *decoración de bodas Villavicencio* / *diseño de bodas* | Parejas |
-| `/quince-anos` | *decoración de 15 años Villavicencio* | Mamá o quinceañera |
-| `/vestidos-de-novia` | *vestidos de novia (a medida) Villavicencio* / *diseñador de vestidos de novia* | Novias, en otro momento de la compra que `/bodas` |
+| `/fiestas-de-15` | *decoración de 15 años Villavicencio* | Mamá o quinceañera |
+| `/vestidos-de-novia` | *vestidos de novia (a medida) Villavicencio* / *diseñador de vestidos de novia* (secundaria: *traje de novio a medida*) | Novias, en otro momento de la compra que `/bodas` |
+| `/vestidos-de-15` | *vestidos de 15 años (a medida) Villavicencio* | Quinceañera y familia, buscando el vestido y no la decoración de `/fiestas-de-15` |
 | `/eventos/[slug]` | *boda en [lugar], [municipio]* | Long-tail de salones y fincas |
 | `/lugares-para-bodas-y-quince-villavicencio` | *fincas / salones para bodas en Villavicencio* + *salones / fincas para 15 años* | Parejas y familias en etapa de elegir lugar (ampliada a 15 años el 2026-11-03: los mismos lugares tienen montajes de los dos tipos; una sola guía en vez de dos casi duplicadas) |
 | `/sobre-ruben-dario` | *Rubén Darío decorador*, búsquedas de marca | Quien quiere saber quién diseña |
@@ -58,11 +60,13 @@ Revisión con la empresa (2026-10-24, documento de palabras clave):
 - Estilo que más le piden: **romántico** (va en el estilo y la descripción de cada evento).
 - Flores, techos, arcos y pedida de mano: secciones dentro de `/bodas`, no páginas propias
   (pedida de mano pasa a página propia solo si la empresa confirma el servicio y hay eventos).
-- **Rubén Darío diseña vestidos de novia y de 15 años.** Novia → `/vestidos-de-novia`;
-  vestido de 15 → sección en `/quince-anos` (mismo público: quinceañera y familia). Página
-  propia para el vestido de 15 solo cuando haya fotos de varios vestidos. *Anillos* no se
-  persigue (otra intención: joyería).
-- La **organización completa** también aplica a fiestas de 15 (sección en `/quince-anos`).
+- **Rubén Darío diseña vestidos de novia, vestidos de 15 años y trajes de novio** (el traje,
+  confirmado para cualquier cliente el 2026-11-06). Novia → `/vestidos-de-novia`; vestido de
+  15 → `/vestidos-de-15` (página propia desde el 2026-11-06, con 3 vestidos reales), y
+  una sección en `/fiestas-de-15` que enlaza a ella. Traje de novio → sección
+  `#traje-de-novio` en la página de novia; página propia solo con varios trajes en el
+  portafolio. *Anillos* no se persigue (otra intención: joyería).
+- La **organización completa** también aplica a fiestas de 15 (sección en `/fiestas-de-15`).
   En 15 años no se usa "wedding planner": es término de bodas.
 - Competencia que nombró la empresa: Liliana Céspedes, Eventos Mi Cabañita.
 
@@ -83,8 +87,10 @@ Reglas:
 
 ## 3. Elementos comunes (todas las páginas)
 
-**Encabezado:** Logo → `/` · Bodas · 15 años · Vestidos · Eventos · Nosotros (→ `/sobre-ruben-dario`) ·
-botón **Cotizar** (→ formulario de la página, o `/#contacto`). Sin enlace "Contacto": duplicaba Cotizar (2026-10-25).
+**Encabezado:** Logo → `/` · Bodas · Fiestas de 15 · Vestidos (desplegable: novia, 15 años, trajes de novio) ·
+Eventos · Nosotros (→ `/sobre-ruben-dario`) · botón principal: **Cotizar** (→ formulario de la página, o `/#contacto`);
+en las páginas de vestidos, **Agendar cita** (→ cierre de la página). Sin enlace "Contacto": duplicaba Cotizar (2026-10-25).
+WhatsApp no va en la barra: ya está el botón flotante, y el menú móvil usa su mismo mensaje según la página.
 
 **Botón flotante de WhatsApp:** acceso rápido, mensaje genérico, sin formulario.
 
@@ -134,7 +140,7 @@ Hola, quisiera cotizar la decoración de mi evento.
 |---|---|---|
 | `/` | Sección `#contacto` | — |
 | `/bodas` | Cierre | Boda |
-| `/quince-anos` | Cierre | 15 años |
+| `/fiestas-de-15` | Cierre | 15 años |
 | `/eventos/[slug]` | Cierre (al que lleva "Quiero algo así") | Tipo + referencia del evento |
 | `/sobre-ruben-dario` | Cierre | — |
 | `/lugares-para-bodas-y-quince-villavicencio` | Cierre | — |
@@ -144,8 +150,10 @@ Hola, quisiera cotizar la decoración de mi evento.
 | Origen | Mensaje |
 |---|---|
 | Flotante en `/bodas` | "Hola, quisiera cotizar el diseño de mi boda." |
-| Flotante en `/quince-anos` | "Hola, quisiera cotizar mi fiesta de 15 años." |
+| Flotante en `/fiestas-de-15` | "Hola, quisiera cotizar mi fiesta de 15 años." |
 | Flotante en `/vestidos-de-novia` | "Hola, quisiera una cita para diseñar mi vestido de novia." |
+| Flotante en `/vestidos-de-15` | "Hola, quisiera una cita para diseñar mi vestido de 15 años." |
+| Sección traje de novio | "Hola, quisiera una cita para diseñar mi traje de novio." |
 | Flotante en un evento | "Hola, vi la boda en Finca San Luis, Villavicencio y quisiera algo así." |
 | Flotante en las demás páginas · menú | "Hola, quisiera información para decorar mi evento." |
 | Tarjeta "Otros eventos" | "Hola, quisiera cotizar la decoración de un evento." |
@@ -168,7 +176,7 @@ se recoge a los 4,5 s. Mensajes en `src/lib/whatsapp.ts` → `flotanteSegunRuta`
 | # | Sección (ancla) | Contenido |
 |---|---|---|
 | 1 | Portada `#inicio` | Foto de boda (fuerte de la empresa, LCP con prioridad) + H1 + botones Cotizar / Ver eventos |
-| 2 | Servicios `#servicios` | Tarjetas cortas: Bodas → `/bodas` · 15 años → `/quince-anos` · Vestidos de novia → `/vestidos-de-novia` · Otros eventos → WhatsApp |
+| 2 | Servicios `#servicios` | Tarjetas cortas: Bodas → `/bodas` · 15 años → `/fiestas-de-15` · Vestidos de novia → `/vestidos-de-novia` · Otros eventos → WhatsApp |
 | 3 | Eventos destacados `#eventos` | 3–6 tarjetas mezcladas + "Ver todos los eventos" → `/eventos` |
 | 4 | Cómo trabajamos `#como-trabajamos` | 4–5 pasos: contacto → visita/idea → propuesta → montaje → el día |
 | 5 | Sobre Rubén Darío `#sobre` | Resumen + "Conoce su historia" → `/sobre-ruben-dario` |
@@ -179,18 +187,18 @@ se recoge a los 4,5 s. Mensajes en `src/lib/whatsapp.ts` → `flotanteSegunRuta`
 
 **Datos estructurados:** `LocalBusiness` (areaServed, `makesOffer` con las 3 páginas de servicio, `@id` global) · `WebSite` · `FAQPage`.
 
-### `/bodas` y `/quince-anos` (misma plantilla)
+### `/bodas` y `/fiestas-de-15` (misma plantilla)
 
 - **H1 `/bodas`:** Wedding planner y diseño de bodas en Villavicencio
 - **Título `/bodas`:** Wedding planner y decoración de bodas en Villavicencio (sin "| Rubén Darío": Google ya muestra el nombre del sitio)
-- **H1 `/quince-anos`:** Decoración de fiestas de 15 años en Villavicencio
+- **H1 `/fiestas-de-15`:** Decoración de fiestas de 15 años en Villavicencio
 
 | # | Sección | Contenido |
 |---|---|---|
 | 1 | Migas | Inicio › Bodas |
 | 2 | Portada | H1 + foto + botón Cotizar |
 | 3 | Texto propio **[contenido]** | 2–3 párrafos: enfoque, estilos |
-| 3b | Secciones propias (opcional, `secciones`) | `/bodas`: "Dos formas de trabajar contigo" (wedding planner / solo diseño) · "Flores, techos y arcos para bodas" (+ pedida de mano y enlace a vestidos). `/quince-anos`: "Dos formas de trabajar contigo" (organización completa / solo diseño) · "Vestido de 15 años a medida" |
+| 3b | Secciones propias (opcional, `secciones`) | `/bodas`: "Dos formas de trabajar contigo" (wedding planner / solo diseño) · "Flores, techos y arcos para bodas" (+ pedida de mano y enlace a vestidos). `/fiestas-de-15`: "Dos formas de trabajar contigo" (organización completa / solo diseño) · "Vestido de 15 años a medida" |
 | 4 | Tipos / variantes | Bodas: ceremonia, recepción, en finca o al aire libre, íntima, civil · 15 años: temáticas y estilos |
 | 5 | Qué incluye | Diseño, mobiliario, flores, iluminación, montaje y desmontaje… |
 | 6 | Galería | Solo eventos del tipo, cada foto enlazada a su evento |
@@ -201,7 +209,7 @@ se recoge a los 4,5 s. Mensajes en `src/lib/whatsapp.ts` → `flotanteSegunRuta`
 
 **Datos estructurados:** `Service` (provider → `@id` del negocio) · `FAQPage` · `BreadcrumbList`.
 
-### `/vestidos-de-novia` **[contenido: proceso, valor desde, preguntas; aprobación de la empresa]**
+### `/vestidos-de-novia` **[contenido: valor desde, alquiler o venta; aprobación de la empresa]**
 
 - **Título:** Vestidos de novia a medida en Villavicencio | Rubén Darío
 - **H1:** Vestidos de novia a medida en Villavicencio
@@ -209,19 +217,41 @@ se recoge a los 4,5 s. Mensajes en `src/lib/whatsapp.ts` → `flotanteSegunRuta`
 
 | # | Sección | Contenido |
 |---|---|---|
-| 1 | Migas + portada | H1 + bajada + "Agenda tu cita" (WhatsApp) + foto vertical de un vestido |
-| 2 | Presentación | Formación en Diseño de Modas y Alta Costura + enlace a `/sobre-ruben-dario` |
-| 3 | Cómo es el proceso | Cita · boceto · telas y medidas · pruebas · entrega |
-| 4 | Un vestido real | El vestido de Liz (fotos del evento) → boda completa |
-| 5 | Inversión "desde" | |
-| 6 | Preguntas frecuentes | Anticipación, pruebas, alquiler/venta, vestido + decoración (el vestido de 15 va en `/quince-anos`) |
-| 7 | Cierre `#contacto` | WhatsApp ("Hola, quisiera una cita para diseñar mi vestido de novia.") + enlace a `/bodas`. Sin el formulario de cotización, que pide datos de un evento |
+| 1 | Migas + portada | H1 + bajada + "Agenda tu cita" (WhatsApp) + enlace a `/vestidos-de-15` + foto vertical de un vestido |
+| 2 | Vestidos de novia | Angie · Liz. Fotos sin recortar y ampliables, descripción → boda completa |
+| 3 | Quién diseña tu vestido | Retrato, una frase, formación en lista + enlace a `/sobre-ruben-dario` |
+| 4 | Cómo es el proceso | Cita · boceto · telas y medidas · pruebas · entrega |
+| 5 | Inversión "Tu vestido, desde" | Antes del traje, para que el precio no parezca el del traje |
+| 6 | Traje de novio `#traje-de-novio` | El traje de Samuel, cita de Angie & Samuel, WhatsApp propio → boda completa |
+| 7 | Preguntas frecuentes | Anticipación, pruebas, alquiler/venta, vestido + decoración, traje del novio, vestido de 15 |
+| 8 | Cierre `#contacto` | WhatsApp ("Hola, quisiera una cita para diseñar mi vestido de novia.") + enlace a `/bodas`. Sin el formulario de cotización, que pide datos de un evento |
 
-Las fotos salen de los eventos del portafolio. En un evento, el proveedor "Vestido de novia:
-Rubén Darío" lleva `"ruta": "/vestidos-de-novia"` y enlaza aquí.
+Las fotos salen de los eventos del portafolio. En un evento, el proveedor "Vestido de novia" o
+"Traje del novio: Rubén Darío" lleva `"ruta": "/vestidos-de-novia"` y enlaza aquí.
 
 **Datos estructurados:** `Service` · `FAQPage` · `BreadcrumbList`. Open Graph propio
 (`/img/og/paginas/vestidos-de-novia.jpg`).
+
+### `/vestidos-de-15` **[contenido: valor desde, tiempos, alquiler o venta; aprobación de la empresa]**
+
+- **Título:** Vestidos de 15 años a medida en Villavicencio | Rubén Darío
+- **H1:** Vestidos de 15 años a medida en Villavicencio
+- Contenido en `content/vestidos-de-15.json` (`revisadoPorLaEmpresa`: borrador de XyraCode).
+  Misma plantilla que `/vestidos-de-novia` (`PaginaVestidos`), sin sección de traje.
+
+| # | Sección | Contenido |
+|---|---|---|
+| 1 | Migas + portada | H1 + bajada + "Agenda tu cita" (WhatsApp) + enlace a `/vestidos-de-novia` + foto vertical |
+| 2 | Vestidos de 15 años | Valentina · Juliana · María Camila. Fotos sin recortar y ampliables → fiesta completa |
+| 3 | Quién diseña tu vestido | Retrato, texto, formación en lista + enlace a `/sobre-ruben-dario` |
+| 4 | Cómo es el proceso | Cita · boceto · telas y medidas · pruebas · entrega |
+| 5 | Inversión "desde" | |
+| 6 | Preguntas frecuentes | Precio, anticipación, combinar con la decoración, referencias, telas, otros municipios, alquiler/venta |
+| 7 | Cierre `#contacto` | WhatsApp ("Hola, quisiera una cita para diseñar mi vestido de 15 años.") + enlace a `/fiestas-de-15` |
+
+En un evento, el proveedor "Vestido de 15 años: Rubén Darío" lleva `"ruta": "/vestidos-de-15"`.
+**Datos estructurados:** `Service` · `FAQPage` · `BreadcrumbList`. Open Graph propio
+(`/img/og/paginas/vestidos-de-15.jpg`).
 
 ### `/eventos` Portafolio
 
@@ -293,7 +323,7 @@ Tratamiento de datos (Ley 1581 de 2012), uso de fotos con autorización, contact
 
 ### `/404`
 
-Mensaje breve + enlaces a Bodas, 15 años, Eventos y WhatsApp.
+"404" grande + mensaje breve + botón "Volver al inicio" + enlaces a Bodas, Fiestas de 15, Eventos, Vestidos de novia, Vestidos de 15 y WhatsApp. Una sola pantalla, sin scroll y sin pie.
 
 ---
 
@@ -339,7 +369,8 @@ relacionados, destacados y guía de lugares se actualizan solos.
 - Video del montaje, si existe.
 - Horario de atención y dirección exacta como en Google Business.
 - ¿Decora pedidas de mano o compromisos?
-- Vestidos: ¿solo a medida, o también alquila o vende? Proceso, tiempos, valor desde y
-  fotos de otros vestidos de novia y de 15 (con autorización de cada novia o quinceañera).
+- Vestidos: ¿solo a medida, o también alquila o vende? Valor desde (novia, 15 años y traje);
+  con cuánto tiempo encargar el de 15; confirmar el proceso y los tiempos redactados. Fotos
+  de otros vestidos y trajes (con autorización de cada novia, novio o quinceañera).
 - Qué incluye la organización completa (bodas y 15 años) frente a solo diseño y decoración.
 - ¿Hay eventos en Chía, Tenjo o Subachoque para el portafolio?

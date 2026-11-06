@@ -48,7 +48,7 @@ y equipo) · Testimonios · Cobertura Villavicencio y el Meta · Preguntas frecu
 Formulario de contacto que arma el mensaje y abre WhatsApp · Botón de WhatsApp siempre
 visible · Redes y footer · 100% responsive.
 
-### B · Páginas de servicio: `/bodas` y `/quince-anos`
+### B · Páginas de servicio: `/bodas` y `/fiestas-de-15`
 Cada una con: texto propio, qué incluye, galería, referencia de inversión "desde",
 preguntas frecuentes propias, cierre hacia WhatsApp. Título y descripción por página,
 URLs amigables, datos estructurados de negocio local.
@@ -130,9 +130,17 @@ Palabras clave objetivo (una principal por página):
 - Inicio: marca + *decoración de eventos en Villavicencio* (resume y enlaza; no compite con los servicios)
 - `/bodas`: *wedding planner Villavicencio* / *decoración de bodas Villavicencio*
 - `/vestidos-de-novia`: *vestidos de novia a medida Villavicencio* (página agregada el
-  2026-10-24, **fuera del alcance aprobado**: falta decidir si se cotiza o va como valor agregado)
-- `/quince-anos`: *decoración de 15 años Villavicencio* (+ organización y vestido de 15, como secciones)
+  2026-10-24, **fuera del alcance aprobado**: falta decidir si se cotiza o va como valor agregado).
+  Incluye el traje de novio a medida, como sección (confirmado para cualquier cliente el 2026-11-06)
+- `/vestidos-de-15`: *vestidos de 15 años a medida Villavicencio* (página agregada el
+  2026-11-06, también **fuera del alcance aprobado**, misma decisión pendiente)
+- `/fiestas-de-15`: *decoración de 15 años Villavicencio* (+ organización y vestido de 15, como secciones)
 - Cada evento: *boda en [lugar], [municipio]* (salones y fincas de la zona)
+
+Rutas de 15 años sin "años" (decisión del 2026-11-06): `/fiestas-de-15` y `/vestidos-de-15`, porque
+"anos" se lee mal y la ñ se vuelve `%C3%B1` al compartir por WhatsApp. La palabra clave completa,
+con ñ, va en el título y el H1. Reemplazan a `/quince-anos` (publicada: redirige con 301 desde
+`public/_redirects`) y a `/vestidos-de-15-anos` (nunca se publicó). `docs/entregables/` conserva las rutas viejas.
 
 Mapa completo de rutas, secciones y SEO por página: `docs/mapa-del-sitio.md`.
 
@@ -197,8 +205,11 @@ tipografía y componentes para aprobar el diseño; antes del lanzamiento, decidi
 **Paleta y tipografía** (decididas por la empresa el 2026-10-09, tras probar 7 paletas y 6
 tipografías en una página de elección, `docs/entregables/elegir-estilo/`): **paleta 2 ·
 Terracota Atardecer Llanero** (`src/app/estilos/paleta.css`) y **tipografía 3 · Alta Costura**,
-Bodoni Moda + Manrope (`src/app/estilos/tipografia.css` y `layout.tsx`). Detalle en
-`docs/brief-diseno.md` §4. El selector temporal se retiró.
+Bodoni Moda + Manrope. **Desde el 2026-11-06 los títulos oficiales van en Poiret One** (la letra
+del logo), con Manrope en el texto y Bodoni Moda solo en citas en cursiva
+(`src/app/estilos/tipografia.css` y `layout.tsx`). Las fuentes están guardadas en `src/fuentes/`
+(`next/font/local`, sin depender de Google al compilar). Detalle en `docs/brief-diseno.md` §4.
+El selector temporal se retiró.
 
 Hábitos de agencia: **registrar horas por fase** (para calibrar precios futuros), anotar
 y cotizar todo pedido fuera de alcance, reporte semanal fijo (qué se hizo, enlace de

@@ -6,8 +6,9 @@ definen cada archivo están en `src/lib/contenido/esquemas.ts`.
 | Archivo | Qué contiene |
 |---|---|
 | `sitio.json` | Nombre, teléfono, WhatsApp, dirección, horario, redes, municipios, cifras. **Debe coincidir con Google Business.** |
-| `servicios/bodas.json`, `servicios/quince-anos.json` | Páginas `/bodas` y `/quince-anos` |
-| `vestidos-de-novia.json` | Página `/vestidos-de-novia`. Sus fotos son de eventos del portafolio (`evento` + `archivo`) |
+| `servicios/bodas.json`, `servicios/fiestas-de-15.json` | Páginas `/bodas` y `/fiestas-de-15` |
+| `vestidos-de-novia.json` | Página `/vestidos-de-novia`, con el traje de novio. Sus fotos son de eventos del portafolio (`evento` + `archivo`) |
+| `vestidos-de-15.json` | Página `/vestidos-de-15`. Sus fotos son de eventos del portafolio (`evento` + `archivo`) |
 | `proceso.json` | "Cómo trabajamos" de la portada: 3 a 6 pasos |
 | `preguntas-generales.json` | Preguntas frecuentes de la portada (las de cada servicio van en su archivo) |
 | `lugares.json` | Salones, haciendas y fincas. Los eventos los referencian por `slug` |
