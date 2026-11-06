@@ -136,6 +136,20 @@
   }
 }
 
+/* Página 404: cabe en una sola pantalla. Sin pie, y el contenido ocupa el alto que deja el encabezado. */
+body:has(.pagina-404) > footer {
+  display: none;
+}
+body:has(.pagina-404) > #contenido {
+  display: flex;
+}
+/* En pantallas bajas, sin scroll, el flotante taparía el enlace de WhatsApp de la página. */
+@media (max-width: 760px) and (max-height: 640px) {
+  body:has(.pagina-404) .whatsapp-flotante {
+    display: none;
+  }
+}
+
 /* ── Utilidades del sistema ─────────────────────────────────────────────── */
 
 /* Contenedor de página: ancho máximo y margen lateral que crece con la pantalla. */

@@ -1,6 +1,8 @@
-import { Boton } from "@/components/ui/Boton";
-import { Foto } from "@/components/ui/Foto";
+import Link from "next/link";
+
+import { Boton, clasesBoton } from "@/components/ui/Boton";
 import { obtenerContenido } from "@/lib/contenido/cargar";
+import { RUTA_VESTIDOS, RUTA_VESTIDOS_QUINCE } from "@/lib/rutas";
 import { metadatos } from "@/lib/seo/metadatos";
 import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 
@@ -12,35 +14,67 @@ export const metadata = metadatos({
   noIndexar: true,
 });
 
-/** 404 (brief §7.9): mensaje amable y caminos útiles. Se publica como out/404.html. */
+/** Nombres cortos, como en el menú: en celular caben en dos filas. */
+const CAMINOS = [
+  { nombre: "Bodas", ruta: "/bodas" },
+  { nombre: "Fiestas de 15", ruta: "/fiestas-de-15" },
+  { nombre: "Eventos", ruta: "/eventos" },
+  { nombre: "Vestidos de novia", ruta: RUTA_VESTIDOS },
+  { nombre: "Vestidos de 15", ruta: RUTA_VESTIDOS_QUINCE },
+];
+
+/**
+ * 404 (brief §7.9): a propósito no se parece a las demás páginas. Sin foto y centrada, con el
+ * número como elemento dominante, para que se entienda de inmediato que la página no existe.
+ * Todo cabe en una pantalla, sin scroll: `pagina-404` oculta el pie (globals.css), y el número
+ * y los espacios (--e) dependen de la altura. En celular horizontal va a dos columnas, y bajo
+ * 560 px de alto las frases de apoyo solo quedan para lectores de pantalla. Nada se recorta: si
+ * la pantalla no alcanza (zoom alto), la página vuelve a desplazarse.
+ * Se publica como out/404.html.
+ */
 export default function NoEncontrada() {
-  const { sitio, eventos } = obtenerContenido();
-  const evento = eventos[0];
-  const foto = evento?.fotos.find((f) => f.archivo !== evento.portada) ?? evento?.fotos[0];
+  const { sitio } = obtenerContenido();
 
   return (
-    <main className="contenedor grid items-center gap-10 pt-8 pb-(--spacing-seccion) lg:grid-cols-2 lg:gap-16 lg:pt-14">
-      <div className="min-w-0">
-        <p className="antetitulo">Error 404</p>
-        <h1 className="mt-4 text-titulo-1">Esta página no existe, pero tu evento sí puede</h1>
-        <p className="mt-5 text-lg text-topo">
-          Puede que el enlace haya cambiado. Estos caminos te llevan a lo que buscas:
+    <main className="pagina-404 contenedor flex flex-1 flex-col items-center justify-center py-[clamp(0.75rem,3svh,2rem)] text-center [--e:clamp(0.375rem,2.4svh,1.5rem)] [@media(max-height:500px)_and_(orientation:landscape)]:flex-row [@media(max-height:500px)_and_(orientation:landscape)]:gap-4">
+      <div className="flex flex-col items-center [@media(max-height:500px)_and_(orientation:landscape)]:min-w-0 [@media(max-height:500px)_and_(orientation:landscape)]:flex-1">
+        {/* El h1 ya dice lo mismo con palabras: el lector de pantalla no necesita el número. */}
+        <p
+          aria-hidden="true"
+          className="font-titulo text-[clamp(4.5rem,min(30vw,22svh),15rem)] leading-[0.85] text-terracota [@media(max-height:560px)]:text-[4rem]"
+        >
+          404
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Boton href="/bodas">Decoración de bodas</Boton>
-          <Boton href="/quince-anos" variante="secundario">
-            Decoración de 15 años
-          </Boton>
-          <Boton href="/vestidos-de-novia" variante="secundario">
-            Vestidos de novia
-          </Boton>
-          <Boton href="/eventos" variante="secundario">
-            Eventos realizados
-          </Boton>
-        </div>
-        <div className="mt-6">
+        <h1 className="mt-(--e) text-titulo-2">Esta página no existe</h1>
+        <p className="mt-[calc(var(--e)/2)] max-w-[60ch] text-topo sm:text-lg">
+          Puede que el enlace esté mal escrito o que la página ya no exista.
+        </p>
+      </div>
+
+      <div className="mt-(--e) flex flex-col items-center [@media(max-height:500px)_and_(orientation:landscape)]:mt-0 [@media(max-height:500px)_and_(orientation:landscape)]:min-w-0 [@media(max-height:500px)_and_(orientation:landscape)]:flex-1">
+        <Boton href="/">Volver al inicio</Boton>
+
+        <nav aria-labelledby="caminos-404" className="mt-(--e)">
+          <p id="caminos-404" className="text-sm text-topo [@media(max-height:560px)]:sr-only">
+            O ve directo a
+          </p>
+          <ul className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6">
+            {CAMINOS.map((c) => (
+              <li key={c.ruta}>
+                <Link href={c.ruta} className={clasesBoton("texto")}>
+                  {c.nombre}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="mt-[calc(var(--e)/2)]">
+          <p className="text-sm text-topo [@media(max-height:560px)]:sr-only">
+            ¿No encuentras lo que buscas?
+          </p>
           <Boton
-            href={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)}
+            href={enlaceWhatsApp(sitio.whatsapp, MENSAJES.noEncontrada)}
             whatsapp
             variante="texto"
             origen="404"
@@ -49,17 +83,6 @@ export default function NoEncontrada() {
           </Boton>
         </div>
       </div>
-      {evento && foto && (
-        <div className="min-w-0">
-          <Foto
-            evento={evento.slug}
-            archivo={foto.archivo}
-            alt={foto.alt}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="aspect-[4/5] w-full rounded-sm object-cover opacity-90 sm:aspect-[3/2] lg:aspect-[4/5]"
-          />
-        </div>
-      )}
     </main>
   );
 }
