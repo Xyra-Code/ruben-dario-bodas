@@ -17,7 +17,9 @@ export type FotoVisor = { src: string; srcSet: string; alt: string; ancho: numbe
 /**
  * Visor a pantalla completa para la galería. Las miniaturas (children) llegan ya
  * renderizadas desde el servidor como <button data-indice>; aquí solo vive el visor:
- * flechas, teclado (← → Esc), deslizar con el dedo y contador "3 / 18".
+ * flechas, teclado (← → Esc), deslizar con el dedo y contador "3 / 18". Abrir agrega un paso
+ * al historial: el gesto o botón "atrás" de iPhone y Android cierra el visor sin salir de la
+ * página. Cerrarlo de otra forma quita ese paso.
  */
 export function VisorGaleria({ fotos, children }: { fotos: FotoVisor[]; children: ReactNode }) {
   const dialogo = useRef<HTMLDialogElement>(null);
@@ -38,6 +40,13 @@ export function VisorGaleria({ fotos, children }: { fotos: FotoVisor[]; children
     document.documentElement.style.overflow = indice !== null ? "hidden" : "";
   }, [indice]);
 
+  // "Atrás" con el visor abierto: solo lo cierra.
+  useEffect(() => {
+    const alVolver = () => setIndice(null);
+    window.addEventListener("popstate", alVolver);
+    return () => window.removeEventListener("popstate", alVolver);
+  }, []);
+
   useEffect(() => {
     if (indice === null) return;
     const teclas = (e: KeyboardEvent) => {
@@ -51,7 +60,16 @@ export function VisorGaleria({ fotos, children }: { fotos: FotoVisor[]; children
   // Abre el visor desde cualquier miniatura (delegación: un solo manejador).
   const abrir = (e: MouseEvent<HTMLDivElement>) => {
     const boton = (e.target as HTMLElement).closest<HTMLElement>("[data-indice]");
-    if (boton) setIndice(Number(boton.dataset.indice));
+    if (!boton) return;
+    setIndice(Number(boton.dataset.indice));
+    // Misma URL; Next conserva su estado interno junto a esta marca.
+    history.pushState({ visorGaleria: true }, "");
+  };
+
+  // Cerrado con la X o Escape: se quita el paso del historial. Con "atrás" ya no está.
+  const alCerrar = () => {
+    setIndice(null);
+    if (history.state?.visorGaleria) history.back();
   };
 
   const alSoltar = (e: PointerEvent) => {
@@ -73,7 +91,7 @@ export function VisorGaleria({ fotos, children }: { fotos: FotoVisor[]; children
 
       <dialog
         ref={dialogo}
-        onClose={() => setIndice(null)}
+        onClose={alCerrar}
         aria-label="Visor de fotos"
         className="m-0 h-dvh max-h-none w-full max-w-none bg-[#141210] p-0 text-white backdrop:bg-black/80"
       >
