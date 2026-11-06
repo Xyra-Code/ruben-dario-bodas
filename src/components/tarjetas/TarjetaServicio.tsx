@@ -21,7 +21,7 @@ type Props = {
 
 /**
  * Tarjeta de servicio: las tres del inicio miden igual desde tableta (foto 3:4) y toda la
- * tarjeta enlaza a /bodas, /quince-anos o /vestidos-de-novia. En el celular se reparten en una
+ * tarjeta enlaza a /bodas, /fiestas-de-15 o /vestidos-de-novia. En el celular se reparten en una
  * destacada y dos compactas, para que la sección no ocupe una pantalla por servicio.
  */
 export function TarjetaServicio({ titulo, texto, ruta, foto, etiqueta, variante }: Props) {

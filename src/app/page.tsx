@@ -45,7 +45,7 @@ const FOTO_TU_DIA = {
 };
 
 /**
- * Portada: resume y enlaza (no compite con /bodas ni /quince-anos). Secciones del mapa del
+ * Portada: resume y enlaza (no compite con /bodas ni /fiestas-de-15). Secciones del mapa del
  * sitio §4: portada, servicios, destacados, cómo trabajamos, sobre, testimonios,
  * cobertura, preguntas y contacto.
  */
@@ -357,7 +357,7 @@ export default function Inicio() {
           {retratoInicio && (
             /* Recorte a mano para este retrato: de la cintura para arriba, con la mano en el
                pecho y un filo de la puerta azul. Si cambia la foto, hay que ajustar top y ancho. */
-            <div className="mx-auto w-full max-w-md min-w-0 lg:order-2 lg:col-span-6 lg:mr-0 lg:max-w-120">
+            <div className="mx-auto w-full max-w-md min-w-0 lg:order-2 lg:col-span-6 lg:mr-0 lg:max-w-[min(30rem,calc((100dvh_-_6rem)*0.8))]">
               <div className="relative aspect-4/5 overflow-hidden rounded-sm">
                 <Foto
                   evento="sobre"

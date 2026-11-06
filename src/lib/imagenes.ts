@@ -51,7 +51,10 @@ export const ogEvento = (slug: string, alt: string): ImagenOg => ({
 });
 
 /** Páginas con imagen para compartir propia (no de un evento): public/img/og/paginas/<nombre>.jpg */
-export const OG_PAGINAS = { vestidos: "vestidos-de-novia" } as const;
+export const OG_PAGINAS = {
+  vestidos: "vestidos-de-novia",
+  vestidosQuince: "vestidos-de-15",
+} as const;
 
 export const ogPagina = (pagina: keyof typeof OG_PAGINAS, alt: string): ImagenOg => ({
   src: `/img/og/paginas/${OG_PAGINAS[pagina]}.jpg`,

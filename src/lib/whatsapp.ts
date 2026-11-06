@@ -12,9 +12,13 @@ export const MENSAJES = {
   otros: "Hola, quisiera cotizar la decoración de un evento.",
   /** Página de vestidos de novia: agendar la primera cita. */
   vestido: "Hola, quisiera una cita para diseñar mi vestido de novia.",
-  /** Botón flotante en /bodas y /quince-anos. */
+  vestidoQuince: "Hola, quisiera una cita para diseñar mi vestido de 15 años.",
+  trajeNovio: "Hola, quisiera una cita para diseñar mi traje de novio.",
+  /** Botón flotante en /bodas y /fiestas-de-15. */
   boda: "Hola, quisiera cotizar el diseño de mi boda.",
   quince: "Hola, quisiera cotizar mi fiesta de 15 años.",
+  /** Página 404: quien escribe buscaba algo concreto, no necesariamente cotizar. */
+  noEncontrada: "Hola, estaba buscando algo en el sitio web y no lo encontré.",
 } as const;
 
 /** Cierre de las preguntas frecuentes ("¿No encuentras tu pregunta?"), uno por página. */
@@ -23,6 +27,7 @@ export const MENSAJES_PREGUNTA = {
   boda: "Hola, tengo una pregunta sobre el diseño de mi boda.",
   quince: "Hola, tengo una pregunta sobre la decoración de 15 años.",
   vestido: "Hola, tengo una pregunta sobre los vestidos de novia a medida.",
+  vestidoQuince: "Hola, tengo una pregunta sobre los vestidos de 15 años a medida.",
   sobre: "Hola, tengo una pregunta para Rubén Darío.",
   lugares: "Hola, tengo una pregunta sobre el lugar para mi boda.",
 } as const;
@@ -45,10 +50,12 @@ export function flotanteSegunRuta(ruta: string, eventos: EventoMensaje[]) {
     };
   }
   if (ruta.startsWith("/bodas")) return { mensaje: MENSAJES.boda, etiqueta: "¿Cotizamos tu boda?" };
-  if (ruta.startsWith("/quince-anos"))
+  if (ruta.startsWith("/fiestas-de-15"))
     return { mensaje: MENSAJES.quince, etiqueta: "¿Cotizamos tu fiesta de 15?" };
   if (ruta.startsWith("/vestidos-de-novia"))
     return { mensaje: MENSAJES.vestido, etiqueta: "¿Agendamos tu cita?" };
+  if (ruta.startsWith("/vestidos-de-15"))
+    return { mensaje: MENSAJES.vestidoQuince, etiqueta: "¿Agendamos tu cita?" };
   return { mensaje: MENSAJES.general, etiqueta: "¿Cotizamos tu evento?" };
 }
 

@@ -4,7 +4,7 @@ import { obtenerContenido } from "@/lib/contenido/cargar";
 import { obtenerImagen } from "@/lib/imagenes";
 import { urlAbsoluta } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
-import { RUTA_SERVICIO, RUTA_VESTIDOS, rutaEvento } from "@/lib/rutas";
+import { RUTA_SERVICIO, RUTA_VESTIDOS, RUTA_VESTIDOS_QUINCE, rutaEvento } from "@/lib/rutas";
 
 export const dynamic = "force-static";
 
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     PAGINAS.inicio.ruta,
     ...servicios.map((s) => RUTA_SERVICIO[s.tipo]!),
     RUTA_VESTIDOS,
+    RUTA_VESTIDOS_QUINCE,
     PAGINAS.eventos.ruta,
     PAGINAS.sobre.ruta,
     PAGINAS.lugares.ruta,

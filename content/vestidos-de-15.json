@@ -1,0 +1,125 @@
+{
+  "revisadoPorLaEmpresa": false,
+  "nombre": "Vestidos de 15 años a medida",
+  "h1": "Vestidos de 15 años a medida en Villavicencio",
+  "seo": {
+    "title": "Vestidos de 15 años a medida en Villavicencio | Rubén Darío",
+    "description": "Vestidos de 15 años a medida en Villavicencio: diseñados por Rubén Darío, en los colores de tu fiesta. Mira vestidos reales y agenda tu cita por WhatsApp."
+  },
+  "bajada": "Rubén Darío diseña tu vestido de 15 a medida, en los colores de tu fiesta, desde el primer boceto hasta la última prueba.",
+  "presentacion": {
+    "antetitulo": "Rubén Darío",
+    "titulo": "Quién diseña tu vestido",
+    "texto": "Cada vestido parte de quien lo lleva y de la fiesta donde lo va a llevar. Cuando también diseña tu fiesta, el vestido y la decoración salen de la misma idea.",
+    "foto": {
+      "evento": "quince-lenos-y-parrilla-villavicencio",
+      "archivo": "quince-lenos-y-parrilla-villavicencio-ruben-dario-frente-a-nichos-con-velas-y-rosas.jpg"
+    },
+    "credenciales": [
+      "Diseño de Modas",
+      "Alta Costura e Interpretación de Modas",
+      "Profesor de patronaje y confección"
+    ]
+  },
+  "portada": {
+    "evento": "quince-verde-tropical-finca-los-pinos-villavicencio",
+    "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-de-espaldas-en-pista-led-portada.jpg"
+  },
+  "compartir": {
+    "evento": "quince-finca-privada-villanueva",
+    "archivo": "quince-finca-privada-villanueva-vestido-palo-de-rosa-girando-en-el-salon.jpg"
+  },
+  "galeria": {
+    "antetitulo": "Diseños reales",
+    "titulo": "Vestidos de 15 años de Rubén Darío",
+    "intro": "Cada uno se diseñó para una quinceañera y una fiesta concretas. Míralos aquí y entra a la fiesta completa.",
+    "items": [
+      {
+        "evento": "quince-coral-finca-la-principesa-villavicencio",
+        "titulo": "El vestido de Valentina",
+        "texto": "Satín coral cubierto de encaje dorado, corsé con cordones y un gran moño en la espalda, en los mismos colores de su fiesta en Finca La Principesa.",
+        "fotos": [
+          "quince-coral-finca-la-principesa-villavicencio-quinceanera-girando-vestido-coral-con-mono.jpg",
+          "quince-coral-finca-la-principesa-villavicencio-quinceanera-vestido-coral-en-banca-de-flores.jpg",
+          "quince-coral-finca-la-principesa-villavicencio-quinceanera-vestido-coral-entre-letras-xv.jpg"
+        ]
+      },
+      {
+        "evento": "quince-finca-privada-villanueva",
+        "titulo": "El vestido de Juliana",
+        "texto": "Palo de rosa con corpiño de encaje y una falda amplia de flores bordadas que se abre al girar, en sintonía con las flores de cerezo de su fiesta en Villanueva.",
+        "fotos": [
+          "quince-finca-privada-villanueva-vestido-palo-de-rosa-girando-bajo-lamparas-portada.jpg",
+          "quince-finca-privada-villanueva-vestido-palo-de-rosa-girando-en-el-salon.jpg",
+          "quince-finca-privada-villanueva-quinceanera-bajo-arco-de-flores-de-cerezo.jpg"
+        ]
+      },
+      {
+        "evento": "quince-verde-tropical-finca-los-pinos-villavicencio",
+        "titulo": "El vestido de María Camila",
+        "texto": "Satín verde esmeralda con falda amplia y abertura, cinturón de brillos y un moño con cola de lentejuelas que cae desde la espalda, para su fiesta verde tropical en Finca Los Pinos.",
+        "fotos": [
+          "quince-verde-tropical-finca-los-pinos-villavicencio-vestido-verde-esmeralda-girando-en-pista-led.jpg",
+          "quince-verde-tropical-finca-los-pinos-villavicencio-retrato-de-la-quinceanera-vestido-verde-satinado.jpg",
+          "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-frente-a-arco-de-flores-blancas-y-follaje.jpg"
+        ]
+      }
+    ]
+  },
+  "proceso": [
+    {
+      "titulo": "Primera cita",
+      "descripcion": "Hablamos de tu fecha, el lugar y los colores que te imaginas para tu fiesta. Si tienes fotos de vestidos que te gustan, tráelas: ayudan a entender tu estilo."
+    },
+    {
+      "titulo": "Boceto",
+      "descripcion": "A partir de esa conversación, Rubén Darío propone un diseño propio, pensado para ti y para la fiesta que sueñas."
+    },
+    {
+      "titulo": "Telas y medidas",
+      "descripcion": "Elegimos la tela y los detalles según el diseño, y tomamos tus medidas para empezar el patrón."
+    },
+    {
+      "titulo": "Pruebas",
+      "descripcion": "Ajustamos el vestido en las pruebas que necesite, hasta que te quede perfecto y puedas bailar tu vals con comodidad."
+    },
+    {
+      "titulo": "Entrega",
+      "descripcion": "Con la prueba final lista, recibes tu vestido preparado para tu fiesta."
+    }
+  ],
+  "inversion": {
+    "desde": "[PENDIENTE: valor desde]",
+    "nota": "El valor final depende del diseño, las telas y los detalles de confección."
+  },
+  "preguntas": [
+    {
+      "pregunta": "¿Cuánto cuesta un vestido de 15 años a medida?",
+      "respuesta": "[PENDIENTE: valor desde y qué hace variar el precio]"
+    },
+    {
+      "pregunta": "¿Con cuánto tiempo debo encargar mi vestido de 15?",
+      "respuesta": "[PENDIENTE: con cuánto tiempo de anticipación encargarlo]"
+    },
+    {
+      "pregunta": "¿El vestido puede combinar con la decoración de mi fiesta?",
+      "respuesta": "Sí, y es una de nuestras fortalezas: Rubén Darío puede pensar el vestido, la paleta y la decoración como un solo diseño, como hizo con el vestido coral de Valentina en su fiesta coral y dorada."
+    },
+    {
+      "pregunta": "¿Puedo llevar fotos de vestidos que me gustan?",
+      "respuesta": "Sí, y te lo recomendamos: ayudan a entender tu estilo. A partir de ellas Rubén Darío propone un diseño propio."
+    },
+    {
+      "pregunta": "¿Qué telas y detalles se pueden usar?",
+      "respuesta": "Depende del diseño. En sus vestidos de 15 verás satín, encaje dorado, flores bordadas, brillos y moños con cola, entre otros."
+    },
+    {
+      "pregunta": "¿Atienden quinceañeras de otros municipios?",
+      "respuesta": "Sí. La primera conversación puede empezar por WhatsApp, y las citas de medidas y pruebas se agendan en fechas que te queden cómodas. Juliana, por ejemplo, celebró sus 15 en Villanueva."
+    },
+    {
+      "pregunta": "¿También alquilan o venden vestidos de 15 ya hechos?",
+      "respuesta": "[PENDIENTE: confirmar si solo diseña a medida o también alquila o vende]"
+    }
+  ]
+}

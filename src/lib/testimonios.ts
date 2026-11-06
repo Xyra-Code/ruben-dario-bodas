@@ -58,7 +58,7 @@ export function testimoniosDelInicio(testimonios: Testimonio[], eventos: Evento[
 }
 
 /**
- * Testimonios de /bodas o /quince-anos (con su evento): un destacado distinto del inicio
+ * Testimonios de /bodas o /fiestas-de-15 (con su evento): un destacado distinto del inicio
  * (`servicio: "destacado"`, o el primero del tipo que no sea el destacado del inicio) y
  * tres cortos sorteados al compilar. Con menos de tres, no hay destacado: todos iguales.
  */

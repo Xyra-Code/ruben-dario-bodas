@@ -1,5 +1,5 @@
 {
-  "slug": "quince-anos",
+  "slug": "fiestas-de-15",
   "tipo": "quince",
   "nombre": "Decoración de 15 años",
   "h1": "Decoración de fiestas de 15 años en Villavicencio",
@@ -35,12 +35,12 @@
       "items": [
         {
           "nombre": "Diseñado para ti",
-          "descripcion": "[PENDIENTE: cómo es el proceso del vestido de 15: cita, boceto, pruebas y con cuánto tiempo encargarlo]"
+          "descripcion": "Cita, boceto, telas, medidas y pruebas con Rubén Darío, hasta que tu vestido quede perfecto para tu fiesta."
         },
         {
           "nombre": "Vestido y decoración, del mismo diseñador",
-          "descripcion": "[PENDIENTE: cómo se piensan juntos el vestido, la paleta y la decoración de la fiesta]",
-          "enlace": { "texto": "Así diseña sus vestidos", "ruta": "/vestidos-de-novia" }
+          "descripcion": "El vestido, la paleta y la decoración salen de la misma idea: el vestido coral de Valentina en su fiesta coral y dorada, o el verde esmeralda de María Camila entre palmas y flores blancas.",
+          "enlace": { "texto": "Mira sus vestidos de 15 años", "ruta": "/vestidos-de-15" }
         }
       ]
     }

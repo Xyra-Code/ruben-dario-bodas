@@ -49,6 +49,7 @@ export type Contenido = {
   sobre: esquema.Sobre;
   guiaLugares: esquema.GuiaLugares;
   vestidos: esquema.Vestidos;
+  vestidosQuince: esquema.Vestidos;
   politica: esquema.Politica;
   /** Fotos fuera de los eventos (content/sobre/fotos), para el pipeline de imágenes. */
   fotosSobre: { archivo: string; ruta: string }[];
@@ -131,8 +132,9 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
   const sobre = cargar("sobre/sobre.json", esquema.sobre);
   const guiaLugares = cargar("guia-lugares.json", esquema.guiaLugares);
   const vestidos = cargar("vestidos-de-novia.json", esquema.vestidos);
+  const vestidosQuince = cargar("vestidos-de-15.json", esquema.vestidos);
   const politica = cargar("politica-de-datos.json", esquema.politica);
-  const servicios = ["bodas", "quince-anos"]
+  const servicios = ["bodas", "fiestas-de-15"]
     .map((nombre) => cargar(`servicios/${nombre}.json`, esquema.servicio))
     .filter((s) => s !== null);
 
@@ -159,7 +161,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
 
   // Servicios: cada archivo con su slug esperado.
   for (const s of servicios) {
-    const esperado = s.tipo === "boda" ? "bodas" : s.tipo === "quince" ? "quince-anos" : null;
+    const esperado = s.tipo === "boda" ? "bodas" : s.tipo === "quince" ? "fiestas-de-15" : null;
     if (s.slug !== esperado) {
       errores.push(
         `content/servicios: el servicio de tipo "${s.tipo}" debe tener slug "${esperado}"`,
@@ -359,20 +361,26 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
   }
 
   // Vestidos: sus fotos salen de los eventos del portafolio.
-  if (vestidos) {
-    const base = "content/vestidos-de-novia.json";
+  for (const [archivoPagina, pagina] of [
+    ["vestidos-de-novia.json", vestidos],
+    ["vestidos-de-15.json", vestidosQuince],
+  ] as const) {
+    if (!pagina) continue;
+    const base = `content/${archivoPagina}`;
     const fotoExiste = (slugEvento: string, archivo: string, campo: string) => {
       const evento = eventos.find((e) => e.slug === slugEvento);
       if (!evento) errores.push(`${base} → ${campo}: el evento "${slugEvento}" no existe`);
       else if (!evento.fotos.some((f) => f.archivo === archivo))
         errores.push(`${base} → ${campo}: "${archivo}" no está en las fotos de "${slugEvento}"`);
     };
-    fotoExiste(vestidos.portada.evento, vestidos.portada.archivo, "portada");
-    fotoExiste(vestidos.compartir.evento, vestidos.compartir.archivo, "compartir");
-    for (const archivo of vestidos.caso?.fotos ?? []) {
-      fotoExiste(vestidos.caso!.evento, archivo, "caso.fotos");
+    fotoExiste(pagina.portada.evento, pagina.portada.archivo, "portada");
+    fotoExiste(pagina.compartir.evento, pagina.compartir.archivo, "compartir");
+    fotoExiste(pagina.presentacion.foto.evento, pagina.presentacion.foto.archivo, "presentacion.foto");
+    for (const item of pagina.galeria.items) {
+      for (const archivo of item.fotos) fotoExiste(item.evento, archivo, "galeria.fotos");
     }
-    if (!vestidos.revisadoPorLaEmpresa) {
+    if (pagina.traje) fotoExiste(pagina.traje.evento, pagina.traje.foto, "traje.foto");
+    if (!pagina.revisadoPorLaEmpresa) {
       (estricto ? errores : avisos).push(
         `${base}: borrador de XyraCode sin aprobar (revisadoPorLaEmpresa: false)`,
       );
@@ -454,6 +462,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
     sobre &&
     guiaLugares &&
     vestidos &&
+    vestidosQuince &&
     politica &&
     servicios.length === 2 &&
     !errores.length;
@@ -471,6 +480,7 @@ export function validarContenido({ estricto = false } = {}): ResultadoValidacion
           sobre,
           guiaLugares,
           vestidos,
+          vestidosQuince,
           politica,
           fotosSobre,
         }

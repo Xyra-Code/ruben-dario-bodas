@@ -12,7 +12,7 @@ import { SeccionPreguntas } from "@/components/ui/SeccionPreguntas";
 import { TituloSeccion } from "@/components/ui/TituloSeccion";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { fondos } from "@/lib/fondos";
-import { RUTA_VESTIDOS, rutaEvento } from "@/lib/rutas";
+import { RUTA_VESTIDOS, RUTA_VESTIDOS_QUINCE, rutaEvento } from "@/lib/rutas";
 import { paginaSobre, preguntasFrecuentes } from "@/lib/seo/jsonld";
 import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
@@ -94,7 +94,7 @@ export default function Sobre() {
         <h1 id="sobre-titulo" className="mt-4 text-titulo-1">
           {pagina.h1}
         </h1>
-        <p className="mt-6 font-titulo text-titulo-3 text-topo italic">{sobre.frase}</p>
+        <p className="mt-4 font-titulo text-titulo-3 text-topo italic lg:mt-6">{sobre.frase}</p>
       </PortadaConFoto>
 
       {/* Video de presentación: preload="none", nada se descarga hasta tocar play. */}
@@ -146,7 +146,7 @@ export default function Sobre() {
               Su historia
             </h2>
             {fotoHistoria && (
-              <figure className="mt-8 max-w-sm">
+              <figure className="mt-8 max-w-sm lg:max-w-[min(24rem,calc((100dvh_-_6rem)*0.6667))]">
                 <Foto
                   evento={fotoHistoria.evento.slug}
                   archivo={fotoHistoria.archivo}
@@ -189,9 +189,12 @@ export default function Sobre() {
               ))}
             </div>
             {/* Su historia nació en los vestidos de novia: hoy también los diseña a medida. */}
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col items-start gap-1 sm:flex-row sm:gap-6">
               <Boton href={RUTA_VESTIDOS} variante="texto">
                 Vestidos de novia a medida
+              </Boton>
+              <Boton href={RUTA_VESTIDOS_QUINCE} variante="texto">
+                Vestidos de 15 años a medida
               </Boton>
             </div>
           </div>

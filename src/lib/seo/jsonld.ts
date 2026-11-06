@@ -8,7 +8,7 @@ import { obtenerContenido } from "@/lib/contenido/cargar";
 import type { Lugar, PreguntaFrecuente, Servicio } from "@/lib/contenido/esquemas";
 import { correoAscii, esCorreo } from "@/lib/formato";
 import { obtenerImagen } from "@/lib/imagenes";
-import { RUTA_SERVICIO, RUTA_VESTIDOS } from "@/lib/rutas";
+import { RUTA_SERVICIO, RUTA_VESTIDOS, RUTA_VESTIDOS_QUINCE } from "@/lib/rutas";
 import { urlAbsoluta } from "@/lib/seo/metadatos";
 
 type Nodo = Record<string, unknown>;
@@ -53,7 +53,7 @@ const direccionLugar = (l: Lugar) => ({
 
 /** Negocio completo (solo portada). */
 export function negocio(): Nodo {
-  const { sitio, servicios, vestidos } = obtenerContenido();
+  const { sitio, servicios, vestidos, vestidosQuince } = obtenerContenido();
   const d = sitio.direccion;
   const redes = Object.values(sitio.redes).filter(Boolean);
   return {
@@ -90,6 +90,7 @@ export function negocio(): Nodo {
       "Decoración y organización de fiestas de 15 años",
       "Vestidos de novia a medida",
       "Vestidos de 15 años a medida",
+      "Trajes de novio a medida",
       "Flores para bodas",
       "Techos y arcos para bodas",
     ],
@@ -97,6 +98,8 @@ export function negocio(): Nodo {
     makesOffer: [
       ...servicios.map((s) => ({ nombre: s.nombre, ruta: RUTA_SERVICIO[s.tipo]! })),
       { nombre: vestidos.nombre, ruta: RUTA_VESTIDOS },
+      { nombre: vestidosQuince.nombre, ruta: RUTA_VESTIDOS_QUINCE },
+      { nombre: "Trajes de novio a medida", ruta: `${RUTA_VESTIDOS}#traje-de-novio` },
     ].map(({ nombre, ruta }) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name: nombre, url: urlAbsoluta(ruta) },
@@ -151,7 +154,7 @@ function valorEnPesos(texto: string) {
   return digitos ? Number(digitos) : null;
 }
 
-/** Servicio de /bodas, /quince-anos o /vestidos-de-novia. */
+/** Servicio de /bodas, /fiestas-de-15, /vestidos-de-novia o /vestidos-de-15. */
 export function servicio(
   s: Pick<Servicio, "nombre" | "seo"> & { inversion: { desde: string } },
   ruta: string,
@@ -239,7 +242,7 @@ export function paginaSobre(ruta: string): Nodo[] {
       "@type": "Person",
       "@id": ids.fundador(),
       name: "Rubén Darío",
-      jobTitle: "Diseñador de bodas y de vestidos de novia",
+      jobTitle: "Diseñador de bodas y de vestidos a medida",
       description: sobre.resumen,
       knowsAbout: [
         "Diseño de bodas",
@@ -247,6 +250,7 @@ export function paginaSobre(ruta: string): Nodo[] {
         "Diseño de escenarios y mobiliario para eventos",
         "Vestidos de novia a medida",
         "Vestidos de 15 años a medida",
+        "Trajes de novio a medida",
         "Alta costura",
       ],
       worksFor: { "@id": ids.negocio() },

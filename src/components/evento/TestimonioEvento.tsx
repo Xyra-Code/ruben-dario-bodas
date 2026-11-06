@@ -35,7 +35,7 @@ export function TestimonioEvento({
 
   return (
     <figure className="grid items-center lg:grid-cols-12 lg:gap-16">
-      <div className="relative mx-auto w-full max-w-md min-w-0 lg:order-2 lg:col-span-5 lg:max-w-none">
+      <div className="relative mx-auto w-full max-w-md min-w-0 lg:order-2 lg:col-span-5 lg:max-w-[calc((100dvh_-_6rem)*0.8)]">
         <span
           aria-hidden="true"
           className="absolute inset-0 translate-x-3 translate-y-3 border border-dorado sm:translate-x-4 sm:translate-y-4 lg:-translate-x-4"

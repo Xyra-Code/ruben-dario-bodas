@@ -22,7 +22,7 @@ type Props = {
 
 /**
  * Filtros del portafolio. Funcionan en el navegador ocultando tarjetas que ya están en el
- * HTML: sin URLs nuevas (?tipo=…) que compitan con /bodas y /quince-anos en Google, y
+ * HTML: sin URLs nuevas (?tipo=…) que compitan con /bodas y /fiestas-de-15 en Google, y
  * sin JavaScript todo el portafolio sigue visible.
  *
  * Estética: pestañas de tipo subrayadas como el menú (con su cantidad) y selectores

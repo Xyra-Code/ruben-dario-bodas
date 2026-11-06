@@ -28,7 +28,7 @@ type Props = {
 };
 
 /**
- * Inversión de /bodas y /quince-anos: el precio "desde" en una tarjeta y, al lado, qué
+ * Inversión de /bodas y /fiestas-de-15: el precio "desde" en una tarjeta y, al lado, qué
  * hace variar el valor. Es la única sección de la página sobre foto, para que el precio
  * no pase de largo justo antes de los testimonios y el formulario.
  * - Celular: la foto como banda, la tarjeta montada sobre su borde y los factores debajo.

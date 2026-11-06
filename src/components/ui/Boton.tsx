@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import { IconoWhatsApp } from "@/components/ui/Iconos";
 
-export type Variante = "principal" | "secundario" | "claro" | "texto";
+export type Variante = "principal" | "secundario" | "claro" | "blanco" | "texto";
 
 /**
  * Clases de botón, reutilizables en <a>, <Link> y <button>. Esquinas apenas suavizadas
@@ -19,6 +19,9 @@ export function clasesBoton(variante: Variante = "principal", ancho = false, com
     secundario:
       "border border-terracota text-terracota hover:bg-terracota hover:text-sobre-principal",
     claro: "border border-white/80 text-white hover:bg-white hover:text-carbon",
+    // Acción principal sobre fondo terracota. El foco global es terracota: aquí no se vería.
+    blanco:
+      "bg-white text-terracota hover:bg-white/85 hover:text-terracota-profundo focus-visible:outline-white",
     texto:
       "min-h-11 text-terracota underline decoration-terracota/40 underline-offset-[6px] hover:decoration-terracota",
   };

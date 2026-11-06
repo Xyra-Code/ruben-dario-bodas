@@ -29,19 +29,24 @@
   ],
   "proveedores": [
     {
+      "rol": "Vestido de 15 años",
+      "nombre": "Rubén Darío",
+      "ruta": "/vestidos-de-15"
+    },
+    {
       "rol": "Fotografía",
       "nombre": "[PENDIENTE]"
     }
   ],
   "seo": {
     "title": "15 años en finca privada, Villanueva (Casanare) | Rubén Darío",
-    "description": "Fiesta de 15 años en una finca privada de Villanueva, Casanare: techo de faroles colgantes, flores de cerezo y vestido palo de rosa."
+    "description": "Fiesta de 15 años en una finca privada de Villanueva, Casanare: techo de faroles, flores de cerezo y vestido palo de rosa diseñado por Rubén Darío."
   },
   "portada": "quince-finca-privada-villanueva-vestido-palo-de-rosa-girando-bajo-lamparas-portada.jpg",
   "fotos": [
     {
       "archivo": "quince-finca-privada-villanueva-vestido-palo-de-rosa-girando-bajo-lamparas-portada.jpg",
-      "alt": "Vestido palo de rosa girando bajo lámparas"
+      "alt": "Juliana girando su vestido palo de rosa con flores bordadas bajo las lámparas de madera"
     },
     {
       "archivo": "quince-finca-privada-villanueva-quinceanera-globos-palo-de-rosa-salon-de-lamparas.jpg",
@@ -89,7 +94,7 @@
     },
     {
       "archivo": "quince-finca-privada-villanueva-vestido-palo-de-rosa-girando-en-el-salon.jpg",
-      "alt": "Vestido palo de rosa girando en el salón"
+      "alt": "Juliana con la falda amplia de su vestido palo de rosa abierta al girar en el salón"
     },
     {
       "archivo": "quince-finca-privada-villanueva-mesa-de-torta-con-arco-de-flores-de-cerezo.jpg",
@@ -133,7 +138,7 @@
     },
     {
       "archivo": "quince-finca-privada-villanueva-quinceanera-bajo-arco-de-flores-de-cerezo.jpg",
-      "alt": "Quinceañera bajo arco de flores de cerezo"
+      "alt": "Juliana con corona y vestido palo de rosa bajo un arco de flores de cerezo"
     }
   ]
 }

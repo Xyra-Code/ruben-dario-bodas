@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/Iconos";
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { correoAscii, esEnlace, textoDias, textoHora } from "@/lib/formato";
-import { NAVEGACION } from "@/lib/rutas";
+import { ENLACES_PIE } from "@/lib/rutas";
 import { PAGINAS } from "@/lib/seo/paginas";
 import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 
@@ -194,7 +194,7 @@ export function Pie() {
                 Explorar
               </h2>
               <ul className={`mt-2 ${textoPie}`}>
-                {NAVEGACION.map((n) => (
+                {ENLACES_PIE.map((n) => (
                   <li key={n.ruta}>
                     <Link href={n.ruta} className={enlaceClase}>
                       {n.nombre}

@@ -47,7 +47,7 @@
         },
         {
           "nombre": "Vestido de novia a medida",
-          "descripcion": "Rubén Darío estudió Diseño de Modas y Alta Costura: también puede diseñar tu vestido.",
+          "descripcion": "Rubén Darío estudió Diseño de Modas y Alta Costura: también puede diseñar tu vestido y el traje del novio.",
           "enlace": { "texto": "Vestidos de novia a medida", "ruta": "/vestidos-de-novia" }
         }
       ]

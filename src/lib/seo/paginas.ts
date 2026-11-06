@@ -9,7 +9,7 @@ export const PAGINAS = {
     h1: "Diseño y decoración de eventos en Villavicencio y el Meta",
     titulo: "Rubén Darío Diseñador de Bodas · Decoración en Villavicencio",
     descripcion:
-      "Wedding planner, decoración de bodas y fiestas de 15 años y vestidos de novia en Villavicencio, el Meta y la Sabana de Bogotá. Cotiza por WhatsApp.",
+      "Wedding planner, decoración de bodas y fiestas de 15 años y vestidos a medida en Villavicencio, el Meta y la Sabana de Bogotá. Cotiza por WhatsApp.",
   },
   eventos: {
     ruta: "/eventos",
@@ -23,7 +23,7 @@ export const PAGINAS = {
     h1: "Rubén Darío, diseñador de bodas en Villavicencio",
     titulo: "Rubén Darío, diseñador de bodas en Villavicencio",
     descripcion:
-      "Conoce a Rubén Darío, diseñador de bodas y de vestidos de novia en Villavicencio: su historia en la alta costura, su equipo y los eventos que lo marcaron.",
+      "Conoce a Rubén Darío, diseñador de bodas y de vestidos a medida en Villavicencio: su historia en la alta costura, su equipo y los eventos que lo marcaron.",
   },
   lugares: {
     ruta: "/lugares-para-bodas-y-quince-villavicencio",

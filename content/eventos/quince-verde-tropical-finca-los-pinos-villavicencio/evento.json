@@ -33,19 +33,24 @@
       "nombre": "Finca Los Pinos"
     },
     {
+      "rol": "Vestido de 15 años",
+      "nombre": "Rubén Darío",
+      "ruta": "/vestidos-de-15"
+    },
+    {
       "rol": "Fotografía",
       "nombre": "[PENDIENTE]"
     }
   ],
   "seo": {
     "title": "15 años verde tropical en Finca Los Pinos | Rubén Darío",
-    "description": "Fiesta de 15 años verde tropical en Finca Los Pinos, Villavicencio: palmas, arco de flores blancas, faroles colgantes y letras gigantes."
+    "description": "Fiesta de 15 años verde tropical en Finca Los Pinos, Villavicencio: palmas, arco de flores blancas y vestido verde esmeralda de Rubén Darío."
   },
   "portada": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-de-espaldas-en-pista-led-portada.jpg",
   "fotos": [
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-de-espaldas-en-pista-led-portada.jpg",
-      "alt": "Quinceañera de espaldas en pista LED"
+      "alt": "María Camila de espaldas en la pista LED con su vestido verde esmeralda, moño de brillos y cola"
     },
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-mesa-de-fotos-con-follaje-tropical-y-lamparas.jpg",
@@ -65,11 +70,11 @@
     },
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-retrato-de-la-quinceanera-vestido-verde-satinado.jpg",
-      "alt": "Retrato de la quinceañera vestido verde satinado"
+      "alt": "Retrato de María Camila con corona y vestido de satín verde esmeralda"
     },
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-frente-a-arco-de-flores-blancas-y-follaje.jpg",
-      "alt": "Quinceañera frente a arco de flores blancas y follaje"
+      "alt": "María Camila de espaldas con su vestido verde esmeralda y moño con cola, frente a un arco de flores blancas"
     },
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-salon-techo-de-faroles-y-follaje-verde.jpg",
@@ -129,7 +134,7 @@
     },
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-vestido-verde-esmeralda-girando-en-pista-led.jpg",
-      "alt": "Vestido verde esmeralda girando en pista LED"
+      "alt": "María Camila girando su vestido de satín verde esmeralda con cinturón de brillos en la pista LED"
     },
     {
       "archivo": "quince-verde-tropical-finca-los-pinos-villavicencio-quinceanera-junto-a-mesa-imperial.jpg",

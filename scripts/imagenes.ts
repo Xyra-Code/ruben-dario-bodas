@@ -4,7 +4,7 @@
  *   - Color dominante y miniatura borrosa para mostrar mientras carga.
  *   - Manifiesto con medidas: src/generado/imagenes.json.
  *   - Imágenes para compartir (Open Graph, 1200×630 JPEG): una por evento, una por página
- *     con foto propia (vestidos de novia) y la del sitio.
+ *     con foto propia (vestidos de novia y de 15 años) y la del sitio.
  *   - Borra lo generado de fotos o eventos que ya no existen (una foto retirada no
  *     debe seguir publicada: Ley 1581).
  * Es incremental: solo procesa las fotos nuevas o modificadas.
@@ -192,16 +192,15 @@ async function main() {
 
   const rutaFoto = (slug: string, archivo: string) =>
     contenido.eventos.find((e) => e.slug === slug)!.fotos.find((f) => f.archivo === archivo)!.ruta;
-  const { compartir } = contenido.vestidos;
   const og = await generarOg([
     ...contenido.eventos.map((e) => ({
       destino: `eventos/${e.slug}.jpg`,
       portada: rutaFoto(e.slug, e.portada),
     })),
-    {
-      destino: `paginas/${OG_PAGINAS.vestidos}.jpg`,
-      portada: rutaFoto(compartir.evento, compartir.archivo),
-    },
+    ...(["vestidos", "vestidosQuince"] as const).map((pagina) => {
+      const { evento, archivo } = contenido[pagina].compartir;
+      return { destino: `paginas/${OG_PAGINAS[pagina]}.jpg`, portada: rutaFoto(evento, archivo) };
+    }),
   ]);
 
   const total = [...esperados.values()].reduce((n, s) => n + s.size, 0);

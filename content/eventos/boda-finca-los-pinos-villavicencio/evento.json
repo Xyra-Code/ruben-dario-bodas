@@ -35,13 +35,23 @@
       "nombre": "Finca Los Pinos"
     },
     {
+      "rol": "Vestido de novia",
+      "nombre": "Rubén Darío",
+      "ruta": "/vestidos-de-novia"
+    },
+    {
+      "rol": "Traje del novio",
+      "nombre": "Rubén Darío",
+      "ruta": "/vestidos-de-novia"
+    },
+    {
       "rol": "Fotografía",
       "nombre": "[PENDIENTE]"
     }
   ],
   "seo": {
     "title": "Boda en Finca Los Pinos, Villavicencio | Rubén Darío",
-    "description": "Boda en Finca Los Pinos, Villavicencio: rosa, blanco, salmón y follajes verdes, telas que dibujan el cielo, luces envolventes y una pista que brilla."
+    "description": "Boda en Finca Los Pinos, Villavicencio: rosa, salmón y follajes, techo de telas, pista iluminada, y vestido de novia y traje del novio de Rubén Darío."
   },
   "portada": "boda-finca-los-pinos-villavicencio-primer-baile-pista-iluminada.jpg",
   "fotos": [
@@ -83,23 +93,24 @@
     },
     {
       "archivo": "boda-finca-los-pinos-villavicencio-novia-cola-de-encaje-pista.jpg",
-      "alt": "Novia cola de encaje pista"
+      "alt": "Angie y Samuel besándose en la pista iluminada, con la cola amplia de encaje del vestido extendida"
     },
     {
       "archivo": "boda-finca-los-pinos-villavicencio-novia-entrada-ceremonia.jpg",
-      "alt": "Novia entrada ceremonia"
+      "alt": "Angie de espaldas en la ceremonia, con la cola y el velo de encaje extendidos sobre el jardín"
     },
     {
       "archivo": "boda-finca-los-pinos-villavicencio-novia-velo-al-viento-salon.jpg",
-      "alt": "Novia velo al viento salon"
+      "alt": "Angie con su vestido de encaje con flores en relieve y el velo largo al viento en el salón"
     },
     {
       "archivo": "boda-finca-los-pinos-villavicencio-novia-velo-de-encaje-jardin.jpg",
-      "alt": "Novia velo de encaje jardin"
+      "alt": "Angie de perfil con su ramo, el vestido de encaje y el velo bordado extendido en el jardín",
+      "encuadre": "15% 50%"
     },
     {
       "archivo": "boda-finca-los-pinos-villavicencio-novio-retrato-jardin.jpg",
-      "alt": "Novio retrato jardin"
+      "alt": "Samuel ajustándose el corbatín, con el traje de chaqueta azul y chaleco gris diseñado por Rubén Darío"
     },
     {
       "archivo": "boda-finca-los-pinos-villavicencio-pareja-altar-jardin.jpg",

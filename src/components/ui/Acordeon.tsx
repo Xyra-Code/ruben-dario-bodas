@@ -1,5 +1,6 @@
 import type { PreguntaFrecuente } from "@/lib/contenido/esquemas";
 
+import { Boton } from "@/components/ui/Boton";
 import { IconoMas } from "@/components/ui/Iconos";
 
 /**
@@ -25,6 +26,13 @@ export function Acordeon({ preguntas }: { preguntas: PreguntaFrecuente[] }) {
           </summary>
           <div className="lectura pr-5 pb-6 pl-5 text-topo sm:pr-16 sm:pl-6">
             <p>{p.respuesta}</p>
+            {p.enlace && (
+              <div className="mt-2">
+                <Boton href={p.enlace.ruta} variante="texto">
+                  {p.enlace.texto}
+                </Boton>
+              </div>
+            )}
           </div>
         </details>
       ))}

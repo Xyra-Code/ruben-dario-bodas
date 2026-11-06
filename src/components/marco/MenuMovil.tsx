@@ -7,10 +7,13 @@ import { useEffect, useRef, useState, type CSSProperties, type TouchEvent } from
 import { BotonCotizar } from "@/components/marco/BotonCotizar";
 import { clasesBoton } from "@/components/ui/Boton";
 import { IconoFacebook, IconoFlecha, IconoInstagram, IconoWhatsApp } from "@/components/ui/Iconos";
-import { NAVEGACION } from "@/lib/rutas";
+import { NAVEGACION, esRutaActual } from "@/lib/rutas";
+import { enlaceWhatsApp, flotanteSegunRuta, type EventoMensaje } from "@/lib/whatsapp";
 
 type Props = {
-  enlaceWhatsApp: string;
+  numero: string;
+  /** Para armar el mismo mensaje de WhatsApp del botón flotante según la página. */
+  eventos: EventoMensaje[];
   redes: { instagram?: string; facebook?: string };
   cobertura: string;
 };
@@ -23,8 +26,8 @@ const orden = (i: number) => ({ "--i": i }) as CSSProperties;
 /**
  * Menú de celular y tablet. El botón ("Menú" + dos líneas desiguales) abre un panel a
  * pantalla completa que se despliega en círculo desde el propio botón, con los enlaces
- * grandes y numerados como el índice de una revista de novias, el monograma de fondo y,
- * abajo, Cotizar, WhatsApp, redes y cobertura. Es un <dialog> modal: atrapa el foco y
+ * grandes, las páginas de Vestidos siempre a la vista bajo su nombre, el monograma de fondo
+ * y, abajo, el botón principal, WhatsApp, redes y cobertura. Es un <dialog> modal: atrapa el foco y
  * devuelve el foco al botón. Animaciones en globals.css (sin ellas con movimiento
  * reducido). Desde lg no existe: manda la barra de enlaces del encabezado.
  *
@@ -37,8 +40,9 @@ const orden = (i: number) => ({ "--i": i }) as CSSProperties;
  *   con un gesto rápido), sale por ese lado; si no, vuelve a su sitio.
  * - Tocar un espacio vacío del panel (lo marcado con data-vacio).
  */
-export function MenuMovil({ enlaceWhatsApp, redes, cobertura }: Props) {
+export function MenuMovil({ numero, eventos, redes, cobertura }: Props) {
   const ruta = usePathname();
+  const whatsapp = enlaceWhatsApp(numero, flotanteSegunRuta(ruta, eventos).mensaje);
   const dialogo = useRef<HTMLDialogElement>(null);
   const boton = useRef<HTMLButtonElement>(null);
   const temporizador = useRef<number>(undefined);
@@ -258,7 +262,42 @@ export function MenuMovil({ enlaceWhatsApp, redes, cobertura }: Props) {
           >
             <ol>
               {NAVEGACION.map((item, i) => {
-                const actual = ruta === item.ruta || ruta.startsWith(`${item.ruta}/`);
+                const actual = esRutaActual(item.ruta, ruta);
+                if (item.hijos) {
+                  const idGrupo = `menu-grupo-${i}`;
+                  return (
+                    <li
+                      key={item.ruta}
+                      className="menu-pieza border-b border-linea py-2.5 sm:py-4 [@media(max-height:36rem)]:py-1.5"
+                      style={orden(i)}
+                    >
+                      <span
+                        id={idGrupo}
+                        className={`block font-titulo text-[clamp(1.875rem,1.3rem+2.8vw,3rem)] leading-tight ${
+                          actual ? "text-terracota" : "text-carbon"
+                        }`}
+                      >
+                        {item.nombre}
+                      </span>
+                      <ul aria-labelledby={idGrupo} className="flex flex-wrap gap-x-4">
+                        {item.hijos.map((h) => (
+                          <li key={h.ruta}>
+                            <Link
+                              href={h.ruta}
+                              replace
+                              onClick={cerrarNavegando}
+                              aria-label={h.nombre}
+                              aria-current={h.ruta === ruta ? "page" : undefined}
+                              className="inline-flex min-h-11 items-center text-sm text-terracota underline decoration-terracota/40 underline-offset-4 aria-[current=page]:font-semibold aria-[current=page]:decoration-terracota"
+                            >
+                              {h.corto}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  );
+                }
                 return (
                   <li key={item.ruta} className="menu-pieza border-b border-linea" style={orden(i)}>
                     <Link
@@ -266,11 +305,8 @@ export function MenuMovil({ enlaceWhatsApp, redes, cobertura }: Props) {
                       replace
                       onClick={cerrarNavegando}
                       aria-current={actual ? "page" : undefined}
-                      className="group/enlace flex min-h-11 items-center gap-4 py-2.5 sm:py-4"
+                      className="group/enlace flex min-h-11 items-center gap-4 py-2.5 sm:py-4 [@media(max-height:36rem)]:py-1.5"
                     >
-                      <span className="w-6 shrink-0 self-start pt-2 text-xs font-semibold tracking-widest text-dorado-texto tabular-nums">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
                       <span className="min-w-0 flex-1">
                         <span
                           className={`block font-titulo text-[clamp(1.875rem,1.3rem+2.8vw,3rem)] leading-tight transition-colors group-hover/enlace:text-terracota ${
@@ -301,7 +337,7 @@ export function MenuMovil({ enlaceWhatsApp, redes, cobertura }: Props) {
             <div className="grid grid-cols-2 gap-3">
               <BotonCotizar compacto replace className="w-full" alNavegar={cerrarNavegando} />
               <a
-                href={enlaceWhatsApp}
+                href={whatsapp}
                 target="_blank"
                 rel="noopener"
                 className={clasesBoton("secundario", true, true)}

@@ -2,6 +2,6 @@ import { PaginaServicio, metadatosServicio } from "@/components/plantillas/Pagin
 
 export const metadata = metadatosServicio("quince");
 
-export default function QuinceAnos() {
+export default function Fiestas15() {
   return <PaginaServicio tipo="quince" />;
 }

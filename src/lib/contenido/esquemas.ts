@@ -35,12 +35,17 @@ const seo = z.strictObject({
     .max(160, "La descripción SEO no debe pasar de 160 caracteres"),
 });
 
-const preguntaFrecuente = z.strictObject({ pregunta: texto, respuesta: texto });
-
 /** Ruta interna del sitio: "/vestidos-de-novia", "/bodas". */
 const rutaInterna = z
   .string()
   .regex(/^\/[a-z0-9-]*(?:\/[a-z0-9-]+)*$/, "Ruta interna del sitio: /vestidos-de-novia");
+
+const preguntaFrecuente = z.strictObject({
+  pregunta: texto,
+  respuesta: texto,
+  /** Enlace bajo la respuesta, cuando esta remite a otra página del sitio. */
+  enlace: z.strictObject({ texto, ruta: rutaInterna }).optional(),
+});
 
 /** Foto de un evento del portafolio, usada en otra página (el alt sale del evento). */
 const fotoDeEvento = z.strictObject({ evento: slug, archivo: archivoFoto });
@@ -62,6 +67,7 @@ export const sitio = z.strictObject({
     boda: fotoPreguntas,
     quince: fotoPreguntas,
     vestido: fotoPreguntas,
+    vestidoQuince: fotoPreguntas,
     sobre: fotoPreguntas,
     lugares: fotoPreguntas,
   }),
@@ -136,7 +142,7 @@ export const sitio = z.strictObject({
   invitados: z.array(texto).min(2).max(8),
 });
 
-// ── Servicios: /bodas y /quince-anos ────────────────────────────────────────
+// ── Servicios: /bodas y /fiestas-de-15 ────────────────────────────────────────
 
 /**
  * Sección extra de un servicio, con H2 propio para una búsqueda concreta ("wedding
@@ -261,7 +267,7 @@ export const testimonio = z.strictObject({
    */
   inicio: z.enum(["destacado", "fijo"]).optional(),
   /**
-   * "destacado": el grande de la página de su servicio (/bodas o /quince-anos, según
+   * "destacado": el grande de la página de su servicio (/bodas o /fiestas-de-15, según
    * `tipo`). Sin marca, se elige el primero del tipo que no sea el destacado del inicio.
    */
   servicio: z.literal("destacado").optional(),
@@ -488,10 +494,30 @@ export const guiaLugares = z.strictObject({
 
 // ── Vestidos de novia (/vestidos-de-novia) ─────────────────────────────────
 
+/** Vestidos diseñados por Rubén Darío en un evento del portafolio, con sus fotos. */
+const grupoVestidos = z.strictObject({
+  antetitulo: texto,
+  titulo: texto,
+  intro: texto,
+  items: z
+    .array(
+      z.strictObject({
+        evento: slug,
+        titulo: texto,
+        texto,
+        /** La primera es la principal. Todas van a la misma altura y sin recortar. */
+        fotos: z.array(archivoFoto).min(2).max(3),
+        /** Palabras textuales de los protagonistas (de content/testimonios.json). */
+        cita: z.strictObject({ texto, autor: texto }).optional(),
+      }),
+    )
+    .min(1),
+});
+
 /**
- * Página del diseño de vestidos de novia a medida: otra búsqueda y otro momento de la
- * novia que /bodas, por eso tiene página propia. Las fotos salen de los eventos del
- * portafolio donde la novia lleva un vestido de Rubén Darío.
+ * Páginas de vestidos a medida (/vestidos-de-novia y /vestidos-de-15): otra búsqueda y
+ * otro momento que /bodas y /fiestas-de-15, por eso tienen página propia. Las fotos salen de
+ * los eventos del portafolio donde la novia o la quinceañera lleva un vestido de Rubén Darío.
  */
 export const vestidos = z.strictObject({
   /** Textos redactados por XyraCode como borrador: false hasta que la empresa los apruebe. */
@@ -500,7 +526,15 @@ export const vestidos = z.strictObject({
   h1: texto,
   seo,
   bajada: texto,
-  introduccion: parrafos,
+  /** "Quién diseña tu vestido", debajo de la galería. La foto no se repite en otra página. */
+  presentacion: z.strictObject({
+    antetitulo: texto,
+    titulo: texto,
+    texto,
+    foto: fotoDeEvento,
+    /** Su formación, en frases cortas para leer de un vistazo. */
+    credenciales: z.array(texto).min(2).max(4),
+  }),
   /** Foto vertical junto al H1. */
   portada: fotoDeEvento,
   /** Foto horizontal para compartir (Open Graph 1200×630). */
@@ -510,13 +544,17 @@ export const vestidos = z.strictObject({
     .array(z.strictObject({ titulo: texto, descripcion: texto }))
     .min(3)
     .max(6),
-  /** Un vestido real del portafolio, enlazado a su boda. */
-  caso: z
+  /** Vestidos reales del portafolio, enlazados a su evento. */
+  galeria: grupoVestidos,
+  /** Traje de novio (solo en la página de novia): con su foto, cita y evento. */
+  traje: z
     .strictObject({
-      evento: slug,
+      antetitulo: texto,
       titulo: texto,
       texto,
-      fotos: z.array(archivoFoto).min(2).max(4),
+      evento: slug,
+      foto: archivoFoto,
+      cita: z.strictObject({ texto, autor: texto }).optional(),
     })
     .optional(),
   inversion: z.strictObject({ desde: texto, nota: texto }),

@@ -4,53 +4,90 @@
   "h1": "Vestidos de novia a medida en Villavicencio",
   "seo": {
     "title": "Vestidos de novia a medida en Villavicencio | Rubén Darío",
-    "description": "Diseño de vestidos de novia a medida en Villavicencio: boceto, telas y pruebas hasta tu día. Mira los diseños y agenda tu cita por WhatsApp."
+    "description": "Vestidos de novia a medida en Villavicencio y traje del novio: diseño propio, telas y pruebas con Rubén Darío, formado en alta costura. Agenda tu cita."
   },
   "bajada": "Antes que las bodas, fueron los vestidos: Rubén Darío diseña el tuyo a medida, desde el primer boceto hasta la última prueba.",
-  "introduccion": [
-    "Rubén Darío estudió Diseño de Modas, se especializó en Alta Costura e Interpretación de Modas y fue profesor de patronaje y confección. Esa formación es la base de cada vestido que diseña.",
-    "[PENDIENTE: cómo diseña un vestido de novia: siluetas, telas y estilos que trabaja, y qué lo hace distinto]"
-  ],
+  "presentacion": {
+    "antetitulo": "Rubén Darío",
+    "titulo": "Quién diseña tu vestido",
+    "texto": "Cada vestido parte de quien lo lleva y de la boda donde lo va a llevar.",
+    "foto": {
+      "evento": "boda-la-topia-villavicencio",
+      "archivo": "boda-la-topia-villavicencio-disenador-ceremonia-jardin.jpg"
+    },
+    "credenciales": [
+      "Diseño de Modas",
+      "Alta Costura e Interpretación de Modas",
+      "Profesor de patronaje y confección"
+    ]
+  },
   "portada": {
-    "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
-    "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-ivory-y-rosa.jpg"
+    "evento": "boda-finca-los-pinos-villavicencio",
+    "archivo": "boda-finca-los-pinos-villavicencio-novia-velo-de-encaje-jardin.jpg"
   },
   "compartir": {
     "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
     "archivo": "boda-verde-menta-finca-los-pinos-villavicencio-novia-vestido-y-velo-en-el-jardin.jpg"
   },
+  "galeria": {
+    "antetitulo": "Diseños reales",
+    "titulo": "Vestidos de novia de Rubén Darío",
+    "intro": "Cada uno se diseñó para una novia y una boda concretas. Míralos aquí y entra a la boda completa.",
+    "items": [
+      {
+        "evento": "boda-finca-los-pinos-villavicencio",
+        "titulo": "El vestido de Angie",
+        "texto": "Hombros caídos, corsé con cordones en la espalda, encaje con flores en relieve y una cola amplia, con un velo largo de borde bordado, para su boda en Finca Los Pinos.",
+        "fotos": [
+          "boda-finca-los-pinos-villavicencio-novia-velo-al-viento-salon.jpg",
+          "boda-finca-los-pinos-villavicencio-novia-entrada-ceremonia.jpg",
+          "boda-finca-los-pinos-villavicencio-novia-cola-de-encaje-pista.jpg"
+        ]
+      },
+      {
+        "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
+        "titulo": "El vestido de Liz",
+        "texto": "Ivory con un fondo rosa suave, pensado para su boda verde menta en Finca Los Pinos: el vestido y la decoración, del mismo diseñador.",
+        "fotos": [
+          "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-ivory-y-rosa.jpg",
+          "boda-verde-menta-finca-los-pinos-villavicencio-novia-velo-al-viento-jardin.jpg",
+          "boda-verde-menta-finca-los-pinos-villavicencio-caja-del-vestido-con-logo-de-ruben-dario.jpg"
+        ]
+      }
+    ]
+  },
   "proceso": [
     {
       "titulo": "Primera cita",
-      "descripcion": "[PENDIENTE: cómo es la primera cita: qué conversan, qué traer]"
+      "descripcion": "Hablamos de tu fecha, el lugar y cómo te imaginas ese día. Si tienes fotos de vestidos que te gustan, tráelas: ayudan a entender tu estilo."
     },
     {
       "titulo": "Boceto",
-      "descripcion": "[PENDIENTE: cómo se propone el diseño]"
+      "descripcion": "A partir de esa conversación, Rubén Darío propone un diseño propio, pensado para tu cuerpo, tu boda y tu personalidad."
     },
     {
       "titulo": "Telas y medidas",
-      "descripcion": "[PENDIENTE: elección de telas y toma de medidas]"
+      "descripcion": "Elegimos la tela según el diseño, el lugar y el clima de tu boda, y tomamos tus medidas para empezar el patrón."
     },
     {
       "titulo": "Pruebas",
-      "descripcion": "[PENDIENTE: cuántas pruebas y con qué tiempo]"
+      "descripcion": "Por lo general son tres: una para ajustar el patrón, otra con el vestido armado y una final con los zapatos y accesorios de ese día."
     },
     {
       "titulo": "Entrega",
-      "descripcion": "[PENDIENTE: cuándo y cómo se entrega el vestido]"
+      "descripcion": "Con la prueba final lista, recibes tu vestido en su caja, preparado para tu día."
     }
   ],
-  "caso": {
-    "evento": "boda-verde-menta-finca-los-pinos-villavicencio",
-    "titulo": "El vestido de Liz",
-    "texto": "Ivory con un fondo rosa suave, pensado para su boda verde menta en Finca Los Pinos: el vestido y la decoración, del mismo diseñador.",
-    "fotos": [
-      "boda-verde-menta-finca-los-pinos-villavicencio-vestido-de-novia-colgado-en-el-jardin.jpg",
-      "boda-verde-menta-finca-los-pinos-villavicencio-caja-del-vestido-con-logo-de-ruben-dario.jpg",
-      "boda-verde-menta-finca-los-pinos-villavicencio-novia-abriendo-la-caja-del-vestido.jpg",
-      "boda-verde-menta-finca-los-pinos-villavicencio-novia-velo-al-viento-jardin.jpg"
-    ]
+  "traje": {
+    "antetitulo": "Para el novio",
+    "titulo": "Traje de novio a medida",
+    "texto": "Rubén Darío también diseña el traje del novio, pensado para que combine con el vestido. El de Samuel, para su boda con Angie en Finca Los Pinos, lleva chaqueta azul, chaleco y pantalón gris, y un corbatín a juego.",
+    "evento": "boda-finca-los-pinos-villavicencio",
+    "foto": "boda-finca-los-pinos-villavicencio-novio-retrato-jardin.jpg",
+    "cita": {
+      "texto": "Diseñaste nuestros trajes con ese talento y esa sensibilidad que te hacen tan especial.",
+      "autor": "Angie & Samuel"
+    }
   },
   "inversion": {
     "desde": "[PENDIENTE: valor desde]",
@@ -88,6 +125,15 @@
     {
       "pregunta": "¿Puedo encargar el vestido y la decoración de mi boda juntos?",
       "respuesta": "Sí. Rubén Darío puede diseñar tu vestido y la decoración de tu boda, como hizo con Liz en su boda verde menta en Finca Los Pinos: el vestido, la paleta y el escenario se piensan juntos para que todo hable el mismo idioma."
+    },
+    {
+      "pregunta": "¿También diseñan el traje del novio?",
+      "respuesta": "Sí. Rubén Darío diseña trajes de novio a medida, como el de Samuel para su boda con Angie en Finca Los Pinos. Escríbenos y agendamos la cita para el tuyo."
+    },
+    {
+      "pregunta": "¿También diseñan vestidos de 15 años?",
+      "respuesta": "Sí. Rubén Darío diseña vestidos de 15 años a medida, y puede pensarlos junto con la decoración de la fiesta.",
+      "enlace": { "texto": "Mira los vestidos de 15 años", "ruta": "/vestidos-de-15" }
     }
   ]
 }

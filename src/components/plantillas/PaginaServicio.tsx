@@ -8,7 +8,7 @@ import {
   CLASES_IMG_PORTADA,
   MEDIDAS_FOTO_PORTADA,
   PortadaConFoto,
-  SIZES_FOTO_PORTADA,
+  sizesFotoPortada,
 } from "@/components/plantillas/PortadaConFoto";
 import { SeccionInversion } from "@/components/plantillas/SeccionInversion";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -30,7 +30,7 @@ import { metadatos } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
 import { testimoniosDelServicio } from "@/lib/testimonios";
 
-/** Metadata de /bodas o /quince-anos; para compartir, la portada del evento más reciente del tipo. */
+/** Metadata de /bodas o /fiestas-de-15; para compartir, la portada del evento más reciente del tipo. */
 export function metadatosServicio(tipo: TipoEvento): Metadata {
   const s = obtenerServicio(tipo)!;
   const reciente = obtenerContenido().eventos.find((e) => e.tipo === tipo);
@@ -63,7 +63,7 @@ const TEXTOS: Record<
 const seccion = "py-(--spacing-seccion)";
 
 /**
- * Página de servicio (/bodas, /quince-anos): cada una compite por su búsqueda, con texto
+ * Página de servicio (/bodas, /fiestas-de-15): cada una compite por su búsqueda, con texto
  * propio y preguntas que no repiten las de la portada. Brief §7.2–7.3.
  */
 export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
@@ -130,8 +130,8 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
         <h1 id="servicio-titulo" className="mt-4 text-titulo-1">
           {s.h1}
         </h1>
-        <p className="mt-6 max-w-md text-lg text-topo">{s.bajada}</p>
-        <div className="mt-8">
+        <p className="mt-4 max-w-md text-lg text-topo lg:mt-6">{s.bajada}</p>
+        <div className="mt-6 lg:mt-8">
           <Boton href="#contacto" origen={`${s.slug}-portada`}>
             {textos.cotizar}
           </Boton>
@@ -161,7 +161,7 @@ export function PaginaServicio({ tipo }: { tipo: "boda" | "quince" }) {
                 evento={eventoPresentacion.slug}
                 archivo={fotoPresentacion.archivo}
                 alt={fotoPresentacion.alt}
-                sizes={SIZES_FOTO_PORTADA}
+                sizes={sizesFotoPortada(eventoPresentacion.slug, fotoPresentacion.archivo)}
                 className={CLASES_IMG_PORTADA}
               />
               <CreditoEvento evento={eventoPresentacion.slug} enlace />

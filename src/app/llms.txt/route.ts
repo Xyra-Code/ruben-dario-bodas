@@ -7,20 +7,29 @@
 import { obtenerContenido } from "@/lib/contenido/cargar";
 import { urlAbsoluta } from "@/lib/seo/metadatos";
 import { PAGINAS } from "@/lib/seo/paginas";
-import { RUTA_SERVICIO, RUTA_VESTIDOS, rutaEvento } from "@/lib/rutas";
+import { RUTA_SERVICIO, RUTA_VESTIDOS, RUTA_VESTIDOS_QUINCE, rutaEvento } from "@/lib/rutas";
 
 export const dynamic = "force-static";
 
 export function GET() {
-  const { sitio, servicios, vestidos, eventos, preguntasGenerales, lugares, guiaLugares, sobre } =
-    obtenerContenido();
+  const {
+    sitio,
+    servicios,
+    vestidos,
+    vestidosQuince,
+    eventos,
+    preguntasGenerales,
+    lugares,
+    guiaLugares,
+    sobre,
+  } = obtenerContenido();
   const enlace = (texto: string, ruta: string) => `[${texto}](${urlAbsoluta(ruta)})`;
   const whatsapp = `https://wa.me/${sitio.whatsapp}`;
 
   const lineas = [
     `# ${sitio.nombre}`,
     "",
-    `> Wedding planner, diseño y decoración de bodas y fiestas de 15 años, y vestidos de novia a medida en ${sitio.cobertura.resumen} (Colombia). ${sitio.lema}`,
+    `> Wedding planner, diseño y decoración de bodas y fiestas de 15 años, y vestidos de novia y de 15 años y trajes de novio a medida en ${sitio.cobertura.resumen} (Colombia). ${sitio.lema}`,
     "",
     `- Sitio: ${sitio.dominioVisible}`,
     `- Centro de operación: ${sitio.cobertura.sede} (Meta)`,
@@ -36,6 +45,7 @@ export function GET() {
         `- ${enlace(s.nombre, RUTA_SERVICIO[s.tipo]!)}: ${s.seo.description} Inversión desde ${s.inversion.desde}.`,
     ),
     `- ${enlace(vestidos.nombre, RUTA_VESTIDOS)}: ${vestidos.seo.description} Inversión desde ${vestidos.inversion.desde}.`,
+    `- ${enlace(vestidosQuince.nombre, RUTA_VESTIDOS_QUINCE)}: ${vestidosQuince.seo.description} Inversión desde ${vestidosQuince.inversion.desde}.`,
     "",
     "## Portafolio de eventos",
     "",
@@ -49,6 +59,7 @@ export function GET() {
     ...[
       ...servicios.map((s) => s.preguntas),
       vestidos.preguntas,
+      vestidosQuince.preguntas,
       guiaLugares.preguntas ?? [],
       sobre.preguntas ?? [],
     ].flatMap((lista) => lista.flatMap((p) => [`### ${p.pregunta}`, "", p.respuesta, ""])),

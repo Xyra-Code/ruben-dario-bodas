@@ -33,13 +33,18 @@
       "nombre": "Finca La Principesa"
     },
     {
+      "rol": "Vestido de 15 años",
+      "nombre": "Rubén Darío",
+      "ruta": "/vestidos-de-15"
+    },
+    {
       "rol": "Fotografía",
       "nombre": "[PENDIENTE]"
     }
   ],
   "seo": {
     "title": "15 años coral en Finca La Principesa | Rubén Darío",
-    "description": "Fiesta de 15 años coral en Finca La Principesa, Villavicencio: celosía con flores, techo de faroles, esculturas de show y vestido coral."
+    "description": "Fiesta de 15 años coral en Finca La Principesa, Villavicencio: celosía con flores, techo de faroles y vestido coral diseñado por Rubén Darío."
   },
   "portada": "quince-coral-finca-la-principesa-villavicencio-quinceanera-en-pista-led-bajo-faroles-portada.jpg",
   "fotos": [
@@ -49,7 +54,7 @@
     },
     {
       "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-vestido-coral-en-banca-de-flores.jpg",
-      "alt": "Quinceañera vestido coral en banca de flores"
+      "alt": "Valentina sentada bajo un arco de flores con su vestido de satín coral y encaje dorado"
     },
     {
       "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-de-postres-con-arco-dorado-y-flores.jpg",
@@ -61,7 +66,7 @@
     },
     {
       "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-vestido-coral-entre-letras-xv.jpg",
-      "alt": "Quinceañera vestido coral entre letras XV"
+      "alt": "Valentina con su vestido coral y dorado entre las letras XV iluminadas"
     },
     {
       "archivo": "quince-coral-finca-la-principesa-villavicencio-salon-techo-de-faroles-y-mesa-principal.jpg",
@@ -153,7 +158,7 @@
     },
     {
       "archivo": "quince-coral-finca-la-principesa-villavicencio-quinceanera-girando-vestido-coral-con-mono.jpg",
-      "alt": "Quinceañera girando vestido coral con moño"
+      "alt": "Valentina de espaldas girando su vestido coral, con corsé de cordones y un gran moño de satín"
     },
     {
       "archivo": "quince-coral-finca-la-principesa-villavicencio-mesa-de-torta-con-muro-de-flores-y-luces.jpg",

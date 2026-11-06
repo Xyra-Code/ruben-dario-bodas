@@ -19,7 +19,7 @@ const IZQUIERDA: Pestana[] = [
   { nombre: "Bodas", ruta: "/bodas", Icono: IconoAnillos },
 ];
 const DERECHA: Pestana[] = [
-  { nombre: "15 años", ruta: "/quince-anos", Icono: IconoTiara },
+  { nombre: "15 años", ruta: "/fiestas-de-15", Icono: IconoTiara },
   { nombre: "Eventos", ruta: "/eventos", Icono: IconoGaleria },
 ];
 

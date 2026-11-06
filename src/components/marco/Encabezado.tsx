@@ -5,16 +5,16 @@ import { CabeceraFija } from "@/components/marco/CabeceraFija";
 import { EnlacesNavegacion } from "@/components/marco/EnlacesNavegacion";
 import { MenuMovil } from "@/components/marco/MenuMovil";
 import { obtenerContenido } from "@/lib/contenido/cargar";
-import { MENSAJES, enlaceWhatsApp } from "@/lib/whatsapp";
 
 /**
  * Encabezado de todas las páginas.
  * - Celular: firma + botón del menú (MenuMovil). Compartir un evento flota sobre WhatsApp
  *   (CompartirFlotante).
- * - Desde sm: la firma por altura y "Cotizar" a la vista. Desde lg: enlaces en línea.
+ * - Desde sm: la firma por altura y el botón principal a la vista (BotonCotizar: "Cotizar"
+ *   o "Agendar cita" según la página). Desde lg: enlaces en línea.
  */
 export function Encabezado() {
-  const { sitio } = obtenerContenido();
+  const { sitio, eventos } = obtenerContenido();
 
   return (
     <CabeceraFija>
@@ -44,7 +44,8 @@ export function Encabezado() {
         <div className="flex shrink-0 items-center gap-1">
           <BotonCotizar compacto className="max-sm:hidden" />
           <MenuMovil
-            enlaceWhatsApp={enlaceWhatsApp(sitio.whatsapp, MENSAJES.general)}
+            numero={sitio.whatsapp}
+            eventos={eventos.map((e) => ({ slug: e.slug, titulo: e.titulo, tipo: e.tipo }))}
             redes={sitio.redes}
             cobertura={sitio.cobertura.resumen}
           />
